@@ -1,7 +1,7 @@
 <template>
     <div>
         <transition name="fade">
-            <section v-if="testStarted" id="test-section">
+            <section v-if="quizStarted" id="quiz-section">
             this is the test section
             </section>
         </transition>
@@ -10,13 +10,13 @@
 
 <script>
 export default {
-  name: "Test",
-  props: ["testStarted"]
+  name: "Quiz",
+  props: ["quizStarted"]
 };
 </script>
 
 <style lang="scss" scoped>
-#test-section {
+#quiz-section {
   background: red;
   height: 100vh;
   width: 100%;

@@ -1,22 +1,22 @@
 <template>
     <div id="app-container">
-        <h1 class="home-title" :class="{'test-started': testStarted}">This is the home page</h1>
-        <button v-if="!testStarted" class="start-test-btn" @click="testStarted = true">click to begin</button>
-         <Test :testStarted="testStarted"/>
+        <h1 class="home-title" :class="{'quiz-started': quizStarted}">This is the home page</h1>
+        <button v-if="!quizStarted" class="start-quiz-btn" @click="quizStarted = true">click to begin</button>
+         <Quiz :quizStarted="quizStarted"/>
     </div>
 </template>
 
 <script>
-import Test from "./Test";
+import Quiz from "./Quiz";
 
 export default {
   name: "Home",
   components: {
-    Test
+    Quiz
   },
   data() {
     return {
-      testStarted: false
+      quizStarted: false
     };
   }
 };
@@ -37,11 +37,11 @@ export default {
   transform: translateY(40vh) scale(3);
 }
 
-.home-title.test-started {
+.home-title.quiz-started {
   transform: translateY(0) scale(1);
 }
 
-.start-test-btn {
+.start-quiz-btn {
   height: 50px;
   width: 100px;
   position: absolute;
