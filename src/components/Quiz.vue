@@ -18,7 +18,7 @@ export default {
 <style lang="scss" scoped>
 #quiz-section {
   background: red;
-  height: 100vh;
+  padding: 20vh 0;
   width: 100%;
 }
 

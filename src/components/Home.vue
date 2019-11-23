@@ -2,7 +2,7 @@
     <div id="app-container">
         <h1 class="home-title" :class="{'quiz-started': quizStarted}">This is the home page</h1>
         <button v-if="!quizStarted" class="start-quiz-btn" @click="quizStarted = true">click to begin</button>
-         <Quiz :quizStarted="quizStarted"/>
+        <Quiz :quizStarted="quizStarted"/>
     </div>
 </template>
 
