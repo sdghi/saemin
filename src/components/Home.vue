@@ -2,17 +2,18 @@
     <div id="app-container">
         <h1 class="home-title" :class="{'test-started': testStarted}">This is the home page</h1>
         <button v-if="!testStarted" class="start-test-btn" @click="testStarted = true">click to begin</button>
-        <transition name="fade">
-            <section v-if="testStarted" id="test-section">
-            this is the test section
-            </section>
-        </transition>
+         <Test :testStarted="testStarted"/>
     </div>
 </template>
 
 <script>
+import Test from "./Test";
+
 export default {
   name: "Home",
+  components: {
+    Test
+  },
   data() {
     return {
       testStarted: false
@@ -32,7 +33,7 @@ export default {
   top: 2.5%;
   text-align: center;
   font-size: 2vw;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-out;
   transform: translateY(40vh) scale(3);
 }
 
@@ -46,19 +47,5 @@ export default {
   position: absolute;
   top: 60%;
   left: calc(50% - 50px);
-}
-
-#test-section {
-  background: red;
-  height: 100vh;
-  width: 100%;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s 0.5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
 }
 </style>
