@@ -1,24 +1,26 @@
 <template>
-    <div>
-        <transition name="fade">
-            <section v-if="quizStarted" id="quiz-section">
-            this is the test section
-            </section>
-        </transition>
-    </div>
+  <transition name="fade">
+      <section v-if="quizStarted" id="quiz-section">
+        <Question/>
+      </section>
+  </transition>
 </template>
 
 <script>
+import Question from "./Question";
+
 export default {
   name: "Quiz",
+  components: {
+    Question
+  },
   props: ["quizStarted"]
 };
 </script>
 
 <style lang="scss" scoped>
 #quiz-section {
-  background: red;
-  padding: 20vh 0;
+  padding: 10vh 0;
   width: 100%;
 }
 

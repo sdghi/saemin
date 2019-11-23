@@ -33,7 +33,7 @@ export default {
 
 .home-title {
   position: relative;
-  top: 2.5%;
+  top: 2.5vh;
   text-align: center;
   font-size: 1.3rem;
   transition: all 0.3s ease-out;
