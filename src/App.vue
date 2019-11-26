@@ -16,18 +16,9 @@ export default {
 </script>
 
 <style>
-html {
-  box-sizing: border-box;
-}
+@import "/scss/index.scss";
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-body {
-  margin: 0;
-  padding: 0;
+button:focus {
+  outline: none;
 }
 </style>

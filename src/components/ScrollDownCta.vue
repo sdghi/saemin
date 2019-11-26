@@ -14,7 +14,6 @@ export default {
 section {
   padding: 15vh;
   border: 1px solid red;
-  width: 100%;
   text-align: center;
   font-size: 5vmin;
 }
