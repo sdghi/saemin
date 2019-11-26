@@ -1,8 +1,12 @@
 <template>
     <div id="app-container">
-        <h1 class="home-title" :class="{'quiz-started': quizStarted}">SDG Saemin Generator</h1>
-        <h3 v-if="!quizStarted" class="home-subtitle">What kind of ramen are you? Take the quiz to find out.</h3>
-        <button v-if="!quizStarted" class="start-quiz-btn" @click="quizStarted = true">click to begin</button>
+        <div class="home-title" :class="{'quiz-started': quizStarted}">
+          <h1>Saemin</h1>
+          <h1>Generator</h1>
+        </div>
+        <p v-if="!quizStarted" class="home-subtitle">What Would You Be As Ramen Noodle Soup?</p>
+        <button v-if="!quizStarted" class="start-quiz-btn" @click="quizStarted = true">take quiz</button>
+        <button v-if="quizStarted" class="restart-btn" @click="restartQuiz">restart</button>
         <Quiz :quizStarted="quizStarted"/>
     </div>
 </template>
@@ -19,56 +23,84 @@ export default {
     return {
       quizStarted: false
     };
+  },
+  methods: {
+    restartQuiz() {
+      window.scrollTo(0, 0);
+      this.quizStarted = false;
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/_variables";
+@import "@/scss/index.scss";
+@import "@/scss/partials/_variables";
 
 #app-container {
-  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  min-height: 100vh;
+  background: $accent-color;
 }
 
 .home-title {
-  position: relative;
-  top: 2.5vh;
-  text-align: center;
-  font-size: 1.3rem;
-  transition: all 0.3s ease-out;
-  transform: translateY(40vh) scale(1.5);
+  width: fit-content;
+  margin: 30vh auto 0 auto;
+  font-size: 6vmin;
+  transition: all 0.3s $cubic-ease;
+
+  h1 {
+    font-family: $type-heading-italic;
+    margin: 0;
+    position: relative;
+
+    &:first-of-type {
+      left: -8vw;
+    }
+
+    &:nth-of-type(2) {
+      left: 8vw;
+    }
+  }
 }
 
 .home-subtitle {
-  position: relative;
   text-align: center;
-  top: 45vh;
-  font-size: 2rem;
+  font-size: 5vmin;
   width: 80%;
-  margin: 0 auto;
-  font-size: 1.3rem;
-}
-
-@media (min-width: $breakpoint-small) {
-  .home-title {
-    transform: translateY(40vh) scale(3.5);
-  }
-
-  .home-subtitle {
-    font-size: 2rem;
-  }
+  margin: 2rem auto 0 auto;
 }
 
 .home-title.quiz-started {
-  transform: translateY(0) scale(1);
+  transform: translateY(-15vh);
+}
+
+button {
+  background: $black;
+  font-weight: 700;
+  padding-top: 5px;
+  border: none;
+  color: $white;
+  border-radius: 30px;
+  font-size: 30px;
+  font-family: $type-heading;
+  text-transform: uppercase;
+  height: 60px;
+  width: 200px;
 }
 
 .start-quiz-btn {
-  height: 50px;
-  width: 100px;
-  position: absolute;
-  top: 60%;
-  left: calc(50% - 50px);
+  margin-top: 50px;
+  position: relative;
+  left: calc(50% - 100px);
+}
+
+.restart-btn {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
 }
 </style>

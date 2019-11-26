@@ -1,30 +1,27 @@
 <template>
     <div class="question">
-        <h3>This is the question</h3>
-        <div>this is where you will reference the answers templates</div>
+     
+        <QuestionCard/>
     </div>
 </template>
 
 <script>
+import QuestionCard from "./QuestionCard";
+
 export default {
-  name: "Question"
+  name: "Question",
+  components: {
+    QuestionCard
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/_variables";
+@import "@/scss/partials/_variables";
 
 .question {
-  width: 90%;
-  margin: 0 auto;
-  background: black;
-  color: white;
-  padding: 50px;
-}
-
-@media (min-width: 768px) {
-  .question {
-    width: 60%;
-  }
+  background: $background;
+  width: 100%;
+  height: fit-content;
 }
 </style>

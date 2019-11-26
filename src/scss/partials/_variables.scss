@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Din Next Pro Heavy";
+  // Has to be realtive path to the component
+  src: url("../fonts/DINNextLTPro-Heavy.otf");
+}
+
+@font-face {
+  font-family: "Din Next Pro Heavy Italic";
+  src: url("../fonts/DINNextLTPro-HeavyItalic.otf");
+}
+
+@font-face {
+  font-family: "Source Sans Variable Roman";
+  src: url("../fonts/SourceSansVariable-Roman.otf");
+}
+
+// Fonts
+$type-heading: "Din Next Pro Heavy";
+$type-heading-italic: "Din Next Pro Heavy Italic";
+$type-base: "Source Sans Variable Roman";
+
+// Colors
+$background: white;
+$white: white;
+$black: black;
+$card-color: grey;
+$accent-color: lightgrey;
+
+// Easings
+$cubic-ease: cubic-bezier(0.18, 0.61, 0.63, 0.975);
+
+// Breakpoints
+$breakpoint-small: 768px;
