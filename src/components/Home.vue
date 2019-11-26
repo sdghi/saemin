@@ -85,22 +85,31 @@ button {
   border: none;
   color: $white;
   border-radius: 30px;
-  font-size: 30px;
   font-family: $type-heading;
   text-transform: uppercase;
-  height: 60px;
-  width: 200px;
 }
 
 .start-quiz-btn {
   margin-top: 50px;
   position: relative;
   left: calc(50% - 100px);
+  height: 60px;
+  width: 200px;
+  font-size: 30px;
 }
 
 .restart-btn {
   position: fixed;
-  bottom: 5%;
-  right: 5%;
+  bottom: 2.5%;
+  right: 15%;
+  padding: 20px 15px 15px 15px;
+}
+
+@media (min-width: $breakpoint-small) {
+  .restart-btn {
+    right: 2.5%;
+    padding: 20px 25px 15px 25px;
+    font-size: 30px;
+  }
 }
 </style>

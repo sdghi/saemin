@@ -3,10 +3,10 @@
           <h3>This is the question</h3>
           <div class="answers-container">
               <!-- the answer == 1 will be data.value and the value in the input will be pulled data.answerTitle -->
-              <input @click="setAnswer" class="answer" :class="{'selected': answer == 1}" value="1"/>
-              <input @click="setAnswer" class="answer" :class="{'selected': answer == 2}" value="2"/>
-              <input @click="setAnswer" class="answer" :class="{'selected': answer == 3}" value="3"/>
-              <input @click="setAnswer" class="answer" :class="{'selected': answer == 4}" value="4"/>
+              <input type="submit" @click="setAnswer" class="answer" :class="{'selected': answer == 1}" value="1"/>
+              <input type="submit" @click="setAnswer" class="answer" :class="{'selected': answer == 2}" value="2"/>
+              <input type="submit" @click="setAnswer" class="answer" :class="{'selected': answer == 3}" value="3"/>
+              <input type="submit" @click="setAnswer" class="answer" :class="{'selected': answer == 4}" value="4"/>
           </div>
           <div v-if="answer !== null" class="current-answer">current answer: {{answer}}</div>
         </div>
@@ -38,7 +38,6 @@ export default {
 @import "@/scss/partials/_variables";
 
 .question-card {
-  width: 90%;
   margin: 0 auto;
   background: $card-color;
   color: $black;
