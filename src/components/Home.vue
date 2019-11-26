@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/_variables";
+@import "@/scss/partials/_variables";
 
 #app-container {
   min-height: 100vh;
