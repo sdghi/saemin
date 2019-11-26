@@ -3,13 +3,12 @@
           <h3>{{question.content}}</h3>
           <div class="answers-container">
               <!-- the answer == 1 will be data.value and the value in the input will be pulled data.answerTitle -->
-              <input v-for="answer in question.answers" :key="answer.id" 
-              type="submit" 
+              <button v-for="answer in question.answers" :key="answer.id" 
               @click="setAnswer" 
               class="answer" 
               :class="{'selected': currentAnswer == answer.content}" 
-              :value="answer.content"
-              >
+              :value="answer.value"
+              >{{answer.content}}</button>
           </div>
           <div v-if="currentAnswer !== null" class="current-answer">current answer: {{currentAnswer}}</div>
         </div>
