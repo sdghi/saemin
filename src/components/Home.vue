@@ -6,6 +6,7 @@
         </div>
         <p v-if="!quizStarted" class="home-subtitle">What Would You Be As Ramen Noodle Soup?</p>
         <button v-if="!quizStarted" class="start-quiz-btn" @click="quizStarted = true">take quiz</button>
+        <button v-if="quizStarted" class="restart-btn" @click="restartQuiz">restart</button>
         <Quiz :quizStarted="quizStarted"/>
     </div>
 </template>
@@ -22,6 +23,12 @@ export default {
     return {
       quizStarted: false
     };
+  },
+  methods: {
+    restartQuiz() {
+      window.scrollTo(0, 0);
+      this.quizStarted = false;
+    }
   }
 };
 </script>
@@ -71,20 +78,29 @@ export default {
   transform: translateY(-15vh);
 }
 
-.start-quiz-btn {
+button {
   background: $black;
   font-weight: 700;
   padding-top: 5px;
   border: none;
   color: $white;
   border-radius: 30px;
-  height: 60px;
-  width: 200px;
-  margin-top: 50px;
-  position: relative;
-  left: calc(50% - 100px);
   font-size: 30px;
   font-family: $type-heading;
   text-transform: uppercase;
+  height: 60px;
+  width: 200px;
+}
+
+.start-quiz-btn {
+  margin-top: 50px;
+  position: relative;
+  left: calc(50% - 100px);
+}
+
+.restart-btn {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
 }
 </style>
