@@ -4,7 +4,7 @@
           <h1>Saemin</h1>
           <h1>Generator</h1>
         </div>
-        <h3 v-if="!quizStarted" class="home-subtitle">What Would You Be As Ramen Noodle Soup?</h3>
+        <p v-if="!quizStarted" class="home-subtitle">What Would You Be As Ramen Noodle Soup?</p>
         <button v-if="!quizStarted" class="start-quiz-btn" @click="quizStarted = true">take quiz</button>
         <Quiz :quizStarted="quizStarted"/>
     </div>
@@ -31,7 +31,6 @@ export default {
 @import "@/scss/partials/_variables";
 
 #app-container {
-  min-height: 100vh;
   width: 100%;
 }
 
@@ -42,22 +41,23 @@ export default {
   transition: all 0.3s ease-out;
 
   h1 {
+    font-family: $type-heading-italic;
     margin: 0;
     position: relative;
 
     &:first-of-type {
-      left: -5vw;
+      left: -8vw;
     }
 
     &:nth-of-type(2) {
-      left: 5vw;
+      left: 8vw;
     }
   }
 }
 
 .home-subtitle {
   text-align: center;
-  font-size: 3vmin;
+  font-size: 5vmin;
   width: 80%;
   margin: 2rem auto 0 auto;
 }

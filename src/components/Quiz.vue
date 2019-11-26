@@ -1,17 +1,20 @@
 <template>
   <transition name="fade">
       <section v-if="quizStarted" id="quiz-section">
+        <ScrollDownCta/>
         <Question/>
       </section>
   </transition>
 </template>
 
 <script>
+import ScrollDownCta from "./ScrollDownCta";
 import Question from "./Question";
 
 export default {
   name: "Quiz",
   components: {
+    ScrollDownCta,
     Question
   },
   props: ["quizStarted"]
@@ -20,7 +23,7 @@ export default {
 
 <style lang="scss" scoped>
 #quiz-section {
-  padding: 10vh 0;
+  padding-bottom: 10vh;
   width: 100%;
 }
 
