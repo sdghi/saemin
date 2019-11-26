@@ -1,33 +1,35 @@
 <template>
     <div class="question-card">
-          <h3>This is the question</h3>
+          <h3>{{question.content}}</h3>
           <div class="answers-container">
               <!-- the answer == 1 will be data.value and the value in the input will be pulled data.answerTitle -->
-              <input type="submit" @click="setAnswer" class="answer" :class="{'selected': answer == 1}" value="1"/>
-              <input type="submit" @click="setAnswer" class="answer" :class="{'selected': answer == 2}" value="2"/>
-              <input type="submit" @click="setAnswer" class="answer" :class="{'selected': answer == 3}" value="3"/>
-              <input type="submit" @click="setAnswer" class="answer" :class="{'selected': answer == 4}" value="4"/>
+              <input v-for="answer in question.answers" :key="answer.id" 
+              type="submit" 
+              @click="setAnswer" 
+              class="answer" 
+              :class="{'selected': currentAnswer == answer.content}" 
+              :value="answer.content"
+              >
           </div>
-          <div v-if="answer !== null" class="current-answer">current answer: {{answer}}</div>
+          <div v-if="currentAnswer !== null" class="current-answer">current answer: {{currentAnswer}}</div>
         </div>
 </template>
 
 <script>
 export default {
   name: "QuestionCard",
+  props: ["question"],
   data() {
     return {
-      answer: null,
-      isSelected: false
+      currentAnswer: null,
+      isSelected: false,
     };
   },
   methods: {
     setAnswer(e) {
       // sets current answer
       console.log(e.target.value);
-      this.answer = e.target.value;
-
-      // sets answer to selected
+      this.currentAnswer = e.target.value;
       this.isSelected = true;
     }
   }

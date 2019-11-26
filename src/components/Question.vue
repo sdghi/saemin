@@ -1,15 +1,18 @@
 <template>
-    <div class="question">
-     
-        <QuestionCard/>
+    <div>
+      <div class="question" v-for="question in allQuestions" :key="question.id">
+          <QuestionCard :question="question"/>
+      </div>
     </div>
 </template>
 
 <script>
 import QuestionCard from "./QuestionCard";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Question",
+  computed: mapGetters(["allQuestions"]),
   components: {
     QuestionCard
   }
