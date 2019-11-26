@@ -1,7 +1,9 @@
 <template>
     <div class="question">
-        <h3>This is the question</h3>
-        <div>this is where you will reference the answers templates</div>
+        <div class="question-card">
+          <h3>This is the question</h3>
+          <div>this is where you will reference the answers templates</div>
+        </div>
     </div>
 </template>
 
@@ -13,8 +15,12 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/scss/partials/_variables";
-
 .question {
+  width: 100%;
+  height: fit-content;
+}
+
+.question-card {
   width: 90%;
   margin: 0 auto;
   background: black;
@@ -23,7 +29,7 @@ export default {
 }
 
 @media (min-width: 768px) {
-  .question {
+  .question-card {
     width: 60%;
   }
 }

@@ -43,7 +43,7 @@ export default {
   width: fit-content;
   margin: 30vh auto 0 auto;
   font-size: 6vmin;
-  transition: all 0.3s ease-out;
+  transition: all 0.3s $cubic-ease;
 
   h1 {
     font-family: $type-heading-italic;
@@ -74,13 +74,17 @@ export default {
 .start-quiz-btn {
   background: $black;
   font-weight: 700;
+  padding-top: 5px;
   border: none;
   color: $white;
   border-radius: 30px;
-  height: 50px;
-  width: 100px;
+  height: 60px;
+  width: 200px;
   margin-top: 50px;
   position: relative;
-  left: calc(50% - 50px);
+  left: calc(50% - 100px);
+  font-size: 30px;
+  font-family: $type-heading;
+  text-transform: uppercase;
 }
 </style>
