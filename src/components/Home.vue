@@ -1,8 +1,11 @@
 <template>
     <div id="app-container">
-        <h1 class="home-title" :class="{'quiz-started': quizStarted}">SDG Saemin Generator</h1>
-        <h3 v-if="!quizStarted" class="home-subtitle">What kind of ramen are you? Take the quiz to find out.</h3>
-        <button v-if="!quizStarted" class="start-quiz-btn" @click="quizStarted = true">click to begin</button>
+        <div class="home-title" :class="{'quiz-started': quizStarted}">
+          <h1>Saemin</h1>
+          <h1>Generator</h1>
+        </div>
+        <h3 v-if="!quizStarted" class="home-subtitle">What Would You Be As Ramen Noodle Soup?</h3>
+        <button v-if="!quizStarted" class="start-quiz-btn" @click="quizStarted = true">take quiz</button>
         <Quiz :quizStarted="quizStarted"/>
     </div>
 </template>
@@ -32,43 +35,46 @@ export default {
 }
 
 .home-title {
-  position: relative;
-  top: 2.5vh;
-  text-align: center;
-  font-size: 1.3rem;
+  width: fit-content;
+  margin: 30vh auto 0 auto;
+  font-size: 6vmin;
   transition: all 0.3s ease-out;
-  transform: translateY(40vh) scale(1.5);
+
+  h1 {
+    margin: 0;
+    position: relative;
+
+    &:first-of-type {
+      left: -5vw;
+    }
+
+    &:nth-of-type(2) {
+      left: 5vw;
+    }
+  }
 }
 
 .home-subtitle {
-  position: relative;
   text-align: center;
-  top: 45vh;
-  font-size: 2rem;
+  font-size: 3vmin;
   width: 80%;
-  margin: 0 auto;
-  font-size: 1.3rem;
-}
-
-@media (min-width: $breakpoint-small) {
-  .home-title {
-    transform: translateY(40vh) scale(3.5);
-  }
-
-  .home-subtitle {
-    font-size: 2rem;
-  }
+  margin: 2rem auto 0 auto;
 }
 
 .home-title.quiz-started {
-  transform: translateY(0) scale(1);
+  transform: translateY(-15vh);
 }
 
 .start-quiz-btn {
+  background: $black;
+  font-weight: 700;
+  border: none;
+  color: $white;
+  border-radius: 30px;
   height: 50px;
   width: 100px;
-  position: absolute;
-  top: 60%;
+  margin-top: 50px;
+  position: relative;
   left: calc(50% - 50px);
 }
 </style>
