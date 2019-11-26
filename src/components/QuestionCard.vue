@@ -2,20 +2,33 @@
     <div class="question-card">
           <h3>This is the question</h3>
           <div class="answers-container">
-              <input @click="getAnswer" class="answer" value="1"/>
-              <input @click="getAnswer" class="answer" value="2"/>
-              <input @click="getAnswer" class="answer" value="3"/>
-              <input @click="getAnswer" class="answer" value="4"/>
+              <!-- the answer == 1 will be data.value and the value in the input will be pulled data.answerTitle -->
+              <input @click="setAnswer" class="answer" :class="{'selected': answer == 1}" value="1"/>
+              <input @click="setAnswer" class="answer" :class="{'selected': answer == 2}" value="2"/>
+              <input @click="setAnswer" class="answer" :class="{'selected': answer == 3}" value="3"/>
+              <input @click="setAnswer" class="answer" :class="{'selected': answer == 4}" value="4"/>
           </div>
+          <div v-if="answer !== null" class="current-answer">current answer: {{answer}}</div>
         </div>
 </template>
 
 <script>
 export default {
   name: "QuestionCard",
+  data() {
+    return {
+      answer: null,
+      isSelected: false
+    };
+  },
   methods: {
-    getAnswer(e) {
+    setAnswer(e) {
+      // sets current answer
       console.log(e.target.value);
+      this.answer = e.target.value;
+
+      // sets answer to selected
+      this.isSelected = true;
     }
   }
 };
@@ -59,6 +72,11 @@ export default {
     cursor: pointer;
     text-align: center;
     font-size: 2rem;
+
+    &.selected {
+      background: $black;
+      color: $white;
+    }
 
     &:hover {
       background: $black;
