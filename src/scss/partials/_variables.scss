@@ -1,3 +1,24 @@
+@font-face {
+  font-family: "Din Next Pro Heavy";
+  // Has to be realtive path to the component
+  src: url("../fonts/DINNextLTPro-Heavy.otf");
+}
+
+@font-face {
+  font-family: "Din Next Pro Heavy Italic";
+  src: url("../fonts/DINNextLTPro-HeavyItalic.otf");
+}
+
+@font-face {
+  font-family: "Source Sans Variable Roman";
+  src: url("../fonts/SourceSansVariable-Roman.otf");
+}
+
+// Fonts
+$heading-font: "Din Next Pro Heavy";
+$heading-font-italic: "Din Next Pro Heavy Italic";
+$body-font: "Source Sans Variable Roman";
+
 // Colors
 $white: white;
 $black: black;
