@@ -101,7 +101,7 @@ button {
 .restart-btn {
   position: fixed;
   bottom: 2.5%;
-  right: 15%;
+  right: 5%;
   padding: 20px 15px 15px 15px;
 }
 
