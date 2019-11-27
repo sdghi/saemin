@@ -11,9 +11,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/scss/partials/_variables";
+
 section {
+  // remove padding once illustration goes in
   padding: 15vh;
-  border: 1px solid red;
   text-align: center;
   font-size: 5vmin;
 }

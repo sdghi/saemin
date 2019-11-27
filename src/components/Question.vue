@@ -1,15 +1,18 @@
 <template>
-    <div class="question">
-     
-        <QuestionCard/>
+    <div>
+      <div class="question" v-for="question in allQuestions" :key="question.id">
+          <QuestionCard :question="question" :allQuestions="allQuestions"/>
+      </div>
     </div>
 </template>
 
 <script>
 import QuestionCard from "./QuestionCard";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Question",
+  computed: mapGetters(["allQuestions"]),
   components: {
     QuestionCard
   }
@@ -20,7 +23,6 @@ export default {
 @import "@/scss/partials/_variables";
 
 .question {
-  background: $background;
   width: 100%;
   height: fit-content;
 }

@@ -30,7 +30,7 @@ export default {
         top: 0,
         behavior: "smooth"
       });
-
+      this.$store.commit("clearIngredients");
       this.quizStarted = false;
     }
   }
@@ -47,7 +47,12 @@ export default {
   left: 0;
   width: 100%;
   min-height: 100vh;
-  background: $accent-color;
+  background: linear-gradient(
+    180deg,
+    $accent-color 0%,
+    $accent-color 0%,
+    $background 100vh
+  );
 }
 
 .home-title {
