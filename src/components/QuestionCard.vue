@@ -6,11 +6,10 @@
               <button v-for="answer in question.answers" :key="answer.id" 
               @click="setAnswer" 
               class="answer" 
-              :class="{'selected': currentAnswer == answer.content}" 
+              :class="{'selected': currentAnswer == answer.value}" 
               :value="answer.value"
               >{{answer.content}}</button>
           </div>
-          <div v-if="currentAnswer !== null" class="current-answer">current answer: {{currentAnswer}}</div>
         </div>
 </template>
 
