@@ -2,6 +2,8 @@ const state = {
     questions: [
         {
             content: 'Pick a spirit animal',
+            // this will reference the illustration on the bottom of the question
+            illustrationRef: 0,
             // ingredient 0 will be noodles and broth together
             ingredientRef: 0,
             answers: [
@@ -58,6 +60,7 @@ const state = {
         },
         {
             content: 'I find ___ the most interesting',
+            illustrationRef: 1,
             ingredientRef: 0,
             answers: [
                 {
@@ -84,6 +87,7 @@ const state = {
         },
         {
             content: "You’re Bored. Pick a smartphone activity / app:",
+            illustrationRef: 2,
             ingredientRef: 0,
             answers: [
                 {
@@ -112,7 +116,7 @@ const state = {
                 },
                 {
                     content: 'Camera',
-                    value: 5
+                    value: 4
                 }
             ]
         }
