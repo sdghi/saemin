@@ -81,6 +81,40 @@ const state = {
                     value: 5
                 }
             ]
+        },
+        {
+            content: "You’re Bored. Pick a smartphone activity / app:",
+            ingredientRef: 0,
+            answers: [
+                {
+                    content: 'Instagram',
+                    value: 0
+                },
+                {
+                    content: 'Venmo',
+                    value: 0
+                },
+                {
+                    content: 'Facebook',
+                    value: 3
+                },
+                {
+                    content: 'Twitter',
+                    value: 1
+                },
+                {
+                    content: 'Medium',
+                    value: 1
+                },
+                {
+                    content: 'Reminders',
+                    value: 2
+                },
+                {
+                    content: 'Camera',
+                    value: 5
+                }
+            ]
         }
     ]
 
