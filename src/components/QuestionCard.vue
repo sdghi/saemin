@@ -90,10 +90,4 @@ export default {
     }
   }
 }
-
-@media (min-width: $breakpoint-small) {
-  .answers-container {
-    overflow-y: initial;
-  }
-}
 </style>
