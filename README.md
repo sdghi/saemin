@@ -1,29 +1,7 @@
-# holiday-promo-2019
+# Happy Holiday From Sae Design Group
 
-## Project setup
-```
-npm install
-```
+### Saemin Generator
+- built w/ vue 
+- personality quiz that generators a custom ramen based off user input
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+https://saemin.netlify.com/
