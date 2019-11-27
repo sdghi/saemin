@@ -26,10 +26,16 @@ export default {
   methods: {
     setAnswer(e) {
       // sets current answer
-      console.log(e.target.value);
       this.currentAnswer = e.target.value;
       this.isSelected = true;
-      this.$store.commit("addBroth", e.target.value);
+
+      if (this.question.ingredientRef === 0) {
+        this.$store.commit("addBroth", e.target.value);
+      } else if (this.question.ingredientRef === 1) {
+        this.$store.commit("addToppings", e.target.value);
+      } else if (this.question.ingredientRef === 2) {
+        this.$store.commit("addBowl", e.target.value);
+      }
     }
   }
 };
