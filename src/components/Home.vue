@@ -51,7 +51,7 @@ export default {
     180deg,
     $accent-color 0%,
     $accent-color 0%,
-    $background 50%
+    $background 100vh
   );
 }
 
