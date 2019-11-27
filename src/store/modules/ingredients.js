@@ -19,7 +19,11 @@ const mutations = {
         state.brothAndNoodle = [];
         state.toppings = [];
         state.bowl = [];
-        console.log(state);
+        console.log({
+            'noodles and broth': state.brothAndNoodle,
+            'toppings': state.toppings,
+            'bowl': state.bowl
+        });
     },
     addBroth(state, payload) {
         state.brothAndNoodle.push(payload);
