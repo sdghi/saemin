@@ -47,7 +47,12 @@ export default {
   left: 0;
   width: 100%;
   min-height: 100vh;
-  background: $accent-color;
+  background: linear-gradient(
+    180deg,
+    $accent-color 0%,
+    $accent-color 0%,
+    $background 50%
+  );
 }
 
 .home-title {

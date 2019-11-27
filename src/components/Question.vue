@@ -23,7 +23,6 @@ export default {
 @import "@/scss/partials/_variables";
 
 .question {
-  background: $background;
   width: 100%;
   height: fit-content;
 }
