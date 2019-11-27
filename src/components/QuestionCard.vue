@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       currentAnswer: null,
-      isSelected: false,
+      isSelected: false
     };
   },
   methods: {
@@ -29,6 +29,7 @@ export default {
       console.log(e.target.value);
       this.currentAnswer = e.target.value;
       this.isSelected = true;
+      this.$store.commit("addBroth", e.target.value);
     }
   }
 };

@@ -30,7 +30,7 @@ export default {
         top: 0,
         behavior: "smooth"
       });
-
+      this.$store.commit("clearIngredients");
       this.quizStarted = false;
     }
   }

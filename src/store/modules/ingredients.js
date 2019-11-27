@@ -14,7 +14,24 @@ const getters = {
 
 const actions = {};
 
-const mutations = {};
+const mutations = {
+    clearIngredients(state) {
+        state.brothAndNoodle = [];
+        state.toppings = [];
+        state.bowl = [];
+        console.log(state);
+    },
+    addBroth(state, payload) {
+        state.brothAndNoodle.push(payload);
+        console.log(state.brothAndNoodle);
+    },
+    addToppings(state, payload) {
+        state.toppings.push(payload);
+    },
+    addBowl(state, payload) {
+        state.bowl.push(payload);
+    }
+};
 
 export default {
     state,
