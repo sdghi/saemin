@@ -10,18 +10,42 @@ const state = {
                     content: 'Tiger',
                     value: 2
                 },
-               {
-                   content: 'Owl',
-                   value: 1,
-               },
-               {
-                   content: 'Pony',
-                   value: 0
-               },
-               {
-                   content: 'Bird',
-                   value: 4
-               }
+                {
+                    content: 'Owl',
+                    value: 1,
+                },
+                {
+                    content: 'Pony',
+                    value: 0
+                },
+                {
+                    content: 'Bird',
+                    value: 4
+                }
+            ]
+        },
+        {
+            content: 'Pick a spirit animal',
+            // ingredient 0 will be noodles and broth together
+            ingredientRef: 0,
+            answers: [
+                {
+                    // This object references a single answer
+                    content: 'Tiger',
+                    value: 2
+                },
+                {
+                    content: 'Owl',
+                    value: 1,
+                },
+                {
+                    content: 'Pony',
+                    value: 0
+                },
+                {
+                    content: 'Bird',
+                    value: 4
+                }
             ]
         }
     ]

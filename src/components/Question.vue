@@ -1,7 +1,7 @@
 <template>
     <div>
       <div class="question" v-for="question in allQuestions" :key="question.id">
-          <QuestionCard :question="question"/>
+          <QuestionCard :question="question" :allQuestions="allQuestions"/>
       </div>
     </div>
 </template>

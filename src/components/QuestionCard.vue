@@ -16,11 +16,12 @@
 <script>
 export default {
   name: "QuestionCard",
-  props: ["question"],
+  props: ["question", "allQuestions"],
   data() {
     return {
       currentAnswer: null,
-      isSelected: false
+      isSelected: false,
+      index: this.allQuestions.indexOf(this.question)
     };
   },
   methods: {
@@ -29,8 +30,13 @@ export default {
       this.currentAnswer = e.target.value;
       this.isSelected = true;
 
+      console.log("index", this.index);
+
       if (this.question.ingredientRef === 0) {
-        this.$store.commit("addBroth", e.target.value);
+        this.$store.commit("addBroth", {
+          payload: e.target.value,
+          index: this.index
+        });
       } else if (this.question.ingredientRef === 1) {
         this.$store.commit("addToppings", e.target.value);
       } else if (this.question.ingredientRef === 2) {

@@ -25,15 +25,23 @@ const mutations = {
             'bowl': state.bowl
         });
     },
-    addBroth(state, payload) {
-        state.brothAndNoodle.push(payload);
-        console.log(state.brothAndNoodle);
+    addBroth(state, { payload, index }) {
+        console.log('state index', index)
+        if (typeof state.brothAndNoodle[index] === 'undefined') {
+            state.brothAndNoodle.push(payload);
+        } else {
+            state.brothAndNoodle[index] = payload;
+        }
+        // state.brothAndNoodle.push(payload.value);
+        console.log('broth and noodle', state.brothAndNoodle);
     },
     addToppings(state, payload) {
         state.toppings.push(payload);
+        console.log('toppings', state.brothAndNoodle);
     },
     addBowl(state, payload) {
         state.bowl.push(payload);
+        console.log('bowl', state.brothAndNoodle);
     }
 };
 
