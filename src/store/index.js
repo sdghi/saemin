@@ -1,8 +1,8 @@
 import Vuex from 'vuex';
 import Vue from 'vue';
 import questions from './modules/questions';
-import descriptions from './modules/descriptions';
 import ingredients from './modules/ingredients';
+import noodlesAndBroth from './modules/noodlesAndBroth';
 
 // Load Vuex
 Vue.use(Vuex);
@@ -11,7 +11,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     modules: {
         questions,
-        descriptions,
-        ingredients
+        ingredients,
+        noodlesAndBroth,
     }
 })

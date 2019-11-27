@@ -21,6 +21,64 @@ const state = {
                 {
                     content: 'Bird',
                     value: 4
+                },
+                {
+                    content: 'Otter',
+                    value: 6
+                },
+                {
+                    content: 'Bear',
+                    value: 6
+                },
+                {
+                    content: 'Wolf',
+                    value: 2
+                },
+                {
+                    content: 'Monkey',
+                    value: 5
+                },
+                {
+                    content: 'Dog',
+                    value: 0
+                },
+                {
+                    content: 'Cat',
+                    value: 4
+                },
+                {
+                    content: 'Elephant',
+                    value: 6
+                },
+                {
+                    content: 'Octopus',
+                    value: 4
+                }
+            ]
+        },
+        {
+            content: 'I find ___ the most interesting',
+            ingredientRef: 0,
+            answers: [
+                {
+                    content: "People's stories",
+                    value: 0
+                },
+                {
+                    content: 'Complex puzzles',
+                    value: 1
+                },
+                {
+                    content: "Kid's perspective",
+                    value: 3
+                },
+                {
+                    content: "Exploring unknown territory",
+                    value: 4
+                },
+                {
+                    content: "Connecting with my community",
+                    value: 5
                 }
             ]
         }
