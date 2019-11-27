@@ -27,7 +27,7 @@ const state = {
         {
             content: 'Pick a spirit animal',
             // ingredient 0 will be noodles and broth together
-            ingredientRef: 0,
+            ingredientRef: 1,
             answers: [
                 {
                     // This object references a single answer

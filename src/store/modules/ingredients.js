@@ -25,23 +25,35 @@ const mutations = {
             'bowl': state.bowl
         });
     },
-    addBroth(state, { payload, index }) {
-        console.log('state index', index)
-        if (typeof state.brothAndNoodle[index] === 'undefined') {
-            state.brothAndNoodle.push(payload);
-        } else {
-            state.brothAndNoodle[index] = payload;
+    addIngredient(state, { payload, ingredientRef, index }) {
+        if (ingredientRef === 0) {
+            // add to broth
+            if (typeof state.brothAndNoodle[index] === 'undefined') {
+                state.brothAndNoodle.push(payload);
+            } else {
+                state.brothAndNoodle[index] = payload;
+            }
+            // state.brothAndNoodle.push(payload.value);
+            console.log('broth and noodle', state.brothAndNoodle);
+        } else if (ingredientRef === 1) {
+            // add to toppings
+            if (typeof state.toppings[index] === 'undefined') {
+                state.toppings.push(payload);
+            } else {
+                state.toppings[index] = payload;
+            }
+            // state.brothAndNoodle.push(payload.value);
+            console.log('toppings', state.toppings);
+        } else if (ingredientRef === 2) {
+            // add to bowl
+            if (typeof state.bowl[index] === 'undefined') {
+                state.bowl.push(payload);
+            } else {
+                state.bowl[index] = payload;
+            }
+            // state.brothAndNoodle.push(payload.value);
+            console.log('bowl', state.bowl);
         }
-        // state.brothAndNoodle.push(payload.value);
-        console.log('broth and noodle', state.brothAndNoodle);
-    },
-    addToppings(state, payload) {
-        state.toppings.push(payload);
-        console.log('toppings', state.brothAndNoodle);
-    },
-    addBowl(state, payload) {
-        state.bowl.push(payload);
-        console.log('bowl', state.brothAndNoodle);
     }
 };
 

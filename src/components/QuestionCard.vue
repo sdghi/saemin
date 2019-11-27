@@ -30,18 +30,12 @@ export default {
       this.currentAnswer = e.target.value;
       this.isSelected = true;
 
-      console.log("index", this.index);
-
-      if (this.question.ingredientRef === 0) {
-        this.$store.commit("addBroth", {
-          payload: e.target.value,
-          index: this.index
-        });
-      } else if (this.question.ingredientRef === 1) {
-        this.$store.commit("addToppings", e.target.value);
-      } else if (this.question.ingredientRef === 2) {
-        this.$store.commit("addBowl", e.target.value);
-      }
+      // adds the ingredient if it doesn't exists || updates if index exists
+      this.$store.commit("addIngredient", {
+        payload: e.target.value,
+        index: this.index,
+        ingredientRef: this.question.ingredientRef
+      });
     }
   }
 };
