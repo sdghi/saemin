@@ -5,8 +5,9 @@
               <!-- the answer == 1 will be data.value and the value in the input will be pulled data.answerTitle -->
               <button v-for="answer in question.answers" :key="answer.id" 
               @click="setAnswer" 
+              :data-currentAnswer="answer.content"
               class="answer" 
-              :class="{'selected': currentAnswer == answer.value}" 
+              :class="{'selected': currentAnswer == answer.content}" 
               :value="answer.value"
               >{{answer.content}}</button>
           </div>
@@ -27,8 +28,8 @@ export default {
   methods: {
     setAnswer(e) {
       // sets current answer
-      this.currentAnswer = e.target.value;
       this.isSelected = true;
+      this.currentAnswer = e.target.getAttribute("data-currentAnswer");
 
       // adds the ingredient if it doesn't exists || updates if index exists
       this.$store.commit("addIngredient", {

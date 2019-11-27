@@ -34,7 +34,7 @@ const mutations = {
                 state.brothAndNoodle[index] = payload;
             }
             // state.brothAndNoodle.push(payload.value);
-            console.log('broth and noodle', state.brothAndNoodle);
+            // console.log('broth and noodle', state.brothAndNoodle);
         } else if (ingredientRef === 1) {
             // add to toppings
             if (typeof state.toppings[index] === 'undefined') {
