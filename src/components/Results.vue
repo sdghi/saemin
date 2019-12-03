@@ -1,17 +1,26 @@
 <template>
-    <div>
-      <h3>You are a {{brothAndNoodle.title}}</h3>
-
-      <p>{{brothAndNoodle.description}}</p>
+    <div class="results-container">
+      <div class="ramen-info">
+        <h3 class="ramen-title">You are a {{brothAndNoodle.title}}</h3>
+        <div class="description-container">
+          <p>{{brothAndNoodle.description}}</p>        
+        </div>
+      </div>
+       <Ramen/>
+   
       <button class="restart-btn" @click="restartQuiz">restart</button>
     </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import Ramen from "./Ramen";
 
 export default {
   name: "Results",
+  components: {
+    Ramen
+  },
   computed: mapGetters([
     "allIngredients",
     "noodlesAndBroth",
@@ -101,5 +110,40 @@ button {
   border-radius: 30px;
   font-family: $type-heading;
   text-transform: uppercase;
+}
+
+.ramen-info {
+  overflow-y: auto;
+  height: 80vh;
+  padding: 50px;
+}
+
+.ramen-title {
+  font-size: 2rem;
+}
+
+.description-container {
+  p {
+    font-size: 1.4rem;
+  }
+}
+
+.results-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 1440px) {
+  .results-container {
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    place-items: center;
+    grid-gap: 20px;
+  }
+
+  .ramen-info {
+    padding: 0;
+  }
 }
 </style>
