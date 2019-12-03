@@ -16,7 +16,7 @@ export default {
   computed: mapGetters(["allIngredients", "noodlesAndBroth", "allQuestions"]),
   data() {
     return {
-      brothAndNoodleTotal: "hi"
+      brothAndNoodleTotal: null
     };
   },
   created() {
@@ -40,7 +40,9 @@ export default {
       return maxEl;
     },
     getIngredientValue(value) {
+      // get the array of ingredient values
       const valueArr = this.allIngredients[value];
+      // return the most occured value in the array
       return this.modeValue(valueArr);
     },
     restartQuiz() {
