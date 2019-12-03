@@ -1,5 +1,6 @@
 
 const state = {
+    quizStarted: false,
     quizCompleted: false,
     questions: [
         {
@@ -131,7 +132,8 @@ const state = {
 
 const getters = {
     allQuestions: (state) => state.questions,
-    quizCompleted: (state) => state.quizCompleted
+    quizCompleted: (state) => state.quizCompleted,
+    quizStarted: (state) => state.quizStarted
 };
 
 const actions = {};
@@ -146,6 +148,9 @@ const mutations = {
     },
     setQuizStatus(state, { result }) {
         state.quizCompleted = result;
+    },
+    setQuizStarted(state, { value }) {
+        state.quizStarted = value;
     }
 };
 

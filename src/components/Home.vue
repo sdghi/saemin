@@ -5,8 +5,7 @@
           <h1>Generator</h1>
         </div>
         <p v-if="!quizStarted" class="home-subtitle">What Would You Be As Ramen Noodle Soup?</p>
-        <button v-if="!quizStarted" class="start-quiz-btn" @click="quizStarted = true">take quiz</button>
-        <button v-if="quizStarted" class="restart-btn" @click="restartQuiz">restart</button>
+        <button v-if="!quizStarted" class="start-quiz-btn" @click="startQuiz">take quiz</button>
         <Quiz :quizStarted="quizStarted"/>
         <Results v-if="quizCompleted"/>
     </div>
@@ -19,37 +18,17 @@ import Results from "./Results";
 
 export default {
   name: "Home",
-  computed: mapGetters(["allQuestions", "quizCompleted"]),
+  computed: mapGetters(["allQuestions", "quizCompleted", "quizStarted"]),
+  methods: {
+    startQuiz() {
+      this.$store.commit("setQuizStarted", {
+        value: true
+      });
+    }
+  },
   components: {
     Quiz,
     Results
-  },
-  data() {
-    return {
-      quizStarted: false
-    };
-  },
-  methods: {
-    restartQuiz() {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-      this.$store.commit("clearIngredients");
-      this.quizStarted = false;
-      // sets the isAnswered to true if answer is selected
-      this.allQuestions.map(question => {
-        this.$store.commit("setQuestionsToAnswered", {
-          selected: question,
-          value: false
-        });
-      });
-
-      // reset quiz status to false
-      this.$store.commit("setQuizStatus", {
-        result: false
-      });
-    }
   }
 };
 </script>
@@ -122,13 +101,6 @@ button {
   height: 60px;
   width: 200px;
   font-size: 30px;
-}
-
-.restart-btn {
-  position: fixed;
-  bottom: 2.5%;
-  right: 5%;
-  padding: 20px 15px 15px 15px;
 }
 
 @media (min-width: $breakpoint-small) {
