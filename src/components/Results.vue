@@ -1,9 +1,8 @@
 <template>
     <div>
-      <div v-for="ingredient in allIngredients" :key="ingredient.index">
-          {{ingredient}}
-      </div>
-      <h1>{{brothAndNoodleTotal}}</h1>
+      <h3>You are a {{brothAndNoodle.title}}</h3>
+
+      <p>{{brothAndNoodle.description}}</p>
       <button class="restart-btn" @click="restartQuiz">restart</button>
     </div>
 </template>
@@ -21,11 +20,11 @@ export default {
   ]),
   data() {
     return {
-      brothAndNoodleTotal: null
+      brothAndNoodle: null
     };
   },
   created() {
-    this.brothAndNoodleTotal = this.getIngredientValue(
+    this.brothAndNoodle = this.getIngredientValue(
       "brothAndNoodle",
       this.allNoodlesAndBroth
     );
@@ -52,7 +51,7 @@ export default {
       const valueArr = this.allIngredients[value];
       // the most occured value in the array
       const indexValue = this.modeValue(valueArr);
-      return ingredient[indexValue].description;
+      return ingredient[indexValue];
     },
     restartQuiz() {
       // Scroll to top of page when quiz is restarted
