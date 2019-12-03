@@ -5,34 +5,30 @@
           <h1>Generator</h1>
         </div>
         <p v-if="!quizStarted" class="home-subtitle">What Would You Be As Ramen Noodle Soup?</p>
-        <button v-if="!quizStarted" class="start-quiz-btn" @click="quizStarted = true">take quiz</button>
-        <button v-if="quizStarted" class="restart-btn" @click="restartQuiz">restart</button>
+        <button v-if="!quizStarted" class="start-quiz-btn" @click="startQuiz">take quiz</button>
         <Quiz :quizStarted="quizStarted"/>
+        <Results v-if="quizCompleted"/>
     </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import Quiz from "./Quiz";
+import Results from "./Results";
 
 export default {
   name: "Home",
-  components: {
-    Quiz
-  },
-  data() {
-    return {
-      quizStarted: false
-    };
-  },
+  computed: mapGetters(["allQuestions", "quizCompleted", "quizStarted"]),
   methods: {
-    restartQuiz() {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+    startQuiz() {
+      this.$store.commit("setQuizStarted", {
+        value: true
       });
-      this.$store.commit("clearIngredients");
-      this.quizStarted = false;
     }
+  },
+  components: {
+    Quiz,
+    Results
   }
 };
 </script>
@@ -105,13 +101,6 @@ button {
   height: 60px;
   width: 200px;
   font-size: 30px;
-}
-
-.restart-btn {
-  position: fixed;
-  bottom: 2.5%;
-  right: 5%;
-  padding: 20px 15px 15px 15px;
 }
 
 @media (min-width: $breakpoint-small) {

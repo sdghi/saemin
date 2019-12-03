@@ -1,7 +1,11 @@
+
 const state = {
+    quizStarted: false,
+    quizCompleted: false,
     questions: [
         {
             content: 'Pick a spirit animal',
+            isAnswered: false,
             // this will reference the illustration on the bottom of the question
             illustrationRef: 0,
             // ingredient 0 will be noodles and broth together
@@ -60,6 +64,7 @@ const state = {
         },
         {
             content: 'I find ___ the most interesting',
+            isAnswered: false,
             illustrationRef: 1,
             ingredientRef: 0,
             answers: [
@@ -87,6 +92,7 @@ const state = {
         },
         {
             content: "You’re Bored. Pick a smartphone activity / app:",
+            isAnswered: false,
             illustrationRef: 2,
             ingredientRef: 0,
             answers: [
@@ -125,12 +131,28 @@ const state = {
 };
 
 const getters = {
-    allQuestions: (state) => state.questions
+    allQuestions: (state) => state.questions,
+    quizCompleted: (state) => state.quizCompleted,
+    quizStarted: (state) => state.quizStarted
 };
 
 const actions = {};
 
-const mutations = {};
+const mutations = {
+    setQuestionsToAnswered(state, { selected, value }) {
+        state.questions.map((question) => {
+            if (question.content == selected) {
+                question.isAnswered = value;
+            }
+        })
+    },
+    setQuizStatus(state, { result }) {
+        state.quizCompleted = result;
+    },
+    setQuizStarted(state, { value }) {
+        state.quizStarted = value;
+    }
+};
 
 export default {
     state,

@@ -17,7 +17,10 @@
 <script>
 export default {
   name: "QuestionCard",
-  props: ["question", "allQuestions"],
+  props: ["question", "allQuestions", "quizCompleted"],
+  updated() {
+    this.checkIfCompleted();
+  },
   data() {
     return {
       currentAnswer: null,
@@ -37,6 +40,26 @@ export default {
         index: this.index,
         ingredientRef: this.question.ingredientRef
       });
+
+      // sets the isAnswered to true if answer is selected
+      this.$store.commit("setQuestionsToAnswered", {
+        selected: this.question.content,
+        value: true
+      });
+    },
+    checkIfCompleted() {
+      function checkAnswerStatus(element) {
+        return element.isAnswered === true;
+      }
+
+      for (let i = 0; i < this.allQuestions.length; i++) {
+        if (this.allQuestions.every(checkAnswerStatus)) {
+          // run the quiz completed mutation
+          this.$store.commit("setQuizStatus", {
+            result: true
+          });
+        }
+      }
     }
   }
 };

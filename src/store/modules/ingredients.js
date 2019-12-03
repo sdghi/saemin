@@ -9,7 +9,14 @@ const state = {
 const getters = {
     brothAndNoodle: (state) => state.brothAndNoodle,
     toppings: (state) => state.toppings,
-    bowl: (state) => state.bowl
+    bowl: (state) => state.bowl,
+    allIngredients: (state) => {
+        return {
+            brothAndNoodle: state.brothAndNoodle,
+            toppings: state.toppings,
+            bowl: state.bowl
+        }
+    }
 };
 
 const actions = {};
