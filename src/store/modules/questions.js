@@ -2,6 +2,7 @@ const state = {
     questions: [
         {
             content: 'Pick a spirit animal',
+            isAnswered: false,
             // this will reference the illustration on the bottom of the question
             illustrationRef: 0,
             // ingredient 0 will be noodles and broth together
@@ -60,6 +61,7 @@ const state = {
         },
         {
             content: 'I find ___ the most interesting',
+            isAnswered: false,
             illustrationRef: 1,
             ingredientRef: 0,
             answers: [
@@ -87,6 +89,7 @@ const state = {
         },
         {
             content: "You’re Bored. Pick a smartphone activity / app:",
+            isAnswered: false,
             illustrationRef: 2,
             ingredientRef: 0,
             answers: [
@@ -130,7 +133,15 @@ const getters = {
 
 const actions = {};
 
-const mutations = {};
+const mutations = {
+    setToAnswered(state, selected) {
+        state.questions.map((question, i) => {
+            if (i === selected) {
+                question.isAnswered = true;
+            }
+        })
+    }
+};
 
 export default {
     state,

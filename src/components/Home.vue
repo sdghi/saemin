@@ -8,24 +8,30 @@
         <button v-if="!quizStarted" class="start-quiz-btn" @click="quizStarted = true">take quiz</button>
         <button v-if="quizStarted" class="restart-btn" @click="restartQuiz">restart</button>
         <Quiz :quizStarted="quizStarted"/>
-        <Results v-if="quizStarted"/>
+        <Results v-if="quizCompleted"/>
     </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import Quiz from "./Quiz";
 import Results from "./Results";
 
 export default {
   name: "Home",
+  computed: mapGetters(["allQuestions"]),
   components: {
     Quiz,
     Results
   },
   data() {
     return {
-      quizStarted: false
+      quizStarted: false,
+      quizCompleted: false
     };
+  },
+  updated() {
+    this.checkIfCompleted();
   },
   methods: {
     restartQuiz() {
@@ -35,6 +41,17 @@ export default {
       });
       this.$store.commit("clearIngredients");
       this.quizStarted = false;
+    },
+    checkIfCompleted() {
+      for (let i = 0; i < this.allQuestions.length; i++) {
+        if (this.allQuestions[i].isAnswered === false) {
+          console.log("a question is not answered");
+          break;
+        }
+
+        console.log("all questions are answered");
+        this.quizCompleted = true;
+      }
     }
   }
 };
