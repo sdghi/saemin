@@ -19,7 +19,7 @@ export default {
   name: "QuestionCard",
   props: ["question", "allQuestions", "quizCompleted"],
   updated() {
-    console.log("updated: quizCompleted", this.quizCompleted);
+    this.checkIfCompleted();
   },
   data() {
     return {
@@ -40,17 +40,25 @@ export default {
         index: this.index,
         ingredientRef: this.question.ingredientRef
       });
+
+      // sets the isAnswered to true if answer is selected
+      this.$store.commit("setQuestionsToAnswered", {
+        selected: this.question.content,
+        value: true
+      });
     },
     checkIfCompleted() {
-      for (let i = 0; i < this.allQuestions.length; i++) {
-        if (this.allQuestions[i].isAnswered === false) {
-          console.log("a question is not answered");
-          console.log("questions answered", this.quizCompleted);
-          break;
-        }
+      function checkAnswerStatus(element) {
+        return element.isAnswered === true;
+      }
 
-        console.log("all questions are answered");
-        // run setQuizCompleted Mutation
+      for (let i = 0; i < this.allQuestions.length; i++) {
+        if (this.allQuestions.every(checkAnswerStatus)) {
+          // run the quiz completed mutation
+          this.$store.commit("setQuizStatus", {
+            result: true
+          });
+        }
       }
     }
   }

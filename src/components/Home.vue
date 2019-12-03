@@ -37,6 +37,18 @@ export default {
       });
       this.$store.commit("clearIngredients");
       this.quizStarted = false;
+      // sets the isAnswered to true if answer is selected
+      this.allQuestions.map(question => {
+        this.$store.commit("setQuestionsToAnswered", {
+          selected: question,
+          value: false
+        });
+      });
+
+      // reset quiz status to false
+      this.$store.commit("setQuizStatus", {
+        result: false
+      });
     }
   }
 };

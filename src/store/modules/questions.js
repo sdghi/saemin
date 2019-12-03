@@ -137,14 +137,18 @@ const getters = {
 const actions = {};
 
 const mutations = {
-    setQuestionsToAnswered(state, selected) {
-        state.questions.map((question, i) => {
-            if (i === selected) {
-                question.isAnswered = true;
+    setQuestionsToAnswered(state, { selected, value }) {
+        state.questions.map((question) => {
+            if (question.content == selected) {
+                console.log('finding question index working', question.isAnswered)
+                question.isAnswered = value;
             }
         })
     },
-    setQuizCompleted() { }
+    setQuizStatus(state, { result }) {
+        state.quizCompleted = result;
+        console.log('quiz completed result', state.quizCompleted);
+    }
 };
 
 export default {
