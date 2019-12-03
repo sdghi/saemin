@@ -140,14 +140,12 @@ const mutations = {
     setQuestionsToAnswered(state, { selected, value }) {
         state.questions.map((question) => {
             if (question.content == selected) {
-                console.log('finding question index working', question.isAnswered)
                 question.isAnswered = value;
             }
         })
     },
     setQuizStatus(state, { result }) {
         state.quizCompleted = result;
-        console.log('quiz completed result', state.quizCompleted);
     }
 };
 

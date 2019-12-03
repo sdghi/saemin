@@ -12,18 +12,18 @@ import { mapGetters } from "vuex";
 
 export default {
   name: "Results",
-  created() {
-    this.getIngredientValue();
-  },
-  computed: mapGetters(["allIngredients"]),
+  computed: mapGetters(["allIngredients", "noodlesAndBroth"]),
   data() {
     return {
-      brothAndNoodleTotal: 0
+      brothAndNoodleTotal: "hi"
     };
   },
+  created() {
+    this.brothAndNoodleTotal = this.getIngredientValue("brothAndNoodle");
+  },
   methods: {
-    getIngredientValue() {
-      console.log(this.allIngredients.brothAndNoodle);
+    getIngredientValue(value) {
+      return this.allIngredients[value];
     }
   }
 };
