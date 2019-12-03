@@ -13,14 +13,22 @@ import { mapGetters } from "vuex";
 
 export default {
   name: "Results",
-  computed: mapGetters(["allIngredients", "noodlesAndBroth", "allQuestions"]),
+  computed: mapGetters([
+    "allIngredients",
+    "noodlesAndBroth",
+    "allQuestions",
+    "allNoodlesAndBroth"
+  ]),
   data() {
     return {
       brothAndNoodleTotal: null
     };
   },
   created() {
-    this.brothAndNoodleTotal = this.getIngredientValue("brothAndNoodle");
+    this.brothAndNoodleTotal = this.getIngredientValue(
+      "brothAndNoodle",
+      this.allNoodlesAndBroth
+    );
   },
   methods: {
     modeValue(array) {
@@ -39,11 +47,12 @@ export default {
       }
       return maxEl;
     },
-    getIngredientValue(value) {
+    getIngredientValue(value, ingredient) {
       // get the array of ingredient values
       const valueArr = this.allIngredients[value];
-      // return the most occured value in the array
-      return this.modeValue(valueArr);
+      // the most occured value in the array
+      const indexValue = this.modeValue(valueArr);
+      return ingredient[indexValue].description;
     },
     restartQuiz() {
       // Scroll to top of page when quiz is restarted
