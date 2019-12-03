@@ -6,7 +6,7 @@
           <p>{{brothAndNoodle.description}}</p>        
         </div>
       </div>
-       <Ramen/>
+       <Ramen :brothAndNoodleRef="brothAndNoodle.refId"/>
    
       <button class="restart-btn" @click="restartQuiz">restart</button>
     </div>
