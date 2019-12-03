@@ -1,4 +1,6 @@
+
 const state = {
+    quizCompleted: false,
     questions: [
         {
             content: 'Pick a spirit animal',
@@ -128,19 +130,21 @@ const state = {
 };
 
 const getters = {
-    allQuestions: (state) => state.questions
+    allQuestions: (state) => state.questions,
+    quizCompleted: (state) => state.quizCompleted
 };
 
 const actions = {};
 
 const mutations = {
-    setToAnswered(state, selected) {
+    setQuestionsToAnswered(state, selected) {
         state.questions.map((question, i) => {
             if (i === selected) {
                 question.isAnswered = true;
             }
         })
-    }
+    },
+    setQuizCompleted() { }
 };
 
 export default {

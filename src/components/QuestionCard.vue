@@ -17,7 +17,10 @@
 <script>
 export default {
   name: "QuestionCard",
-  props: ["question", "allQuestions"],
+  props: ["question", "allQuestions", "quizCompleted"],
+  updated() {
+    console.log("updated: quizCompleted", this.quizCompleted);
+  },
   data() {
     return {
       currentAnswer: null,
@@ -37,6 +40,18 @@ export default {
         index: this.index,
         ingredientRef: this.question.ingredientRef
       });
+    },
+    checkIfCompleted() {
+      for (let i = 0; i < this.allQuestions.length; i++) {
+        if (this.allQuestions[i].isAnswered === false) {
+          console.log("a question is not answered");
+          console.log("questions answered", this.quizCompleted);
+          break;
+        }
+
+        console.log("all questions are answered");
+        // run setQuizCompleted Mutation
+      }
     }
   }
 };

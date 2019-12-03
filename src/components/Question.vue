@@ -1,7 +1,7 @@
 <template>
     <div>
       <div class="question" v-for="question in allQuestions" :key="question.id">
-          <QuestionCard :question="question" :allQuestions="allQuestions"/>
+          <QuestionCard :question="question" :allQuestions="allQuestions" :quizCompleted="quizCompleted"/>
       </div>
     </div>
 </template>
@@ -12,7 +12,7 @@ import { mapGetters } from "vuex";
 
 export default {
   name: "Question",
-  computed: mapGetters(["allQuestions"]),
+  computed: mapGetters(["allQuestions", "quizCompleted"]),
   components: {
     QuestionCard
   }

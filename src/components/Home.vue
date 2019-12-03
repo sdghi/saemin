@@ -19,19 +19,15 @@ import Results from "./Results";
 
 export default {
   name: "Home",
-  computed: mapGetters(["allQuestions"]),
+  computed: mapGetters(["allQuestions", "quizCompleted"]),
   components: {
     Quiz,
     Results
   },
   data() {
     return {
-      quizStarted: false,
-      quizCompleted: false
+      quizStarted: false
     };
-  },
-  updated() {
-    this.checkIfCompleted();
   },
   methods: {
     restartQuiz() {
@@ -41,17 +37,6 @@ export default {
       });
       this.$store.commit("clearIngredients");
       this.quizStarted = false;
-    },
-    checkIfCompleted() {
-      for (let i = 0; i < this.allQuestions.length; i++) {
-        if (this.allQuestions[i].isAnswered === false) {
-          console.log("a question is not answered");
-          break;
-        }
-
-        console.log("all questions are answered");
-        this.quizCompleted = true;
-      }
     }
   }
 };
