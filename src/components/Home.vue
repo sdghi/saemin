@@ -8,16 +8,19 @@
         <button v-if="!quizStarted" class="start-quiz-btn" @click="quizStarted = true">take quiz</button>
         <button v-if="quizStarted" class="restart-btn" @click="restartQuiz">restart</button>
         <Quiz :quizStarted="quizStarted"/>
+        <Results v-if="quizStarted"/>
     </div>
 </template>
 
 <script>
 import Quiz from "./Quiz";
+import Results from "./Results";
 
 export default {
   name: "Home",
   components: {
-    Quiz
+    Quiz,
+    Results
   },
   data() {
     return {
