@@ -56,12 +56,6 @@ export default {
   }
 }
 
-@media (min-width: 768px) {
-  .question-card {
-    width: 60%;
-  }
-}
-
 // May break into another component later
 .answers-container {
   display: grid;
@@ -89,6 +83,16 @@ export default {
       background: $black;
       color: $white;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .question-card {
+    width: 60%;
+  }
+
+  .answers-container {
+    max-height: fit-content;
   }
 }
 </style>
