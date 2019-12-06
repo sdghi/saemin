@@ -3,7 +3,8 @@
       <div class="ramen-info">
         <h3 class="ramen-title">You are a {{brothAndNoodle.title}}</h3>
         <div class="description-container">
-          <p>{{brothAndNoodle.description}}</p>        
+          <p>{{brothAndNoodle.description}}</p>  
+          
         </div>
       </div>
        <Ramen :brothAndNoodleRef="brothAndNoodle.refId"/>
@@ -81,6 +82,9 @@ export default {
           value: false
         });
       });
+
+      // reset all question isAnswered
+      this.$store.commit("resetAllAnsweredStatus");
 
       // reset quiz status to false
       this.$store.commit("setQuizStatus", {
