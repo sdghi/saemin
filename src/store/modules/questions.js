@@ -151,6 +151,11 @@ const mutations = {
     },
     setQuizStarted(state, { value }) {
         state.quizStarted = value;
+    },
+    resetAllAnsweredStatus(state) {
+        state.questions.map(question => {
+            question.isAnswered = false;
+        })
     }
 };
 
