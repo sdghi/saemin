@@ -17,7 +17,7 @@
 <script>
 export default {
   name: "QuestionCard",
-  props: ["question", "allQuestions", "quizCompleted", "updatedScrollHeight"],
+  props: ["question", "allQuestions", "quizCompleted"],
   data() {
     return {
       currentAnswer: null,
@@ -33,8 +33,6 @@ export default {
     //   "question height",
     //   `index: ${this.index} height: ${this.$refs.quizQuestion.clientHeight}`
     // );
-
-    this.$emit("updatedScrollHeight", this.$refs.quizQuestion.clientHeight);
   },
   methods: {
     setAnswer(e) {
@@ -54,6 +52,8 @@ export default {
         selected: this.question.content,
         value: true
       });
+
+      this.$emit("updateScrollHeight", this.$refs.quizQuestion.clientHeight);
     },
     checkIfCompleted() {
       function checkAnswerStatus(element) {

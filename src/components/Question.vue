@@ -1,6 +1,6 @@
 <template>
-    <div>
-      <div class="question" v-for="question in allQuestions" :key="question.id" @updatedScrollHeight="updateScroll">
+    <div v-on:updateScrollHeight="updateScroll($event)">
+      <div class="question" v-for="question in allQuestions" :key="question.id">
           <QuestionCard :question="question" :allQuestions="allQuestions" :quizCompleted="quizCompleted" :startingScrollHeight="startingScrollHeight" :updatedScrollHeight="updatedScrollHeight"/>
       </div>
     </div>
@@ -32,8 +32,8 @@ export default {
     }, 1000);
   },
   methods: {
-    updateScroll() {
-      console.log("updated");
+    updateScroll(data) {
+      console.log("payload", data);
 
       // updatedScrollHeight += emit.payload
     }
