@@ -1,7 +1,7 @@
 <template>
     <div>
       <div class="question" v-for="question in allQuestions" :key="question.id">
-          <QuestionCard :question="question" :allQuestions="allQuestions" :quizCompleted="quizCompleted"/>
+          <QuestionCard :question="question" :allQuestions="allQuestions" :quizCompleted="quizCompleted" :startingScrollHeight="startingScrollHeight"/>
       </div>
     </div>
 </template>
@@ -15,6 +15,20 @@ export default {
   computed: mapGetters(["allQuestions", "quizCompleted"]),
   components: {
     QuestionCard
+  },
+  data() {
+    return {
+      startingScrollHeight: 864
+    };
+  },
+  mounted() {
+    // Will handle initial scroll down to first question when starting quiz
+    setTimeout(() => {
+      window.scrollTo({
+        top: this.startingScrollHeight,
+        behavior: "smooth"
+      });
+    }, 1000);
   }
 };
 </script>

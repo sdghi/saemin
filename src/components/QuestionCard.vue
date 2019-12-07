@@ -1,5 +1,5 @@
 <template>
-    <div class="question-card">
+    <div class="question-card" ref="quizQuestion">
           <h3>{{question.content}}</h3>
           <div class="answers-container">
               <!-- the answer == 1 will be data.value and the value in the input will be pulled data.answerTitle -->
@@ -17,16 +17,18 @@
 <script>
 export default {
   name: "QuestionCard",
-  props: ["question", "allQuestions", "quizCompleted"],
-  updated() {
-    this.checkIfCompleted();
-  },
+  props: ["question", "allQuestions", "quizCompleted", "startingScrollHeight"],
   data() {
     return {
       currentAnswer: null,
       isSelected: false,
-      index: this.allQuestions.indexOf(this.question)
+      index: this.allQuestions.indexOf(this.question),
+
+      newScrollHeight: 0
     };
+  },
+  updated() {
+    this.checkIfCompleted();
   },
   methods: {
     setAnswer(e) {
@@ -46,6 +48,13 @@ export default {
         selected: this.question.content,
         value: true
       });
+
+      console.log("question height", this.$refs.quizQuestion.clientHeight);
+
+      // window.scrollTo({
+      //   top: this.newScrollHeight,
+      //   behavior: "smooth"
+      // });
     },
     checkIfCompleted() {
       function checkAnswerStatus(element) {
