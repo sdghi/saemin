@@ -17,18 +17,24 @@
 <script>
 export default {
   name: "QuestionCard",
-  props: ["question", "allQuestions", "quizCompleted", "startingScrollHeight"],
+  props: ["question", "allQuestions", "quizCompleted", "updatedScrollHeight"],
   data() {
     return {
       currentAnswer: null,
       isSelected: false,
       index: this.allQuestions.indexOf(this.question),
-
-      newScrollHeight: 0
+      nextScrollHeight: 0
     };
   },
   updated() {
     this.checkIfCompleted();
+
+    // console.log(
+    //   "question height",
+    //   `index: ${this.index} height: ${this.$refs.quizQuestion.clientHeight}`
+    // );
+
+    this.$emit("updatedScrollHeight", this.$refs.quizQuestion.clientHeight);
   },
   methods: {
     setAnswer(e) {
@@ -48,13 +54,6 @@ export default {
         selected: this.question.content,
         value: true
       });
-
-      console.log("question height", this.$refs.quizQuestion.clientHeight);
-
-      // window.scrollTo({
-      //   top: this.newScrollHeight,
-      //   behavior: "smooth"
-      // });
     },
     checkIfCompleted() {
       function checkAnswerStatus(element) {

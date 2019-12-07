@@ -1,7 +1,7 @@
 <template>
     <div>
-      <div class="question" v-for="question in allQuestions" :key="question.id">
-          <QuestionCard :question="question" :allQuestions="allQuestions" :quizCompleted="quizCompleted" :startingScrollHeight="startingScrollHeight"/>
+      <div class="question" v-for="question in allQuestions" :key="question.id" @updatedScrollHeight="updateScroll">
+          <QuestionCard :question="question" :allQuestions="allQuestions" :quizCompleted="quizCompleted" :startingScrollHeight="startingScrollHeight" :updatedScrollHeight="updatedScrollHeight"/>
       </div>
     </div>
 </template>
@@ -18,7 +18,8 @@ export default {
   },
   data() {
     return {
-      startingScrollHeight: 864
+      startingScrollHeight: 864,
+      updatedScrollHeight: 0
     };
   },
   mounted() {
@@ -29,6 +30,13 @@ export default {
         behavior: "smooth"
       });
     }, 1000);
+  },
+  methods: {
+    updateScroll() {
+      console.log("updated");
+
+      // updatedScrollHeight += emit.payload
+    }
   }
 };
 </script>
