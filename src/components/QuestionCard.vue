@@ -28,11 +28,6 @@ export default {
   },
   updated() {
     this.checkIfCompleted();
-
-    // console.log(
-    //   "question height",
-    //   `index: ${this.index} height: ${this.$refs.quizQuestion.clientHeight}`
-    // );
   },
   methods: {
     setAnswer(e) {
@@ -53,7 +48,11 @@ export default {
         value: true
       });
 
-      this.$emit("updateScrollHeight", this.$refs.quizQuestion.clientHeight);
+      // Scroll window from current window position to the start of the next question
+      window.scrollTo({
+        top: window.pageYOffset + this.$refs.quizQuestion.clientHeight,
+        behavior: "smooth"
+      });
     },
     checkIfCompleted() {
       function checkAnswerStatus(element) {

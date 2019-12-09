@@ -1,5 +1,5 @@
 <template>
-    <div v-on:updateScrollHeight="updateScroll($event)">
+    <div>
       <div class="question" v-for="question in allQuestions" :key="question.id">
           <QuestionCard :question="question" :allQuestions="allQuestions" :quizCompleted="quizCompleted" :startingScrollHeight="startingScrollHeight" :updatedScrollHeight="updatedScrollHeight"/>
       </div>
@@ -30,13 +30,6 @@ export default {
         behavior: "smooth"
       });
     }, 1000);
-  },
-  methods: {
-    updateScroll(data) {
-      console.log("payload", data);
-
-      // updatedScrollHeight += emit.payload
-    }
   }
 };
 </script>
