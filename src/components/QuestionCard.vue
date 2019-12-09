@@ -49,10 +49,20 @@ export default {
       });
 
       // Scroll window from current window position to the start of the next question
-      window.scrollTo({
-        top: window.pageYOffset + this.$refs.quizQuestion.clientHeight,
-        behavior: "smooth"
-      });
+      // If it's the last question wait for the results to load
+      if (this.index === this.allQuestions.length - 1) {
+        setTimeout(() => {
+          window.scrollTo({
+            top: window.pageYOffset + this.$refs.quizQuestion.clientHeight,
+            behavior: "smooth"
+          });
+        }, 1000);
+      } else {
+        window.scrollTo({
+          top: window.pageYOffset + this.$refs.quizQuestion.clientHeight,
+          behavior: "smooth"
+        });
+      }
     },
     checkIfCompleted() {
       function checkAnswerStatus(element) {
@@ -89,7 +99,7 @@ export default {
 // May break into another component later
 .answers-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-gap: 20px;
   max-height: 40vh;
   // allow for scroll for questions with a lot of answers
@@ -97,12 +107,12 @@ export default {
 
   .answer {
     width: 100%;
-    height: 150px;
+    height: 100px;
     background: $white;
     border: none;
     cursor: pointer;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
 
     &.selected {
       background: $black;
