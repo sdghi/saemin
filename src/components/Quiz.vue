@@ -23,7 +23,6 @@ export default {
 
 <style lang="scss" scoped>
 #quiz-section {
-  padding-bottom: 10vh;
   width: 100%;
 }
 

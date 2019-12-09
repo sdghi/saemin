@@ -1,5 +1,5 @@
 <template>
-    <div class="question-card">
+    <div class="question-card" ref="quizQuestion">
           <h3>{{question.content}}</h3>
           <div class="answers-container">
               <!-- the answer == 1 will be data.value and the value in the input will be pulled data.answerTitle -->
@@ -18,15 +18,16 @@
 export default {
   name: "QuestionCard",
   props: ["question", "allQuestions", "quizCompleted"],
-  updated() {
-    this.checkIfCompleted();
-  },
   data() {
     return {
       currentAnswer: null,
       isSelected: false,
-      index: this.allQuestions.indexOf(this.question)
+      index: this.allQuestions.indexOf(this.question),
+      nextScrollHeight: 0
     };
+  },
+  updated() {
+    this.checkIfCompleted();
   },
   methods: {
     setAnswer(e) {
@@ -46,6 +47,22 @@ export default {
         selected: this.question.content,
         value: true
       });
+
+      // Scroll window from current window position to the start of the next question
+      // If it's the last question wait for the results to load
+      if (this.index === this.allQuestions.length - 1) {
+        setTimeout(() => {
+          window.scrollTo({
+            top: window.pageYOffset + this.$refs.quizQuestion.clientHeight,
+            behavior: "smooth"
+          });
+        }, 1000);
+      } else {
+        window.scrollTo({
+          top: window.pageYOffset + this.$refs.quizQuestion.clientHeight,
+          behavior: "smooth"
+        });
+      }
     },
     checkIfCompleted() {
       function checkAnswerStatus(element) {
@@ -82,7 +99,7 @@ export default {
 // May break into another component later
 .answers-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-gap: 20px;
   max-height: 40vh;
   // allow for scroll for questions with a lot of answers
@@ -90,12 +107,12 @@ export default {
 
   .answer {
     width: 100%;
-    height: 150px;
+    height: 100px;
     background: $white;
     border: none;
     cursor: pointer;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
 
     &.selected {
       background: $black;
