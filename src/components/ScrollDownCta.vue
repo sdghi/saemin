@@ -1,12 +1,13 @@
 <template>
-    <section ref="scroll-cta">
+    <section ref="scrollCta">
         first scroll section
     </section>
 </template>
 
 <script>
 export default {
-  name: "ScrollDownCta"
+  name: "ScrollDownCta",
+  props: ["scrollCtaHeight"]
 };
 </script>
 

@@ -69,6 +69,10 @@ export default {
   }
 }
 
+p {
+  line-height: 1.3;
+}
+
 .home-subtitle {
   text-align: center;
   font-size: 5vmin;
