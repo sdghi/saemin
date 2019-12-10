@@ -34,9 +34,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/index.scss";
-@import "@/scss/partials/_variables";
-
 #app-container {
   position: absolute;
   top: 0;
@@ -70,6 +67,10 @@ export default {
       left: 8vw;
     }
   }
+}
+
+p {
+  line-height: 1.3;
 }
 
 .home-subtitle {

@@ -96,8 +96,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/partials/_variables.scss";
-
 .restart-btn {
   position: fixed;
   bottom: 2.5%;
