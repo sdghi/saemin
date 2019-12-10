@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section ref="scroll-cta">
         first scroll section
     </section>
 </template>
@@ -11,8 +11,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/partials/_variables";
-
 section {
   // remove padding once illustration goes in
   padding: 15vh;

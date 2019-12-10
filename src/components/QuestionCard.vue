@@ -83,8 +83,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/partials/_variables";
-
 .question-card {
   margin: 0 auto;
   background: $card-color;

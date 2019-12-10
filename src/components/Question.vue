@@ -35,8 +35,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/partials/_variables";
-
 .question {
   width: 100%;
   height: fit-content;

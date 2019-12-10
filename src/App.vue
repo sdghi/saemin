@@ -15,8 +15,35 @@ export default {
 };
 </script>
 
-<style>
-@import "/scss/index.scss";
+<style lang="scss">
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+a {
+  text-decoration: none;
+}
 
 button:focus {
   outline: none;

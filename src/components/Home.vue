@@ -34,9 +34,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/index.scss";
-@import "@/scss/partials/_variables";
-
 #app-container {
   position: absolute;
   top: 0;
