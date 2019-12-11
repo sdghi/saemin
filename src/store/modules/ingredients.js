@@ -34,7 +34,7 @@ const mutations = {
     },
     addIngredient(state, { payload, ingredientRef, index }) {
         if (ingredientRef === 0) {
-            // add to broth
+            // add to broth  console.log("quiz completed", this.quizCompleted);
             if (typeof state.brothAndNoodle[index] === 'undefined') {
                 state.brothAndNoodle.push(payload);
             } else {

@@ -25,47 +25,23 @@ const state = {
                     value: 0
                 },
                 {
-                    content: 'Bird',
-                    value: 4
-                },
-                {
-                    content: 'Otter',
-                    value: 6
-                },
-                {
-                    content: 'Bear',
-                    value: 6
-                },
-                {
-                    content: 'Wolf',
-                    value: 2
+                    content: 'Dog',
+                    value: 3
                 },
                 {
                     content: 'Monkey',
                     value: 5
                 },
                 {
-                    content: 'Dog',
-                    value: 0
-                },
-                {
                     content: 'Cat',
-                    value: 4
-                },
-                {
-                    content: 'Elephant',
-                    value: 6
-                },
-                {
-                    content: 'Octopus',
                     value: 4
                 }
             ]
         },
         {
-            content: 'I find ___ the most interesting',
+            content: 'I find ________ the most interesting',
             isAnswered: false,
-            illustrationRef: 1,
+            illustrationRef: 0,
             ingredientRef: 0,
             answers: [
                 {
@@ -77,7 +53,7 @@ const state = {
                     value: 1
                 },
                 {
-                    content: "Kid's perspective",
+                    content: "Kids’ perspectives",
                     value: 3
                 },
                 {
@@ -87,21 +63,21 @@ const state = {
                 {
                     content: "Connecting with my community",
                     value: 5
+                },
+                {
+                    content: 'Organizing things',
+                    value: 2
                 }
             ]
         },
         {
-            content: "You’re Bored. Pick a smartphone activity / app:",
+            content: 'You’re Bored. Pick a smartphone activity / app',
             isAnswered: false,
-            illustrationRef: 2,
+            illustrationRef: 0,
             ingredientRef: 0,
             answers: [
                 {
                     content: 'Instagram',
-                    value: 0
-                },
-                {
-                    content: 'Venmo',
                     value: 0
                 },
                 {
@@ -113,19 +89,20 @@ const state = {
                     value: 1
                 },
                 {
-                    content: 'Medium',
-                    value: 1
-                },
-                {
                     content: 'Reminders',
                     value: 2
                 },
                 {
                     content: 'Camera',
                     value: 4
+                },
+                {
+                    content: 'Pinterest',
+                    value: 5
                 }
             ]
-        }
+        },
+
     ]
 
 };
