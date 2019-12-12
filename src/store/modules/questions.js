@@ -360,6 +360,167 @@ const state = {
             ]
         },
         // MOOD QUESTIONS
+        {
+            content: 'How’s it going?',
+            isAnswered: false,
+            illustrationRef: 1,
+            ingredientRef: 1,
+            answers: [
+                {
+                    content: 'Meh',
+                    value: 2
+                },
+                {
+                    content: 'Everything stay cherry',
+                    value: 4
+                },
+                {
+                    content: "I can’t sit still",
+                    value: 3
+                },
+                {
+                    content: "I’m doing amazing!",
+                    value: 0
+                },
+                {
+                    content: "Grr!!",
+                    value: 5
+                },
+                {
+                    content: "There’s a lot on my mind",
+                    value: 1
+                }
+            ]
+        },
+        {
+            content: 'Quickly — Pick a Patronus',
+            isAnswered: false,
+            illustrationRef: 1,
+            ingredientRef: 1,
+            answers: [
+                {
+                    content: 'Cactus',
+                    value: 5
+                },
+                {
+                    content: 'Turtle',
+                    value: 4
+                },
+                {
+                    content: 'Puppy',
+                    value: 0
+                },
+                {
+                    content: 'Whale',
+                    value: 1
+                },
+                {
+                    content: 'Sloth',
+                    value: 2
+                },
+                {
+                    content: 'Squirrel',
+                    value: 3
+                }
+            ]
+        },
+        {
+            content: 'Pick a color',
+            isAnswered: false,
+            illustrationRef: 1,
+            ingredientRef: 1,
+            answers: [
+                {
+                    content: 'Yellow',
+                    value: 0
+                },
+                {
+                    content: 'Blue',
+                    value: 1
+                },
+                {
+                    content: 'Red',
+                    value: 5
+                },
+                {
+                    content: 'Gray',
+                    value: 2
+                },
+                {
+                    content: 'White',
+                    value: 3
+                },
+                {
+                    content: 'Green',
+                    value: 4
+                }
+            ]
+        },
+        {
+            content: 'Pick an emoji',
+            isAnswered: false,
+            illustrationRef: 1,
+            ingredientRef: 1,
+            answers: [
+                {
+                    content: 'T_T',
+                    value: 1
+                },
+                {
+                    content: '(╯°Д°）╯︵ ┻━┻',
+                    value: 5
+                },
+                {
+                    content: '-_-',
+                    value: 2
+                },
+                {
+                    content: '^____^',
+                    value: 0
+                },
+                {
+                    // eslint-disable-next-line no-useless-escape
+                    content: "¯\_(ツ)_/¯",
+                    value: 4
+                },
+                {
+                    content: '(＠_＠)',
+                    value: 3
+                }
+            ]
+        },
+        {
+            content: 'You usually sleep',
+            isAnswered: false,
+            illustrationRef: 1,
+            ingredientRef: 1,
+            answers: [
+                {
+                    content: 'Full Fetal',
+                    value: 3
+                },
+                {
+                    content: 'Vampire',
+                    value: 0
+                },
+                {
+                    content: 'Log',
+                    value: 2
+                },
+                {
+                    content: 'Half fetal',
+                    value: 1
+                },
+                {
+                    content: 'Starfish',
+                    value: 4
+                },
+                {
+                    content: 'Stomach',
+                    value: 5
+                }
+            ]
+        }
 
     ]
 
