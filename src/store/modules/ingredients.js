@@ -50,7 +50,7 @@ const mutations = {
                 state.toppings[index] = payload;
             }
             // state.brothAndNoodle.push(payload.value);
-            console.log('toppings', state.toppings);
+            // console.log('toppings', state.toppings);
         } else if (ingredientRef === 2) {
             // add to bowl
             if (typeof state.bowl[index] === 'undefined') {
@@ -59,7 +59,7 @@ const mutations = {
                 state.bowl[index] = payload;
             }
             // state.brothAndNoodle.push(payload.value);
-            console.log('bowl', state.bowl);
+            // console.log('bowl', state.bowl);
         }
     }
 };
