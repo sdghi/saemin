@@ -520,6 +520,167 @@ const state = {
                     value: 5
                 }
             ]
+        },
+        //  STYLE QUESTIONS
+        {
+            content: 'Choose a place to spend an afternoon',
+            isAnswered: false,
+            illustrationRef: 2,
+            ingredientRef: 2,
+            answers: [
+                {
+                    content: 'Museum',
+                    value: 1
+                },
+                {
+                    content: 'Spa',
+                    value: 5
+                },
+                {
+                    content: 'The Beach',
+                    value: 2
+                },
+                {
+                    content: 'Antique Store',
+                    value: 0
+                },
+                {
+                    content: 'Botanical Garden',
+                    value: 3
+                },
+                {
+                    content: 'Harajuku',
+                    value: 4
+                }
+            ]
+        },
+        {
+            content: 'Choose a red',
+            isAnswered: false,
+            illustrationRef: 2,
+            ingredientRef: 2,
+            answers: [
+                {
+                    content: 'Ruby Red',
+                    value: 5
+                },
+                {
+                    content: 'Vermillion',
+                    value: 3
+                },
+                {
+                    content: 'Midcentury Orange',
+                    value: 0
+                },
+                {
+                    content: 'Maroon',
+                    value: 1
+                },
+                {
+                    content: 'Neon Pink',
+                    value: 4
+                },
+                {
+                    content: 'Red',
+                    value: 2
+                }
+            ]
+        },
+        {
+            content: 'Choose a Bob',
+            isAnswered: false,
+            illustrationRef: 2,
+            ingredientRef: 2,
+            answers: [
+                {
+                    content: 'Ross',
+                    value: 1
+                },
+                {
+                    content: 'Marley',
+                    value: 3
+                },
+                {
+                    content: 'Sponge',
+                    value: 4
+                },
+                {
+                    content: 'Dylan',
+                    value: 0
+                },
+                {
+                    content: '‘s BBQ',
+                    value: 2
+                },
+                {
+                    content: 'Julia Roberts',
+                    value: 5
+                }
+            ]
+        },
+        {
+            content: 'Which object best represents you?',
+            isAnswered: false,
+            illustrationRef: 2,
+            ingredientRef: 2,
+            answers: [
+                {
+                    content: 'Sponge',
+                    value: 3
+                },
+                {
+                    content: 'Tree',
+                    value: 0
+                },
+                {
+                    content: 'Book',
+                    value: 1
+                },
+                {
+                    content: 'Gem',
+                    value: 5
+                },
+                {
+                    content: 'Ball',
+                    value: 4
+                },
+                {
+                    content: 'Slippah',
+                    value: 2
+                }
+            ]
+        },
+        {
+            content: 'Choose a condiment or topping',
+            isAnswered: false,
+            illustrationRef: 2,
+            ingredientRef: 2,
+            answers: [
+                {
+                    content: 'Kikkoman Shoyu',
+                    value: 2
+                },
+                {
+                    content: 'Scallions',
+                    value: 5
+                },
+                {
+                    content: 'Nori',
+                    value: 1
+                },
+                {
+                    content: 'Tobiko',
+                    value: 4
+                },
+                {
+                    content: 'Microgreens',
+                    value: 0
+                },
+                {
+                    content: 'Yuzu Kosho',
+                    value: 3
+                }
+            ]
         }
 
     ]
