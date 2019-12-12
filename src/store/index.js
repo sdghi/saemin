@@ -3,6 +3,8 @@ import Vue from 'vue';
 import questions from './modules/questions';
 import ingredients from './modules/ingredients';
 import noodlesAndBroth from './modules/noodlesAndBroth';
+import toppings from './modules/toppings';
+import bowls from './modules/bowls';
 
 // Load Vuex
 Vue.use(Vuex);
@@ -13,5 +15,7 @@ export default new Vuex.Store({
         questions,
         ingredients,
         noodlesAndBroth,
+        toppings,
+        bowls
     }
 })

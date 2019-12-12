@@ -1,13 +1,18 @@
 <template>
     <div class="results-container">
-      <div class="ramen-info">
-        <h3 class="ramen-title">You are a {{brothAndNoodle.title}}</h3>
+      <div class="intant-ramen-info" v-if="topping.refId === 2">
+        <h3 class="ramen-title">You are an instant ramen</h3>
+        <p>stop being basic</p>
+      </div>
+      <div class="ramen-info" v-else-if="topping.refId !== 2">
+        <h3 class="ramen-title">You are a {{brothAndNoodle.title}}. Topped with {{topping.title}} and bundled in a {{bowl.title}}</h3>
         <div class="description-container">
           <p>{{brothAndNoodle.description}}</p>  
-          
+          <p>You are {{topping.description}}</p>
+          <p>Personality-wise you are {{bowl.description}}</p>
         </div>
       </div>
-       <Ramen :brothAndNoodleRef="brothAndNoodle.refId"/>
+       <Ramen :brothAndNoodleRef="brothAndNoodle.refId" :toppingRef="topping.refId" :bowlRef="bowl.refId"/>
    
       <button class="restart-btn" @click="restartQuiz">restart</button>
     </div>
@@ -24,13 +29,19 @@ export default {
   },
   computed: mapGetters([
     "allIngredients",
-    "noodlesAndBroth",
     "allQuestions",
-    "allNoodlesAndBroth"
+    "noodlesAndBroth",
+    "allNoodlesAndBroth",
+    "toppings",
+    "allToppings",
+    "bowls",
+    "allBowls"
   ]),
   data() {
     return {
-      brothAndNoodle: null
+      brothAndNoodle: null,
+      topping: null,
+      bowl: null
     };
   },
   created() {
@@ -38,6 +49,10 @@ export default {
       "brothAndNoodle",
       this.allNoodlesAndBroth
     );
+
+    this.topping = this.getIngredientValue("toppings", this.allToppings);
+
+    this.bowl = this.getIngredientValue("bowl", this.allBowls);
   },
   methods: {
     modeValue(array) {
