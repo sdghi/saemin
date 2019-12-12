@@ -5,13 +5,14 @@
         <p>stop being basic</p>
       </div>
       <div class="ramen-info" v-else-if="topping.refId !== 2">
-        <h3 class="ramen-title">You are a {{brothAndNoodle.title}}. Topped with {{topping.description}}</h3>
+        <h3 class="ramen-title">You are a {{brothAndNoodle.title}}. Topped with {{topping.title}} and bundled in a {{bowl.title}}</h3>
         <div class="description-container">
           <p>{{brothAndNoodle.description}}</p>  
           <p>You are {{topping.description}}</p>
+          <p>Personality-wise you are {{bowl.description}}</p>
         </div>
       </div>
-       <Ramen :brothAndNoodleRef="brothAndNoodle.refId" :toppingRef="topping.refId"/>
+       <Ramen :brothAndNoodleRef="brothAndNoodle.refId" :toppingRef="topping.refId" :bowlRef="bowl.refId"/>
    
       <button class="restart-btn" @click="restartQuiz">restart</button>
     </div>
@@ -32,12 +33,15 @@ export default {
     "noodlesAndBroth",
     "allNoodlesAndBroth",
     "toppings",
-    "allToppings"
+    "allToppings",
+    "bowls",
+    "allBowls"
   ]),
   data() {
     return {
       brothAndNoodle: null,
-      topping: null
+      topping: null,
+      bowl: null
     };
   },
   created() {
@@ -47,6 +51,8 @@ export default {
     );
 
     this.topping = this.getIngredientValue("toppings", this.allToppings);
+
+    this.bowl = this.getIngredientValue("bowl", this.allBowls);
   },
   methods: {
     modeValue(array) {

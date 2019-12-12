@@ -22,7 +22,7 @@ const state = {
             refId: 2,
             title: 'Chinese style bowl with bamboo chopsticks.',
             type: 'Chinese style bowl with bamboo chopsticks.',
-            description: 'simple'
+            description: 'simple.'
         },
         {
             name: 'Eclectic',
@@ -49,7 +49,7 @@ const state = {
 };
 
 const getters = {
-    allBowlss: (state) => state.bowls,
+    allBowls: (state) => state.bowls,
 };
 
 const actions = {};
