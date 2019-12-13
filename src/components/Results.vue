@@ -43,7 +43,8 @@ export default {
     return {
       brothAndNoodle: null,
       topping: null,
-      bowl: null
+      bowl: null,
+      questionCardHeight: null
     };
   },
   created() {
@@ -132,8 +133,6 @@ button {
 }
 
 .ramen-info {
-  overflow-y: auto;
-  height: 80vh;
   padding: 50px;
 }
 

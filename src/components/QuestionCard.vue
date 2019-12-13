@@ -24,7 +24,7 @@
 <script>
 export default {
   name: "QuestionCard",
-  props: ["question", "allQuestions", "quizCompleted"],
+  props: ["question", "allQuestions", "quizCompleted", "setScrollHeight"],
   data() {
     return {
       currentAnswer: null,
@@ -54,6 +54,11 @@ export default {
       this.$store.commit("setQuestionsToAnswered", {
         selected: this.question.content,
         value: true
+      });
+
+      // set the global scroll height for the back button
+      this.$store.commit("setScrollHeight", {
+        value: this.$refs.quizQuestion.clientHeight
       });
 
       // Scroll window from current window position to the start of the next question
