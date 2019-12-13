@@ -1,15 +1,17 @@
 <template>
     <div class="results-container">
       <div class="intant-ramen-info" v-if="topping.refId === 2">
-        <h3 class="ramen-title">You are an instant ramen</h3>
+        <h2 class="ramen-title">You are an instant ramen</h2>
         <p>stop being basic</p>
       </div>
       <div class="ramen-info" v-else-if="topping.refId !== 2">
-        <h3 class="ramen-title">You are a {{brothAndNoodle.title}}. Topped with {{topping.title}} and bundled in a {{bowl.title}}</h3>
+        <h2 class="ramen-title">You are {{topping.name}}, {{bowl.name}} and {{brothAndNoodle.name}}</h2>
         <div class="description-container">
+          <p>You are <strong>{{brothAndNoodle.title}}</strong>.</p>
           <p>{{brothAndNoodle.description}}</p>  
-          <p>You are {{topping.description}}</p>
-          <p>Personality-wise you are {{bowl.description}}</p>
+          <p><strong>Toppings:</strong> {{topping.title}}</p>
+          <p>{{topping.description}}</p>
+          <p><strong>Style:</strong> {{bowl.name}}</p>
         </div>
       </div>
        <Ramen :brothAndNoodleRef="brothAndNoodle.refId" :toppingRef="topping.refId" :bowlRef="bowl.refId"/>

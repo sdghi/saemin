@@ -2,48 +2,41 @@ const state = {
     toppings: [
         {
             // not finished
-            name: 'Optimistic',
+            name: 'optimistic',
             refId: 0,
             // this is the title of what the topping is called
-            title: 'sunny side up egg, lime, cilantro, and emanating rays of light.',
-            // use this to remind you to the svg that will be output
-            type: 'sunny side up egg, lime, cilantro, and emanating rays of light.',
-            description: 'a ray of Sunshine Positive, bright, joyful'
+            title: 'sunny side up egg, lime, cilantro, and emanating rays of light',
+            description: '“Why does it feel like the universe is smiling down on me?”'
         },
         {
-            name: 'Troubled',
+            name: 'troubled',
             refId: 1,
-            title: 'bok choy, shiitake mushroom, and a dark cloud.',
-            type: 'bok choy, shiitake mushroom, and a dark cloud.',
-            description: 'melancholy, depressed, weighed down.'
+            title: 'bok choy, shiitake mushroom, and a dark cloud',
+            description: '“I don’t think you can handle my darkness.”'
         },
         {
-            name: 'Disenchanted',
+            name: 'disenchanted',
             refId: 2,
             title: 'Instant ramen cup or square package',
-            type: 'Instant ramen cup or square package',
-            description: 'unmotivated, apathetic, “meh”, lazy, lethargic, gudetama-like, tired, unmotivated, disenchanted, uninspired.'
+            description: '“Let’s not do anything today.”'
         },
         {
-            name: 'Anxious ',
+            name: 'anxious ',
             refId: 3,
             title: 'Char siu, deep kim chee, menma, a tangle of garnish',
-            type: 'Char siu, deep kim chee, menma, a tangle of garnish',
-            description: 'stressed, anxious, worried, jittery, overwhelmed, busy.'
+            description: '"Why so stressed?"'
         },
         {
-            name: 'Easygoing',
+            name: 'easygoing',
             refId: 4,
-            title: 'butter, corn, a tempura chillin’, and green onions.',
-            type: 'butter, corn, a tempura chillin’, and green onions.',
-            description: 'contentul, peaceful, serene, chill',
+            title: 'butter, corn, a tempura chillin’, and green onions',
+            description: '“Just cruisin’!”',
         },
         {
-            name: 'Angry',
+            name: 'angry',
             refId: 5,
             title: 'hard boiled egg, hot chili peppers and Sriracha on the side',
-            type: 'hard boiled egg, hot chili peppers and Sriracha on the side',
-            description: 'irritable and angry'
+            description: '“Cross me and I might bite your head off.”'
         }
     ]
 };
