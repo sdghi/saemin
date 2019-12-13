@@ -120,12 +120,11 @@ export default {
 }
 
 .answers-container {
+  user-select: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   margin-top: 40px;
-  // allow for scroll for questions with a lot of answers
-  // overflow-y: auto;
 
   .answer {
     width: 100%;
@@ -154,6 +153,7 @@ export default {
   }
 
   .answers-container {
+    grid-template-columns: repeat(3, 1fr);
     max-height: fit-content;
   }
 }
