@@ -24,7 +24,7 @@
 <script>
 export default {
   name: "QuestionCard",
-  props: ["question", "allQuestions", "quizCompleted"],
+  props: ["question", "allQuestions", "quizCompleted", "setScrollHeight"],
   data() {
     return {
       currentAnswer: null,
@@ -54,6 +54,11 @@ export default {
       this.$store.commit("setQuestionsToAnswered", {
         selected: this.question.content,
         value: true
+      });
+
+      // set the global scroll height for the back button
+      this.$store.commit("setScrollHeight", {
+        value: this.$refs.quizQuestion.clientHeight
       });
 
       // Scroll window from current window position to the start of the next question
@@ -120,12 +125,11 @@ export default {
 }
 
 .answers-container {
+  user-select: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   margin-top: 40px;
-  // allow for scroll for questions with a lot of answers
-  // overflow-y: auto;
 
   .answer {
     width: 100%;
@@ -154,6 +158,7 @@ export default {
   }
 
   .answers-container {
+    grid-template-columns: repeat(3, 1fr);
     max-height: fit-content;
   }
 }

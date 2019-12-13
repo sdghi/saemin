@@ -2,6 +2,7 @@
 const state = {
     quizStarted: false,
     quizCompleted: false,
+    scrollHeight: 0,
     questions: [
         // PERSONALITY QUESTIONS
         {
@@ -690,12 +691,16 @@ const state = {
 const getters = {
     allQuestions: (state) => state.questions,
     quizCompleted: (state) => state.quizCompleted,
-    quizStarted: (state) => state.quizStarted
+    quizStarted: (state) => state.quizStarted,
+    scrollHeight: (state) => state.scrollHeight
 };
 
 const actions = {};
 
 const mutations = {
+    setScrollHeight(state, { value }) {
+        state.scrollHeight = value
+    },
     setQuestionsToAnswered(state, { selected, value }) {
         state.questions.map((question) => {
             if (question.content == selected) {
