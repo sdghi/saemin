@@ -1,6 +1,6 @@
 <template>
     <div class="results-container">
-      <div class="intant-ramen-info" v-if="topping.refId === 2">
+      <div class="instant-ramen-info" v-if="topping.refId === 2">
         <h2 class="ramen-title">You are an instant ramen</h2>
         <p>stop being basic</p>
       </div>
@@ -15,7 +15,7 @@
         </div>
       </div>
        <Ramen :brothAndNoodleRef="brothAndNoodle.refId" :toppingRef="topping.refId" :bowlRef="bowl.refId"/>
-   
+        <button @click="shareToFb">share to facebook</button>
       <button class="restart-btn" @click="restartQuiz">restart</button>
     </div>
 </template>
@@ -58,6 +58,16 @@ export default {
     this.bowl = this.getIngredientValue("bowl", this.allBowls);
   },
   methods: {
+    shareToFb() {
+      var desc = encodeURIComponent(
+        `I was ${this.topping.title}, ${this.bowl.title} and ${this.brothAndNoodle.title}`
+      );
+
+      console.log(desc);
+      window.open(
+        `https://www.facebook.com/sharer.php?u=https://saemin.netlify.com`
+      );
+    },
     modeValue(array) {
       if (array.length == 0) return null;
       var modeMap = {};
