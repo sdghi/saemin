@@ -15,21 +15,21 @@ export default {
   computed: mapGetters(["allQuestions", "quizCompleted"]),
   components: {
     QuestionCard
-  },
-  data() {
-    return {
-      startingScrollHeight: 864
-    };
-  },
-  created() {
-    // Will handle initial scroll down to first question when starting quiz
-    setTimeout(() => {
-      window.scrollTo({
-        top: this.startingScrollHeight,
-        behavior: "smooth"
-      });
-    }, 1000);
   }
+  // data() {
+  //   return {
+  //     startingScrollHeight: 864
+  //   };
+  // },
+  // created() {
+  //   // Will handle initial scroll down to first question when starting quiz
+  //   setTimeout(() => {
+  //     window.scrollTo({
+  //       top: this.startingScrollHeight,
+  //       behavior: "smooth"
+  //     });
+  //   }, 1000);
+  // }
 };
 </script>
 
