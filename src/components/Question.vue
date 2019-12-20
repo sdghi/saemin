@@ -1,7 +1,7 @@
 <template>
     <div>
       <div class="question" v-for="question in allQuestions" :key="question.id" ref="question">
-          <QuestionCard  :question="question" :allQuestions="allQuestions" :quizCompleted="quizCompleted" :scrollHeight="scrollHeight"/>
+          <QuestionCard  :question="question" :allQuestions="allQuestions" :quizCompleted="quizCompleted"/>
       </div>
     </div>
 </template>
@@ -12,10 +12,24 @@ import { mapGetters } from "vuex";
 
 export default {
   name: "Question",
-  computed: mapGetters(["allQuestions", "quizCompleted", "scrollHeight"]),
+  computed: mapGetters(["allQuestions", "quizCompleted"]),
   components: {
     QuestionCard
   }
+  // data() {
+  //   return {
+  //     startingScrollHeight: 864
+  //   };
+  // },
+  // created() {
+  //   // Will handle initial scroll down to first question when starting quiz
+  //   setTimeout(() => {
+  //     window.scrollTo({
+  //       top: this.startingScrollHeight,
+  //       behavior: "smooth"
+  //     });
+  //   }, 1000);
+  // }
 };
 </script>
 
