@@ -17,16 +17,26 @@
          
           
           <!-- this is the illustration -->
-          <div class="line"></div>
+          <IllustrationOne v-if="index % 2 !== 0 && index % 3 !== 0" />
+          <IllustrationTwo v-if="index % 2 === 0 && index % 3 !== 0" />
+          <IllustrationThree v-if="index % 3 === 0"/>
         </div>
 </template>
 
 <script>
 import "scroll-behavior-polyfill";
+import IllustrationOne from "./Transitions/IllustrationOne";
+import IllustrationTwo from "./Transitions/IllustrationTwo";
+import IllustrationThree from "./Transitions/IllustrationThree";
 
 export default {
   name: "QuestionCard",
   props: ["question", "allQuestions", "quizCompleted", "setScrollHeight"],
+  components: {
+    IllustrationOne,
+    IllustrationTwo,
+    IllustrationThree
+  },
   data() {
     return {
       currentAnswer: null,
@@ -99,21 +109,16 @@ export default {
 
 <style lang="scss" scoped>
 .question-card {
-  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  // top: -2%;
+  margin: 0 auto 0 auto;
   color: $black;
   // padding: 50px;
 
   h3 {
     font-size: 2rem;
   }
-}
-
-// delete this later it is the fake illustration
-.line {
-  height: 50vh;
-  width: 80px;
-  margin: 0 auto;
-  background: black;
 }
 
 // May break into another component later
