@@ -30,6 +30,7 @@ export default {
         behavior: "smooth"
       });
     }, 1000);
+    console.log("window", window);
   }
 };
 </script>
