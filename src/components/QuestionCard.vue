@@ -17,16 +17,20 @@
          
           
           <!-- this is the illustration -->
-          <div class="line"></div>
+          <IllustrationOne/>
         </div>
 </template>
 
 <script>
 import "scroll-behavior-polyfill";
+import IllustrationOne from "./Transitions/IllustrationOne";
 
 export default {
   name: "QuestionCard",
   props: ["question", "allQuestions", "quizCompleted", "setScrollHeight"],
+  components: {
+    IllustrationOne
+  },
   data() {
     return {
       currentAnswer: null,
@@ -99,7 +103,10 @@ export default {
 
 <style lang="scss" scoped>
 .question-card {
-  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  // top: -2%;
+  margin: 0 auto 0 auto;
   color: $black;
   // padding: 50px;
 

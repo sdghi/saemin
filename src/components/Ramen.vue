@@ -20,7 +20,7 @@ export default {
 
 <style lang="scss" scoped>
 .ramen {
-  height: 80vh;
+  height: 100vh;
   width: 100%;
   background: red;
 }
