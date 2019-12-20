@@ -699,8 +699,7 @@ const actions = {};
 
 const mutations = {
     setScrollHeight(state, { value }) {
-        state.scrollHeight += value;
-        console.log(state.scrollHeight)
+        state.scrollHeight = value
     },
     setQuestionsToAnswered(state, { selected, value }) {
         state.questions.map((question) => {
@@ -719,7 +718,6 @@ const mutations = {
         state.questions.map(question => {
             question.isAnswered = false;
         })
-        state.scrollHeight = 0;
     }
 };
 

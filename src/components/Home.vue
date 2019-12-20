@@ -1,14 +1,15 @@
 <template>
-  <div id="app-container" ref="appContainer">
-        <div class="home-title" :class="{'quiz-started': quizStarted}" v-if="!quizCompleted">
+    <div id="app-container">
+        <div class="home-title" :class="{'quiz-started': quizStarted}">
           <h1>Saemin</h1>
           <h1>Generator</h1>
         </div>
         <p v-if="!quizStarted" class="home-subtitle">What Would You Be As Ramen Noodle Soup?</p>
         <button v-if="!quizStarted" class="start-quiz-btn" @click="startQuiz">take quiz</button>
-      <Quiz v-if="!quizCompleted" :quizStarted="quizStarted"/>
-      <Results v-if="quizCompleted"/>
-  </div>
+        <Quiz :quizStarted="quizStarted"/>
+        <button @click="goBack" v-if="quizStarted && !quizCompleted" class="back-btn">go back</button>
+        <Results v-if="quizCompleted"/>
+    </div>
 </template>
 
 <script>
@@ -30,6 +31,14 @@ export default {
       this.$store.commit("setQuizStarted", {
         value: true
       });
+    },
+    goBack() {
+      // check to see if it's the first question before going back
+      window.scrollY - this.scrollHeight > 0 &&
+        window.scrollTo({
+          top: window.pageYOffset - this.scrollHeight,
+          behavior: "smooth"
+        });
     }
   },
   updated() {
