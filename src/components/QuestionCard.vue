@@ -22,6 +22,8 @@
 </template>
 
 <script>
+import "scroll-behavior-polyfill";
+
 export default {
   name: "QuestionCard",
   props: ["question", "allQuestions", "quizCompleted", "setScrollHeight"],
@@ -127,13 +129,13 @@ export default {
 .answers-container {
   user-select: none;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 20px;
   margin-top: 40px;
 
   .answer {
     width: 100%;
-    height: 100px;
+    height: 60px;
     background: $white;
     border: none;
     cursor: pointer;
@@ -160,6 +162,10 @@ export default {
   .answers-container {
     grid-template-columns: repeat(3, 1fr);
     max-height: fit-content;
+
+    .answer {
+      height: 150px;
+    }
   }
 }
 </style>

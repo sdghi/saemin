@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import "scroll-behavior-polyfill";
 import { mapGetters } from "vuex";
 import Quiz from "./Quiz";
 import Results from "./Results";

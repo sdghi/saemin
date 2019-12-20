@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import "scroll-behavior-polyfill";
+
 export default {
   name: "ScrollDownCta",
   props: ["scrollCtaHeight", "quizStarted"],
@@ -12,9 +14,6 @@ export default {
     // Will handle initial scroll down to first question when starting quiz
     this.quizStarted &&
       setTimeout(() => {
-        console.log("height", this.$refs.scrollCta.offsetHeight);
-        console.log("top", this.$refs.scrollCta.offsetTop);
-
         window.scrollTo({
           top:
             this.$refs.scrollCta.offsetHeight + this.$refs.scrollCta.offsetTop,
