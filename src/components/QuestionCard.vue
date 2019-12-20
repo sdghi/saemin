@@ -17,19 +17,25 @@
          
           
           <!-- this is the illustration -->
-          <IllustrationOne/>
+          <IllustrationOne v-if="index % 2 !== 0 && index % 3 !== 0" />
+          <IllustrationTwo v-if="index % 2 === 0 && index % 3 !== 0" />
+          <IllustrationThree v-if="index % 3 === 0"/>
         </div>
 </template>
 
 <script>
 import "scroll-behavior-polyfill";
 import IllustrationOne from "./Transitions/IllustrationOne";
+import IllustrationTwo from "./Transitions/IllustrationTwo";
+import IllustrationThree from "./Transitions/IllustrationThree";
 
 export default {
   name: "QuestionCard",
   props: ["question", "allQuestions", "quizCompleted", "setScrollHeight"],
   components: {
-    IllustrationOne
+    IllustrationOne,
+    IllustrationTwo,
+    IllustrationThree
   },
   data() {
     return {
