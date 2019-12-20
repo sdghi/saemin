@@ -13,6 +13,7 @@
                 :value="answer.value"
                 >{{answer.content}}</button>
             </div>
+            <button @click="goBack">back</button>
           </div>
          
           
@@ -24,20 +25,32 @@
 <script>
 export default {
   name: "QuestionCard",
-  props: ["question", "allQuestions", "quizCompleted", "setScrollHeight"],
+  props: [
+    "question",
+    "allQuestions",
+    "quizCompleted",
+    "setScrollHeight",
+    "scrollHeight"
+  ],
   data() {
     return {
       currentAnswer: null,
       isSelected: false,
-      index: this.allQuestions.indexOf(this.question),
-      nextScrollHeight: 0,
-      currentQuestionHeight: 0
+      index: this.allQuestions.indexOf(this.question)
     };
   },
   updated() {
     this.checkIfCompleted();
   },
   methods: {
+    goBack() {
+      const backDistance =
+        this.scrollHeight - this.$refs.quizQuestion.clientHeight;
+
+      console.log("back distance ", backDistance);
+
+      document.body.style.transform = `translateY(-${backDistance}px)`;
+    },
     setAnswer(e) {
       // sets current answer
       this.isSelected = true;
@@ -61,20 +74,24 @@ export default {
         value: this.$refs.quizQuestion.clientHeight
       });
 
-      // Scroll window from current window position to the start of the next question
       // If it's the last question wait for the results to load
-      if (this.index === this.allQuestions.length - 1) {
-        setTimeout(() => {
-          window.scrollTo({
-            top: window.pageYOffset + this.$refs.quizQuestion.clientHeight,
-            behavior: "smooth"
-          });
-        }, 300);
+      if (this.index !== this.allQuestions.length - 1) {
+        document.body.style.transform = `translateY(-${this.scrollHeight}px)`;
       } else {
+        this.$refs.quizQuestion.style.display = "none";
+        // document.body.style.opacity = 0;
+        document.body.style.transform = `translateY(0px)`;
         window.scrollTo({
-          top: window.pageYOffset + this.$refs.quizQuestion.clientHeight,
-          behavior: "smooth"
+          top: 0
         });
+
+        // setTimeout(() => {}, 200);
+
+        // setTimeout(() => {
+
+        //   document.body.style.transition = "all 0.5s ease";
+        //   document.body.style.opacity = 1;
+        // }, 2500);
       }
     },
     checkIfCompleted() {
@@ -100,6 +117,7 @@ export default {
   margin: 0 auto;
   color: $black;
   // padding: 50px;
+  transition: none;
 
   h3 {
     font-size: 2rem;

@@ -1,5 +1,6 @@
 <template>
-    <div class="results-container">
+<transition name="fade">
+    <div v-if="show" class="results-container">
       <div class="intant-ramen-info" v-if="topping.refId === 2">
         <h2 class="ramen-title">You are an instant ramen</h2>
         <p>stop being basic</p>
@@ -18,6 +19,8 @@
    
       <button class="restart-btn" @click="restartQuiz">restart</button>
     </div>
+</transition>
+
 </template>
 
 <script>
@@ -44,8 +47,12 @@ export default {
       brothAndNoodle: null,
       topping: null,
       bowl: null,
-      questionCardHeight: null
+      questionCardHeight: null,
+      show: false
     };
+  },
+  mounted() {
+    this.show = true;
   },
   created() {
     this.brothAndNoodle = this.getIngredientValue(
@@ -114,8 +121,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s ease;
+  transition-delay: 1.5s;
+  opacity: 1;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
 .restart-btn {
-  position: fixed;
+  position: absolute;
   bottom: 2.5%;
   right: 5%;
   padding: 20px 15px 15px 15px;
@@ -147,6 +166,8 @@ button {
 }
 
 .results-container {
+  width: 100%;
+  position: absolute;
   display: flex;
   flex-direction: column-reverse;
 }
@@ -158,6 +179,7 @@ button {
     grid-template-columns: 1fr 2fr;
     place-items: center;
     grid-gap: 20px;
+    height: 100vh;
   }
 
   .ramen-info {
