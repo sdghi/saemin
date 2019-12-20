@@ -128,6 +128,11 @@ export default {
   opacity: 1;
 }
 
+.fade-leave-active {
+  transition: none;
+  transition-delay: none;
+}
+
 .fade-enter,
 .fade-leave-to {
   opacity: 0;

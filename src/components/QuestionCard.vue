@@ -53,7 +53,6 @@ export default {
     },
     setAnswer(e) {
       // sets current answer
-      this.isSelected = true;
       this.currentAnswer = e.target.getAttribute("data-currentAnswer");
 
       // adds the ingredient if it doesn't exists || updates if index exists
@@ -78,21 +77,18 @@ export default {
       if (this.index !== this.allQuestions.length - 1) {
         document.body.style.transform = `translateY(-${this.scrollHeight}px)`;
       } else {
-        this.$refs.quizQuestion.style.display = "none";
-        // document.body.style.opacity = 0;
+        // this.$refs.quizQuestion.style.transition = "none";
+        this.$refs.quizQuestion.style.opacity = 0;
         document.body.style.transform = `translateY(0px)`;
-        window.scrollTo({
-          top: 0
-        });
-
-        // setTimeout(() => {}, 200);
 
         // setTimeout(() => {
-
-        //   document.body.style.transition = "all 0.5s ease";
-        //   document.body.style.opacity = 1;
-        // }, 2500);
+        //   window.scrollTo({
+        //     top: 0
+        //   });
+        // }, 1000);
       }
+
+      this.isSelected = true;
     },
     checkIfCompleted() {
       function checkAnswerStatus(element) {
