@@ -121,14 +121,6 @@ export default {
   }
 }
 
-// delete this later it is the fake illustration
-.line {
-  height: 50vh;
-  width: 80px;
-  margin: 0 auto;
-  background: black;
-}
-
 // May break into another component later
 .question-container {
   background: $card-color;
