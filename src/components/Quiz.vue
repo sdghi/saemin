@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
       <section v-if="quizStarted" id="quiz-section">
-        <ScrollDownCta/>
+        <ScrollDownCta :quizStarted="quizStarted"/>
         <Question/>
       </section>
   </transition>

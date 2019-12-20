@@ -7,6 +7,7 @@
         <p v-if="!quizStarted" class="home-subtitle">What Would You Be As Ramen Noodle Soup?</p>
         <button v-if="!quizStarted" class="start-quiz-btn" @click="startQuiz">take quiz</button>
         <Quiz :quizStarted="quizStarted"/>
+        <button @click="goBack" v-if="quizStarted && !quizCompleted" class="back-btn">go back</button>
         <Results v-if="quizCompleted"/>
     </div>
 </template>
@@ -18,12 +19,35 @@ import Results from "./Results";
 
 export default {
   name: "Home",
-  computed: mapGetters(["allQuestions", "quizCompleted", "quizStarted"]),
+  computed: mapGetters([
+    "allQuestions",
+    "quizCompleted",
+    "quizStarted",
+    "scrollHeight",
+    "setQuizStarted"
+  ]),
   methods: {
     startQuiz() {
       this.$store.commit("setQuizStarted", {
         value: true
       });
+    },
+    goBack() {
+      // check to see if it's the first question before going back
+      window.scrollY - this.scrollHeight > 0 &&
+        window.scrollTo({
+          top: window.pageYOffset - this.scrollHeight,
+          behavior: "smooth"
+        });
+    }
+  },
+  updated() {
+    // scroll jack until all question are answered
+    if (this.quizStarted) {
+      document.body.style.overflow = "hidden";
+    }
+    if (this.quizCompleted) {
+      document.body.style.overflow = "initial";
     }
   },
   components: {
@@ -34,9 +58,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/index.scss";
-@import "@/scss/partials/_variables";
-
 #app-container {
   position: absolute;
   top: 0;
@@ -72,6 +93,10 @@ export default {
   }
 }
 
+p {
+  line-height: 1.3;
+}
+
 .home-subtitle {
   text-align: center;
   font-size: 5vmin;
@@ -94,13 +119,20 @@ button {
   text-transform: uppercase;
 }
 
-.start-quiz-btn {
+.start-quiz-btn,
+.back-btn {
   margin-top: 50px;
   position: relative;
   left: calc(50% - 100px);
   height: 60px;
   width: 200px;
   font-size: 30px;
+}
+
+.back-btn {
+  position: fixed;
+  bottom: 5%;
+  left: 5%;
 }
 
 @media (min-width: $breakpoint-small) {

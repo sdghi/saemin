@@ -1,7 +1,7 @@
 <template>
     <div>
-      <div class="question" v-for="question in allQuestions" :key="question.id">
-          <QuestionCard :question="question" :allQuestions="allQuestions" :quizCompleted="quizCompleted" :startingScrollHeight="startingScrollHeight" :updatedScrollHeight="updatedScrollHeight"/>
+      <div class="question" v-for="question in allQuestions" :key="question.id" ref="question">
+          <QuestionCard  :question="question" :allQuestions="allQuestions" :quizCompleted="quizCompleted"/>
       </div>
     </div>
 </template>
@@ -21,23 +21,11 @@ export default {
       startingScrollHeight: 864,
       updatedScrollHeight: 0
     };
-  },
-  mounted() {
-    // Will handle initial scroll down to first question when starting quiz
-    setTimeout(() => {
-      window.scrollTo({
-        top: this.startingScrollHeight,
-        behavior: "smooth"
-      });
-    }, 1000);
-    console.log("window", window);
   }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/partials/_variables";
-
 .question {
   width: 100%;
   height: fit-content;

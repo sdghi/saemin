@@ -1,13 +1,20 @@
 <template>
     <div class="results-container">
-      <div class="ramen-info">
-        <h3 class="ramen-title">You are a {{brothAndNoodle.title}}</h3>
+      <div class="intant-ramen-info" v-if="topping.refId === 2">
+        <h2 class="ramen-title">You are an instant ramen</h2>
+        <p>stop being basic</p>
+      </div>
+      <div class="ramen-info" v-else-if="topping.refId !== 2">
+        <h2 class="ramen-title">You are {{topping.name}}, {{bowl.name}} and {{brothAndNoodle.name}}</h2>
         <div class="description-container">
+          <p>You are <strong>{{brothAndNoodle.title}}</strong>.</p>
           <p>{{brothAndNoodle.description}}</p>  
-          
+          <p><strong>Toppings:</strong> {{topping.title}}</p>
+          <p>{{topping.description}}</p>
+          <p><strong>Style:</strong> {{bowl.name}}</p>
         </div>
       </div>
-       <Ramen :brothAndNoodleRef="brothAndNoodle.refId"/>
+       <Ramen :brothAndNoodleRef="brothAndNoodle.refId" :toppingRef="topping.refId" :bowlRef="bowl.refId"/>
    
       <button class="restart-btn" @click="restartQuiz">restart</button>
     </div>
@@ -24,13 +31,20 @@ export default {
   },
   computed: mapGetters([
     "allIngredients",
-    "noodlesAndBroth",
     "allQuestions",
-    "allNoodlesAndBroth"
+    "noodlesAndBroth",
+    "allNoodlesAndBroth",
+    "toppings",
+    "allToppings",
+    "bowls",
+    "allBowls"
   ]),
   data() {
     return {
-      brothAndNoodle: null
+      brothAndNoodle: null,
+      topping: null,
+      bowl: null,
+      questionCardHeight: null
     };
   },
   created() {
@@ -38,6 +52,10 @@ export default {
       "brothAndNoodle",
       this.allNoodlesAndBroth
     );
+
+    this.topping = this.getIngredientValue("toppings", this.allToppings);
+
+    this.bowl = this.getIngredientValue("bowl", this.allBowls);
   },
   methods: {
     modeValue(array) {
@@ -96,8 +114,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/partials/_variables.scss";
-
 .restart-btn {
   position: fixed;
   bottom: 2.5%;
@@ -117,8 +133,6 @@ button {
 }
 
 .ramen-info {
-  overflow-y: auto;
-  height: 80vh;
   padding: 50px;
 }
 
