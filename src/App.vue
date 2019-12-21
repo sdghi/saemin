@@ -27,6 +27,7 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   padding: 0;
 }
