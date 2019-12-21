@@ -7,7 +7,6 @@
         <p v-if="!quizStarted" class="home-subtitle">What Would You Be As Ramen Noodle Soup?</p>
         <button v-if="!quizStarted" class="start-quiz-btn" @click="startQuiz">take quiz</button>
         <Quiz :quizStarted="quizStarted"/>
-        <button @click="goBack" v-if="quizStarted && !quizCompleted" class="back-btn">go back</button>
         <Results v-if="quizCompleted"/>
     </div>
 </template>
@@ -32,14 +31,6 @@ export default {
       this.$store.commit("setQuizStarted", {
         value: true
       });
-    },
-    goBack() {
-      // check to see if it's the first question before going back
-      window.scrollY - this.scrollHeight > 0 &&
-        window.scrollTo({
-          top: window.pageYOffset - this.scrollHeight,
-          behavior: "smooth"
-        });
     }
   },
   updated() {
@@ -120,27 +111,12 @@ button {
   text-transform: uppercase;
 }
 
-.start-quiz-btn,
-.back-btn {
+.start-quiz-btn {
   margin-top: 50px;
   position: relative;
   left: calc(50% - 100px);
   height: 60px;
   width: 200px;
   font-size: 30px;
-}
-
-.back-btn {
-  position: fixed;
-  bottom: 5%;
-  left: 5%;
-}
-
-@media (min-width: $breakpoint-small) {
-  .restart-btn {
-    right: 2.5%;
-    padding: 20px 25px 15px 25px;
-    font-size: 30px;
-  }
 }
 </style>

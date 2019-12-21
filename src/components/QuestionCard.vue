@@ -13,9 +13,9 @@
                 :value="answer.value"
                 >{{answer.content}}</button>
             </div>
+            <button @click="goBack" class="back-btn">go back</button>
           </div>
-         
-          
+                  
           <!-- this is the illustration -->
           <IllustrationOne v-if="index % 2 !== 0 && index % 3 !== 0" />
           <IllustrationTwo v-if="index % 2 === 0 && index % 3 !== 0" />
@@ -28,9 +28,11 @@ import "scroll-behavior-polyfill";
 import IllustrationOne from "./Transitions/IllustrationOne";
 import IllustrationTwo from "./Transitions/IllustrationTwo";
 import IllustrationThree from "./Transitions/IllustrationThree";
+import { mapGetters } from "vuex";
 
 export default {
   name: "QuestionCard",
+  computed: mapGetters(["scrollHeight"]),
   props: ["question", "allQuestions", "quizCompleted", "setScrollHeight"],
   components: {
     IllustrationOne,
@@ -50,6 +52,14 @@ export default {
     this.checkIfCompleted();
   },
   methods: {
+    goBack() {
+      // check to see if it's the first question before going back
+      window.scrollY - this.scrollHeight > 0 &&
+        window.scrollTo({
+          top: window.pageYOffset - this.scrollHeight,
+          behavior: "smooth"
+        });
+    },
     setAnswer(e) {
       // sets current answer
       this.isSelected = true;
@@ -125,10 +135,24 @@ export default {
 .question-container {
   background: $card-color;
   padding: 50px;
+  position: relative;
 
   h3 {
     margin: 0;
   }
+}
+
+.back-btn {
+  background: $black;
+  font-weight: 700;
+  border: none;
+  color: $white;
+  border-radius: 30px;
+  padding: 10px 15px;
+  font-family: $type-heading;
+  text-transform: uppercase;
+  margin-top: 30px;
+  font-size: 20px;
 }
 
 .answers-container {
