@@ -1,17 +1,18 @@
 <template>
     <div id="app-container">
-        <div class="home-title" :class="{'quiz-started': quizStarted}">
-          <h1>Saemin</h1>
-          <h1>Generator</h1>
+        <HeroIllustration/>
+        <div v-if="!quizStarted" class="home-content" >
+          <h1 class="home-title uppercase text-center">Generator</h1>
+          <p class="home-subtitle">What kind of saimin are you?</p>
+          <button class="start-quiz-btn" @click="startQuiz">take the quiz</button>
         </div>
-        <p v-if="!quizStarted" class="home-subtitle">What Would You Be As Ramen Noodle Soup?</p>
-        <button v-if="!quizStarted" class="start-quiz-btn" @click="startQuiz">take quiz</button>
         <Quiz :quizStarted="quizStarted"/>
         <Results v-if="quizCompleted"/>
     </div>
 </template>
 
 <script>
+import HeroIllustration from './HeroIllustration.vue';
 import "scroll-behavior-polyfill";
 import { mapGetters } from "vuex";
 import Quiz from "./Quiz";
@@ -44,7 +45,8 @@ export default {
   },
   components: {
     Quiz,
-    Results
+    Results,
+    HeroIllustration
   }
 };
 </script>
@@ -56,6 +58,10 @@ export default {
   left: 0;
   width: 100%;
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background: linear-gradient(
     180deg,
     $accent-color 0%,
@@ -64,15 +70,20 @@ export default {
   );
 }
 
+.home-content{
+  position: relative;
+  z-index: 10;
+  margin-top: 30vh;
+  text-align: center;
+}
+
 .home-title {
-  width: fit-content;
-  margin: 30vh auto 0 auto;
+  margin: 0;
   font-size: 6vmin;
   transition: all 0.3s $cubic-ease;
 
   h1 {
     font-family: $type-heading-italic;
-    margin: 0;
     position: relative;
 
     &:first-of-type {
@@ -92,31 +103,13 @@ p {
 .home-subtitle {
   text-align: center;
   font-size: 5vmin;
-  width: 80%;
-  margin: 2rem auto 0 auto;
 }
 
-.home-title.quiz-started {
-  transform: translateY(-15vh);
-}
-
-button {
-  background: $black;
-  font-weight: 700;
-  padding-top: 5px;
+.start-quiz-btn{
+  background: none;
   border: none;
-  color: $white;
-  border-radius: 30px;
-  font-family: $type-heading;
-  text-transform: uppercase;
+  font-size: 2rem;
+  margin-top: 1rem;
 }
 
-.start-quiz-btn {
-  margin-top: 50px;
-  position: relative;
-  left: calc(50% - 100px);
-  height: 60px;
-  width: 200px;
-  font-size: 30px;
-}
 </style>
