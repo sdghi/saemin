@@ -1,7 +1,7 @@
 <template>
-    <section ref="scrollCta">
-        first scroll section
-    </section>
+  <section ref="scrollCta">
+    first scroll section
+  </section>
 </template>
 
 <script>
@@ -19,7 +19,7 @@ export default {
             this.$refs.scrollCta.offsetHeight + this.$refs.scrollCta.offsetTop,
           behavior: "smooth"
         });
-      }, 1000);
+      });
   }
 };
 </script>
