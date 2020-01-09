@@ -1,26 +1,31 @@
 <template>
-    <div class="question-card" ref="quizQuestion">
-          
-          <div class="question-container">
-            <h3>{{question.content}}</h3>
-              <div class="answers-container">
-                <!-- the answer == 1 will be data.value and the value in the input will be pulled data.answerTitle -->
-                <button v-for="answer in question.answers" :key="answer.id" 
-                @click="setAnswer" 
-                :data-currentAnswer="answer.content"
-                class="answer" 
-                :class="{'selected': currentAnswer == answer.content}" 
-                :value="answer.value"
-                >{{answer.content}}</button>
-            </div>
-            <button @click="goBack" class="back-btn">go back</button>
-          </div>
-                  
-          <!-- this is the illustration -->
-          <IllustrationOne v-if="index % 2 !== 0 && index % 3 !== 0" />
-          <IllustrationTwo v-if="index % 2 === 0 && index % 3 !== 0" />
-          <IllustrationThree v-if="index % 3 === 0"/>
-        </div>
+  <div class="question-card" ref="quizQuestion">
+    <div class="question-container">
+      <h3>{{ question.content }}</h3>
+      <div class="answers-container">
+        <!-- the answer == 1 will be data.value and the value in the input will be pulled data.answerTitle -->
+        <button
+          v-for="answer in question.answers"
+          :key="answer.id"
+          @click="setAnswer"
+          :data-currentAnswer="answer.content"
+          class="answer"
+          :class="{ selected: currentAnswer == answer.content }"
+          :value="answer.value"
+        >
+          {{ answer.content }}
+        </button>
+      </div>
+      <button @click="goBack" class="back-btn">go back</button>
+    </div>
+
+    <!-- this is the illustration -->
+    <div ref="noodle">
+      <IllustrationOne v-if="index % 2 !== 0 && index % 3 !== 0" />
+      <IllustrationTwo v-if="index % 2 === 0 && index % 3 !== 0" />
+      <IllustrationThree v-if="index % 3 === 0" />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -82,6 +87,8 @@ export default {
       this.$store.commit("setScrollHeight", {
         value: this.$refs.quizQuestion.clientHeight
       });
+
+      console.log("noodle", this.$refs.noodle.clientHeight);
 
       // Scroll window from current window position to the start of the next question
       // If it's the last question wait for the results to load

@@ -1,23 +1,37 @@
 <template>
-    <div class="results-container">
-      <div class="intant-ramen-info" v-if="topping.refId === 2">
-        <h2 class="ramen-title">You are an instant ramen</h2>
-        <p>stop being basic</p>
-      </div>
-      <div class="ramen-info" v-else-if="topping.refId !== 2">
-        <h2 class="ramen-title">You are {{topping.name}}, {{bowl.name}} and {{brothAndNoodle.name}}</h2>
-        <div class="description-container">
-          <p>You are <strong>{{brothAndNoodle.title}}</strong>.</p>
-          <p>{{brothAndNoodle.description}}</p>  
-          <p><strong>Toppings:</strong> {{topping.title}}</p>
-          <p>{{topping.description}}</p>
-          <p><strong>Style:</strong> {{bowl.name}}</p>
-        </div>
-      </div>
-       <Ramen :brothAndNoodleRef="brothAndNoodle.refId" :toppingRef="topping.refId" :bowlRef="bowl.refId"/>
-   
-      <button class="restart-btn" @click="restartQuiz">restart</button>
+  <div class="results-container">
+    <div class="intant-ramen-info" v-if="topping.refId === 2">
+      <h2 class="ramen-title">You are an instant ramen</h2>
+      <p>
+        When presented with a choice, you reliably choose the easier. Immediate
+        gratification is routinely sought at the expense of basic health and
+        hygiene. Maybe try a little harder?
+      </p>
     </div>
+    <div class="ramen-info" v-else-if="topping.refId !== 2">
+      <h2 class="ramen-title">
+        You are {{ topping.name }}, {{ bowl.name }} and
+        {{ brothAndNoodle.name }}
+      </h2>
+      <div class="description-container">
+        <p>
+          You are <strong>{{ brothAndNoodle.title }}</strong
+          >.
+        </p>
+        <p>{{ brothAndNoodle.description }}</p>
+        <p><strong>Toppings:</strong> {{ topping.title }}</p>
+        <p>{{ topping.description }}</p>
+        <p><strong>Style:</strong> {{ bowl.name }}</p>
+      </div>
+    </div>
+    <Ramen
+      :brothAndNoodleRef="brothAndNoodle.refId"
+      :toppingRef="topping.refId"
+      :bowlRef="bowl.refId"
+    />
+
+    <button class="restart-btn" @click="restartQuiz">restart</button>
+  </div>
 </template>
 
 <script>
