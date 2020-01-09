@@ -1,18 +1,20 @@
 <template>
-    <div id="app-container">
-        <HeroIllustration/>
-        <div v-if="!quizStarted" class="home-content" >
-          <h1 class="home-title uppercase text-center">Generator</h1>
-          <p class="home-subtitle">What kind of saimin are you?</p>
-          <button class="start-quiz-btn" @click="startQuiz">take the quiz</button>
-        </div>
-        <Quiz :quizStarted="quizStarted"/>
-        <Results v-if="quizCompleted"/>
-    </div>
+  <div id="app-container">
+    <section id="home">
+      <HeroIllustration />
+      <div class="home-content">
+        <h1 class="home-title uppercase text-center">Generator</h1>
+        <p class="home-subtitle">What kind of saimin are you?</p>
+        <button class="start-quiz-btn" @click="startQuiz">take the quiz</button>
+      </div>
+    </section>
+    <Quiz :quizStarted="quizStarted" />
+    <Results v-if="quizCompleted" />
+  </div>
 </template>
 
 <script>
-import HeroIllustration from './HeroIllustration.vue';
+import HeroIllustration from "./HeroIllustration.vue";
 import "scroll-behavior-polyfill";
 import { mapGetters } from "vuex";
 import Quiz from "./Quiz";
@@ -58,10 +60,6 @@ export default {
   left: 0;
   width: 100%;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   background: linear-gradient(
     180deg,
     $accent-color 0%,
@@ -70,11 +68,20 @@ export default {
   );
 }
 
-.home-content{
+#home {
   position: relative;
-  z-index: 10;
-  margin-top: 30vh;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+
+  .home-content {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    text-align: center;
+  }
 }
 
 .home-title {
@@ -105,11 +112,10 @@ p {
   font-size: 5vmin;
 }
 
-.start-quiz-btn{
+.start-quiz-btn {
   background: none;
   border: none;
   font-size: 2rem;
   margin-top: 1rem;
 }
-
 </style>
