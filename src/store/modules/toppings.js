@@ -11,13 +11,13 @@ const state = {
         {
             name: 'troubled',
             refId: 1,
-            title: 'bok choy, shiitake mushroom, and a dark cloud',
+            title: 'wilted bok choy, feel-like-shiitake mushroom, and a dark cloud',
             description: '“I don’t think you can handle my darkness.”'
         },
         {
             name: 'disenchanted',
             refId: 2,
-            title: 'Instant ramen cup or square package',
+            title: 'fatty pork belly, an uninspired egg, and “meh”-noki mushrooms',
             description: '“Let’s not do anything today.”'
         },
         {
@@ -29,13 +29,13 @@ const state = {
         {
             name: 'easygoing',
             refId: 4,
-            title: 'butter, corn, a tempura chillin’, and green onions',
+            title: 'a piece of fishcake, a tempura chillin’, cool cucumber',
             description: '“Just cruisin’!”',
         },
         {
             name: 'angry',
             refId: 5,
-            title: 'hard boiled egg, hot chili peppers and Sriracha on the side',
+            title: 'an angry Hard boiled egg with Hot chili peppers, Gochujang, Mizuna and nori',
             description: '“Cross me and I might bite your head off.”'
         }
     ]
