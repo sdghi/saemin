@@ -15,7 +15,7 @@ const state = {
             answers: [
                 {
                     // This object references a single answer
-                    content: 'Tiger',
+                    content: 'Wolf',
                     value: 2
                 },
                 {
@@ -55,10 +55,6 @@ const state = {
                     value: 1
                 },
                 {
-                    content: "Kids’ perspectives",
-                    value: 3
-                },
-                {
                     content: "Exploring unknown territory",
                     value: 4
                 },
@@ -69,11 +65,15 @@ const state = {
                 {
                     content: 'Organizing things',
                     value: 2
+                },
+                {
+                    content: "Kids’ perspectives",
+                    value: 3
                 }
             ]
         },
         {
-            content: 'You’re Bored. Pick a smartphone activity / app',
+            content: 'You’re bored. Pick a smartphone activity / app:',
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
@@ -105,7 +105,7 @@ const state = {
             ]
         },
         {
-            content: 'Pick an experience',
+            content: 'Pick an experience:',
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
@@ -175,20 +175,16 @@ const state = {
             ingredientRef: 0,
             answers: [
                 {
-                    content: 'Harmony',
-                    value: 2
+                    content: 'Expression',
+                    value: 4
                 },
                 {
                     content: 'Efficiency',
                     value: 1
                 },
                 {
-                    content: 'Current Events',
-                    value: 0
-                },
-                {
-                    content: 'Expression',
-                    value: 4
+                    content: 'Harmony',
+                    value: 2
                 },
                 {
                     content: 'Open Mindedness',
@@ -197,6 +193,10 @@ const state = {
                 {
                     content: 'Peace',
                     value: 3
+                },
+                {
+                    content: 'Current Events',
+                    value: 0
                 }
             ]
         },
@@ -219,12 +219,12 @@ const state = {
                     value: 4
                 },
                 {
-                    content: 'The space',
-                    value: 5
-                },
-                {
                     content: 'The living room',
                     value: 0
+                },
+                {
+                    content: 'The space',
+                    value: 5
                 },
                 {
                     content: 'The pillars',
@@ -239,8 +239,8 @@ const state = {
             ingredientRef: 0,
             answers: [
                 {
-                    content: 'Catch up on some work',
-                    value: 2
+                    content: 'Make plans to go out',
+                    value: 0
                 },
                 {
                     content: 'Indulge in a hobby',
@@ -251,8 +251,8 @@ const state = {
                     value: 1
                 },
                 {
-                    content: 'Make plans to go out',
-                    value: 0
+                    content: 'Catch up on some work',
+                    value: 2
                 },
                 {
                     content: 'Spend time with the fam',
@@ -291,7 +291,7 @@ const state = {
                     value: 4
                 },
                 {
-                    content: 'Deangelo Jeremitrius Vickers',
+                    content: 'Robert California',
                     value: 2
                 }
             ]
@@ -307,24 +307,24 @@ const state = {
                     value: 1
                 },
                 {
-                    content: 'Rigid Rules & Institutions',
-                    value: 4
-                },
-                {
                     content: 'Too Much Pressure',
                     value: 3
                 },
                 {
-                    content: 'Unwanted Change',
-                    value: 0
+                    content: 'Rigid Rules & Institutions',
+                    value: 4
+                },
+                {
+                    content: 'Analysis Paralysis',
+                    value: 2
                 },
                 {
                     content: 'Micromanagement',
                     value: 5
                 },
                 {
-                    content: 'Analysis Paralysis',
-                    value: 2
+                    content: 'Unwanted Change',
+                    value: 0
                 }
             ]
         },
@@ -400,10 +400,6 @@ const state = {
             ingredientRef: 1,
             answers: [
                 {
-                    content: 'Cactus',
-                    value: 5
-                },
-                {
                     content: 'Turtle',
                     value: 4
                 },
@@ -422,6 +418,10 @@ const state = {
                 {
                     content: 'Squirrel',
                     value: 3
+                },
+                {
+                    content: 'Cactus',
+                    value: 5
                 }
             ]
         },
@@ -444,12 +444,12 @@ const state = {
                     value: 5
                 },
                 {
-                    content: 'Gray',
-                    value: 2
-                },
-                {
                     content: 'White',
                     value: 3
+                },
+                {
+                    content: 'Gray',
+                    value: 2
                 },
                 {
                     content: 'Green',
@@ -468,12 +468,12 @@ const state = {
                     value: 1
                 },
                 {
-                    content: '(╯°Д°）╯︵ ┻━┻',
-                    value: 5
-                },
-                {
                     content: '-_-',
                     value: 2
+                },
+                {
+                    content: '(╯°Д°）╯︵ ┻━┻',
+                    value: 5
                 },
                 {
                     content: '^____^',
@@ -501,16 +501,12 @@ const state = {
                     value: 3
                 },
                 {
-                    content: 'Vampire',
-                    value: 0
-                },
-                {
-                    content: 'Log',
-                    value: 2
-                },
-                {
                     content: 'Half fetal',
                     value: 1
+                },
+                {
+                    content: 'Vampire',
+                    value: 0
                 },
                 {
                     content: 'Starfish',
@@ -519,6 +515,10 @@ const state = {
                 {
                     content: 'Stomach',
                     value: 5
+                },
+                {
+                    content: 'Log',
+                    value: 2
                 }
             ]
         },
