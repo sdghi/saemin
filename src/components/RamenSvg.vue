@@ -11,19 +11,31 @@
   >
     <BowlOne v-if="bowl % 2 == 0" />
     <BowlTwo v-if="bowl % 2 !== 0" />
+    <BrothAndNoodleOne v-if="brothAndNoodle % 2 == 0" />
+    <BrothAndNoodleTwo v-if="brothAndNoodle % 2 !== 0" />
+    <ToppingOne v-if="topping % 2 == 0" />
+    <ToppingTwo v-if="topping % 2 !== 0" />
   </svg>
 </template>
 
 <script>
 import BowlOne from "./Bowls/BowlOne";
 import BowlTwo from "./Bowls/BowlTwo";
+import BrothAndNoodleOne from "./BrothAndNoodles/BrothAndNoodleOne";
+import BrothAndNoodleTwo from "./BrothAndNoodles/BrothAndNoodleTwo";
+import ToppingOne from "./Topping/ToppingOne";
+import ToppingTwo from "./Topping/ToppingTwo";
 
 export default {
   name: "RamenSvg",
   props: ["brothAndNoodle", "bowl", "topping"],
   components: {
     BowlOne,
-    BowlTwo
+    BowlTwo,
+    BrothAndNoodleOne,
+    BrothAndNoodleTwo,
+    ToppingOne,
+    ToppingTwo
   },
   mounted() {
     if (this.topping === 2) {
