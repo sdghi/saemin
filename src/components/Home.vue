@@ -21,9 +21,9 @@ export default {
     if (this.quizStarted) {
       document.body.style.overflow = "hidden";
     }
-    if (this.quizCompleted) {
-      document.body.style.overflow = "initial";
-    }
+    // if (this.quizCompleted) {
+    //   document.body.style.overflow = "initial";
+    // }
   },
   components: {
     Quiz,
