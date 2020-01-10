@@ -9,8 +9,8 @@
     style="enable-background:new 0 0 1442 966;"
     xml:space="preserve"
   >
-    <BowlOne v-if="bowl === 4" />
-    <BowlTwo v-if="bowl !== 4" />
+    <BowlOne v-if="bowl % 2 == 0" />
+    <BowlTwo v-if="bowl % 2 !== 0" />
   </svg>
 </template>
 

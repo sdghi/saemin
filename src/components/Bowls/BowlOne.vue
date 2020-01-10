@@ -186,4 +186,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.st0 {
+  fill: #70c7b2;
+}
+.st1 {
+  fill: #e72527;
+}
+.st2 {
+  fill: #f79e1e;
+}
+.st3 {
+  opacity: 0.3;
+}
+.st4 {
+  fill: #895b24;
+}
+.st5 {
+  fill: #efd6b4;
+}
+.st6 {
+  fill: #727579;
+}
+.st7 {
+  fill: none;
+}
+.st8 {
+  fill: #122d25;
+}
+.st9 {
+  fill: #ffffff;
+}
+.st10 {
+  fill: #89c544;
+}
 </style>
