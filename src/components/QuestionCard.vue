@@ -16,7 +16,9 @@
           {{ answer.content }}
         </button>
       </div>
-      <button @click="goBack" class="back-btn">go back</button>
+      <button @click="goBack" v-if="index !== 0" class="back-btn">
+        go back
+      </button>
     </div>
 
     <!-- this is the illustration -->
