@@ -165,7 +165,7 @@ button {
   flex-direction: column-reverse;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: $breakpoint-medium) {
   .results-container {
     padding: 0 20px;
     display: grid;

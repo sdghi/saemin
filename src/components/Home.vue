@@ -39,12 +39,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
+  overflow: hidden;
   min-height: 100vh;
-  background: linear-gradient(
-    180deg,
-    $accent-color 0%,
-    $accent-color 0%,
-    $background 100vh
-  );
 }
 </style>

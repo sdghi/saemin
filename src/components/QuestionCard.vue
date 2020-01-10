@@ -1,31 +1,41 @@
 <template>
-  <div class="question-card" ref="quizQuestion">
-    <div class="question-container">
-      <h3>{{ question.content }}</h3>
-      <div class="answers-container">
-        <!-- the answer == 1 will be data.value and the value in the input will be pulled data.answerTitle -->
-        <button
-          v-for="answer in question.answers"
-          :key="answer.id"
-          @click="setAnswer"
-          :data-currentAnswer="answer.content"
-          class="answer"
-          :class="{ selected: currentAnswer == answer.content }"
-          :value="answer.value"
-        >
-          {{ answer.content }}
+  <section
+    :class="{
+      even: index % 2 !== 0 && index % 3 !== 0,
+      odd: index % 2 === 0 && index % 3 !== 0,
+      third: index % 3 === 0
+    }"
+  >
+    <div class="question-card" ref="quizQuestion">
+      <div class="question-container">
+        <h3>{{ question.content }}</h3>
+        <div class="answers-container">
+          <!-- the answer == 1 will be data.value and the value in the input will be pulled data.answerTitle -->
+          <button
+            v-for="answer in question.answers"
+            :key="answer.id"
+            @click="setAnswer"
+            :data-currentAnswer="answer.content"
+            class="answer"
+            :class="{ selected: currentAnswer == answer.content }"
+            :value="answer.value"
+          >
+            {{ answer.content }}
+          </button>
+        </div>
+        <button @click="goBack" v-if="index !== 0" class="back-btn">
+          go back
         </button>
       </div>
-      <button @click="goBack" class="back-btn">go back</button>
-    </div>
 
-    <!-- this is the illustration -->
-    <div ref="noodle">
-      <IllustrationOne v-if="index % 2 !== 0 && index % 3 !== 0" />
-      <IllustrationTwo v-if="index % 2 === 0 && index % 3 !== 0" />
-      <IllustrationThree v-if="index % 3 === 0" />
+      <!-- this is the illustration -->
+      <div id="bottom-noodles" ref="noodle">
+        <IllustrationOne v-if="index % 2 !== 0 && index % 3 !== 0" />
+        <IllustrationTwo v-if="index % 2 === 0 && index % 3 !== 0" />
+        <IllustrationThree v-if="index % 3 === 0" />
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -125,13 +135,60 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+section {
+  height: fit-content;
+  width: 100%;
+  background: $maroon;
+  position: relative;
+  /* overflow: hidden; */
+
+  &:after {
+    content: "";
+    top: -20%;
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    background: $maroon;
+  }
+
+  &.third {
+    background: $maroon;
+    &::after {
+      background: $maroon;
+    }
+  }
+
+  &.even {
+    background: $gold;
+
+    &::after {
+      background: $gold;
+    }
+  }
+
+  &.odd {
+    background: $teal;
+
+    &::after {
+      background: $teal;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-small) {
+  section {
+    &::after {
+      height: 30%;
+      top: -30%;
+    }
+  }
+}
+
 .question-card {
   position: relative;
   z-index: 10;
-  // top: -2%;
   margin: 0 auto 0 auto;
   color: $black;
-  // padding: 50px;
 
   h3 {
     font-size: 2rem;
@@ -190,7 +247,21 @@ export default {
   }
 }
 
-@media (min-width: 768px) {
+#bottom-noodles {
+  display: grid;
+  place-items: center;
+  svg {
+    height: 100vh;
+  }
+}
+
+@media (min-width: $breakpoint-small) {
+  #bottom-noodles {
+    svg {
+      height: 200vh;
+    }
+  }
+
   .question-card {
     width: 60%;
   }
