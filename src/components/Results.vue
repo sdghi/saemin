@@ -1,27 +1,29 @@
 <template>
   <div class="results-container">
-    <div class="intant-ramen-info" v-if="topping.refId === 2">
-      <h2 class="ramen-title">You are an instant ramen</h2>
-      <p>
-        When presented with a choice, you reliably choose the easier. Immediate
-        gratification is routinely sought at the expense of basic health and
-        hygiene. Maybe try a little harder?
-      </p>
-    </div>
-    <div class="ramen-info" v-else-if="topping.refId !== 2">
-      <h2 class="ramen-title">
-        You are {{ topping.name }}, {{ bowl.name }} and
-        {{ brothAndNoodle.name }}
-      </h2>
-      <div class="description-container">
+    <div id="info-container">
+      <div class="intant-ramen-info" v-if="topping.refId === 2">
+        <h2 class="ramen-title">You are an instant ramen</h2>
         <p>
-          You are <strong>{{ brothAndNoodle.title }}</strong
-          >.
+          When presented with a choice, you reliably choose the easier.
+          Immediate gratification is routinely sought at the expense of basic
+          health and hygiene. Maybe try a little harder?
         </p>
-        <p>{{ brothAndNoodle.description }}</p>
-        <p><strong>Toppings:</strong> {{ topping.title }}</p>
-        <p>{{ topping.description }}</p>
-        <p><strong>Style:</strong> {{ bowl.name }}</p>
+      </div>
+      <div class="ramen-info" v-else-if="topping.refId !== 2">
+        <h2 class="ramen-title">
+          You are {{ topping.name }}, {{ bowl.name }} and
+          {{ brothAndNoodle.name }}
+        </h2>
+        <div class="description-container">
+          <p>
+            You are <strong>{{ brothAndNoodle.title }}</strong
+            >.
+          </p>
+          <p>{{ brothAndNoodle.description }}</p>
+          <p><strong>Toppings:</strong> {{ topping.title }}</p>
+          <p>{{ topping.description }}</p>
+          <p><strong>Style:</strong> {{ bowl.name }}</p>
+        </div>
       </div>
     </div>
     <Ramen
@@ -161,12 +163,25 @@ button {
 }
 
 .results-container {
+  height: 100vh;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column-reverse;
+
+  &::-webkit-scrollbar {
+    width: 0.5em;
+    background-color: $black;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $gold;
+    outline: 1;
+  }
 }
 
 @media (min-width: $breakpoint-medium) {
   .results-container {
+    overflow: hidden;
     padding: 0 20px;
     display: grid;
     grid-template-columns: 1fr 2fr;

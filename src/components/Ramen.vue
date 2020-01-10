@@ -31,7 +31,7 @@ export default {
   }
 }
 
-@media (min-width: $breakpoint-small) {
+@media (min-width: $breakpoint-medium) {
   .ramen {
     height: 100vh;
   }
