@@ -1,5 +1,6 @@
 <template>
   <section id="home">
+    <header>KUNG HEI FAT CHOY! HAPPY NEW YEAR!</header>
     <HeroIllustration />
     <div class="home-content">
       <h1 class="home-title uppercase text-center">Generator</h1>
@@ -35,6 +36,7 @@ export default {
   justify-content: center;
   flex-direction: column;
   height: 100vh;
+  background: $pink;
 
   .home-content {
     position: absolute;
@@ -42,6 +44,20 @@ export default {
     top: 50%;
     text-align: center;
   }
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 3vh 0;
+  font-size: 2rem;
+  line-height: 1.3;
+  font-weight: 700;
+  background: $white;
+  color: $pink;
 }
 
 .home-title {
