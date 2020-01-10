@@ -1,0 +1,53 @@
+<template>
+  <svg
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    viewBox="0 0 1442 966"
+    style="enable-background:new 0 0 1442 966;"
+    xml:space="preserve"
+  >
+    <BowlOne v-if="bowl % 2 == 0" />
+    <BowlTwo v-if="bowl % 2 !== 0" />
+    <BrothAndNoodleOne v-if="brothAndNoodle % 2 == 0" />
+    <BrothAndNoodleTwo v-if="brothAndNoodle % 2 !== 0" />
+    <ToppingOne v-if="topping % 2 == 0" />
+    <ToppingTwo v-if="topping % 2 !== 0" />
+  </svg>
+</template>
+
+<script>
+import BowlOne from "./Bowls/BowlOne";
+import BowlTwo from "./Bowls/BowlTwo";
+import BrothAndNoodleOne from "./BrothAndNoodles/BrothAndNoodleOne";
+import BrothAndNoodleTwo from "./BrothAndNoodles/BrothAndNoodleTwo";
+import ToppingOne from "./Topping/ToppingOne";
+import ToppingTwo from "./Topping/ToppingTwo";
+
+export default {
+  name: "RamenSvg",
+  props: ["brothAndNoodle", "bowl", "topping"],
+  components: {
+    BowlOne,
+    BowlTwo,
+    BrothAndNoodleOne,
+    BrothAndNoodleTwo,
+    ToppingOne,
+    ToppingTwo
+  },
+  mounted() {
+    if (this.topping === 2) {
+      console.log("instant ramen");
+    } else {
+      console.log(
+        `broth and noodle: ${this.brothAndNoodle}, topping: ${this.topping}, bowl: ${this.bowl}`
+      );
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+</style>

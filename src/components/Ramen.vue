@@ -1,27 +1,39 @@
 <template>
-    <div class="ramen">
-      <div class="instant-ramen" v-if="toppingRef === 2">
-        instant ramen
-      </div>
-      <div class="regular-ramen" v-else-if="toppingRef !== 2">
-        <h3>broth and noodle: {{brothAndNoodleRef}}</h3>
-        <h3>topping: {{toppingRef}}</h3>
-        <h3>bowl: {{bowlRef}}</h3>
-      </div>
-    </div>
+  <div class="ramen">
+    <RamenSvg
+      :brothAndNoodle="brothAndNoodleRef"
+      :topping="toppingRef"
+      :bowl="bowlRef"
+    />
+  </div>
 </template>
 
 <script>
+import RamenSvg from "./RamenSvg";
+
 export default {
   name: "Ramen",
-  props: ["brothAndNoodleRef", "toppingRef", "bowlRef"]
+  props: ["brothAndNoodleRef", "toppingRef", "bowlRef"],
+  components: {
+    RamenSvg
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .ramen {
-  height: 100vh;
+  height: fit-content;
   width: 100%;
-  background: red;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media (min-width: $breakpoint-small) {
+  .ramen {
+    height: 100vh;
+  }
 }
 </style>
