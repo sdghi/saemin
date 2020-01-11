@@ -1,6 +1,6 @@
 <template>
   <section ref="scrollCta">
-    first scroll section
+    first scroll section remove padding later
   </section>
 </template>
 
