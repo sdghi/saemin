@@ -5,9 +5,10 @@
       odd: index % 2 === 0 && index % 3 !== 0,
       third: index % 3 === 0
     }"
+    ref="questionSection"
   >
     <div class="question-card" ref="quizQuestion">
-      <div class="question-container">
+      <div class="question-container" ref="questionContainer">
         <h3>{{ question.content }}</h3>
         <div class="answers-container">
           <!-- the answer == 1 will be data.value and the value in the input will be pulled data.answerTitle -->
@@ -29,7 +30,7 @@
       </div>
 
       <!-- this is the illustration -->
-      <div id="bottom-noodles" ref="noodle">
+      <div id="bottom-noodles">
         <IllustrationOne v-if="index % 2 !== 0 && index % 3 !== 0" />
         <IllustrationTwo v-if="index % 2 === 0 && index % 3 !== 0" />
         <IllustrationThree v-if="index % 3 === 0" />
@@ -98,7 +99,8 @@ export default {
         value: this.$refs.quizQuestion.clientHeight
       });
 
-      console.log("noodle", this.$refs.noodle.clientHeight);
+      const centerHeight =
+        (window.innerHeight - this.$refs.questionContainer.clientHeight) / 2;
 
       // Scroll window from current window position to the start of the next question
       // If it's the last question wait for the results to load
@@ -109,6 +111,14 @@ export default {
             behavior: "smooth"
           });
         }, 300);
+      } else if (this.index === 0) {
+        window.scrollTo({
+          top:
+            window.pageYOffset +
+            this.$refs.quizQuestion.clientHeight -
+            centerHeight,
+          behavior: "smooth"
+        });
       } else {
         window.scrollTo({
           top: window.pageYOffset + this.$refs.quizQuestion.clientHeight,
@@ -191,7 +201,7 @@ section {
   color: $black;
 
   h3 {
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -222,7 +232,7 @@ section {
 .answers-container {
   user-select: none;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   margin-top: 40px;
 
@@ -233,7 +243,7 @@ section {
     border: none;
     cursor: pointer;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.7rem;
 
     &.selected {
       background: $black;
@@ -264,6 +274,10 @@ section {
 
   .question-card {
     width: 60%;
+
+    h3 {
+      font-size: 2rem;
+    }
   }
 
   .answers-container {
@@ -272,6 +286,7 @@ section {
 
     .answer {
       height: 150px;
+      font-size: 1.5rem;
     }
   }
 }
