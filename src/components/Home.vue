@@ -1,7 +1,7 @@
 <template>
   <div id="app-container">
-    <Landing />
-    <Quiz :quizStarted="quizStarted" />
+    <Landing v-if="!quizCompleted" />
+    <Quiz v-if="!quizCompleted" :quizStarted="quizStarted" />
     <Results v-if="quizCompleted" />
   </div>
 </template>
@@ -21,9 +21,9 @@ export default {
     if (this.quizStarted) {
       document.body.style.overflow = "hidden";
     }
-    // if (this.quizCompleted) {
-    //   document.body.style.overflow = "initial";
-    // }
+    if (this.quizCompleted) {
+      document.body.style.overflow = "initial";
+    }
   },
   components: {
     Quiz,
