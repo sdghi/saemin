@@ -11,7 +11,7 @@
       </div>
       <div class="ramen-info" v-else-if="topping.refId !== 2">
         <h2 class="ramen-title">
-          You are {{ topping.name }}, {{ bowl.name }} and
+          You are {{ topping.starter }} {{ topping.name }} {{ bowl.name }}
           {{ brothAndNoodle.name }}
         </h2>
         <div class="description-container">

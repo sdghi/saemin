@@ -243,7 +243,7 @@ section {
     border: none;
     cursor: pointer;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.7rem;
 
     &.selected {
       background: $black;
@@ -274,6 +274,10 @@ section {
 
   .question-card {
     width: 60%;
+
+    h3 {
+      font-size: 2rem;
+    }
   }
 
   .answers-container {
@@ -282,6 +286,7 @@ section {
 
     .answer {
       height: 150px;
+      font-size: 1.5rem;
     }
   }
 }
