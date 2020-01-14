@@ -201,7 +201,7 @@ section {
   color: $black;
 
   h3 {
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -232,7 +232,7 @@ section {
 .answers-container {
   user-select: none;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   margin-top: 40px;
 

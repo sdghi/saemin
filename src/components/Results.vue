@@ -163,24 +163,13 @@ button {
 }
 
 .results-container {
-  height: 100vh;
-  overflow-y: scroll;
   display: flex;
-  flex-direction: column-reverse;
-
-  &::-webkit-scrollbar {
-    width: 0.5em;
-    background-color: $black;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: $gold;
-    outline: 1;
-  }
+  flex-direction: column;
 }
 
 @media (min-width: $breakpoint-medium) {
   .results-container {
+    height: 100vh;
     overflow: hidden;
     padding: 0 20px;
     display: grid;
