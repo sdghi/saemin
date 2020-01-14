@@ -5,9 +5,10 @@
       odd: index % 2 === 0 && index % 3 !== 0,
       third: index % 3 === 0
     }"
+    ref="questionSection"
   >
     <div class="question-card" ref="quizQuestion">
-      <div class="question-container">
+      <div class="question-container" ref="questionContainer">
         <h3>{{ question.content }}</h3>
         <div class="answers-container">
           <!-- the answer == 1 will be data.value and the value in the input will be pulled data.answerTitle -->
@@ -29,7 +30,7 @@
       </div>
 
       <!-- this is the illustration -->
-      <div id="bottom-noodles" ref="noodle">
+      <div id="bottom-noodles">
         <IllustrationOne v-if="index % 2 !== 0 && index % 3 !== 0" />
         <IllustrationTwo v-if="index % 2 === 0 && index % 3 !== 0" />
         <IllustrationThree v-if="index % 3 === 0" />
@@ -98,7 +99,8 @@ export default {
         value: this.$refs.quizQuestion.clientHeight
       });
 
-      console.log("noodle", this.$refs.noodle.clientHeight);
+      const centerHeight =
+        (window.innerHeight - this.$refs.questionContainer.clientHeight) / 2;
 
       // Scroll window from current window position to the start of the next question
       // If it's the last question wait for the results to load
@@ -109,6 +111,14 @@ export default {
             behavior: "smooth"
           });
         }, 300);
+      } else if (this.index === 0) {
+        window.scrollTo({
+          top:
+            window.pageYOffset +
+            this.$refs.quizQuestion.clientHeight -
+            centerHeight,
+          behavior: "smooth"
+        });
       } else {
         window.scrollTo({
           top: window.pageYOffset + this.$refs.quizQuestion.clientHeight,
