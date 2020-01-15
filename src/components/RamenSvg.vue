@@ -10,14 +10,18 @@
     xml:space="preserve"
     :class="moodClass"
   >
+    <!-- BACKGROUND  -->
     <g id="BG" :class="moodClass">
       <rect y="-2" class="st4" width="1442" height="966" />
       <rect x="0" y="646.6" class="st27" width="1442" height="319.4" />
     </g>
+    <!-- BOWLS  -->
     <Hipster v-if="bowl === 0" :moodClass="moodClass" />
     <Classy :moodClass="moodClass" />
+    <!-- BROTH AND NOODLES  -->
     <BrothAndNoodleOne v-if="brothAndNoodle % 2 == 0" />
     <BrothAndNoodleTwo v-if="brothAndNoodle % 2 !== 0" />
+    <!-- TOPPINGS  -->
     <ToppingOne v-if="topping % 2 == 0" />
     <ToppingTwo v-if="topping % 2 !== 0" />
   </svg>
@@ -56,6 +60,7 @@ export default {
       );
     }
 
+    // Creates mood class for svgs based off of the topping value
     let toppingVal = this.topping;
 
     switch (toppingVal) {
