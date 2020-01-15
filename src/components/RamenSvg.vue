@@ -10,6 +10,10 @@
     xml:space="preserve"
     :class="moodClass"
   >
+    <g id="BG" :class="moodClass">
+      <rect y="-2" class="st4" width="1442" height="966" />
+      <rect x="0" y="646.6" class="st27" width="1442" height="319.4" />
+    </g>
     <Hipster :moodClass="moodClass" />
     <BrothAndNoodleOne v-if="brothAndNoodle % 2 == 0" />
     <BrothAndNoodleTwo v-if="brothAndNoodle % 2 !== 0" />
@@ -78,5 +82,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../scss/ramenMoods/anxious.scss";
+@import "../scss/ramenMoods/anxious";
+@import "../scss/ramenMoods/angry";
+@import "../scss/ramenMoods/disenchanted";
+@import "../scss/ramenMoods/troubled";
+@import "../scss/ramenMoods/optimistic";
+@import "../scss/ramenMoods/easygoing";
 </style>
