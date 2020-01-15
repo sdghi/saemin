@@ -1,5 +1,5 @@
 <template>
-  <g id="Bowl-Style" class="easygoing">
+  <g id="Bowl-Style" :class="moodClass">
     <g id="Bowl03">
       <path
         id="bowl03-fill"
@@ -76,7 +76,8 @@
 
 <script>
 export default {
-  name: "Hipster"
+  name: "Hipster",
+  props: ["moodClass"]
 };
 </script>
 

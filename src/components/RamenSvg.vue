@@ -8,9 +8,9 @@
     viewBox="0 0 1442 966"
     style="enable-background:new 0 0 1442 966;"
     xml:space="preserve"
-    class="anixous"
+    :class="moodClass"
   >
-    <Hipster />
+    <Hipster :moodClass="moodClass" />
     <BrothAndNoodleOne v-if="brothAndNoodle % 2 == 0" />
     <BrothAndNoodleTwo v-if="brothAndNoodle % 2 !== 0" />
     <ToppingOne v-if="topping % 2 == 0" />
@@ -35,6 +35,11 @@ export default {
     ToppingOne,
     ToppingTwo
   },
+  data() {
+    return {
+      moodClass: ""
+    };
+  },
   mounted() {
     if (this.topping === 2) {
       console.log("instant ramen");
@@ -42,6 +47,31 @@ export default {
       console.log(
         `broth and noodle: ${this.brothAndNoodle}, topping: ${this.topping}, bowl: ${this.bowl}`
       );
+    }
+
+    let toppingVal = this.topping;
+
+    switch (toppingVal) {
+      case 0:
+        this.moodClass = "optimistic";
+        break;
+      case 1:
+        this.moodClass = "troubled";
+        break;
+      case 2:
+        this.moodClass = "disenchanted";
+        break;
+      case 3:
+        this.moodClass = "anxious";
+        break;
+      case 4:
+        this.moodClass = "easygoing";
+        break;
+      case 5:
+        this.moodClass = "angry";
+        break;
+      default:
+        break;
     }
   }
 };
