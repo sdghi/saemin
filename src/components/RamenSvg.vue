@@ -8,9 +8,9 @@
     viewBox="0 0 1442 966"
     style="enable-background:new 0 0 1442 966;"
     xml:space="preserve"
+    class="anixous"
   >
-    <BowlOne v-if="bowl % 2 == 0" />
-    <BowlTwo v-if="bowl % 2 !== 0" />
+    <Hipster />
     <BrothAndNoodleOne v-if="brothAndNoodle % 2 == 0" />
     <BrothAndNoodleTwo v-if="brothAndNoodle % 2 !== 0" />
     <ToppingOne v-if="topping % 2 == 0" />
@@ -19,8 +19,7 @@
 </template>
 
 <script>
-import BowlOne from "./Bowls/BowlOne";
-import BowlTwo from "./Bowls/BowlTwo";
+import Hipster from "./Bowls/Hipster";
 import BrothAndNoodleOne from "./BrothAndNoodles/BrothAndNoodleOne";
 import BrothAndNoodleTwo from "./BrothAndNoodles/BrothAndNoodleTwo";
 import ToppingOne from "./Topping/ToppingOne";
@@ -30,8 +29,7 @@ export default {
   name: "RamenSvg",
   props: ["brothAndNoodle", "bowl", "topping"],
   components: {
-    BowlOne,
-    BowlTwo,
+    Hipster,
     BrothAndNoodleOne,
     BrothAndNoodleTwo,
     ToppingOne,
@@ -50,4 +48,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../scss/ramenMoods/anxious.scss";
 </style>
