@@ -4,7 +4,11 @@
       <h2>KUNG HEI FAT CHOY! HAPPY NEW YEAR!</h2>
       <BottomRidge />
     </header>
-    <HeroIllustration />
+    <div class="illustration-hero">
+      <HeroIllustration />
+      <SDGBug />
+    </div>
+
     <div class="home-content">
       <h1 class="home-title uppercase text-center">Generator</h1>
       <p class="home-subtitle">What kind of saimin are you?</p>
@@ -16,12 +20,14 @@
 <script>
 import HeroIllustration from "./HeroIllustration";
 import BottomRidge from "./BottomRidge";
+import SDGBug from "./SDGBug";
 
 export default {
   name: "Landing",
   components: {
     HeroIllustration,
-    BottomRidge
+    BottomRidge,
+    SDGBug
   },
   methods: {
     startQuiz() {
@@ -49,6 +55,10 @@ export default {
     top: 50%;
     text-align: center;
   }
+}
+
+.illustration-hero {
+  position: relative;
 }
 
 header {
