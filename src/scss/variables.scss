@@ -1,17 +1,18 @@
 @font-face {
-  font-family: "Din Next Pro Heavy";
-  // Has to be realtive path to the component
-  src: url("~@/fonts/DINNextLTPro-Heavy.otf");
+    font-family: "Din Next Pro Heavy";
+
+    // Has to be realtive path to the component
+    src: url("~@/fonts/DINNextLTPro-Heavy.otf");
 }
 
 @font-face {
-  font-family: "Din Next Pro Heavy Italic";
-  src: url("~@/fonts/DINNextLTPro-HeavyItalic.otf");
+    font-family: "Din Next Pro Heavy Italic";
+    src: url("~@/fonts/DINNextLTPro-HeavyItalic.otf");
 }
 
 @font-face {
-  font-family: "Source Sans Variable Roman";
-  src: url("~@/fonts/SourceSansVariable-Roman.otf");
+    font-family: "Source Sans Variable Roman";
+    src: url("~@/fonts/SourceSansVariable-Roman.otf");
 }
 
 // Fonts
@@ -25,10 +26,12 @@ $white: white;
 $black: black;
 $card-color: grey;
 $accent-color: lightgrey;
-$pink: pink;
-$maroon: maroon;
-$gold: gold;
-$teal: teal;
+$pink: #E92E55;
+$maroon: #5A110A;
+$gold: #876521;
+$teal: #2A5960;
+$textGold: #E1C487;
+$textBlue: #70C4BA;
 
 // Easings
 $cubic-ease: cubic-bezier(0.18, 0.61, 0.63, 0.975);
