@@ -36,6 +36,7 @@
         <IllustrationThree v-if="index % 3 === 0" />
       </div>
     </div>
+    <BottomRidge />
   </section>
 </template>
 
@@ -44,6 +45,7 @@ import "scroll-behavior-polyfill";
 import IllustrationOne from "./Transitions/IllustrationOne";
 import IllustrationTwo from "./Transitions/IllustrationTwo";
 import IllustrationThree from "./Transitions/IllustrationThree";
+import BottomRidge from "./BottomRidge";
 import { mapGetters } from "vuex";
 
 export default {
@@ -53,7 +55,8 @@ export default {
   components: {
     IllustrationOne,
     IllustrationTwo,
-    IllustrationThree
+    IllustrationThree,
+    BottomRidge
   },
   data() {
     return {
