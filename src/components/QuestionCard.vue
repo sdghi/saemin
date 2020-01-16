@@ -7,8 +7,11 @@
     }"
     ref="questionSection"
   >
+    <TopRidge :fillClass="currentColor" />
+
     <div class="question-card" ref="quizQuestion">
       <div class="question-container" ref="questionContainer">
+        <QuestionPattern />
         <h3>{{ question.content }}</h3>
         <div class="answers-container">
           <!-- the answer == 1 will be data.value and the value in the input will be pulled data.answerTitle -->
@@ -44,6 +47,9 @@ import "scroll-behavior-polyfill";
 import IllustrationOne from "./Transitions/IllustrationOne";
 import IllustrationTwo from "./Transitions/IllustrationTwo";
 import IllustrationThree from "./Transitions/IllustrationThree";
+import QuestionPattern from "./QuestionPattern";
+import TopRidge from "./TopRidge";
+// import BottomRidge from "./BottomRidge";
 import { mapGetters } from "vuex";
 
 export default {
@@ -53,7 +59,10 @@ export default {
   components: {
     IllustrationOne,
     IllustrationTwo,
-    IllustrationThree
+    IllustrationThree,
+    TopRidge,
+    QuestionPattern
+    // BottomRidge
   },
   data() {
     return {
@@ -61,7 +70,8 @@ export default {
       isSelected: false,
       index: this.allQuestions.indexOf(this.question),
       nextScrollHeight: 0,
-      currentQuestionHeight: 0
+      currentQuestionHeight: 0,
+      currentColor: "gold"
     };
   },
   updated() {
@@ -150,7 +160,6 @@ section {
   width: 100%;
   background: $maroon;
   position: relative;
-  /* overflow: hidden; */
 
   &:after {
     content: "";
@@ -207,11 +216,12 @@ section {
 
 // May break into another component later
 .question-container {
-  background: $card-color;
+  background: $pink;
   padding: 50px;
   position: relative;
 
   h3 {
+    color: $textGold;
     margin: 0;
   }
 }
@@ -244,6 +254,7 @@ section {
     cursor: pointer;
     text-align: center;
     font-size: 0.7rem;
+    color: $textBlue;
 
     &.selected {
       background: $black;
@@ -251,7 +262,7 @@ section {
     }
 
     &:hover {
-      background: $black;
+      background: $textGold;
       color: $white;
     }
   }
