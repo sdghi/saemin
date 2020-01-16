@@ -71,7 +71,7 @@ export default {
       index: this.allQuestions.indexOf(this.question),
       nextScrollHeight: 0,
       currentQuestionHeight: 0,
-      currentColor: "gold"
+      currentColor: ""
     };
   },
   updated() {
