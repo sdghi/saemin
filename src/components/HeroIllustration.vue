@@ -1,12 +1,5 @@
 <template>
-  <svg
-    version="1.1"
-    id="Layer_1"
-    x="0"
-    y="0"
-    viewBox="0 0 4247 2151"
-    xml:space="preserve"
-  >
+  <svg version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 4247 2151">
     <switch>
       <g>
         <path
@@ -26,12 +19,8 @@ export default {
 
 <style lang="scss" scoped>
 svg {
-  height: auto;
-  width: 80vw;
+  max-width: 80vw;
   height: 50vh;
-  position: absolute;
-  top: 25vh;
-  left: calc(50% - 40vw);
   z-index: 0;
 }
 
