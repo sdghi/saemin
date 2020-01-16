@@ -1,6 +1,9 @@
 <template>
   <section id="home">
-    <header>KUNG HEI FAT CHOY! HAPPY NEW YEAR!</header>
+    <header>
+      <h2>KUNG HEI FAT CHOY! HAPPY NEW YEAR!</h2>
+      <BottomRidge />
+    </header>
     <HeroIllustration />
     <div class="home-content">
       <h1 class="home-title uppercase text-center">Generator</h1>
@@ -12,11 +15,13 @@
 
 <script>
 import HeroIllustration from "./HeroIllustration";
+import BottomRidge from "./BottomRidge";
 
 export default {
   name: "Landing",
   components: {
-    HeroIllustration
+    HeroIllustration,
+    BottomRidge
   },
   methods: {
     startQuiz() {
@@ -51,13 +56,31 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  text-align: center;
-  padding: 3vh 0;
-  font-size: 2rem;
   line-height: 1.3;
   font-weight: 700;
-  background: $white;
+  border: 1px solid green;
   color: $pink;
+  background: $white;
+  text-align: center;
+  height: 10vh;
+  display: grid;
+  place-items: center;
+
+  h2 {
+    position: relative;
+    z-index: 7;
+    font-size: 2rem;
+    width: fit-content;
+    top: 10%;
+  }
+
+  svg {
+    position: absolute;
+    bottom: -10%;
+    left: 0;
+    z-index: 1;
+    min-width: 100%;
+  }
 }
 
 .home-title {
