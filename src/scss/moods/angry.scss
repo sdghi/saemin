@@ -1,0 +1,34 @@
+.angry {
+    // Reusable
+    $orange: #f79e1e;
+    $white: #ffe06b;
+    $background: #e76152;
+    $pink: #e57264;
+    $red: #e72527;
+    $salmon: #e57164;
+
+    // Global styles
+    $beige: $white;
+    $bowl: $white;
+    $pencil: $orange;
+    $table: $pink;
+    $chopsticks: $orange;
+    $yellow: $orange;
+    $noodle: $orange;
+    $noodle-shade: #ee7928;
+    $broth: $red;
+    $mushrooms: $orange;
+    $green: #71c4ba;
+    $light-green: lighten($green, 20%);
+    $cloud: $salmon;
+    $nori: $cloud;
+    $outlines: $red;
+    $decoration: $red;
+    $decoration2: $red;
+    $phone: $salmon;
+    $shoyu: $salmon;
+    $shoyu-level: lighten($shoyu, 20%);
+    $raindrops: $salmon;
+    $garnish: $salmon;
+    $sweat: $salmon;
+}
