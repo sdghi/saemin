@@ -90,10 +90,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../scss/ramenMoods/anxious";
-@import "../scss/ramenMoods/angry";
-@import "../scss/ramenMoods/disenchanted";
-@import "../scss/ramenMoods/troubled";
-@import "../scss/ramenMoods/optimistic";
-@import "../scss/ramenMoods/easygoing";
 </style>
