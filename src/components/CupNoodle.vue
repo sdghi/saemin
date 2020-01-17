@@ -8,12 +8,11 @@
     viewBox="0 0 1442 966"
     style="enable-background:new 0 0 1442 966;"
     xml:space="preserve"
-    :class="moodClass"
   >
     <!-- BACKGROUND  -->
-    <g id="BG" :class="moodClass">
-      <rect y="-2" class="st4" width="1442" height="966" />
-      <rect x="0" y="646.6" class="st27" width="1442" height="319.4" />
+    <g id="BG" >
+      <rect y="-2" class="background" width="1442" height="966" />
+      <rect x="0" y="646.6" class="table" width="1442" height="319.4" />
     </g>
     <g >
 	<g id="cupnoodle_1_">
@@ -349,12 +348,19 @@
 </script>
 
 <style lang="scss" scoped>
+    .background{
+        fill: #8a9992;
+    }
+
+    .table{
+        fill: #97a59f;
+    }
 
 	.st0{fill:#8A9992;}
 	.st1{fill:#97A59F;}
 	.st2{fill:#ADB5B0;}
 	.st3{fill:#73767B;}
-	.st4{fill:#1D2036;}
+    .st4{fill:#1D2036;}
 	.st5{fill:#D7DEDD;}
 	.st6{fill:none;}
 	.st7{fill:#A8AFAF;}

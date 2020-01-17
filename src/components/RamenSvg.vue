@@ -81,27 +81,29 @@ export default {
     // Creates mood class for svgs based off of the topping value
     let toppingVal = this.topping;
 
-    switch (toppingVal) {
-      case 0:
-        this.moodClass = "optimistic";
-        break;
-      case 1:
-        this.moodClass = "troubled";
-        break;
-      case 2:
-        this.moodClass = "disenchanted";
-        break;
-      case 3:
-        this.moodClass = "anxious";
-        break;
-      case 4:
-        this.moodClass = "easygoing";
-        break;
-      case 5:
-        this.moodClass = "angry";
-        break;
-      default:
-        break;
+    if (this.topping !== 2) {
+      switch (toppingVal) {
+        case 0:
+          this.moodClass = "optimistic";
+          break;
+        case 1:
+          this.moodClass = "troubled";
+          break;
+        case 2:
+          this.moodClass = "disenchanted";
+          break;
+        case 3:
+          this.moodClass = "anxious";
+          break;
+        case 4:
+          this.moodClass = "easygoing";
+          break;
+        case 5:
+          this.moodClass = "angry";
+          break;
+        default:
+          break;
+      }
     }
   }
 };
