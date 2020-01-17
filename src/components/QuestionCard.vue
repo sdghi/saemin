@@ -113,15 +113,7 @@ export default {
         (window.innerHeight - this.$refs.questionContainer.clientHeight) / 2;
 
       // Scroll window from current window position to the start of the next question
-      // If it's the last question wait for the results to load
-      if (this.index === this.allQuestions.length - 1) {
-        setTimeout(() => {
-          window.scrollTo({
-            top: window.pageYOffset + this.$refs.quizQuestion.clientHeight,
-            behavior: "smooth"
-          });
-        }, 300);
-      } else if (this.index === 0) {
+      if (this.index === 0) {
         window.scrollTo({
           top:
             window.pageYOffset +
