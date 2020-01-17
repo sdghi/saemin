@@ -26,37 +26,40 @@
     <BrothAndNoodleOne v-if="brothAndNoodle % 2 == 0" />
     <BrothAndNoodleTwo v-if="brothAndNoodle % 2 !== 0" />
     <!-- TOPPINGS  -->
-    <ToppingOne v-if="topping % 2 == 0" />
-    <ToppingTwo v-if="topping % 2 !== 0" />
+    <Angry />
   </svg>
 </template>
 
 <script>
+// Bowls
 import Hipster from "./Bowls/Hipster";
 import Classy from "./Bowls/Classy";
 import Cute from "./Bowls/Cute";
 import Eclectic from "./Bowls/Eclectic";
 import Glamorous from "./Bowls/Glamorous";
 import Local from "./Bowls/Local";
+// Toppings
+import Angry from "./Topping/Angry";
+// Broth and Noodle
 import BrothAndNoodleOne from "./BrothAndNoodles/BrothAndNoodleOne";
 import BrothAndNoodleTwo from "./BrothAndNoodles/BrothAndNoodleTwo";
-import ToppingOne from "./Topping/ToppingOne";
-import ToppingTwo from "./Topping/ToppingTwo";
 
 export default {
   name: "RamenSvg",
   props: ["brothAndNoodle", "bowl", "topping"],
   components: {
+    // Bowls
     Hipster,
     Classy,
     Cute,
     Eclectic,
     Glamorous,
     Local,
+    // Broth and Noodle
     BrothAndNoodleOne,
     BrothAndNoodleTwo,
-    ToppingOne,
-    ToppingTwo
+    // Toppings
+    Angry
   },
   data() {
     return {

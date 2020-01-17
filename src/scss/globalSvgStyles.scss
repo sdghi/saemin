@@ -1,3 +1,4 @@
+// Background
 .st4 {
     fill: $background;
 }
@@ -6,6 +7,7 @@
     fill: $table;
 }
 
+// Bowl
 #bowl05-decor,
 #bowl05-lines,
 #bowl03-lines,
@@ -28,7 +30,33 @@
     fill: $bowl;
 }
 
-
 #bowl04-flowers_3_ {
     fill: $decoration;
+}
+
+// Toppings
+.st39,
+.st44 {
+    fill: $outlines;
+}
+
+.st62 {
+    fill: $green;
+}
+
+.st78 {
+    fill: $beige;
+}
+
+#angry-egg-white_3_ {
+    fill: $bowl;
+}
+
+
+.st46 {
+    fill: $yellow;
+}
+
+.st14 {
+    fill: $nori;
 }
