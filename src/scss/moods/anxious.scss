@@ -1,0 +1,36 @@
+.anxious {
+    // Reusable
+    $beige: #ec008c;
+    $white: #ffffff;
+    $orange: #ffce07;
+    $pencil: #00aeef;
+    $broth: #000000;
+
+    // Global
+    $bowl: $white;
+    $free-spirit-broth: $bowl;
+    $background: $beige;
+    $table: $beige;
+    $red: $beige;
+    $pink: $beige;
+    $chopsticks: $orange;
+    $yellow: $orange;
+    $noodle: $orange;
+    $noodle-shade: #895b24;
+    $tsukemen-broth: $broth;
+    $plate: $broth;
+    $mushrooms: $beige;
+    $green: $pencil;
+    $light-green: lighten($green, 20%);
+    $cloud: $pencil;
+    $nori: $pencil;
+    $outlines: $broth;
+    $decoration: $beige;
+    $decoration2: $broth;
+    $phone: $pencil;
+    $shoyu: $pencil;
+    $shoyu-level: lighten($shoyu, 20%);
+    $raindrops: $pencil;
+    $garnish: $pencil;
+    $sweat: $pencil;
+}
