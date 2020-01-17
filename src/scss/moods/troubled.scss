@@ -1,0 +1,36 @@
+.troubled {
+    // Reusable
+    $red: #9376b2;
+    $pink: #9da7b1;
+    $pencil: #396f91;
+
+    // Global
+    $white: #ffffff;
+    $beige: #baaaA4;
+    $bowl: #294666;
+    $free-spirit-broth: $bowl;
+    $background: #6e8da0;
+    $table: #829bad;
+    $orange: $beige;
+    $chopsticks: $pink;
+    $yellow: $red;
+    $noodle: #d7dEdd;
+    $noodle-shade: #a8afaf;
+    $broth: #296f91;
+    $tsukemen-broth: $broth;
+    $plate: $broth;
+    $mushrooms: $broth;
+    $green: $red;
+    $light-green: lighten($green, 20%);
+    $cloud: #51426b;
+    $nori: #2A2d3f;
+    $outlines: #171b2b;
+    $decoration: $outlines;
+    $decoration2: $outlines;
+    $phone: $pencil;
+    $shoyu: $pencil;
+    $shoyu-level: lighten($shoyu, 20%);
+    $raindrops: $pencil;
+    $garnish: $pencil;
+    $sweat: $pencil;
+}
