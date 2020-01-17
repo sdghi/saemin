@@ -19,6 +19,7 @@
     <Hipster v-if="bowl === 0" />
     <Classy v-if="bowl === 1" />
     <Cute v-if="bowl === 4" />
+    <Glamorous />
     <Eclectic />
     <!-- BROTH AND NOODLES  -->
     <BrothAndNoodleOne v-if="brothAndNoodle % 2 == 0" />
@@ -34,6 +35,7 @@ import Hipster from "./Bowls/Hipster";
 import Classy from "./Bowls/Classy";
 import Cute from "./Bowls/Cute";
 import Eclectic from "./Bowls/Eclectic";
+import Glamorous from "./Bowls/Glamorous";
 import BrothAndNoodleOne from "./BrothAndNoodles/BrothAndNoodleOne";
 import BrothAndNoodleTwo from "./BrothAndNoodles/BrothAndNoodleTwo";
 import ToppingOne from "./Topping/ToppingOne";
@@ -47,6 +49,7 @@ export default {
     Classy,
     Cute,
     Eclectic,
+    Glamorous,
     BrothAndNoodleOne,
     BrothAndNoodleTwo,
     ToppingOne,
