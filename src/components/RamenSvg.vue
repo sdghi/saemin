@@ -26,7 +26,8 @@
     <BrothAndNoodleOne v-if="brothAndNoodle % 2 == 0" />
     <BrothAndNoodleTwo v-if="brothAndNoodle % 2 !== 0" />
     <!-- TOPPINGS  -->
-    <Angry />
+    <Angry v-if="topping === 5" />
+    <Anxious />
   </svg>
 </template>
 
@@ -40,6 +41,7 @@ import Glamorous from "./Bowls/Glamorous";
 import Local from "./Bowls/Local";
 // Toppings
 import Angry from "./Topping/Angry";
+import Anxious from "./Topping/Anxious";
 // Broth and Noodle
 import BrothAndNoodleOne from "./BrothAndNoodles/BrothAndNoodleOne";
 import BrothAndNoodleTwo from "./BrothAndNoodles/BrothAndNoodleTwo";
@@ -59,7 +61,8 @@ export default {
     BrothAndNoodleOne,
     BrothAndNoodleTwo,
     // Toppings
-    Angry
+    Angry,
+    Anxious
   },
   data() {
     return {
