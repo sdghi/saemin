@@ -8,11 +8,18 @@
 
 #bowl05-decor,
 #bowl05-lines,
-#bowl03-lines {
+#bowl03-lines,
+#bowl04-lines_3_ {
     fill: $outlines;
 }
 
 #bowl05-fill,
-#bowl03-fill {
+#bowl03-fill,
+#bowl04-fill_3_ {
     fill: $bowl;
+}
+
+
+#bowl04-flowers_3_ {
+    fill: $decoration;
 }

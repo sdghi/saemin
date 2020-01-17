@@ -16,8 +16,9 @@
       <rect x="0" y="646.6" class="st27" width="1442" height="319.4" />
     </g>
     <!-- BOWLS  -->
-    <Hipster v-if="bowl === 0" :moodClass="moodClass" />
-    <Classy :moodClass="moodClass" />
+    <Hipster v-if="bowl === 0" />
+    <Classy v-if="bowl === 1" />
+    <Cute />
     <!-- BROTH AND NOODLES  -->
     <BrothAndNoodleOne v-if="brothAndNoodle % 2 == 0" />
     <BrothAndNoodleTwo v-if="brothAndNoodle % 2 !== 0" />
@@ -30,6 +31,7 @@
 <script>
 import Hipster from "./Bowls/Hipster";
 import Classy from "./Bowls/Classy";
+import Cute from "./Bowls/Cute";
 import BrothAndNoodleOne from "./BrothAndNoodles/BrothAndNoodleOne";
 import BrothAndNoodleTwo from "./BrothAndNoodles/BrothAndNoodleTwo";
 import ToppingOne from "./Topping/ToppingOne";
@@ -41,6 +43,7 @@ export default {
   components: {
     Hipster,
     Classy,
+    Cute,
     BrothAndNoodleOne,
     BrothAndNoodleTwo,
     ToppingOne,

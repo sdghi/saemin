@@ -1,5 +1,5 @@
 <template>
-  <g id="Bowl-Style" :class="moodClass">
+  <g id="Bowl-Style">
     <g id="Bowl03">
       <path
         id="bowl03-fill"
@@ -76,16 +76,9 @@
 
 <script>
 export default {
-  name: "Hipster",
-  props: ["moodClass"]
+  name: "Hipster"
 };
 </script>
 
 <style lang="scss">
-@import "@/scss/moods/angry";
-@import "@/scss/moods/anxious";
-@import "@/scss/moods/disenchanted";
-@import "@/scss/moods/easygoing";
-@import "@/scss/moods/optimistic";
-@import "@/scss/moods/troubled";
 </style>
