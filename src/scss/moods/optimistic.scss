@@ -1,0 +1,35 @@
+.optimistic {
+    // Reusable
+    $white: #ffffff;
+    $beige: #ece1cc;
+    $yellow: #ffce07;
+    $red: #f68b1f;
+    $pink: #f27171;
+    // Global
+    $bowl: $beige;
+    $free-spirit-broth: $beige;
+    $pencil: $yellow;
+    $background: #e9a041;
+    $table: #fbed51;
+    $orange: $red;
+    $chopsticks: $red;
+    $noodle: $yellow;
+    $noodle-shade: #faa635;
+    $broth: $red;
+    $tsukemen-broth: $red;
+    $plate: $red;
+    $mushrooms: #caab82;
+    $green: #94bf3d;
+    $light-green: lighten($green, 20%);
+    $cloud: #4db5a5;
+    $nori: $cloud;
+    $outlines: #753624;
+    $decoration: $pink;
+    $decoration2: $pink;
+    $phone: $pink;
+    $shoyu: $pink;
+    $shoyu-level: lighten($pink, 20%);
+    $raindrops: $pink;
+    $garnish: $pink;
+    $sweat: $pink;
+}
