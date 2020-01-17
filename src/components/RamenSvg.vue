@@ -90,4 +90,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../scss/moods/angry";
+@import "../scss/moods/anxious";
+@import "../scss/moods/disenchanted";
+@import "../scss/moods/easygoing";
+@import "../scss/moods/optimistic";
+@import "../scss/moods/troubled";
 </style>

@@ -1,4 +1,3 @@
-
 const state = {
     quizStarted: false,
     quizCompleted: false,
@@ -12,8 +11,7 @@ const state = {
             illustrationRef: 0,
             // ingredient 0 will be noodles and broth together
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     // This object references a single answer
                     content: 'Wolf',
                     value: 2
@@ -45,8 +43,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     content: "People's stories",
                     value: 0
                 },
@@ -77,8 +74,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     content: 'Instagram',
                     value: 0
                 },
@@ -109,8 +105,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     content: 'Concert',
                     value: 0
                 },
@@ -141,8 +136,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     content: "Devil’s Advocate",
                     value: 1
                 },
@@ -173,8 +167,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     content: 'Expression',
                     value: 4
                 },
@@ -205,8 +198,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     content: 'The roof',
                     value: 3
                 },
@@ -237,8 +229,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     content: 'Make plans to go out',
                     value: 0
                 },
@@ -269,8 +260,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     content: 'Michael Scott',
                     value: 5
                 },
@@ -301,8 +291,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     content: 'Emotions',
                     value: 1
                 },
@@ -333,8 +322,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     content: 'Armor',
                     value: 3
                 },
@@ -366,8 +354,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 1,
             ingredientRef: 1,
-            answers: [
-                {
+            answers: [{
                     content: 'Meh',
                     value: 2
                 },
@@ -398,8 +385,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 1,
             ingredientRef: 1,
-            answers: [
-                {
+            answers: [{
                     content: 'Turtle',
                     value: 4
                 },
@@ -430,8 +416,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 1,
             ingredientRef: 1,
-            answers: [
-                {
+            answers: [{
                     content: 'Yellow',
                     value: 0
                 },
@@ -462,8 +447,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 1,
             ingredientRef: 1,
-            answers: [
-                {
+            answers: [{
                     content: 'T_T',
                     value: 1
                 },
@@ -495,8 +479,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 1,
             ingredientRef: 1,
-            answers: [
-                {
+            answers: [{
                     content: 'Full Fetal',
                     value: 3
                 },
@@ -528,8 +511,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 2,
             ingredientRef: 2,
-            answers: [
-                {
+            answers: [{
                     content: 'Museum',
                     value: 1
                 },
@@ -560,8 +542,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 2,
             ingredientRef: 2,
-            answers: [
-                {
+            answers: [{
                     content: 'Ruby Red',
                     value: 5
                 },
@@ -592,8 +573,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 2,
             ingredientRef: 2,
-            answers: [
-                {
+            answers: [{
                     content: 'Ross',
                     value: 1
                 },
@@ -624,8 +604,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 2,
             ingredientRef: 2,
-            answers: [
-                {
+            answers: [{
                     content: 'Sponge',
                     value: 3
                 },
@@ -656,8 +635,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 2,
             ingredientRef: 2,
-            answers: [
-                {
+            answers: [{
                     content: 'Kikkoman Shoyu',
                     value: 2
                 },
@@ -698,20 +676,29 @@ const getters = {
 const actions = {};
 
 const mutations = {
-    setScrollHeight(state, { value }) {
+    setScrollHeight(state, {
+        value
+    }) {
         state.scrollHeight = value
     },
-    setQuestionsToAnswered(state, { selected, value }) {
+    setQuestionsToAnswered(state, {
+        selected,
+        value
+    }) {
         state.questions.map((question) => {
             if (question.content == selected) {
                 question.isAnswered = value;
             }
         })
     },
-    setQuizStatus(state, { result }) {
+    setQuizStatus(state, {
+        result
+    }) {
         state.quizCompleted = result;
     },
-    setQuizStarted(state, { value }) {
+    setQuizStarted(state, {
+        value
+    }) {
         state.quizStarted = value;
     },
     resetAllAnsweredStatus(state) {

@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/* #top-ridge {
+#top-ridge {
   position: absolute;
   top: -31%;
   left: 0;
@@ -35,7 +35,7 @@ export default {
   #top-ridge {
     top: -31%;
   }
-} */
+}
 
 .maroon {
   .cls-1 {
