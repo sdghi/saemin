@@ -1,5 +1,10 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 112.67" id="top-ridge" :class="fillClass">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 2000 112.67"
+    id="top-ridge"
+    :class="fillClass"
+  >
     <title>top-ridge</title>
     <g id="Layer_2" data-name="Layer 2">
       <g id="Layer_1-2" data-name="Layer 1">
@@ -15,7 +20,7 @@
 <script>
 export default {
   name: "TopRidge",
-   props: ["fillClass"]
+  props: ["fillClass"]
 };
 </script>
 

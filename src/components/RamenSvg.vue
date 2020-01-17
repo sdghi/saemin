@@ -16,8 +16,12 @@
       <rect x="0" y="646.6" class="st27" width="1442" height="319.4" />
     </g>
     <!-- BOWLS  -->
-    <Hipster v-if="bowl === 0" :moodClass="moodClass" />
-    <Classy :moodClass="moodClass" />
+    <Hipster v-if="bowl === 0" />
+    <Classy v-if="bowl === 1" />
+    <Local v-if="bowl === 2" />
+    <Eclectic v-if="bowl === 3" />
+    <Cute v-if="bowl === 4" />
+    <Glamorous v-if="bowl === 5" />
     <!-- BROTH AND NOODLES  -->
     <BrothAndNoodleOne v-if="brothAndNoodle % 2 == 0" />
     <BrothAndNoodleTwo v-if="brothAndNoodle % 2 !== 0" />
@@ -30,6 +34,10 @@
 <script>
 import Hipster from "./Bowls/Hipster";
 import Classy from "./Bowls/Classy";
+import Cute from "./Bowls/Cute";
+import Eclectic from "./Bowls/Eclectic";
+import Glamorous from "./Bowls/Glamorous";
+import Local from "./Bowls/Local";
 import BrothAndNoodleOne from "./BrothAndNoodles/BrothAndNoodleOne";
 import BrothAndNoodleTwo from "./BrothAndNoodles/BrothAndNoodleTwo";
 import ToppingOne from "./Topping/ToppingOne";
@@ -41,6 +49,10 @@ export default {
   components: {
     Hipster,
     Classy,
+    Cute,
+    Eclectic,
+    Glamorous,
+    Local,
     BrothAndNoodleOne,
     BrothAndNoodleTwo,
     ToppingOne,
@@ -89,11 +101,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "../scss/ramenMoods/anxious";
-@import "../scss/ramenMoods/angry";
-@import "../scss/ramenMoods/disenchanted";
-@import "../scss/ramenMoods/troubled";
-@import "../scss/ramenMoods/optimistic";
-@import "../scss/ramenMoods/easygoing";
+<style lang="scss">
+@import "../scss/moods/angry";
+@import "../scss/moods/anxious";
+@import "../scss/moods/disenchanted";
+@import "../scss/moods/easygoing";
+@import "../scss/moods/optimistic";
+@import "../scss/moods/troubled";
 </style>

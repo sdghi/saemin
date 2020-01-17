@@ -1,5 +1,5 @@
 <template>
-  <g id="Bowl-Style" :class="moodClass">
+  <g id="Bowl-Style">
     <g id="Bowl03">
       <path
         id="bowl03-fill"
@@ -76,16 +76,9 @@
 
 <script>
 export default {
-  name: "Hipster",
-  props: ["moodClass"]
+  name: "Hipster"
 };
 </script>
 
-<style lang="scss" scoped>
-@import "../../scss/ramenMoods/anxious";
-@import "../../scss/ramenMoods/angry";
-@import "../../scss/ramenMoods/disenchanted";
-@import "../../scss/ramenMoods/troubled";
-@import "../../scss/ramenMoods/optimistic";
-@import "../../scss/ramenMoods/easygoing";
+<style lang="scss">
 </style>
