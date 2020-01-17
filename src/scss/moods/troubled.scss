@@ -34,11 +34,5 @@
     $garnish: $pencil;
     $sweat: $pencil;
 
-    .st4 {
-        fill: $background;
-    }
-
-    .st27 {
-        fill: $table;
-    }
+    @import '../globalSvgStyles.scss';
 }

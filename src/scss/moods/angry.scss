@@ -35,11 +35,5 @@
     $garnish: $salmon;
     $sweat: $salmon;
 
-    .st4 {
-        fill: $background;
-    }
-
-    .st27 {
-        fill: $table;
-    }
+    @import '../globalSvgStyles.scss';
 }

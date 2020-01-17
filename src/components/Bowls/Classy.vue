@@ -91,5 +91,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
+@import "@/scss/moods/angry";
+@import "@/scss/moods/anxious";
+@import "@/scss/moods/disenchanted";
+@import "@/scss/moods/easygoing";
+@import "@/scss/moods/optimistic";
+@import "@/scss/moods/troubled";
 </style>

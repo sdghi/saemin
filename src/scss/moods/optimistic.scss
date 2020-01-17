@@ -34,11 +34,5 @@
     $sweat: $pink;
 
 
-    .st4 {
-        fill: $background;
-    }
-
-    .st27 {
-        fill: $table;
-    }
+    @import '../globalSvgStyles.scss';
 }

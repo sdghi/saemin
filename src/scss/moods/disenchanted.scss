@@ -34,11 +34,5 @@
     $garnish: $phone;
     $sweat: $phone;
 
-    .st4 {
-        fill: $background;
-    }
-
-    .st27 {
-        fill: $table;
-    }
+    @import '../globalSvgStyles.scss';
 }
