@@ -7,7 +7,13 @@
     }"
     ref="questionSection"
   >
-    <TopRidge :fillClass="currentColor" />
+    <TopRidge
+      :fillClass="{
+        even: index % 2 !== 0 && index % 3 !== 0,
+        odd: index % 2 === 0 && index % 3 !== 0,
+        third: index % 3 === 0
+      }"
+    />
 
     <div class="question-card" ref="quizQuestion">
       <div class="question-container" ref="questionContainer">
@@ -49,7 +55,6 @@ import IllustrationTwo from "./Transitions/IllustrationTwo";
 import IllustrationThree from "./Transitions/IllustrationThree";
 import QuestionPattern from "./QuestionPattern";
 import TopRidge from "./TopRidge";
-// import BottomRidge from "./BottomRidge";
 import { mapGetters } from "vuex";
 
 export default {
@@ -62,7 +67,6 @@ export default {
     IllustrationThree,
     TopRidge,
     QuestionPattern
-    // BottomRidge
   },
   data() {
     return {
@@ -186,6 +190,18 @@ section {
   }
 }
 
+svg.even {
+  fill: $gold;
+}
+
+svg.odd {
+  fill: $teal;
+}
+
+svg.third {
+  fill: $maroon;
+}
+
 @media (min-width: $breakpoint-small) {
   section {
     &::after {
@@ -276,7 +292,7 @@ section {
   }
 
   .question-card {
-    width: 60%;
+    width: 80%;
 
     h3 {
       font-size: 2rem;
@@ -291,6 +307,12 @@ section {
       height: 150px;
       font-size: 1.5rem;
     }
+  }
+}
+
+@media (min-width: $breakpoint-medium) {
+  .question-card {
+    width: 60%;
   }
 }
 </style>
