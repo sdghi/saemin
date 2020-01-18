@@ -151,6 +151,7 @@ export default {
 
 <style lang="scss" scoped>
 svg {
+  max-height: 500px;
   width: 80%;
 }
 

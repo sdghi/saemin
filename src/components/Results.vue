@@ -175,7 +175,6 @@ button {
   .results-container {
     height: 100vh;
     overflow: hidden;
-    padding: 0 20px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     place-items: center;
