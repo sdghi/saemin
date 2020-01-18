@@ -17,7 +17,8 @@
 #bowl02-fill-inside_1_,
 #bowl02-lines_1_,
 #bowl-01-lines_2_,
-#chinese-border_2_ {
+#chinese-border_2_,
+#ChopDisposable_1_ {
     fill: $outlines;
 }
 
@@ -43,7 +44,8 @@
 .st34,
 .st37,
 .st20,
-.st39 {
+.st39,
+.st54 {
     fill: $outlines;
 }
 
@@ -131,7 +133,8 @@
     fill: $shoyu-level;
 }
 
-.st48 {
+.st48,
+#Noodle06_broth {
     fill: $broth;
 }
 
@@ -142,7 +145,8 @@
 
 .st58,
 #Noodle04-shade_1_,
-#noodle-shadow_1_ .st39 {
+#noodle-shadow_1_ .st39,
+#noodle06-shade_1_ {
     fill: $noodle-shade;
 }
 

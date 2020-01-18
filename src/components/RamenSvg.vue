@@ -24,9 +24,10 @@
     <Glamorous v-if="bowl === 5" />
     <!-- BROTH AND NOODLES  -->
     <!-- <Intellectual v-if="brothAndNoodle === 1" /> -->
-    <Leader />
+    <!-- <Leader v-if="brothAndNoodle === 2" /> -->
     <!-- <Artist v-if="brothAndNoodle === 4" /> -->
     <!-- <FreeSpirit  v-if="brothAndNoodle === 5"/> -->
+    <MamaBear />
     <!-- TOPPINGS  -->
     <Optimistic v-if="topping === 0" />
     <Troubled v-if="topping === 1" />
@@ -54,7 +55,8 @@ import Troubled from "./Topping/Troubled";
 // import Artist from "./BrothAndNoodles/Artist";
 // import FreeSpirit from "./BrothAndNoodles/FreeSpirit";
 // import Intellectual from "./BrothAndNoodles/Intellectual";
-import Leader from "./BrothAndNoodles/Leader";
+// import Leader from "./BrothAndNoodles/Leader";
+import MamaBear from "./BrothAndNoodles/MamaBear";
 
 export default {
   name: "RamenSvg",
@@ -71,7 +73,8 @@ export default {
     // Artist,
     // FreeSpirit,
     // Intellectual,
-    Leader,
+    // Leader,
+    MamaBear,
     // Toppings
     Angry,
     Anxious,
