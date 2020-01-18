@@ -26,10 +26,11 @@
     <BrothAndNoodleOne v-if="brothAndNoodle % 2 == 0" />
     <BrothAndNoodleTwo v-if="brothAndNoodle % 2 !== 0" />
     <!-- TOPPINGS  -->
+    <!-- <Optimistic v-if="topping === 0"/> -->
+    <Troubled />
     <!-- <Anxious v-if="topping === 3" />
     <Easygoing v-if="topping === 4" />
     <Angry v-if="topping === 5" /> -->
-    <Optimistic />
   </svg>
 </template>
 
@@ -45,7 +46,8 @@ import Local from "./Bowls/Local";
 // import Angry from "./Topping/Angry";
 // import Anxious from "./Topping/Anxious";
 // import Easygoing from "./Topping/Easygoing";
-import Optimistic from "./Topping/Optimistic";
+// import Optimistic from "./Topping/Optimistic";
+import Troubled from "./Topping/Troubled";
 // Broth and Noodle
 import BrothAndNoodleOne from "./BrothAndNoodles/BrothAndNoodleOne";
 import BrothAndNoodleTwo from "./BrothAndNoodles/BrothAndNoodleTwo";
@@ -68,7 +70,8 @@ export default {
     // Angry,
     // Anxious,
     // Easygoing,
-    Optimistic
+    // Optimistic,
+    Troubled
   },
   data() {
     return {
