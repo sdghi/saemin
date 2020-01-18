@@ -9,7 +9,17 @@
       <div class="home-content">
         <h1 class="home-title uppercase text-center">Generator</h1>
         <p class="home-subtitle">What kind of saimin are you?</p>
-        <button class="start-quiz-btn" @click="startQuiz">take the quiz</button>
+        <button class="start-quiz-btn" @click="startQuiz">
+          <p>take the quiz</p>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 10">
+            <title>down-triangle</title>
+            <g id="Layer_2" data-name="Layer 2">
+              <g id="Layer_1-2" data-name="Layer 1">
+                <polygon class="cls-1" points="0 0 18 0 9 10 0 0" />
+              </g>
+            </g>
+          </svg>
+        </button>
       </div>
       <BottomLeft />
       <TopRight />
@@ -123,7 +133,45 @@ p {
 .start-quiz-btn {
   background: none;
   border: none;
-  font-size: 2rem;
-  margin-top: 1rem;
+  font-size: 1rem;
+  margin: 1rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+
+  p {
+    background: $teal;
+    color: $white;
+    padding: 15px 20px;
+    border-radius: 40px;
+  }
+
+  &:hover {
+    svg {
+      animation: upDown 0.6s ease infinite;
+    }
+  }
+
+  svg {
+    margin-top: 2px;
+    width: 20px;
+
+    .cls-1 {
+      fill: #e1c487;
+    }
+  }
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 </style>
