@@ -245,10 +245,16 @@ export default {
 <style lang="scss" scoped>
 svg {
   position: absolute;
-  width: 40%;
+  width: 70%;
   bottom: 0;
   left: 0;
   z-index: 0;
+}
+
+@media (min-width: $breakpoint-small) {
+  svg {
+    width: 40%;
+  }
 }
 
 .cls-1 {

@@ -243,8 +243,14 @@ svg {
   position: absolute;
   top: 0;
   right: 0;
-  width: 40%;
+  width: 70%;
   z-index: 0;
+}
+
+@media (min-width: $breakpoint-small) {
+  svg {
+    width: 40%;
+  }
 }
 
 .cls-1 {
