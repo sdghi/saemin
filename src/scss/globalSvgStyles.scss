@@ -26,7 +26,8 @@
 #bowl04-fill_3_,
 #bowl06-fill_1_,
 #bowl02-fill_1_,
-#bowl-01-fill_2_ {
+#bowl-01-fill_2_,
+#tsukemen-bowl-fill_1_ {
     fill: $bowl;
 }
 
@@ -131,15 +132,18 @@
     fill: $broth;
 }
 
-.st18 {
+.st18,
+#noodles04-fill_1_ {
     fill: $noodle;
 }
 
-.st58 {
+.st58,
+#Noodle04-shade_1_ {
     fill: $noodle-shade;
 }
 
-#paletteblob01_1_ {
+#paletteblob01_1_,
+#tsukemen-chopsticks_1_ {
     fill: $chopsticks;
 }
 
@@ -149,4 +153,13 @@
 
 #paletteblob03_1_ {
     fill: $pink;
+}
+
+#tsukemen-broth_1_ {
+    fill: $tsukemen-broth;
+}
+
+// Supposed to be free spirit but has conflicts with personalitites
+#Broth04_1_ {
+    fill: $broth;
 }

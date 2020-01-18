@@ -23,8 +23,8 @@
     <Cute v-if="bowl === 4" />
     <Glamorous v-if="bowl === 5" />
     <!-- BROTH AND NOODLES  -->
-    <Artist />
-
+    <!-- <Artist v-if="brothAndNoodle === 4" /> -->
+    <FreeSpirit />
     <!-- TOPPINGS  -->
     <Optimistic v-if="topping === 0" />
     <Troubled v-if="topping === 1" />
@@ -49,7 +49,8 @@ import Easygoing from "./Topping/Easygoing";
 import Optimistic from "./Topping/Optimistic";
 import Troubled from "./Topping/Troubled";
 // Broth and Noodle
-import Artist from "./BrothAndNoodles/Artist";
+// import Artist from "./BrothAndNoodles/Artist";
+import FreeSpirit from "./BrothAndNoodles/FreeSpirit";
 
 export default {
   name: "RamenSvg",
@@ -63,7 +64,8 @@ export default {
     Glamorous,
     Local,
     // Broth and Noodle
-    Artist,
+    // Artist,
+    FreeSpirit,
     // Toppings
     Angry,
     Anxious,
