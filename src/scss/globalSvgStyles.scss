@@ -39,16 +39,23 @@
 // Angry
 .st39,
 .st44,
-.st34 {
+.st34,
+.st37 {
     fill: $outlines;
 }
 
 .st62,
-.st51 {
+.st51,
+.st57 {
     fill: $green;
 }
 
-.st78 {
+.st80 {
+    fill: $light-green;
+}
+
+.st78,
+.st81 {
     fill: $beige;
 }
 
@@ -87,4 +94,8 @@
 #tempura-flecks_1_,
 #cool-seeds_1_ {
     fill: darken($yellow, 20%);
+}
+
+.st36 {
+    fill: $plate;
 }
