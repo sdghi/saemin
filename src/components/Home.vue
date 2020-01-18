@@ -1,6 +1,6 @@
 <template>
   <div id="app-container">
-    <Landing v-if="!quizCompleted" />
+    <Landing v-if="!quizCompleted" :quizStarted="quizStarted" />
     <Quiz v-if="!quizCompleted" :quizStarted="quizStarted" />
     <Results v-if="quizCompleted" />
   </div>
@@ -19,7 +19,7 @@ export default {
   updated() {
     // scroll jack until all question are answered
     if (this.quizStarted) {
-      document.body.style.overflow = "hidden";
+      // document.body.style.overflow = "hidden";
     }
     if (this.quizCompleted) {
       document.body.style.overflow = "initial";

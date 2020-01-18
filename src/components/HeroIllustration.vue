@@ -21,7 +21,6 @@ export default {
 svg {
   max-width: 80vw;
   height: 50vh;
-  z-index: 0;
 }
 
 .st4 {

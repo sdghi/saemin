@@ -9,7 +9,7 @@
       <div class="home-content">
         <h1 class="home-title uppercase text-center">Generator</h1>
         <p class="home-subtitle">What kind of saimin are you?</p>
-        <button class="start-quiz-btn" @click="startQuiz">
+        <button class="start-quiz-btn" @click="startQuiz" v-if="!quizStarted">
           <p>take the quiz</p>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 10">
             <title>down-triangle</title>
@@ -41,6 +41,7 @@ export default {
     BottomLeft,
     TopRight
   },
+  props: ["quizStarted"],
   methods: {
     startQuiz() {
       this.$store.commit("setQuizStarted", {
@@ -67,11 +68,8 @@ export default {
     z-index: 10;
     top: 50%;
     text-align: center;
+    z-index: 99999999;
   }
-}
-
-.illustration-hero {
-  position: relative;
 }
 
 header {
@@ -110,6 +108,7 @@ header {
   margin: 0;
   font-size: 6vmin;
   transition: all 0.3s $cubic-ease;
+  position: relative;
 
   h1 {
     font-family: $type-heading-italic;

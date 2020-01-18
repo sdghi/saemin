@@ -248,7 +248,7 @@ svg {
   width: 70%;
   bottom: 0;
   left: 0;
-  z-index: 0;
+  z-index: 999999;
 }
 
 @media (min-width: $breakpoint-small) {

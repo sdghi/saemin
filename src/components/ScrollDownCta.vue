@@ -91,19 +91,57 @@ export default {
             this.$refs.scrollCta.offsetHeight + this.$refs.scrollCta.offsetTop,
           behavior: "smooth"
         });
-      });
+      }, 700);
   }
 };
 </script>
 
 <style lang="scss" scoped>
+// Think of a better way to align this
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 99;
+  top: -40vh;
+
+  &::after,
+  &::before {
+    content: "";
+    z-index: -111;
+    position: absolute;
+    left: 0;
+    height: 50%;
+    width: 100%;
+  }
+
+  &:before {
+    bottom: 0;
+    background: $maroon;
+  }
+
+  &:after {
+    top: 0;
+    background: $pink;
+  }
+}
+
 svg {
+  position: relative;
+  /* top: -40vh; */
+  left: 24%;
   margin: 0 auto;
   height: 100vh;
 }
 
 @media (min-width: $breakpoint-small) {
+  section {
+    border: 1px solid green;
+  }
+
   svg {
+    left: 14%;
     height: 200vh;
   }
 }
