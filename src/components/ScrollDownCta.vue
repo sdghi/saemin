@@ -104,7 +104,7 @@ section {
   align-items: center;
   position: relative;
   z-index: 99;
-  top: -40vh;
+  margin-top: -40vh;
 
   &::after,
   &::before {
@@ -112,34 +112,30 @@ section {
     z-index: -111;
     position: absolute;
     left: 0;
-    height: 50%;
     width: 100%;
   }
 
   &:before {
+    height: 50%;
     bottom: 0;
     background: $maroon;
   }
 
   &:after {
-    top: 0;
+    height: 40%;
+    top: 10%;
     background: $pink;
   }
 }
 
 svg {
   position: relative;
-  /* top: -40vh; */
   left: 24%;
   margin: 0 auto;
   height: 100vh;
 }
 
 @media (min-width: $breakpoint-small) {
-  section {
-    border: 1px solid green;
-  }
-
   svg {
     left: 14%;
     height: 200vh;
