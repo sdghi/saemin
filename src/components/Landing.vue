@@ -139,10 +139,12 @@ p {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  text-transform: uppercase;
 
   p {
     background: $teal;
     color: $white;
+    font-weight: 700;
     padding: 15px 20px;
     border-radius: 40px;
   }
