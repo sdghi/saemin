@@ -70,6 +70,10 @@ export default {
   }
 }
 
+.illustration-hero {
+  position: relative;
+}
+
 header {
   position: absolute;
   top: 0;
