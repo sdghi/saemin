@@ -1,27 +1,35 @@
 <template>
-  <section id="home">
+  <section>
     <header>
       <h2>KUNG HEI FAT CHOY! HAPPY NEW YEAR!</h2>
       <BottomRidge />
     </header>
-    <HeroIllustration />
-    <div class="home-content">
-      <h1 class="home-title uppercase text-center">Generator</h1>
-      <p class="home-subtitle">What kind of saimin are you?</p>
-      <button class="start-quiz-btn" @click="startQuiz">take the quiz</button>
+    <div id="home">
+      <HeroIllustration />
+      <div class="home-content">
+        <h1 class="home-title uppercase text-center">Generator</h1>
+        <p class="home-subtitle">What kind of saimin are you?</p>
+        <button class="start-quiz-btn" @click="startQuiz">take the quiz</button>
+      </div>
+      <BottomLeft />
+      <TopRight />
     </div>
   </section>
 </template>
 
 <script>
-import HeroIllustration from "./HeroIllustration";
+import HeroIllustration from "./Illustrations/HeroIllustration";
+import BottomLeft from "./Illustrations/BottomLeft";
+import TopRight from "./Illustrations/TopRight";
 import BottomRidge from "./BottomRidge";
 
 export default {
   name: "Landing",
   components: {
     HeroIllustration,
-    BottomRidge
+    BottomRidge,
+    BottomLeft,
+    TopRight
   },
   methods: {
     startQuiz() {
@@ -40,7 +48,8 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
+  margin-top: 10vh;
+  height: 90vh;
   background: $pink;
 
   .home-content {
@@ -55,10 +64,9 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   line-height: 1.3;
   font-weight: 700;
-  border: 1px solid green;
   color: $pink;
   background: $white;
   text-align: center;
@@ -69,7 +77,8 @@ header {
   h2 {
     position: relative;
     z-index: 7;
-    font-size: 2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
     width: fit-content;
     top: 10%;
   }

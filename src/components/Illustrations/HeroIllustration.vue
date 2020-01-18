@@ -153,6 +153,8 @@ export default {
 svg {
   max-height: 500px;
   width: 80%;
+  position: relative;
+  z-index: 1;
 }
 
 .cls-1 {
