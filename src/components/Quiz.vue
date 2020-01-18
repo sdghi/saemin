@@ -1,9 +1,9 @@
 <template>
   <transition name="fade">
-      <section v-if="quizStarted" id="quiz-section">
-        <ScrollDownCta :quizStarted="quizStarted"/>
-        <Question/>
-      </section>
+    <section v-if="quizStarted" id="quiz-section">
+      <ScrollDownCta :quizStarted="quizStarted" />
+      <Question />
+    </section>
   </transition>
 </template>
 
@@ -30,7 +30,8 @@ export default {
 .fade-leave-active {
   transition: opacity 0.3s 0.5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 </style>

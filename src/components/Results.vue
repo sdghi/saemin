@@ -1,33 +1,53 @@
 <template>
-    <div class="results-container">
+  <div class="results-container">
+    <div id="info-container">
       <div class="intant-ramen-info" v-if="topping.refId === 2">
         <h2 class="ramen-title">You are an instant ramen</h2>
-        <p>stop being basic</p>
+        <p>
+          When presented with a choice, you reliably choose the easier.
+          Immediate gratification is routinely sought at the expense of basic
+          health and hygiene. Maybe try a little harder?
+        </p>
       </div>
       <div class="ramen-info" v-else-if="topping.refId !== 2">
-        <h2 class="ramen-title">You are {{topping.name}}, {{bowl.name}} and {{brothAndNoodle.name}}</h2>
+        <h2 class="ramen-title">
+          You are {{ topping.starter }} {{ topping.name }} {{ bowl.name }}
+          {{ brothAndNoodle.name }}
+        </h2>
         <div class="description-container">
-          <p>You are <strong>{{brothAndNoodle.title}}</strong>.</p>
-          <p>{{brothAndNoodle.description}}</p>  
-          <p><strong>Toppings:</strong> {{topping.title}}</p>
-          <p>{{topping.description}}</p>
-          <p><strong>Style:</strong> {{bowl.name}}</p>
+          <p>
+            You are <strong>{{ brothAndNoodle.title }}</strong
+            >.
+          </p>
+          <p>{{ brothAndNoodle.description }}</p>
+          <p><strong>Toppings:</strong> {{ topping.title }}</p>
+          <p>{{ topping.description }}</p>
+          <p><strong>Style:</strong> {{ bowl.name }}</p>
         </div>
       </div>
-       <Ramen :brothAndNoodleRef="brothAndNoodle.refId" :toppingRef="topping.refId" :bowlRef="bowl.refId"/>
-   
-      <button class="restart-btn" @click="restartQuiz">restart</button>
     </div>
+    <Ramen
+      :brothAndNoodleRef="brothAndNoodle.refId"
+      :toppingRef="topping.refId"
+      :bowlRef="bowl.refId"
+      v-if="topping.refId !== 2"
+    />
+    <CupNoodle v-if="topping.refId === 2" />
+
+    <button class="restart-btn" @click="restartQuiz">restart</button>
+  </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 import Ramen from "./Ramen";
+import CupNoodle from "./CupNoodle";
 
 export default {
   name: "Results",
   components: {
-    Ramen
+    Ramen,
+    CupNoodle
   },
   computed: mapGetters([
     "allIngredients",
@@ -148,12 +168,13 @@ button {
 
 .results-container {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: $breakpoint-medium) {
   .results-container {
-    padding: 0 20px;
+    height: 100vh;
+    overflow: hidden;
     display: grid;
     grid-template-columns: 1fr 2fr;
     place-items: center;

@@ -1,4 +1,3 @@
-
 const state = {
     quizStarted: false,
     quizCompleted: false,
@@ -12,10 +11,9 @@ const state = {
             illustrationRef: 0,
             // ingredient 0 will be noodles and broth together
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     // This object references a single answer
-                    content: 'Tiger',
+                    content: 'Wolf',
                     value: 2
                 },
                 {
@@ -45,18 +43,13 @@ const state = {
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     content: "People's stories",
                     value: 0
                 },
                 {
                     content: 'Complex puzzles',
                     value: 1
-                },
-                {
-                    content: "Kids’ perspectives",
-                    value: 3
                 },
                 {
                     content: "Exploring unknown territory",
@@ -69,16 +62,19 @@ const state = {
                 {
                     content: 'Organizing things',
                     value: 2
+                },
+                {
+                    content: "Kids’ perspectives",
+                    value: 3
                 }
             ]
         },
         {
-            content: 'You’re Bored. Pick a smartphone activity / app',
+            content: 'You’re bored. Pick a smartphone activity / app:',
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     content: 'Instagram',
                     value: 0
                 },
@@ -105,12 +101,11 @@ const state = {
             ]
         },
         {
-            content: 'Pick an experience',
+            content: 'Pick an experience:',
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     content: 'Concert',
                     value: 0
                 },
@@ -141,8 +136,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     content: "Devil’s Advocate",
                     value: 1
                 },
@@ -173,22 +167,17 @@ const state = {
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
-                    content: 'Harmony',
-                    value: 2
+            answers: [{
+                    content: 'Expression',
+                    value: 4
                 },
                 {
                     content: 'Efficiency',
                     value: 1
                 },
                 {
-                    content: 'Current Events',
-                    value: 0
-                },
-                {
-                    content: 'Expression',
-                    value: 4
+                    content: 'Harmony',
+                    value: 2
                 },
                 {
                     content: 'Open Mindedness',
@@ -197,6 +186,10 @@ const state = {
                 {
                     content: 'Peace',
                     value: 3
+                },
+                {
+                    content: 'Current Events',
+                    value: 0
                 }
             ]
         },
@@ -205,8 +198,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     content: 'The roof',
                     value: 3
                 },
@@ -219,12 +211,12 @@ const state = {
                     value: 4
                 },
                 {
-                    content: 'The space',
-                    value: 5
-                },
-                {
                     content: 'The living room',
                     value: 0
+                },
+                {
+                    content: 'The space',
+                    value: 5
                 },
                 {
                     content: 'The pillars',
@@ -237,10 +229,9 @@ const state = {
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
-                    content: 'Catch up on some work',
-                    value: 2
+            answers: [{
+                    content: 'Make plans to go out',
+                    value: 0
                 },
                 {
                     content: 'Indulge in a hobby',
@@ -251,8 +242,8 @@ const state = {
                     value: 1
                 },
                 {
-                    content: 'Make plans to go out',
-                    value: 0
+                    content: 'Catch up on some work',
+                    value: 2
                 },
                 {
                     content: 'Spend time with the fam',
@@ -269,8 +260,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     content: 'Michael Scott',
                     value: 5
                 },
@@ -291,7 +281,7 @@ const state = {
                     value: 4
                 },
                 {
-                    content: 'Deangelo Jeremitrius Vickers',
+                    content: 'Robert California',
                     value: 2
                 }
             ]
@@ -301,30 +291,29 @@ const state = {
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     content: 'Emotions',
                     value: 1
-                },
-                {
-                    content: 'Rigid Rules & Institutions',
-                    value: 4
                 },
                 {
                     content: 'Too Much Pressure',
                     value: 3
                 },
                 {
-                    content: 'Unwanted Change',
-                    value: 0
+                    content: 'Rigid Rules & Institutions',
+                    value: 4
+                },
+                {
+                    content: 'Analysis Paralysis',
+                    value: 2
                 },
                 {
                     content: 'Micromanagement',
                     value: 5
                 },
                 {
-                    content: 'Analysis Paralysis',
-                    value: 2
+                    content: 'Unwanted Change',
+                    value: 0
                 }
             ]
         },
@@ -333,8 +322,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
-            answers: [
-                {
+            answers: [{
                     content: 'Armor',
                     value: 3
                 },
@@ -366,8 +354,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 1,
             ingredientRef: 1,
-            answers: [
-                {
+            answers: [{
                     content: 'Meh',
                     value: 2
                 },
@@ -398,12 +385,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 1,
             ingredientRef: 1,
-            answers: [
-                {
-                    content: 'Cactus',
-                    value: 5
-                },
-                {
+            answers: [{
                     content: 'Turtle',
                     value: 4
                 },
@@ -422,6 +404,10 @@ const state = {
                 {
                     content: 'Squirrel',
                     value: 3
+                },
+                {
+                    content: 'Cactus',
+                    value: 5
                 }
             ]
         },
@@ -430,8 +416,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 1,
             ingredientRef: 1,
-            answers: [
-                {
+            answers: [{
                     content: 'Yellow',
                     value: 0
                 },
@@ -444,12 +429,12 @@ const state = {
                     value: 5
                 },
                 {
-                    content: 'Gray',
-                    value: 2
-                },
-                {
                     content: 'White',
                     value: 3
+                },
+                {
+                    content: 'Gray',
+                    value: 2
                 },
                 {
                     content: 'Green',
@@ -462,18 +447,17 @@ const state = {
             isAnswered: false,
             illustrationRef: 1,
             ingredientRef: 1,
-            answers: [
-                {
+            answers: [{
                     content: 'T_T',
                     value: 1
                 },
                 {
-                    content: '(╯°Д°）╯︵ ┻━┻',
-                    value: 5
-                },
-                {
                     content: '-_-',
                     value: 2
+                },
+                {
+                    content: '(╯°Д°）╯︵ ┻━┻',
+                    value: 5
                 },
                 {
                     content: '^____^',
@@ -495,22 +479,17 @@ const state = {
             isAnswered: false,
             illustrationRef: 1,
             ingredientRef: 1,
-            answers: [
-                {
+            answers: [{
                     content: 'Full Fetal',
                     value: 3
                 },
                 {
-                    content: 'Vampire',
-                    value: 0
-                },
-                {
-                    content: 'Log',
-                    value: 2
-                },
-                {
                     content: 'Half fetal',
                     value: 1
+                },
+                {
+                    content: 'Vampire',
+                    value: 0
                 },
                 {
                     content: 'Starfish',
@@ -519,6 +498,10 @@ const state = {
                 {
                     content: 'Stomach',
                     value: 5
+                },
+                {
+                    content: 'Log',
+                    value: 2
                 }
             ]
         },
@@ -528,8 +511,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 2,
             ingredientRef: 2,
-            answers: [
-                {
+            answers: [{
                     content: 'Museum',
                     value: 1
                 },
@@ -560,8 +542,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 2,
             ingredientRef: 2,
-            answers: [
-                {
+            answers: [{
                     content: 'Ruby Red',
                     value: 5
                 },
@@ -592,8 +573,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 2,
             ingredientRef: 2,
-            answers: [
-                {
+            answers: [{
                     content: 'Ross',
                     value: 1
                 },
@@ -624,8 +604,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 2,
             ingredientRef: 2,
-            answers: [
-                {
+            answers: [{
                     content: 'Sponge',
                     value: 3
                 },
@@ -656,8 +635,7 @@ const state = {
             isAnswered: false,
             illustrationRef: 2,
             ingredientRef: 2,
-            answers: [
-                {
+            answers: [{
                     content: 'Kikkoman Shoyu',
                     value: 2
                 },
@@ -698,20 +676,29 @@ const getters = {
 const actions = {};
 
 const mutations = {
-    setScrollHeight(state, { value }) {
+    setScrollHeight(state, {
+        value
+    }) {
         state.scrollHeight = value
     },
-    setQuestionsToAnswered(state, { selected, value }) {
+    setQuestionsToAnswered(state, {
+        selected,
+        value
+    }) {
         state.questions.map((question) => {
             if (question.content == selected) {
                 question.isAnswered = value;
             }
         })
     },
-    setQuizStatus(state, { result }) {
+    setQuizStatus(state, {
+        result
+    }) {
         state.quizCompleted = result;
     },
-    setQuizStarted(state, { value }) {
+    setQuizStarted(state, {
+        value
+    }) {
         state.quizStarted = value;
     },
     resetAllAnsweredStatus(state) {

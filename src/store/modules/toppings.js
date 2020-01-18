@@ -2,40 +2,46 @@ const state = {
     toppings: [
         {
             // not finished
-            name: 'optimistic',
+            name: 'Optimistic',
+            starter: 'an',
             refId: 0,
             // this is the title of what the topping is called
-            title: 'sunny side up egg, lime, cilantro, and emanating rays of light',
+            title: 'Sunny side up egg, lime, cilantro, and emanating rays of light.',
             description: '“Why does it feel like the universe is smiling down on me?”'
         },
         {
-            name: 'troubled',
+            name: 'Troubled',
+            starter: 'a',
             refId: 1,
-            title: 'bok choy, shiitake mushroom, and a dark cloud',
+            title: 'Wilted bok choy, feel-like-shiitake mushroom, and a dark cloud.',
             description: '“I don’t think you can handle my darkness.”'
         },
         {
-            name: 'disenchanted',
+            name: 'Disenchanted',
+            starter: 'a',
             refId: 2,
-            title: 'Instant ramen cup or square package',
+            title: 'Fatty pork belly, an uninspired egg, and “meh”-noki mushrooms.',
             description: '“Let’s not do anything today.”'
         },
         {
-            name: 'anxious ',
+            name: 'Anxious ',
+            starter: 'an',
             refId: 3,
-            title: 'Char siu, deep kim chee, menma, a tangle of garnish',
+            title: 'Char siu, deep kim chee, menma, a tangle of garnish.',
             description: '"Why so stressed?"'
         },
         {
-            name: 'easygoing',
+            name: 'Easygoing',
+            starter: 'an',
             refId: 4,
-            title: 'butter, corn, a tempura chillin’, and green onions',
+            title: 'A piece of fishcake, a tempura chillin’, cool cucumber.',
             description: '“Just cruisin’!”',
         },
         {
-            name: 'angry',
+            name: 'Angry',
+            starter: 'an',
             refId: 5,
-            title: 'hard boiled egg, hot chili peppers and Sriracha on the side',
+            title: 'Angry Hard boiled egg with Hot chili peppers, Gochujang, Mizuna and nori.',
             description: '“Cross me and I might bite your head off.”'
         }
     ]

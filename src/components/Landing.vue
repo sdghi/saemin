@@ -1,0 +1,179 @@
+<template>
+  <section>
+    <header>
+      <h2>KUNG HEI FAT CHOY! HAPPY NEW YEAR!</h2>
+      <BottomRidge />
+    </header>
+    <div id="home">
+      <HeroIllustration />
+      <div class="home-content">
+        <h1 class="home-title uppercase text-center">Generator</h1>
+        <p class="home-subtitle">What kind of saimin are you?</p>
+        <button class="start-quiz-btn" @click="startQuiz">
+          <p>take the quiz</p>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 10">
+            <title>down-triangle</title>
+            <g id="Layer_2" data-name="Layer 2">
+              <g id="Layer_1-2" data-name="Layer 1">
+                <polygon class="cls-1" points="0 0 18 0 9 10 0 0" />
+              </g>
+            </g>
+          </svg>
+        </button>
+      </div>
+      <BottomLeft />
+      <TopRight />
+    </div>
+  </section>
+</template>
+
+<script>
+import HeroIllustration from "./Illustrations/HeroIllustration";
+import BottomLeft from "./Illustrations/BottomLeft";
+import TopRight from "./Illustrations/TopRight";
+import BottomRidge from "./BottomRidge";
+
+export default {
+  name: "Landing",
+  components: {
+    HeroIllustration,
+    BottomRidge,
+    BottomLeft,
+    TopRight
+  },
+  methods: {
+    startQuiz() {
+      this.$store.commit("setQuizStarted", {
+        value: true
+      });
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+#home {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10vh;
+  height: 90vh;
+  background: $pink;
+
+  .home-content {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    text-align: center;
+  }
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  line-height: 1.3;
+  font-weight: 700;
+  color: $pink;
+  background: $white;
+  text-align: center;
+  height: 10vh;
+  display: grid;
+  place-items: center;
+
+  h2 {
+    position: relative;
+    z-index: 7;
+    font-size: 1.4rem;
+    font-weight: 400;
+    width: fit-content;
+    top: 10%;
+  }
+
+  svg {
+    position: absolute;
+    bottom: -10%;
+    left: 0;
+    z-index: 1;
+    min-width: 100%;
+  }
+}
+
+.home-title {
+  margin: 0;
+  font-size: 6vmin;
+  transition: all 0.3s $cubic-ease;
+
+  h1 {
+    font-family: $type-heading-italic;
+    position: relative;
+
+    &:first-of-type {
+      left: -8vw;
+    }
+
+    &:nth-of-type(2) {
+      left: 8vw;
+    }
+  }
+}
+
+p {
+  line-height: 1.3;
+}
+
+.home-subtitle {
+  text-align: center;
+  font-size: 5vmin;
+}
+
+.start-quiz-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  margin: 1rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  p {
+    background: $teal;
+    color: $white;
+    font-weight: 700;
+    padding: 15px 20px;
+    border-radius: 40px;
+  }
+
+  &:hover {
+    svg {
+      animation: upDown 0.6s ease infinite;
+    }
+  }
+
+  svg {
+    margin-top: 2px;
+    width: 20px;
+
+    .cls-1 {
+      fill: #e1c487;
+    }
+  }
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+</style>

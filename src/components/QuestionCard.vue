@@ -1,45 +1,91 @@
 <template>
+  <section
+    :class="{
+      even: index % 2 !== 0 && index % 3 !== 0,
+      odd: index % 2 === 0 && index % 3 !== 0,
+      third: index % 3 === 0
+    }"
+    ref="questionSection"
+  >
+    <TopRidge :fillClass="currentColor" />
+
     <div class="question-card" ref="quizQuestion">
-          
-          <div class="question-container">
-            <h3>{{question.content}}</h3>
-              <div class="answers-container">
-                <!-- the answer == 1 will be data.value and the value in the input will be pulled data.answerTitle -->
-                <button v-for="answer in question.answers" :key="answer.id" 
-                @click="setAnswer" 
-                :data-currentAnswer="answer.content"
-                class="answer" 
-                :class="{'selected': currentAnswer == answer.content}" 
-                :value="answer.value"
-                >{{answer.content}}</button>
-            </div>
-          </div>
-         
-          
-          <!-- this is the illustration -->
-          <div class="line"></div>
+      <div class="question-container" ref="questionContainer">
+        <QuestionPattern />
+        <h3>{{ question.content }}</h3>
+        <div class="answers-container">
+          <!-- the answer == 1 will be data.value and the value in the input will be pulled data.answerTitle -->
+          <button
+            v-for="answer in question.answers"
+            :key="answer.id"
+            @click="setAnswer"
+            :data-currentAnswer="answer.content"
+            class="answer"
+            :class="{ selected: currentAnswer == answer.content }"
+            :value="answer.value"
+          >
+            {{ answer.content }}
+          </button>
         </div>
+        <button @click="goBack" v-if="index !== 0" class="back-btn">
+          go back
+        </button>
+      </div>
+
+      <!-- this is the illustration -->
+      <div id="bottom-noodles">
+        <IllustrationOne v-if="index % 2 !== 0 && index % 3 !== 0" />
+        <IllustrationTwo v-if="index % 2 === 0 && index % 3 !== 0" />
+        <IllustrationThree v-if="index % 3 === 0" />
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
 import "scroll-behavior-polyfill";
+import IllustrationOne from "./Transitions/IllustrationOne";
+import IllustrationTwo from "./Transitions/IllustrationTwo";
+import IllustrationThree from "./Transitions/IllustrationThree";
+import QuestionPattern from "./QuestionPattern";
+import TopRidge from "./TopRidge";
+// import BottomRidge from "./BottomRidge";
+import { mapGetters } from "vuex";
 
 export default {
   name: "QuestionCard",
+  computed: mapGetters(["scrollHeight"]),
   props: ["question", "allQuestions", "quizCompleted", "setScrollHeight"],
+  components: {
+    IllustrationOne,
+    IllustrationTwo,
+    IllustrationThree,
+    TopRidge,
+    QuestionPattern
+    // BottomRidge
+  },
   data() {
     return {
       currentAnswer: null,
       isSelected: false,
       index: this.allQuestions.indexOf(this.question),
       nextScrollHeight: 0,
-      currentQuestionHeight: 0
+      currentQuestionHeight: 0,
+      currentColor: ""
     };
   },
   updated() {
     this.checkIfCompleted();
   },
   methods: {
+    goBack() {
+      // check to see if it's the first question before going back
+      window.scrollY - this.scrollHeight > 0 &&
+        window.scrollTo({
+          top: window.pageYOffset - this.scrollHeight,
+          behavior: "smooth"
+        });
+    },
     setAnswer(e) {
       // sets current answer
       this.isSelected = true;
@@ -63,15 +109,18 @@ export default {
         value: this.$refs.quizQuestion.clientHeight
       });
 
+      const centerHeight =
+        (window.innerHeight - this.$refs.questionContainer.clientHeight) / 2;
+
       // Scroll window from current window position to the start of the next question
-      // If it's the last question wait for the results to load
-      if (this.index === this.allQuestions.length - 1) {
-        setTimeout(() => {
-          window.scrollTo({
-            top: window.pageYOffset + this.$refs.quizQuestion.clientHeight,
-            behavior: "smooth"
-          });
-        }, 300);
+      if (this.index === 0) {
+        window.scrollTo({
+          top:
+            window.pageYOffset +
+            this.$refs.quizQuestion.clientHeight -
+            centerHeight,
+          behavior: "smooth"
+        });
       } else {
         window.scrollTo({
           top: window.pageYOffset + this.$refs.quizQuestion.clientHeight,
@@ -98,38 +147,94 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.question-card {
-  margin: 0 auto;
-  color: $black;
-  // padding: 50px;
+section {
+  height: fit-content;
+  width: 100%;
+  background: $maroon;
+  position: relative;
 
-  h3 {
-    font-size: 2rem;
+  &:after {
+    content: "";
+    top: -20%;
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    background: $maroon;
+  }
+
+  &.third {
+    background: $maroon;
+    &::after {
+      background: $maroon;
+    }
+  }
+
+  &.even {
+    background: $gold;
+
+    &::after {
+      background: $gold;
+    }
+  }
+
+  &.odd {
+    background: $teal;
+
+    &::after {
+      background: $teal;
+    }
   }
 }
 
-// delete this later it is the fake illustration
-.line {
-  height: 50vh;
-  width: 80px;
-  margin: 0 auto;
-  background: black;
+@media (min-width: $breakpoint-small) {
+  section {
+    &::after {
+      height: 30%;
+      top: -30%;
+    }
+  }
+}
+
+.question-card {
+  position: relative;
+  z-index: 10;
+  margin: 0 auto 0 auto;
+  color: $black;
+
+  h3 {
+    font-size: 1.3rem;
+  }
 }
 
 // May break into another component later
 .question-container {
-  background: $card-color;
+  background: $pink;
   padding: 50px;
+  position: relative;
 
   h3 {
+    color: $textGold;
     margin: 0;
   }
+}
+
+.back-btn {
+  background: $black;
+  font-weight: 700;
+  border: none;
+  color: $white;
+  border-radius: 30px;
+  padding: 10px 15px;
+  font-family: $type-heading;
+  text-transform: uppercase;
+  margin-top: 30px;
+  font-size: 20px;
 }
 
 .answers-container {
   user-select: none;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   margin-top: 40px;
 
@@ -140,7 +245,8 @@ export default {
     border: none;
     cursor: pointer;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.7rem;
+    color: $textBlue;
 
     &.selected {
       background: $black;
@@ -148,15 +254,33 @@ export default {
     }
 
     &:hover {
-      background: $black;
+      background: $textGold;
       color: $white;
     }
   }
 }
 
-@media (min-width: 768px) {
+#bottom-noodles {
+  display: grid;
+  place-items: center;
+  svg {
+    height: 100vh;
+  }
+}
+
+@media (min-width: $breakpoint-small) {
+  #bottom-noodles {
+    svg {
+      height: 200vh;
+    }
+  }
+
   .question-card {
     width: 60%;
+
+    h3 {
+      font-size: 2rem;
+    }
   }
 
   .answers-container {
@@ -165,6 +289,7 @@ export default {
 
     .answer {
       height: 150px;
+      font-size: 1.5rem;
     }
   }
 }
