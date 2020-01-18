@@ -38,11 +38,13 @@
 
 // Angry
 .st39,
-.st44 {
+.st44,
+.st34 {
     fill: $outlines;
 }
 
-.st62 {
+.st62,
+.st51 {
     fill: $green;
 }
 
@@ -50,10 +52,9 @@
     fill: $beige;
 }
 
-
-
 .st46,
-.st28 {
+.st28,
+.st35 {
     fill: $yellow;
 }
 
@@ -62,7 +63,8 @@
 }
 
 .st13,
-#angry-egg-white_3_ {
+#angry-egg-white_3_,
+.st32 {
     fill: $white;
 }
 
@@ -76,4 +78,13 @@
 
 #Nori02_4_ {
     fill: $garnish;
+}
+
+.st53 {
+    fill: $orange;
+}
+
+#tempura-flecks_1_,
+#cool-seeds_1_ {
+    fill: darken($yellow, 20%);
 }
