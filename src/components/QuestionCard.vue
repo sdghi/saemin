@@ -226,11 +226,12 @@ svg.third {
 .question-container {
   background: $pink;
   padding: 50px;
-  position: relative;
 
   h3 {
+    text-align: center;
     color: $textGold;
     margin: 0;
+    padding: 20px 0;
   }
 }
 
@@ -252,7 +253,6 @@ svg.third {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
-  margin-top: 40px;
 
   .answer {
     width: 100%;
