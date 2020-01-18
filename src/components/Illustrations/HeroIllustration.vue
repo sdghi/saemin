@@ -174,6 +174,7 @@ svg {
 }
 
 #spin {
+  transform: scale(0.95);
   transform-box: fill-box;
   transform-origin: center;
   animation: rotate 8s linear infinite;
@@ -181,10 +182,10 @@ svg {
 
 @keyframes rotate {
   from {
-    transform: rotateZ(0deg);
+    transform: rotateZ(0deg) scale(0.95);
   }
   to {
-    transform: rotateZ(360deg);
+    transform: rotateZ(360deg) scale(0.95);
   }
 }
 </style>

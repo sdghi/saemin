@@ -28,7 +28,7 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s $cubic-ease;
+  transition: opacity 0.3s ease-out;
 }
 .fade-enter,
 .fade-leave-to {
