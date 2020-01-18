@@ -30,7 +30,9 @@
       :brothAndNoodleRef="brothAndNoodle.refId"
       :toppingRef="topping.refId"
       :bowlRef="bowl.refId"
+      v-if="topping.refId !== 2"
     />
+    <CupNoodle v-if="topping.refId === 2" />
 
     <button class="restart-btn" @click="restartQuiz">restart</button>
   </div>
@@ -39,11 +41,13 @@
 <script>
 import { mapGetters } from "vuex";
 import Ramen from "./Ramen";
+import CupNoodle from "./CupNoodle";
 
 export default {
   name: "Results",
   components: {
-    Ramen
+    Ramen,
+    CupNoodle
   },
   computed: mapGetters([
     "allIngredients",

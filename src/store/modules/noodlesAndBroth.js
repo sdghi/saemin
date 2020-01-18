@@ -1,6 +1,5 @@
 const state = {
-    noodlesAndBroth: [
-        {
+    noodlesAndBroth: [{
             name: 'Socialite',
             refId: 0,
             // this is the title of what the noodle is called
@@ -38,7 +37,7 @@ const state = {
             description: 'You go where the wind takes you, and your feet quicken to new experiences. You love to reinvent, experiment, and express yourself. This New Year, the world is your oyster. Tap into your imagination and show the world your next passion project.'
         },
         {
-            name: 'Creative',
+            name: 'Free Spirit',
             refId: 5,
             title: 'MISO & SESAME base',
             type: 'Thick Hand Pulled Tsukemen Noodles',

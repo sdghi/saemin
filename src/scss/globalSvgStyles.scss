@@ -1,3 +1,4 @@
+// Background
 .st4 {
     fill: $background;
 }
@@ -6,6 +7,7 @@
     fill: $table;
 }
 
+// Bowl
 #bowl05-decor,
 #bowl05-lines,
 #bowl03-lines,
@@ -15,7 +17,8 @@
 #bowl02-fill-inside_1_,
 #bowl02-lines_1_,
 #bowl-01-lines_2_,
-#chinese-border_2_ {
+#chinese-border_2_,
+#ChopDisposable_1_ {
     fill: $outlines;
 }
 
@@ -24,11 +27,170 @@
 #bowl04-fill_3_,
 #bowl06-fill_1_,
 #bowl02-fill_1_,
-#bowl-01-fill_2_ {
+#bowl-01-fill_2_,
+#tsukemen-bowl-fill_1_ {
     fill: $bowl;
 }
 
-
 #bowl04-flowers_3_ {
     fill: $decoration;
+}
+
+// Toppings
+
+// Angry
+.st39,
+.st44,
+.st34,
+.st37,
+.st20,
+.st39,
+.st54 {
+    fill: $outlines;
+}
+
+.st62,
+.st51,
+.st57,
+.st21,
+#paletteblob02_1_ {
+    fill: $green;
+}
+
+.st80 {
+    fill: $light-green;
+}
+
+.st78,
+.st81,
+#hand-fill_1_ {
+    fill: $beige;
+}
+
+.st46,
+.st28,
+.st35 {
+    fill: $yellow;
+}
+
+.st14 {
+    fill: $nori;
+}
+
+.st13,
+#angry-egg-white_3_,
+.st32,
+#notebook_1_ {
+    fill: $white;
+}
+
+.st25 {
+    fill: $pink;
+}
+
+#kimchee-leaves_4_,
+#pencil-eraser_1_ {
+    fill: $red;
+}
+
+#Nori02_4_ {
+    fill: $garnish;
+}
+
+.st53 {
+    fill: $orange;
+}
+
+#tempura-flecks_1_,
+#cool-seeds_1_ {
+    fill: darken($yellow, 20%);
+}
+
+.st36 {
+    fill: $plate;
+}
+
+#porkbelly-fill_4_ {
+    fill: $pink;
+}
+
+.st75 {
+    fill: $cloud;
+}
+
+#raindrops_4_ {
+    fill: $raindrops;
+}
+
+#Shiitake_4_ {
+    fill: $mushrooms;
+}
+
+#shoyu-fill_3_ {
+    fill: $shoyu;
+}
+
+#shoyu-fill-level_3_ {
+    fill: $shoyu-level;
+}
+
+.st48,
+#Noodle06_broth,
+.st47 {
+    fill: $broth;
+}
+
+.st18,
+#noodles04-fill_1_,
+#noodle02-fill_1_ {
+    fill: $noodle;
+}
+
+.st58,
+#Noodle04-shade_1_,
+#noodle-shadow_1_ .st39,
+#noodle06-shade_1_,
+#noodle02-shade_1_ {
+    fill: $noodle-shade;
+}
+
+#paletteblob01_1_,
+#tsukemen-chopsticks_1_,
+#chopsticks02-fill_1_ {
+    fill: $chopsticks;
+}
+
+#paletteblob04_1_ {
+    fill: $phone;
+}
+
+#paletteblob03_1_ {
+    fill: $pink;
+}
+
+#tsukemen-broth_1_ {
+    fill: $tsukemen-broth;
+}
+
+// Supposed to be free spirit but has conflicts with personalitites
+#Broth04_1_ {
+    fill: $broth;
+}
+
+
+#glasses-lenses_1_ {
+    fill: $white;
+    fill-opacity: 0.5;
+}
+
+#pencil {
+    fill: $pencil;
+}
+
+#pencil-wood_1_ {
+    fill: $beige;
+}
+
+#phone-fill {
+    fill: $phone;
 }

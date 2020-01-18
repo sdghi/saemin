@@ -23,40 +23,67 @@
     <Cute v-if="bowl === 4" />
     <Glamorous v-if="bowl === 5" />
     <!-- BROTH AND NOODLES  -->
-    <BrothAndNoodleOne v-if="brothAndNoodle % 2 == 0" />
-    <BrothAndNoodleTwo v-if="brothAndNoodle % 2 !== 0" />
+    <Socialite v-if="brothAndNoodle === 0" />
+    <Intellectual v-if="brothAndNoodle === 1" />
+    <Leader v-if="brothAndNoodle === 2" />
+    <MamaBear v-if="brothAndNoodle === 3" />
+    <Artist v-if="brothAndNoodle === 4" />
+    <FreeSpirit v-if="brothAndNoodle === 5" />
     <!-- TOPPINGS  -->
-    <ToppingOne v-if="topping % 2 == 0" />
-    <ToppingTwo v-if="topping % 2 !== 0" />
+    <Optimistic v-if="topping === 0" />
+    <Troubled v-if="topping === 1" />
+    <Anxious v-if="topping === 3" />
+    <Easygoing v-if="topping === 4" />
+    <Angry v-if="topping === 5" />
   </svg>
 </template>
 
 <script>
+// Bowls
 import Hipster from "./Bowls/Hipster";
 import Classy from "./Bowls/Classy";
 import Cute from "./Bowls/Cute";
 import Eclectic from "./Bowls/Eclectic";
 import Glamorous from "./Bowls/Glamorous";
 import Local from "./Bowls/Local";
-import BrothAndNoodleOne from "./BrothAndNoodles/BrothAndNoodleOne";
-import BrothAndNoodleTwo from "./BrothAndNoodles/BrothAndNoodleTwo";
-import ToppingOne from "./Topping/ToppingOne";
-import ToppingTwo from "./Topping/ToppingTwo";
+// Toppings
+import Angry from "./Topping/Angry";
+import Anxious from "./Topping/Anxious";
+import Easygoing from "./Topping/Easygoing";
+import Optimistic from "./Topping/Optimistic";
+import Troubled from "./Topping/Troubled";
+// Broth and Noodle
+import Artist from "./BrothAndNoodles/Artist";
+import FreeSpirit from "./BrothAndNoodles/FreeSpirit";
+import Intellectual from "./BrothAndNoodles/Intellectual";
+import Leader from "./BrothAndNoodles/Leader";
+import MamaBear from "./BrothAndNoodles/MamaBear";
+import Socialite from "./BrothAndNoodles/Socialite";
 
 export default {
   name: "RamenSvg",
   props: ["brothAndNoodle", "bowl", "topping"],
   components: {
+    // Bowls
     Hipster,
     Classy,
     Cute,
     Eclectic,
     Glamorous,
     Local,
-    BrothAndNoodleOne,
-    BrothAndNoodleTwo,
-    ToppingOne,
-    ToppingTwo
+    // Broth and Noodle
+    Artist,
+    FreeSpirit,
+    Intellectual,
+    Leader,
+    MamaBear,
+    Socialite,
+    // Toppings
+    Angry,
+    Anxious,
+    Easygoing,
+    Optimistic,
+    Troubled
   },
   data() {
     return {
@@ -75,27 +102,29 @@ export default {
     // Creates mood class for svgs based off of the topping value
     let toppingVal = this.topping;
 
-    switch (toppingVal) {
-      case 0:
-        this.moodClass = "optimistic";
-        break;
-      case 1:
-        this.moodClass = "troubled";
-        break;
-      case 2:
-        this.moodClass = "disenchanted";
-        break;
-      case 3:
-        this.moodClass = "anxious";
-        break;
-      case 4:
-        this.moodClass = "easygoing";
-        break;
-      case 5:
-        this.moodClass = "angry";
-        break;
-      default:
-        break;
+    if (this.topping !== 2) {
+      switch (toppingVal) {
+        case 0:
+          this.moodClass = "optimistic";
+          break;
+        case 1:
+          this.moodClass = "troubled";
+          break;
+        case 2:
+          this.moodClass = "disenchanted";
+          break;
+        case 3:
+          this.moodClass = "anxious";
+          break;
+        case 4:
+          this.moodClass = "easygoing";
+          break;
+        case 5:
+          this.moodClass = "angry";
+          break;
+        default:
+          break;
+      }
     }
   }
 };
