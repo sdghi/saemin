@@ -143,7 +143,8 @@
 }
 
 #paletteblob01_1_,
-#tsukemen-chopsticks_1_ {
+#tsukemen-chopsticks_1_,
+#chopsticks02-fill_1_ {
     fill: $chopsticks;
 }
 
@@ -162,4 +163,10 @@
 // Supposed to be free spirit but has conflicts with personalitites
 #Broth04_1_ {
     fill: $broth;
+}
+
+
+#glasses-lenses_1_ {
+    fill: $white;
+    fill-opacity: 0.5;
 }
