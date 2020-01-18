@@ -42,7 +42,8 @@
 .st44,
 .st34,
 .st37,
-.st20 {
+.st20,
+.st39 {
     fill: $outlines;
 }
 
@@ -75,7 +76,8 @@
 
 .st13,
 #angry-egg-white_3_,
-.st32 {
+.st32,
+#notebook_1_ {
     fill: $white;
 }
 
@@ -83,7 +85,8 @@
     fill: $pink;
 }
 
-#kimchee-leaves_4_ {
+#kimchee-leaves_4_,
+#pencil-eraser_1_ {
     fill: $red;
 }
 
@@ -138,7 +141,8 @@
 }
 
 .st58,
-#Noodle04-shade_1_ {
+#Noodle04-shade_1_,
+#noodle-shadow_1_ .st39 {
     fill: $noodle-shade;
 }
 
@@ -169,4 +173,12 @@
 #glasses-lenses_1_ {
     fill: $white;
     fill-opacity: 0.5;
+}
+
+#pencil {
+    fill: $pencil;
+}
+
+#pencil-wood_1_ {
+    fill: $beige;
 }
