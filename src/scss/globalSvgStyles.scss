@@ -62,7 +62,8 @@
 }
 
 .st78,
-.st81 {
+.st81,
+#hand-fill_1_ {
     fill: $beige;
 }
 
@@ -134,19 +135,22 @@
 }
 
 .st48,
-#Noodle06_broth {
+#Noodle06_broth,
+.st47 {
     fill: $broth;
 }
 
 .st18,
-#noodles04-fill_1_ {
+#noodles04-fill_1_,
+#noodle02-fill_1_ {
     fill: $noodle;
 }
 
 .st58,
 #Noodle04-shade_1_,
 #noodle-shadow_1_ .st39,
-#noodle06-shade_1_ {
+#noodle06-shade_1_,
+#noodle02-shade_1_ {
     fill: $noodle-shade;
 }
 
@@ -185,4 +189,8 @@
 
 #pencil-wood_1_ {
     fill: $beige;
+}
+
+#phone-fill {
+    fill: $phone;
 }

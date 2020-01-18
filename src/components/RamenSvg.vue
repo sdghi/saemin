@@ -23,11 +23,12 @@
     <Cute v-if="bowl === 4" />
     <Glamorous v-if="bowl === 5" />
     <!-- BROTH AND NOODLES  -->
-    <!-- <Intellectual v-if="brothAndNoodle === 1" /> -->
-    <!-- <Leader v-if="brothAndNoodle === 2" /> -->
-    <!-- <Artist v-if="brothAndNoodle === 4" /> -->
-    <!-- <FreeSpirit  v-if="brothAndNoodle === 5"/> -->
-    <MamaBear />
+    <Socialite v-if="brothAndNoodle === 0" />
+    <Intellectual v-if="brothAndNoodle === 1" />
+    <Leader v-if="brothAndNoodle === 2" />
+    <MamaBear v-if="brothAndNoodle === 3" />
+    <Artist v-if="brothAndNoodle === 4" />
+    <FreeSpirit v-if="brothAndNoodle === 5" />
     <!-- TOPPINGS  -->
     <Optimistic v-if="topping === 0" />
     <Troubled v-if="topping === 1" />
@@ -52,11 +53,12 @@ import Easygoing from "./Topping/Easygoing";
 import Optimistic from "./Topping/Optimistic";
 import Troubled from "./Topping/Troubled";
 // Broth and Noodle
-// import Artist from "./BrothAndNoodles/Artist";
-// import FreeSpirit from "./BrothAndNoodles/FreeSpirit";
-// import Intellectual from "./BrothAndNoodles/Intellectual";
-// import Leader from "./BrothAndNoodles/Leader";
+import Artist from "./BrothAndNoodles/Artist";
+import FreeSpirit from "./BrothAndNoodles/FreeSpirit";
+import Intellectual from "./BrothAndNoodles/Intellectual";
+import Leader from "./BrothAndNoodles/Leader";
 import MamaBear from "./BrothAndNoodles/MamaBear";
+import Socialite from "./BrothAndNoodles/Socialite";
 
 export default {
   name: "RamenSvg",
@@ -70,11 +72,12 @@ export default {
     Glamorous,
     Local,
     // Broth and Noodle
-    // Artist,
-    // FreeSpirit,
-    // Intellectual,
-    // Leader,
+    Artist,
+    FreeSpirit,
+    Intellectual,
+    Leader,
     MamaBear,
+    Socialite,
     // Toppings
     Angry,
     Anxious,
