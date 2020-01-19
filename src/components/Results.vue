@@ -1,5 +1,5 @@
 <template>
-  <div class="results-container">
+  <section class="results-container">
     <div id="info-container">
       <div class="intant-ramen-info" v-if="topping.refId === 2">
         <h2 class="ramen-title">You are an instant ramen</h2>
@@ -35,7 +35,7 @@
     <CupNoodle v-if="topping.refId === 2" />
 
     <button class="restart-btn" @click="restartQuiz">restart</button>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -169,6 +169,7 @@ button {
 .results-container {
   display: flex;
   flex-direction: column;
+  background: $textBlue;
 }
 
 @media (min-width: $breakpoint-medium) {
