@@ -35,8 +35,8 @@
     <CupNoodle v-if="topping.refId === 2" />
 
     <button class="restart-btn" @click="restartQuiz">restart</button>
-    <BottomLeft />
-    <TopRight />
+    <BottomLeft status="blue" />
+    <TopRight status="blue" />
   </section>
 </template>
 

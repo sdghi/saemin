@@ -1,5 +1,5 @@
 <template>
-  <svg viewBox="0 0 2142.08 2026.78">
+  <svg viewBox="0 0 2142.08 2026.78" :class="status">
     <title>pattern bottom left</title>
     <g id="Layer_2" data-name="Layer 2">
       <g id="Layer_1-2" data-name="Layer 1">
@@ -238,7 +238,8 @@
 
 <script>
 export default {
-  name: "BottomLeft"
+  name: "BottomLeft",
+  props: ["status"]
 };
 </script>
 
@@ -259,5 +260,11 @@ svg {
 
 .cls-1 {
   fill: #e94568;
+}
+
+.blue {
+  .cls-1 {
+    fill: lighten($textBlue, 4%);
+  }
 }
 </style>
