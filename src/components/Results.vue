@@ -2,7 +2,7 @@
   <section class="results-container">
     <div id="info-container">
       <div class="intant-ramen-info" v-if="topping.refId === 2">
-        <h2 class="ramen-title">You are an instant ramen</h2>
+        <h2 class="ramen-title">An instant ramen.</h2>
         <p>
           When presented with a choice, you reliably choose the easier.
           Immediate gratification is routinely sought at the expense of basic
@@ -11,8 +11,8 @@
       </div>
       <div class="ramen-info" v-else-if="topping.refId !== 2">
         <h2 class="ramen-title">
-          You are {{ topping.starter }} {{ topping.name }} {{ bowl.name }}
-          {{ brothAndNoodle.name }}
+          {{ topping.starter }} {{ topping.name }} {{ bowl.name }}
+          {{ brothAndNoodle.name }}.
         </h2>
         <div class="description-container">
           <p>
@@ -35,6 +35,8 @@
     <CupNoodle v-if="topping.refId === 2" />
 
     <button class="restart-btn" @click="restartQuiz">restart</button>
+    <BottomLeft />
+    <TopRight />
   </section>
 </template>
 
@@ -42,10 +44,14 @@
 import { mapGetters } from "vuex";
 import Ramen from "./Ramen";
 import CupNoodle from "./CupNoodle";
+import BottomLeft from "./Illustrations/BottomLeft";
+import TopRight from "./Illustrations/TopRight";
 
 export default {
   name: "Results",
   components: {
+    BottomLeft,
+    TopRight,
     Ramen,
     CupNoodle
   },
@@ -134,6 +140,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.results-container {
+  display: flex;
+  flex-direction: column;
+  background: $textBlue;
+  position: relative;
+}
+
+#info-container {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  margin: 50px auto 0 auto;
+  width: 60%;
+}
+
+.ramen-title {
+  font-size: 3rem;
+  text-transform: lowercase;
+  color: $white;
+}
+
+.description-container {
+  p {
+    font-size: 1.4rem;
+  }
+}
+
 .restart-btn {
   position: fixed;
   bottom: 2.5%;
@@ -152,34 +185,18 @@ button {
   text-transform: uppercase;
 }
 
-.ramen-info {
-  padding: 50px;
-}
-
-.ramen-title {
-  font-size: 2rem;
-}
-
-.description-container {
-  p {
-    font-size: 1.4rem;
-  }
-}
-
-.results-container {
-  display: flex;
-  flex-direction: column;
-  background: $textBlue;
-}
-
 @media (min-width: $breakpoint-medium) {
+  #info-container {
+    margin: 0 auto;
+  }
+
   .results-container {
     height: 100vh;
     overflow: hidden;
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     place-items: center;
-    grid-gap: 20px;
   }
 
   .ramen-info {
