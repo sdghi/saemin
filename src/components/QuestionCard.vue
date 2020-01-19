@@ -125,10 +125,14 @@ export default {
             centerHeight,
           behavior: "smooth"
         });
-      } else {
+      } else if (this.index !== this.allQuestions.length - 1) {
         window.scrollTo({
           top: window.pageYOffset + this.$refs.quizQuestion.clientHeight,
           behavior: "smooth"
+        });
+      } else {
+        window.scrollTo({
+          top: 0
         });
       }
     },
