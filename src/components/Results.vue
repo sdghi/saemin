@@ -2,7 +2,7 @@
   <section class="results-container">
     <div id="info-container">
       <YouAreSvg />
-      <div class="intant-ramen-info" v-if="topping.refId === 2">
+      <div class="ramen-info" v-if="topping.refId === 2">
         <h2 class="ramen-title">An instant ramen.</h2>
         <p>
           When presented with a choice, you reliably choose the easier.
@@ -168,6 +168,15 @@ export default {
   width: 80%;
 }
 
+.ramen-info {
+  margin-top: -40px;
+  p {
+    font-size: 1.7rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+  }
+}
+
 .ramen-title {
   font-size: 3rem;
   text-transform: lowercase;
@@ -176,7 +185,9 @@ export default {
 
 .description-container {
   p {
-    font-size: 1.4rem;
+    font-size: 1.7rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
   }
 }
 

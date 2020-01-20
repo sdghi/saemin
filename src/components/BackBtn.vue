@@ -76,6 +76,7 @@ button {
 
 .restart {
   background: $white;
+  padding: 10px 30px;
 
   p {
     color: $textGold;

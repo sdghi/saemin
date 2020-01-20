@@ -34,7 +34,12 @@
             {{ answer.content }}
           </button>
         </div>
-        <BackBtn content="back" btnStyle="back" :btnEvent="goBack" />
+        <BackBtn
+          content="back"
+          btnStyle="back"
+          :btnEvent="goBack"
+          v-if="index !== 0"
+        />
       </div>
 
       <!-- this is the illustration -->
@@ -86,12 +91,23 @@ export default {
   },
   methods: {
     goBack() {
+      const centerHeight =
+        (window.innerHeight - this.$refs.questionContainer.clientHeight) / 2;
       // check to see if it's the first question before going back
-      window.scrollY - this.scrollHeight > 0 &&
+
+      if (this.index === 1) {
+        console.log("first back");
         window.scrollTo({
-          top: window.pageYOffset - this.scrollHeight,
+          top: window.pageYOffset - this.scrollHeight + centerHeight,
           behavior: "smooth"
         });
+      } else {
+        window.scrollY - this.scrollHeight > 0 &&
+          window.scrollTo({
+            top: window.pageYOffset - this.scrollHeight,
+            behavior: "smooth"
+          });
+      }
     },
     setAnswer(e) {
       // sets current answer
@@ -238,7 +254,7 @@ svg.third {
     text-align: center;
     color: $textGold;
     margin: 0;
-    padding: 20px 0;
+    padding: 30px 0;
   }
 }
 
