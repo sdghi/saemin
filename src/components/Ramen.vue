@@ -36,7 +36,6 @@ export default {
 @media (min-width: $breakpoint-medium) {
   .ramen {
     height: 100vh;
-    z-index: 0;
 
     svg {
       /* border: 1px solid red; */

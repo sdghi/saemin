@@ -259,6 +259,8 @@ svg {
 }
 
 .blue {
+  z-index: 1;
+
   .cls-1 {
     fill: lighten($textBlue, 4%);
   }
