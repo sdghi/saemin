@@ -38,7 +38,7 @@ button {
   }
 
   svg {
-    width: 15px;
+    width: 10px;
     margin-right: 10px;
     transform: rotate(180deg);
   }
@@ -70,7 +70,6 @@ button {
   }
 
   svg {
-    margin-right: 5px;
     fill: $pink;
   }
 }
@@ -83,6 +82,7 @@ button {
   }
 
   svg {
+    width: 15px;
     fill: $textGold;
   }
 }
