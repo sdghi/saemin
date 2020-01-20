@@ -33,17 +33,7 @@
             {{ answer.content }}
           </button>
         </div>
-        <button @click="goBack" v-if="index !== 0" class="back-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 10">
-            <title>down-triangle</title>
-            <g id="Layer_2" data-name="Layer 2">
-              <g id="Layer_1-2" data-name="Layer 1">
-                <polygon class="cls-1" points="0 0 18 0 9 10 0 0" />
-              </g>
-            </g>
-          </svg>
-          <p>go back</p>
-        </button>
+        <BackBtn content="back" btnStyle="back" :btnEvent="goBack" />
       </div>
 
       <!-- this is the illustration -->
@@ -62,6 +52,7 @@ import IllustrationOne from "./Transitions/IllustrationOne";
 import IllustrationTwo from "./Transitions/IllustrationTwo";
 import IllustrationThree from "./Transitions/IllustrationThree";
 import QuestionPattern from "./QuestionPattern";
+import BackBtn from "./BackBtn";
 import TopRidge from "./TopRidge";
 import { mapGetters } from "vuex";
 
@@ -74,6 +65,7 @@ export default {
     IllustrationTwo,
     IllustrationThree,
     TopRidge,
+    BackBtn,
     QuestionPattern
   },
   data() {
@@ -244,33 +236,6 @@ svg.third {
     color: $textGold;
     margin: 0;
     padding: 20px 0;
-  }
-}
-
-.back-btn {
-  background: $textGold;
-  border: none;
-  border-radius: 30px;
-  padding: 10px 15px;
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-
-  p {
-    font-size: 20px;
-    font-weight: 700;
-    margin: 0;
-    color: $pink;
-    font-family: $type-heading;
-    text-transform: uppercase;
-    line-height: 1;
-  }
-
-  svg {
-    width: 15px;
-    margin-right: 5px;
-    fill: $pink;
-    transform: rotate(180deg);
   }
 }
 

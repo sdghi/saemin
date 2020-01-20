@@ -25,7 +25,11 @@
           <p><strong>Style:</strong> {{ bowl.name }}</p>
         </div>
       </div>
-      <button class="restart-btn" @click="restartQuiz">restart</button>
+      <BackBtn
+        content="try again!"
+        btnStyle="restart"
+        :btnEvent="restartQuiz"
+      />
     </div>
     <Ramen
       :brothAndNoodleRef="brothAndNoodle.refId"
@@ -46,6 +50,7 @@ import Ramen from "./Ramen";
 import CupNoodle from "./CupNoodle";
 import BottomLeft from "./Illustrations/BottomLeft";
 import TopRight from "./Illustrations/TopRight";
+import BackBtn from "./BackBtn";
 
 export default {
   name: "Results",
@@ -53,7 +58,8 @@ export default {
     BottomLeft,
     TopRight,
     Ramen,
-    CupNoodle
+    CupNoodle,
+    BackBtn
   },
   computed: mapGetters([
     "allIngredients",
@@ -169,44 +175,6 @@ export default {
   p {
     font-size: 1.4rem;
   }
-}
-
-.restart-btn {
-  background: $textGold;
-  border: none;
-  border-radius: 30px;
-  padding: 10px 15px;
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-
-  p {
-    font-size: 20px;
-    font-weight: 700;
-    margin: 0;
-    color: $pink;
-    font-family: $type-heading;
-    text-transform: uppercase;
-    line-height: 1;
-  }
-
-  svg {
-    width: 15px;
-    margin-right: 5px;
-    fill: $pink;
-    transform: rotate(180deg);
-  }
-}
-
-button {
-  background: $black;
-  font-weight: 700;
-  padding-top: 5px;
-  border: none;
-  color: $white;
-  border-radius: 30px;
-  font-family: $type-heading;
-  text-transform: uppercase;
 }
 
 @media (min-width: $breakpoint-medium) {
