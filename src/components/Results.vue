@@ -1,6 +1,7 @@
 <template>
   <section class="results-container">
     <div id="info-container">
+      <YouAreSvg />
       <div class="intant-ramen-info" v-if="topping.refId === 2">
         <h2 class="ramen-title">An instant ramen.</h2>
         <p>
@@ -51,6 +52,7 @@ import CupNoodle from "./CupNoodle";
 import BottomLeft from "./Illustrations/BottomLeft";
 import TopRight from "./Illustrations/TopRight";
 import BackBtn from "./BackBtn";
+import YouAreSvg from "./Illustrations/YouAreSvg";
 
 export default {
   name: "Results",
@@ -59,7 +61,8 @@ export default {
     TopRight,
     Ramen,
     CupNoodle,
-    BackBtn
+    BackBtn,
+    YouAreSvg
   },
   computed: mapGetters([
     "allIngredients",
@@ -161,8 +164,8 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin: 50px auto 0 auto;
-  width: 60%;
+  margin: 0 auto;
+  width: 80%;
 }
 
 .ramen-title {
@@ -179,7 +182,7 @@ export default {
 
 @media (min-width: $breakpoint-medium) {
   #info-container {
-    margin: 0 auto;
+    width: 60%;
   }
 
   .results-container {
