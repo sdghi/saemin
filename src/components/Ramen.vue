@@ -24,6 +24,8 @@ export default {
 .ramen {
   height: fit-content;
   width: 100%;
+  position: relative;
+  z-index: 9999;
 
   svg {
     height: 100%;
@@ -34,6 +36,19 @@ export default {
 @media (min-width: $breakpoint-medium) {
   .ramen {
     height: 100vh;
+    z-index: 0;
+
+    svg {
+      /* border: 1px solid red; */
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 100vh;
+
+      #bg {
+        height: 100vh;
+      }
+    }
   }
 }
 </style>

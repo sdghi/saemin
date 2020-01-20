@@ -33,9 +33,7 @@
             {{ answer.content }}
           </button>
         </div>
-        <button @click="goBack" v-if="index !== 0" class="back-btn">
-          go back
-        </button>
+        <BackBtn content="back" btnStyle="back" :btnEvent="goBack" />
       </div>
 
       <!-- this is the illustration -->
@@ -54,6 +52,7 @@ import IllustrationOne from "./Transitions/IllustrationOne";
 import IllustrationTwo from "./Transitions/IllustrationTwo";
 import IllustrationThree from "./Transitions/IllustrationThree";
 import QuestionPattern from "./QuestionPattern";
+import BackBtn from "./BackBtn";
 import TopRidge from "./TopRidge";
 import { mapGetters } from "vuex";
 
@@ -66,6 +65,7 @@ export default {
     IllustrationTwo,
     IllustrationThree,
     TopRidge,
+    BackBtn,
     QuestionPattern
   },
   data() {
@@ -125,10 +125,14 @@ export default {
             centerHeight,
           behavior: "smooth"
         });
-      } else {
+      } else if (this.index !== this.allQuestions.length - 1) {
         window.scrollTo({
           top: window.pageYOffset + this.$refs.quizQuestion.clientHeight,
           behavior: "smooth"
+        });
+      } else {
+        window.scrollTo({
+          top: 0
         });
       }
     },
@@ -235,19 +239,6 @@ svg.third {
   }
 }
 
-.back-btn {
-  background: $black;
-  font-weight: 700;
-  border: none;
-  color: $white;
-  border-radius: 30px;
-  padding: 10px 15px;
-  font-family: $type-heading;
-  text-transform: uppercase;
-  margin-top: 30px;
-  font-size: 20px;
-}
-
 .answers-container {
   user-select: none;
   display: grid;
@@ -262,16 +253,15 @@ svg.third {
     cursor: pointer;
     text-align: center;
     font-size: 0.7rem;
-    color: $textBlue;
+    font-weight: 700;
+    color: $maroon;
+    transition: all 0.2s ease-out;
+    padding: 10px;
 
-    &.selected {
-      background: $black;
-      color: $white;
-    }
-
+    &.selected,
     &:hover {
       background: $textGold;
-      color: $white;
+      color: $maroon;
     }
   }
 }

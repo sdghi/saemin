@@ -10,7 +10,6 @@
         <h1 class="home-title uppercase text-center">Generator</h1>
         <p class="home-subtitle">What kind of saimin are you?</p>
         <button class="start-quiz-btn" @click="startQuiz" v-if="!quizStarted">
-          <p>take the quiz</p>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 10">
             <title>down-triangle</title>
             <g id="Layer_2" data-name="Layer 2">
@@ -19,6 +18,7 @@
               </g>
             </g>
           </svg>
+          <p>take the quiz</p>
         </button>
       </div>
       <BottomLeft />
@@ -106,9 +106,10 @@ header {
 
 .home-title {
   margin: 0;
-  font-size: 6vmin;
+  font-size: 8vmin;
   transition: all 0.3s $cubic-ease;
   position: relative;
+  color: $white;
 
   h1 {
     font-family: $type-heading-italic;
@@ -130,7 +131,16 @@ p {
 
 .home-subtitle {
   text-align: center;
-  font-size: 5vmin;
+  font-size: 16px;
+  font-weight: bold;
+  color: $white;
+  margin-bottom: 30px;
+}
+
+@media (min-width: $breakpoint-small) {
+  .home-subtitle {
+    font-size: 24px;
+  }
 }
 
 .start-quiz-btn {
@@ -139,17 +149,18 @@ p {
   font-size: 1rem;
   margin: 1rem auto 0 auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
   text-transform: uppercase;
+  background: $white;
+  padding: 10px 25px;
+  border-radius: 40px;
 
   p {
-    background: $teal;
-    color: $white;
+    color: $pink;
     font-weight: 700;
-    padding: 15px 20px;
-    border-radius: 40px;
+    margin: 0;
   }
 
   &:hover {
@@ -159,11 +170,11 @@ p {
   }
 
   svg {
-    margin-top: 2px;
-    width: 20px;
+    width: 10px;
+    margin-right: 10px;
 
     .cls-1 {
-      fill: #e1c487;
+      fill: $pink;
     }
   }
 }
@@ -173,7 +184,7 @@ p {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(10px);
+    transform: translateY(3px);
   }
   100% {
     transform: translateY(0);

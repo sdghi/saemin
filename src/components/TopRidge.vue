@@ -27,7 +27,7 @@ export default {
 <style lang="scss" scoped>
 #top-ridge {
   position: absolute;
-  top: -31%;
+  top: -21%;
   left: 0;
 }
 

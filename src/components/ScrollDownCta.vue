@@ -104,7 +104,7 @@ section {
   align-items: center;
   position: relative;
   z-index: 99;
-  margin-top: -40vh;
+  margin-top: -45vh;
 
   &::after,
   &::before {
@@ -122,8 +122,8 @@ section {
   }
 
   &:after {
-    height: 40%;
-    top: 10%;
+    height: 35%;
+    top: 15%;
     background: $pink;
   }
 }

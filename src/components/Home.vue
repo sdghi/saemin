@@ -19,7 +19,7 @@ export default {
   updated() {
     // scroll jack until all question are answered
     if (this.quizStarted) {
-      // document.body.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
     }
     if (this.quizCompleted) {
       document.body.style.overflow = "initial";

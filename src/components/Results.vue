@@ -1,8 +1,9 @@
 <template>
-  <div class="results-container">
+  <section class="results-container">
     <div id="info-container">
+      <YouAreSvg />
       <div class="intant-ramen-info" v-if="topping.refId === 2">
-        <h2 class="ramen-title">You are an instant ramen</h2>
+        <h2 class="ramen-title">An instant ramen.</h2>
         <p>
           When presented with a choice, you reliably choose the easier.
           Immediate gratification is routinely sought at the expense of basic
@@ -11,8 +12,8 @@
       </div>
       <div class="ramen-info" v-else-if="topping.refId !== 2">
         <h2 class="ramen-title">
-          You are {{ topping.starter }} {{ topping.name }} {{ bowl.name }}
-          {{ brothAndNoodle.name }}
+          {{ topping.starter }} {{ topping.name }} {{ bowl.name }}
+          {{ brothAndNoodle.name }}.
         </h2>
         <div class="description-container">
           <p>
@@ -25,6 +26,11 @@
           <p><strong>Style:</strong> {{ bowl.name }}</p>
         </div>
       </div>
+      <BackBtn
+        content="try again!"
+        btnStyle="restart"
+        :btnEvent="restartQuiz"
+      />
     </div>
     <Ramen
       :brothAndNoodleRef="brothAndNoodle.refId"
@@ -34,20 +40,29 @@
     />
     <CupNoodle v-if="topping.refId === 2" />
 
-    <button class="restart-btn" @click="restartQuiz">restart</button>
-  </div>
+    <BottomLeft status="blue" />
+    <TopRight status="blue" />
+  </section>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 import Ramen from "./Ramen";
 import CupNoodle from "./CupNoodle";
+import BottomLeft from "./Illustrations/BottomLeft";
+import TopRight from "./Illustrations/TopRight";
+import BackBtn from "./BackBtn";
+import YouAreSvg from "./Illustrations/YouAreSvg";
 
 export default {
   name: "Results",
   components: {
+    BottomLeft,
+    TopRight,
     Ramen,
-    CupNoodle
+    CupNoodle,
+    BackBtn,
+    YouAreSvg
   },
   computed: mapGetters([
     "allIngredients",
@@ -134,30 +149,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.restart-btn {
-  position: fixed;
-  bottom: 2.5%;
-  right: 5%;
-  padding: 20px 15px 15px 15px;
+.results-container {
+  display: flex;
+  flex-direction: column;
+  background: $textBlue;
+  position: relative;
 }
 
-button {
-  background: $black;
-  font-weight: 700;
-  padding-top: 5px;
-  border: none;
-  color: $white;
-  border-radius: 30px;
-  font-family: $type-heading;
-  text-transform: uppercase;
-}
-
-.ramen-info {
-  padding: 50px;
+#info-container {
+  position: relative;
+  z-index: 900;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0 auto;
+  width: 80%;
 }
 
 .ramen-title {
-  font-size: 2rem;
+  font-size: 3rem;
+  text-transform: lowercase;
+  color: $white;
 }
 
 .description-container {
@@ -166,19 +180,18 @@ button {
   }
 }
 
-.results-container {
-  display: flex;
-  flex-direction: column;
-}
-
 @media (min-width: $breakpoint-medium) {
+  #info-container {
+    width: 60%;
+  }
+
   .results-container {
     height: 100vh;
     overflow: hidden;
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     place-items: center;
-    grid-gap: 20px;
   }
 
   .ramen-info {
