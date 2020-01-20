@@ -34,12 +34,12 @@ button {
     margin: 0;
     font-family: $type-heading;
     text-transform: uppercase;
-    line-height: 1;
+    line-height: auto;
   }
 
   svg {
     width: 10px;
-    margin-right: 10px;
+    margin-right: 5px;
     transform: rotate(180deg);
   }
 
@@ -76,6 +76,7 @@ button {
 
 .restart {
   background: $white;
+  padding: 10px 30px;
 
   p {
     color: $textGold;

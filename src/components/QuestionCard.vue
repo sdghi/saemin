@@ -18,6 +18,7 @@
     <div class="question-card" ref="quizQuestion">
       <div class="question-container" ref="questionContainer">
         <QuestionPattern />
+        <QuestionPatternMobile />
         <h3>{{ question.content }}</h3>
         <div class="answers-container">
           <!-- the answer == 1 will be data.value and the value in the input will be pulled data.answerTitle -->
@@ -33,7 +34,12 @@
             {{ answer.content }}
           </button>
         </div>
-        <BackBtn content="back" btnStyle="back" :btnEvent="goBack" />
+        <BackBtn
+          content="back"
+          btnStyle="back"
+          :btnEvent="goBack"
+          v-if="index !== 0"
+        />
       </div>
 
       <!-- this is the illustration -->
@@ -52,6 +58,7 @@ import IllustrationOne from "./Transitions/IllustrationOne";
 import IllustrationTwo from "./Transitions/IllustrationTwo";
 import IllustrationThree from "./Transitions/IllustrationThree";
 import QuestionPattern from "./QuestionPattern";
+import QuestionPatternMobile from "./QuestionPatternMobile";
 import BackBtn from "./BackBtn";
 import TopRidge from "./TopRidge";
 import { mapGetters } from "vuex";
@@ -66,7 +73,8 @@ export default {
     IllustrationThree,
     TopRidge,
     BackBtn,
-    QuestionPattern
+    QuestionPattern,
+    QuestionPatternMobile
   },
   data() {
     return {
@@ -83,12 +91,23 @@ export default {
   },
   methods: {
     goBack() {
+      const centerHeight =
+        (window.innerHeight - this.$refs.questionContainer.clientHeight) / 2;
       // check to see if it's the first question before going back
-      window.scrollY - this.scrollHeight > 0 &&
+
+      if (this.index === 1) {
+        console.log("first back");
         window.scrollTo({
-          top: window.pageYOffset - this.scrollHeight,
+          top: window.pageYOffset - this.scrollHeight + centerHeight,
           behavior: "smooth"
         });
+      } else {
+        window.scrollY - this.scrollHeight > 0 &&
+          window.scrollTo({
+            top: window.pageYOffset - this.scrollHeight,
+            behavior: "smooth"
+          });
+      }
     },
     setAnswer(e) {
       // sets current answer
@@ -235,7 +254,7 @@ svg.third {
     text-align: center;
     color: $textGold;
     margin: 0;
-    padding: 20px 0;
+    padding: 30px 0;
   }
 }
 

@@ -14,6 +14,13 @@
       <rect y="-2" class="background" width="1442" height="966" />
       <rect x="0" y="646.6" class="table" width="1442" height="319.4" />
     </g>
+
+	<g id="BG-desktop" :class="moodClass">
+      <rect y="-800" width="1442" height="1780" class="st4"></rect>
+      <rect x="0" y="900" width="1442" height="800" class="st27"></rect>
+    </g>
+
+
     <g >
 	<g id="cupnoodle_1_">
 		<path id="cup-inside-fill_1_" class="st2" d="M814.8,291.5c29.7,11.6,51.2,37.5,71.5,62.1c1.6,1.9,3.3,3.9,5.6,4.9    c8,3.2,14-7.5,17.2-13.1c4-6.9,4.4-15.6,2-23.1c-3.4-10.5-11.4-19-20-25.9c-8.6-7-18.1-12.9-28.1-17.7c-9.3-4.4-20.3-0.9-29.7,2.7    C830.7,282.3,816,292,814.8,291.5z"/>
@@ -348,6 +355,11 @@
 </script>
 
 <style lang="scss" scoped>
+	svg{
+		position: relative;
+		z-index: 100;
+	}
+
     .background{
         fill: #8a9992;
     }
