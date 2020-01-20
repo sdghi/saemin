@@ -177,6 +177,7 @@ export default {
   justify-content: center;
   margin: 0 auto;
   width: 80%;
+  padding: 40px 0;
 }
 
 .ramen-info {
@@ -205,6 +206,7 @@ export default {
 @media (min-width: $breakpoint-medium) {
   #info-container {
     width: 60%;
+    padding: 0;
   }
 
   .results-container {
