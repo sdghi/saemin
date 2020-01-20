@@ -252,19 +252,21 @@ svg {
   z-index: 999999;
 }
 
-@media (min-width: $breakpoint-small) {
-  svg {
-    width: 40%;
-  }
-}
-
 .cls-1 {
   fill: #e94568;
 }
 
 .blue {
+  z-index: 1;
+
   .cls-1 {
     fill: lighten($textBlue, 4%);
+  }
+}
+
+@media (min-width: $breakpoint-small) {
+  svg {
+    width: 40%;
   }
 }
 </style>

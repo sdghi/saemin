@@ -34,7 +34,15 @@
           </button>
         </div>
         <button @click="goBack" v-if="index !== 0" class="back-btn">
-          go back
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 10">
+            <title>down-triangle</title>
+            <g id="Layer_2" data-name="Layer 2">
+              <g id="Layer_1-2" data-name="Layer 1">
+                <polygon class="cls-1" points="0 0 18 0 9 10 0 0" />
+              </g>
+            </g>
+          </svg>
+          <p>go back</p>
         </button>
       </div>
 
@@ -240,16 +248,30 @@ svg.third {
 }
 
 .back-btn {
-  background: $black;
-  font-weight: 700;
+  background: $textGold;
   border: none;
-  color: $white;
   border-radius: 30px;
   padding: 10px 15px;
-  font-family: $type-heading;
-  text-transform: uppercase;
   margin-top: 30px;
-  font-size: 20px;
+  display: flex;
+  align-items: center;
+
+  p {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    color: $pink;
+    font-family: $type-heading;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  svg {
+    width: 15px;
+    margin-right: 5px;
+    fill: $pink;
+    transform: rotate(180deg);
+  }
 }
 
 .answers-container {
@@ -266,16 +288,15 @@ svg.third {
     cursor: pointer;
     text-align: center;
     font-size: 0.7rem;
-    color: $textBlue;
+    font-weight: 700;
+    color: $maroon;
+    transition: all 0.2s ease-out;
+    padding: 10px;
 
-    &.selected {
-      background: $black;
-      color: $white;
-    }
-
+    &.selected,
     &:hover {
       background: $textGold;
-      color: $white;
+      color: $maroon;
     }
   }
 }

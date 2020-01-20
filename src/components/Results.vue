@@ -25,6 +25,7 @@
           <p><strong>Style:</strong> {{ bowl.name }}</p>
         </div>
       </div>
+      <button class="restart-btn" @click="restartQuiz">restart</button>
     </div>
     <Ramen
       :brothAndNoodleRef="brothAndNoodle.refId"
@@ -34,7 +35,6 @@
     />
     <CupNoodle v-if="topping.refId === 2" />
 
-    <button class="restart-btn" @click="restartQuiz">restart</button>
     <BottomLeft status="blue" />
     <TopRight status="blue" />
   </section>
@@ -148,9 +148,13 @@ export default {
 }
 
 #info-container {
+  position: relative;
+  z-index: 900;
   min-height: 100vh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   margin: 50px auto 0 auto;
   width: 60%;
 }
@@ -168,10 +172,30 @@ export default {
 }
 
 .restart-btn {
-  position: fixed;
-  bottom: 2.5%;
-  right: 5%;
-  padding: 20px 15px 15px 15px;
+  background: $textGold;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 15px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+
+  p {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    color: $pink;
+    font-family: $type-heading;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  svg {
+    width: 15px;
+    margin-right: 5px;
+    fill: $pink;
+    transform: rotate(180deg);
+  }
 }
 
 button {

@@ -170,7 +170,7 @@ p {
   }
 
   svg {
-    width: 20px;
+    width: 10px;
     margin-right: 10px;
 
     .cls-1 {
