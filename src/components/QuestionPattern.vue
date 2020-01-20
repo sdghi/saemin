@@ -77,6 +77,7 @@ svg {
   position: absolute;
   top: 20px;
   left: 0;
+  display: none;
 }
 
 .cls-1 {
@@ -84,5 +85,11 @@ svg {
 }
 .cls-2 {
   fill: #fff;
+}
+
+@media (min-width: $breakpoint-small) {
+  svg {
+    display: block;
+  }
 }
 </style>

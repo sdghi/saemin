@@ -18,6 +18,7 @@
     <div class="question-card" ref="quizQuestion">
       <div class="question-container" ref="questionContainer">
         <QuestionPattern />
+        <QuestionPatternMobile />
         <h3>{{ question.content }}</h3>
         <div class="answers-container">
           <!-- the answer == 1 will be data.value and the value in the input will be pulled data.answerTitle -->
@@ -52,6 +53,7 @@ import IllustrationOne from "./Transitions/IllustrationOne";
 import IllustrationTwo from "./Transitions/IllustrationTwo";
 import IllustrationThree from "./Transitions/IllustrationThree";
 import QuestionPattern from "./QuestionPattern";
+import QuestionPatternMobile from "./QuestionPatternMobile";
 import BackBtn from "./BackBtn";
 import TopRidge from "./TopRidge";
 import { mapGetters } from "vuex";
@@ -66,7 +68,8 @@ export default {
     IllustrationThree,
     TopRidge,
     BackBtn,
-    QuestionPattern
+    QuestionPattern,
+    QuestionPatternMobile
   },
   data() {
     return {
