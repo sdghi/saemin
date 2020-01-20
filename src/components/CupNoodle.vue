@@ -355,6 +355,11 @@
 </script>
 
 <style lang="scss" scoped>
+	svg{
+		position: relative;
+		z-index: 100;
+	}
+
     .background{
         fill: #8a9992;
     }
