@@ -1,48 +1,50 @@
 <template>
-  <section class="results-container">
-    <div id="info-container">
-      <YouAreSvg />
-      <div class="ramen-info" v-if="topping.refId === 2">
-        <h2 class="ramen-title">An instant ramen.</h2>
-        <p>
-          When presented with a choice, you reliably choose the easier.
-          Immediate gratification is routinely sought at the expense of basic
-          health and hygiene. Maybe try a little harder?
-        </p>
-      </div>
-      <div class="ramen-info" v-else-if="topping.refId !== 2">
-        <h2 class="ramen-title">
-          {{ topping.starter }} {{ topping.name }} {{ bowl.name }}
-          {{ brothAndNoodle.name }}.
-        </h2>
-        <div class="description-container">
+  <transition name="fade" mode="in-out">
+    <section class="results-container">
+      <div id="info-container">
+        <YouAreSvg />
+        <div class="ramen-info" v-if="topping.refId === 2">
+          <h2 class="ramen-title">An instant ramen.</h2>
           <p>
-            You are <strong>{{ brothAndNoodle.title }}</strong
-            >.
+            When presented with a choice, you reliably choose the easier.
+            Immediate gratification is routinely sought at the expense of basic
+            health and hygiene. Maybe try a little harder?
           </p>
-          <p>{{ brothAndNoodle.description }}</p>
-          <p><strong>Toppings:</strong> {{ topping.title }}</p>
-          <p>{{ topping.description }}</p>
-          <p><strong>Style:</strong> {{ bowl.name }}</p>
         </div>
+        <div class="ramen-info" v-else-if="topping.refId !== 2">
+          <h2 class="ramen-title">
+            {{ topping.starter }} {{ topping.name }} {{ bowl.name }}
+            {{ brothAndNoodle.name }}.
+          </h2>
+          <div class="description-container">
+            <p>
+              You are <strong>{{ brothAndNoodle.title }}</strong
+              >.
+            </p>
+            <p>{{ brothAndNoodle.description }}</p>
+            <p><strong>Toppings:</strong> {{ topping.title }}</p>
+            <p>{{ topping.description }}</p>
+            <p><strong>Style:</strong> {{ bowl.name }}</p>
+          </div>
+        </div>
+        <BackBtn
+          content="try again!"
+          btnStyle="restart"
+          :btnEvent="restartQuiz"
+        />
       </div>
-      <BackBtn
-        content="try again!"
-        btnStyle="restart"
-        :btnEvent="restartQuiz"
+      <Ramen
+        :brothAndNoodleRef="brothAndNoodle.refId"
+        :toppingRef="topping.refId"
+        :bowlRef="bowl.refId"
+        v-if="topping.refId !== 2"
       />
-    </div>
-    <Ramen
-      :brothAndNoodleRef="brothAndNoodle.refId"
-      :toppingRef="topping.refId"
-      :bowlRef="bowl.refId"
-      v-if="topping.refId !== 2"
-    />
-    <CupNoodle v-if="topping.refId === 2" />
+      <CupNoodle v-if="topping.refId === 2" />
 
-    <BottomLeft status="blue" />
-    <TopRight status="blue" />
-  </section>
+      <BottomLeft status="blue" />
+      <TopRight status="blue" />
+    </section>
+  </transition>
 </template>
 
 <script>
@@ -149,6 +151,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease-out;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
 .results-container {
   display: flex;
   flex-direction: column;
