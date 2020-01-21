@@ -155,7 +155,7 @@ svg {
   width: 120%;
   position: relative;
   z-index: 1;
-  margin: -4vw;
+  margin-top: -10vw;
 }
 
 .cls-1 {
@@ -183,6 +183,10 @@ svg {
 }
 
 @media (min-width: $breakpoint-small) {
+  svg {
+    margin-top: -4vw;
+  }
+
   #spin {
     display: block;
   }
