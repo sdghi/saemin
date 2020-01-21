@@ -255,6 +255,7 @@ svg.third {
     color: $textGold;
     margin: 0;
     padding: 30px 0;
+    font-weight: 700;
   }
 }
 
@@ -272,7 +273,7 @@ svg.third {
     cursor: pointer;
     text-align: center;
     font-size: 0.7rem;
-    font-weight: 700;
+    font-weight: 600;
     color: $maroon;
     transition: all 0.2s ease-out;
     padding: 10px;

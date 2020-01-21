@@ -1,50 +1,46 @@
 <template>
-  <transition name="fade" mode="in-out">
-    <section class="results-container">
-      <div id="info-container">
-        <YouAreSvg />
-        <div class="ramen-info" v-if="topping.refId === 2">
-          <h2 class="ramen-title">An instant ramen.</h2>
-          <p>
-            When presented with a choice, you reliably choose the easier.
-            Immediate gratification is routinely sought at the expense of basic
-            health and hygiene. Maybe try a little harder?
-          </p>
-        </div>
-        <div class="ramen-info" v-else-if="topping.refId !== 2">
-          <h2 class="ramen-title">
-            {{ topping.starter }} {{ topping.name }} {{ bowl.name }}
-            {{ brothAndNoodle.name }}.
-          </h2>
-          <div class="description-container">
-            <p>
-              You are <strong>{{ brothAndNoodle.title }}</strong
-              >.
-            </p>
-            <p>{{ brothAndNoodle.description }}</p>
-            <p><strong>Toppings:</strong> {{ topping.title }}</p>
-            <p>{{ topping.description }}</p>
-            <p><strong>Style:</strong> {{ bowl.name }}</p>
-          </div>
-        </div>
-        <BackBtn
-          content="try again!"
-          btnStyle="restart"
-          :btnEvent="restartQuiz"
-        />
+  <section class="results-container">
+    <div id="info-container">
+      <YouAreSvg />
+      <div class="ramen-info" v-if="topping.refId === 2">
+        <h2 class="ramen-title">An instant ramen.</h2>
+        <p>
+          When presented with a choice, you reliably choose the easier.
+          Immediate gratification is routinely sought at the expense of basic
+          health and hygiene. Maybe try a little harder?
+        </p>
       </div>
-      <Ramen
-        :brothAndNoodleRef="brothAndNoodle.refId"
-        :toppingRef="topping.refId"
-        :bowlRef="bowl.refId"
-        v-if="topping.refId !== 2"
+      <div class="ramen-info" v-else-if="topping.refId !== 2">
+        <h2 class="ramen-title">
+          {{ topping.starter }} {{ topping.name }} {{ bowl.name }}
+          {{ brothAndNoodle.name }}.
+        </h2>
+        <div class="description-container">
+          <p>
+            You are <strong>{{ brothAndNoodle.title }}</strong
+            >.
+          </p>
+          <p>{{ brothAndNoodle.description }}</p>
+          <p>{{ topping.description }}</p>
+        </div>
+      </div>
+      <BackBtn
+        content="try again!"
+        btnStyle="restart"
+        :btnEvent="restartQuiz"
       />
-      <CupNoodle v-if="topping.refId === 2" />
+    </div>
+    <Ramen
+      :brothAndNoodleRef="brothAndNoodle.refId"
+      :toppingRef="topping.refId"
+      :bowlRef="bowl.refId"
+      v-if="topping.refId !== 2"
+    />
+    <CupNoodle v-if="topping.refId === 2" />
 
-      <BottomLeft status="blue" />
-      <TopRight status="blue" />
-    </section>
-  </transition>
+    <BottomLeft status="blue" />
+    <TopRight status="blue" />
+  </section>
 </template>
 
 <script>
@@ -151,15 +147,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease-out;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-
 .results-container {
   display: flex;
   flex-direction: column;
@@ -189,6 +176,10 @@ export default {
   }
 }
 
+strong {
+  font-weight: 900;
+}
+
 .ramen-title {
   font-size: 3rem;
   text-transform: lowercase;
@@ -213,9 +204,8 @@ export default {
     height: 100vh;
     overflow: hidden;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
+    display: flex;
+    flex-direction: row-reverse;
   }
 
   .ramen-info {

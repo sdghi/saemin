@@ -30,11 +30,8 @@ button {
 
   p {
     font-size: 20px;
-    font-weight: 700;
     margin: 0;
-    font-family: $type-heading;
     text-transform: uppercase;
-    line-height: auto;
   }
 
   svg {
