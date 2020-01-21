@@ -168,11 +168,6 @@ export default {
 
 .ramen-info {
   margin-top: -40px;
-  p {
-    font-size: 1.7rem;
-    margin-bottom: 1.2rem;
-    line-height: 1.4;
-  }
 }
 
 strong {
@@ -185,18 +180,20 @@ strong {
   color: $white;
 }
 
-.description-container {
-  p {
-    font-size: 1.7rem;
-    margin-bottom: 1.2rem;
-    line-height: 1.4;
-  }
+.description-container p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.4;
 }
 
 @media (min-width: $breakpoint-medium) {
   #info-container {
     width: 50%;
     padding: 50px;
+  }
+
+  .description-container p {
+    font-size: 1.3rem;
   }
 
   .results-container {
