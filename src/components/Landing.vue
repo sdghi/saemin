@@ -1,7 +1,7 @@
 <template>
   <section>
     <header>
-      <h2>KUNG HEI FAT CHOY! HAPPY NEW YEAR!</h2>
+      <h2>{{ newYearsValue }}</h2>
       <BottomRidge />
     </header>
     <div id="home">
@@ -44,6 +44,20 @@ export default {
     TopRight
   },
   props: ["quizStarted"],
+  data() {
+    return {
+      newYearsValue: "KUNG HEI FAT CHOY!"
+    };
+  },
+  mounted() {
+    setInterval(() => {
+      if (this.newYearsValue === "KUNG HEI FAT CHOY!") {
+        this.newYearsValue = "HAPPY NEW YEAR!";
+      } else {
+        this.newYearsValue = "KUNG HEI FAT CHOY!";
+      }
+    }, 1500);
+  },
   methods: {
     startQuiz() {
       this.$store.commit("setQuizStarted", {

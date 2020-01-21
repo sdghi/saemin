@@ -225,6 +225,14 @@ svg.third {
   fill: $maroon;
 }
 
+.question-container {
+  border-radius: 15px;
+}
+
+.answer {
+  border-radius: 5px;
+}
+
 @media (min-width: $breakpoint-small) {
   section {
     &::after {
@@ -238,7 +246,6 @@ svg.third {
   position: relative;
   z-index: 10;
   margin: 0 auto 0 auto;
-  color: $black;
 
   h3 {
     font-size: 1.3rem;
