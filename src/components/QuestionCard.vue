@@ -238,15 +238,6 @@ svg.third {
   border-radius: 5px;
 }
 
-@media (min-width: $breakpoint-small) {
-  section {
-    &::after {
-      height: 30%;
-      top: -30%;
-    }
-  }
-}
-
 .question-card {
   position: relative;
   z-index: 10;
@@ -260,13 +251,13 @@ svg.third {
 // May break into another component later
 .question-container {
   background: $pink;
-  padding: 50px;
+  padding: 20px 30px;
 
   h3 {
     text-align: center;
     color: $textGold;
     margin: 0;
-    padding: 30px 0;
+    padding: 30px 0 15px 0;
     font-weight: 700;
   }
 }
@@ -307,6 +298,20 @@ svg.third {
 }
 
 @media (min-width: $breakpoint-small) {
+  section {
+    &::after {
+      height: 30%;
+      top: -30%;
+    }
+  }
+
+  .question-container {
+    padding: 50px;
+
+    h3 {
+      padding: 30px;
+    }
+  }
   .question-card {
     width: 80%;
 

@@ -166,7 +166,7 @@ svg {
 
 .home {
   width: 150px;
-  top: 15vh;
+  top: 12vh;
   animation: spin 5s linear infinite;
 }
 

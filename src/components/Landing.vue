@@ -107,7 +107,7 @@ header {
   h2 {
     position: relative;
     z-index: 7;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 900;
 
     width: fit-content;
@@ -131,7 +131,6 @@ header {
   color: $white;
   text-align: center;
   font-family: $type-accent;
-  font-weight: 400;
   position: relative;
 }
 
@@ -146,6 +145,7 @@ p {
   color: $white;
   margin-bottom: 30px;
   font-weight: 800;
+  margin-top: 20px;
 }
 
 @media (min-width: $breakpoint-small) {
