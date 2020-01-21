@@ -5,18 +5,22 @@
       :topping="toppingRef"
       :bowl="bowlRef"
       :moodClass="moodClass"
+      v-if="toppingRef !== 2"
     />
+    <CupNoodle v-if="toppingRef === 2" />
   </div>
 </template>
 
 <script>
 import RamenSvg from "./RamenSvg";
+import CupNoodle from "./CupNoodle";
 
 export default {
   name: "Ramen",
   props: ["brothAndNoodleRef", "toppingRef", "bowlRef"],
   components: {
-    RamenSvg
+    RamenSvg,
+    CupNoodle
   },
   data() {
     return {
@@ -27,29 +31,27 @@ export default {
     // Creates mood class for svgs based off of the topping value
     let toppingVal = this.toppingRef;
 
-    if (this.toppingRef !== 2) {
-      switch (toppingVal) {
-        case 0:
-          this.moodClass = "optimistic";
-          break;
-        case 1:
-          this.moodClass = "troubled";
-          break;
-        case 2:
-          this.moodClass = "disenchanted";
-          break;
-        case 3:
-          this.moodClass = "anxious";
-          break;
-        case 4:
-          this.moodClass = "easygoing";
-          break;
-        case 5:
-          this.moodClass = "angry";
-          break;
-        default:
-          break;
-      }
+    switch (toppingVal) {
+      case 0:
+        this.moodClass = "optimistic";
+        break;
+      case 1:
+        this.moodClass = "troubled";
+        break;
+      case 2:
+        this.moodClass = "disenchanted";
+        break;
+      case 3:
+        this.moodClass = "anxious";
+        break;
+      case 4:
+        this.moodClass = "easygoing";
+        break;
+      case 5:
+        this.moodClass = "angry";
+        break;
+      default:
+        break;
     }
   }
 };

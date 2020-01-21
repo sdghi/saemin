@@ -34,9 +34,7 @@
       :brothAndNoodleRef="brothAndNoodle.refId"
       :toppingRef="topping.refId"
       :bowlRef="bowl.refId"
-      v-if="topping.refId !== 2"
     />
-    <CupNoodle v-if="topping.refId === 2" />
 
     <BottomLeft status="blue" />
     <TopRight status="blue" />
@@ -46,7 +44,6 @@
 <script>
 import { mapGetters } from "vuex";
 import Ramen from "./Ramen";
-import CupNoodle from "./CupNoodle";
 import BottomLeft from "./Illustrations/BottomLeft";
 import TopRight from "./Illustrations/TopRight";
 import BackBtn from "./BackBtn";
@@ -58,7 +55,6 @@ export default {
     BottomLeft,
     TopRight,
     Ramen,
-    CupNoodle,
     BackBtn,
     YouAreSvg
   },
