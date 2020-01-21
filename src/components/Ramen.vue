@@ -80,12 +80,10 @@ export default {
     height: 100vh;
 
     svg {
-      /* border: 1px solid red; */
       position: absolute;
       bottom: 0;
       left: 0;
       height: auto;
-      /* height: 100vh; */
     }
   }
 }

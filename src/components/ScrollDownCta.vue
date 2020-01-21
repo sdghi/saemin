@@ -88,7 +88,8 @@ export default {
       setTimeout(() => {
         window.scrollTo({
           top:
-            this.$refs.scrollCta.offsetHeight + this.$refs.scrollCta.offsetTop,
+            this.$refs.scrollCta.offsetHeight +
+            this.$refs.scrollCta.offsetTop / 2,
           behavior: "smooth"
         });
       }, 700);
