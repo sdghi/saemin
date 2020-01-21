@@ -158,21 +158,22 @@ p {
 }
 
 .start-quiz-btn {
-  background: none;
   border: none;
-  font-size: 1rem;
   margin: 1rem auto 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  text-transform: uppercase;
-  background: $white;
-  padding: 10px 25px;
   border-radius: 40px;
+  background: #70c4ba;
+  padding: 13px 30px;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  font-weight: bold;
 
   p {
-    color: $pink;
+    color: $white;
     margin: 0;
   }
 
@@ -187,7 +188,7 @@ p {
     margin-right: 10px;
 
     .cls-1 {
-      fill: $pink;
+      fill: $white;
     }
   }
 }
