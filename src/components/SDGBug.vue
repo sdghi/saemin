@@ -145,7 +145,6 @@ export default {
 
 <style lang="scss" scoped>
 svg {
-  width: 10vmin;
   position: absolute;
   z-index: 10;
 }
@@ -160,8 +159,9 @@ svg {
 }
 
 .results {
-  top: 5%;
-  right: 5%;
+  top: 2.5%;
+  right: 2.5%;
+  width: 100px;
 }
 
 .home {
@@ -173,6 +173,10 @@ svg {
 @media (min-width: $breakpoint-small) {
   .home {
     display: none;
+  }
+
+  .results {
+    width: 200px;
   }
 }
 
