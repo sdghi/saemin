@@ -162,6 +162,7 @@ svg {
   top: 2.5%;
   right: 2.5%;
   width: 100px;
+  animation: spin 15s linear infinite;
 }
 
 .home {
