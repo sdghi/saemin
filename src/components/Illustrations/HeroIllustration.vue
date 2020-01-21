@@ -152,7 +152,7 @@ export default {
 <style lang="scss" scoped>
 svg {
   max-height: 500px;
-  width: 80%;
+  width: 110%;
   position: relative;
   z-index: 1;
   margin-top: -4vw;
