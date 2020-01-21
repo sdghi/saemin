@@ -16,35 +16,7 @@
       <rect x="0" y="646.6" width="1442" height="319.4" class="st27" />
     </g>
 
-    <g id="BG-desktop" :class="moodClass">
-      <rect y="-800" width="1442" height="1780" class="st4"></rect>
-      <rect x="0" y="900" width="1442" height="800" class="st27"></rect>
-    </g>
-
-    <g id="DesktopRamen">
-      <!-- BOWLS  -->
-      <Hipster v-if="bowl === 0" />
-      <Classy v-if="bowl === 1" />
-      <Local v-if="bowl === 2" />
-      <Eclectic v-if="bowl === 3" />
-      <Cute v-if="bowl === 4" />
-      <Glamorous v-if="bowl === 5" />
-      <!-- BROTH AND NOODLES  -->
-      <Socialite v-if="brothAndNoodle === 0" />
-      <Intellectual v-if="brothAndNoodle === 1" />
-      <Leader v-if="brothAndNoodle === 2" />
-      <MamaBear v-if="brothAndNoodle === 3" />
-      <Artist v-if="brothAndNoodle === 4" />
-      <FreeSpirit v-if="brothAndNoodle === 5" />
-      <!-- TOPPINGS  -->
-      <Optimistic v-if="topping === 0" />
-      <Troubled v-if="topping === 1" />
-      <Anxious v-if="topping === 3" />
-      <Easygoing v-if="topping === 4" />
-      <Angry v-if="topping === 5" />
-    </g>
-
-    <g id="MobileRamen">
+    <g>
       <!-- BOWLS  -->
       <Hipster v-if="bowl === 0" />
       <Classy v-if="bowl === 1" />
@@ -93,7 +65,7 @@ import Socialite from "./BrothAndNoodles/Socialite";
 
 export default {
   name: "RamenSvg",
-  props: ["brothAndNoodle", "bowl", "topping"],
+  props: ["brothAndNoodle", "bowl", "topping", "moodClass"],
   components: {
     // Bowls
     Hipster,
@@ -115,48 +87,6 @@ export default {
     Easygoing,
     Optimistic,
     Troubled
-  },
-  data() {
-    return {
-      moodClass: ""
-    };
-  },
-  mounted() {
-    if (this.topping === 2) {
-      console.log("instant ramen");
-    } else {
-      console.log(
-        `broth and noodle: ${this.brothAndNoodle}, topping: ${this.topping}, bowl: ${this.bowl}`
-      );
-    }
-
-    // Creates mood class for svgs based off of the topping value
-    let toppingVal = this.topping;
-
-    if (this.topping !== 2) {
-      switch (toppingVal) {
-        case 0:
-          this.moodClass = "optimistic";
-          break;
-        case 1:
-          this.moodClass = "troubled";
-          break;
-        case 2:
-          this.moodClass = "disenchanted";
-          break;
-        case 3:
-          this.moodClass = "anxious";
-          break;
-        case 4:
-          this.moodClass = "easygoing";
-          break;
-        case 5:
-          this.moodClass = "angry";
-          break;
-        default:
-          break;
-      }
-    }
   }
 };
 </script>
@@ -168,41 +98,4 @@ export default {
 @import "../scss/moods/easygoing";
 @import "../scss/moods/optimistic";
 @import "../scss/moods/troubled";
-
-#BG {
-  display: block;
-}
-
-#BG-desktop {
-  display: none;
-}
-
-#DesktopRamen {
-  display: none;
-}
-#MobileRamen {
-  display: block;
-}
-
-/* @media (min-width: $breakpoint-medium) {
-  svg {
-    position: relative;
-  }
-
-  #BG {
-    display: none;
-  }
-
-  #BG-desktop {
-    display: block;
-  }
-
-  #DesktopRamen {
-    display: block;
-    transform: translateY(50vmin);
-  }
-  #MobileRamen {
-    display: none;
-  }
-} */
 </style>

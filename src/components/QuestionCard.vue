@@ -3,7 +3,8 @@
     :class="{
       even: index % 2 !== 0 && index % 3 !== 0,
       odd: index % 2 === 0 && index % 3 !== 0,
-      third: index % 3 === 0
+      third: index % 3 === 0,
+      first: index === 0
     }"
     ref="questionSection"
   >
@@ -34,12 +35,17 @@
             {{ answer.content }}
           </button>
         </div>
-        <BackBtn
-          content="back"
-          btnStyle="back"
-          :btnEvent="goBack"
-          v-if="index !== 0"
-        />
+        <div class="bottom-row">
+          <BackBtn
+            content="back"
+            btnStyle="back"
+            :btnEvent="goBack"
+            v-if="index !== 0"
+          />
+          <h4 class="question-status">
+            {{ index + 1 }} out of {{ allQuestions.length }}
+          </h4>
+        </div>
       </div>
 
       <!-- this is the illustration -->
@@ -91,23 +97,11 @@ export default {
   },
   methods: {
     goBack() {
-      const centerHeight =
-        (window.innerHeight - this.$refs.questionContainer.clientHeight) / 2;
-      // check to see if it's the first question before going back
-
-      if (this.index === 1) {
-        console.log("first back");
+      window.scrollY - this.scrollHeight > 0 &&
         window.scrollTo({
-          top: window.pageYOffset - this.scrollHeight + centerHeight,
+          top: window.pageYOffset - this.scrollHeight,
           behavior: "smooth"
         });
-      } else {
-        window.scrollY - this.scrollHeight > 0 &&
-          window.scrollTo({
-            top: window.pageYOffset - this.scrollHeight,
-            behavior: "smooth"
-          });
-      }
     },
     setAnswer(e) {
       // sets current answer
@@ -132,16 +126,10 @@ export default {
         value: this.$refs.quizQuestion.clientHeight
       });
 
-      const centerHeight =
-        (window.innerHeight - this.$refs.questionContainer.clientHeight) / 2;
-
       // Scroll window from current window position to the start of the next question
       if (this.index === 0) {
         window.scrollTo({
-          top:
-            window.pageYOffset +
-            this.$refs.quizQuestion.clientHeight -
-            centerHeight,
+          top: window.pageYOffset + this.$refs.quizQuestion.clientHeight,
           behavior: "smooth"
         });
       } else if (this.index !== this.allQuestions.length - 1) {
@@ -174,6 +162,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+
+  .question-status {
+    color: $maroon;
+  }
+}
+
+.first {
+  .bottom-row {
+    justify-content: flex-end;
+  }
+}
+
 section {
   height: fit-content;
   width: 100%;
@@ -225,6 +230,14 @@ svg.third {
   fill: $maroon;
 }
 
+.question-container {
+  border-radius: 15px;
+}
+
+.answer {
+  border-radius: 5px;
+}
+
 @media (min-width: $breakpoint-small) {
   section {
     &::after {
@@ -238,7 +251,6 @@ svg.third {
   position: relative;
   z-index: 10;
   margin: 0 auto 0 auto;
-  color: $black;
 
   h3 {
     font-size: 1.3rem;
@@ -255,6 +267,7 @@ svg.third {
     color: $textGold;
     margin: 0;
     padding: 30px 0;
+    font-weight: 700;
   }
 }
 
@@ -272,7 +285,7 @@ svg.third {
     cursor: pointer;
     text-align: center;
     font-size: 0.7rem;
-    font-weight: 700;
+    font-weight: 600;
     color: $maroon;
     transition: all 0.2s ease-out;
     padding: 10px;
@@ -294,12 +307,6 @@ svg.third {
 }
 
 @media (min-width: $breakpoint-small) {
-  #bottom-noodles {
-    svg {
-      height: 200vh;
-    }
-  }
-
   .question-card {
     width: 80%;
 

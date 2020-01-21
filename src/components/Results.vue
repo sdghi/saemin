@@ -1,68 +1,63 @@
 <template>
-  <transition name="fade" mode="in-out">
-    <section class="results-container">
-      <div id="info-container">
-        <YouAreSvg />
-        <div class="ramen-info" v-if="topping.refId === 2">
-          <h2 class="ramen-title">An instant ramen.</h2>
-          <p>
-            When presented with a choice, you reliably choose the easier.
-            Immediate gratification is routinely sought at the expense of basic
-            health and hygiene. Maybe try a little harder?
-          </p>
-        </div>
-        <div class="ramen-info" v-else-if="topping.refId !== 2">
-          <h2 class="ramen-title">
-            {{ topping.starter }} {{ topping.name }} {{ bowl.name }}
-            {{ brothAndNoodle.name }}.
-          </h2>
-          <div class="description-container">
-            <p>
-              You are <strong>{{ brothAndNoodle.title }}</strong
-              >.
-            </p>
-            <p>{{ brothAndNoodle.description }}</p>
-            <p><strong>Toppings:</strong> {{ topping.title }}</p>
-            <p>{{ topping.description }}</p>
-            <p><strong>Style:</strong> {{ bowl.name }}</p>
-          </div>
-        </div>
-        <BackBtn
-          content="try again!"
-          btnStyle="restart"
-          :btnEvent="restartQuiz"
-        />
+  <section class="results-container">
+    <SDGBug page="results" />
+    <div id="info-container">
+      <YouAreSvg />
+      <div class="ramen-info" v-if="topping.refId === 2">
+        <h2 class="ramen-title">An instant ramen.</h2>
+        <p>
+          When presented with a choice, you reliably choose the easier.
+          Immediate gratification is routinely sought at the expense of basic
+          health and hygiene. Maybe try a little harder?
+        </p>
       </div>
-      <Ramen
-        :brothAndNoodleRef="brothAndNoodle.refId"
-        :toppingRef="topping.refId"
-        :bowlRef="bowl.refId"
-        v-if="topping.refId !== 2"
+      <div class="ramen-info" v-else-if="topping.refId !== 2">
+        <h2 class="ramen-title">
+          {{ topping.starter }} {{ topping.name }} {{ bowl.name }}
+          {{ brothAndNoodle.name }}.
+        </h2>
+        <div class="description-container">
+          <!-- <p>
+            You are <strong>{{ brothAndNoodle.title }}</strong
+            >.
+          </p> -->
+          <p>{{ brothAndNoodle.description }}</p>
+          <p>{{ topping.description }}</p>
+        </div>
+      </div>
+      <BackBtn
+        content="try again!"
+        btnStyle="restart"
+        :btnEvent="restartQuiz"
       />
-      <CupNoodle v-if="topping.refId === 2" />
+    </div>
+    <Ramen
+      :brothAndNoodleRef="brothAndNoodle.refId"
+      :toppingRef="topping.refId"
+      :bowlRef="bowl.refId"
+    />
 
-      <BottomLeft status="blue" />
-      <TopRight status="blue" />
-    </section>
-  </transition>
+    <BottomLeft status="blue" />
+    <TopRight status="blue" />
+  </section>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 import Ramen from "./Ramen";
-import CupNoodle from "./CupNoodle";
 import BottomLeft from "./Illustrations/BottomLeft";
 import TopRight from "./Illustrations/TopRight";
 import BackBtn from "./BackBtn";
 import YouAreSvg from "./Illustrations/YouAreSvg";
+import SDGBug from "./SDGBug";
 
 export default {
   name: "Results",
   components: {
+    SDGBug,
     BottomLeft,
     TopRight,
     Ramen,
-    CupNoodle,
     BackBtn,
     YouAreSvg
   },
@@ -151,15 +146,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease-out;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-
 .results-container {
   display: flex;
   flex-direction: column;
@@ -170,7 +156,6 @@ export default {
 #info-container {
   position: relative;
   z-index: 900;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -182,11 +167,11 @@ export default {
 
 .ramen-info {
   margin-top: -40px;
-  p {
-    font-size: 1.7rem;
-    margin-bottom: 1.2rem;
-    line-height: 1.4;
-  }
+  margin-bottom: 20px;
+}
+
+strong {
+  font-weight: 900;
 }
 
 .ramen-title {
@@ -195,27 +180,28 @@ export default {
   color: $white;
 }
 
-.description-container {
-  p {
-    font-size: 1.7rem;
-    margin-bottom: 1.2rem;
-    line-height: 1.4;
-  }
+.description-container p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.4;
 }
 
 @media (min-width: $breakpoint-medium) {
   #info-container {
-    width: 60%;
-    padding: 0;
+    width: 50%;
+    padding: 50px;
+  }
+
+  .description-container p {
+    font-size: 1.3rem;
   }
 
   .results-container {
     height: 100vh;
     overflow: hidden;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
+    display: flex;
+    flex-direction: row-reverse;
   }
 
   .ramen-info {

@@ -22,7 +22,7 @@ export default {
       document.body.style.overflow = "hidden";
     }
     if (this.quizCompleted) {
-      document.body.style.overflow = "initial";
+      document.body.style.overflowY = "initial";
     }
   },
   components: {

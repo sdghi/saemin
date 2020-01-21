@@ -1,5 +1,9 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 178.61 176.41">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 178.61 176.41"
+    :class="page"
+  >
     <title>bug</title>
     <g id="Layer_2" data-name="Layer 2">
       <g id="Layer_1-2" data-name="Layer 1">
@@ -134,17 +138,15 @@
 
 <script>
 export default {
-  name: "SDGBug"
+  name: "SDGBug",
+  props: ["page"]
 };
 </script>
 
 <style lang="scss" scoped>
 svg {
-  width: 200px;
   position: absolute;
-  top: 5%;
-  right: 5%;
-  animation: spin 5s linear infinite;
+  z-index: 10;
 }
 
 @keyframes spin {
@@ -153,6 +155,28 @@ svg {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.results {
+  top: 2.5%;
+  right: 2.5%;
+  width: 100px;
+}
+
+.home {
+  width: 150px;
+  top: 15vh;
+  animation: spin 5s linear infinite;
+}
+
+@media (min-width: $breakpoint-small) {
+  .home {
+    display: none;
+  }
+
+  .results {
+    width: 200px;
   }
 }
 
@@ -165,7 +189,7 @@ svg {
 .cls-3 {
   font-size: 16.25px;
   fill: #eb2e57;
-  font-family: SourceSansPro-Black, SourceSansPro Black;
+  font-family: $type-base;
   font-weight: 800;
 }
 </style>

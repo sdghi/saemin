@@ -1,14 +1,17 @@
 <template>
   <section>
     <header>
-      <h2>KUNG HEI FAT CHOY! HAPPY NEW YEAR!</h2>
+      <h2>{{ newYearsValue }}</h2>
       <BottomRidge />
     </header>
     <div id="home">
+      <SDGBug page="home" />
       <HeroIllustration />
       <div class="home-content">
         <h1 class="home-title uppercase text-center">Generator</h1>
-        <p class="home-subtitle">What kind of saimin are you?</p>
+        <p class="home-subtitle">
+          Find out what kind of saimin you'd be in 21&nbsp;questions
+        </p>
         <button class="start-quiz-btn" @click="startQuiz" v-if="!quizStarted">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 10">
             <title>down-triangle</title>
@@ -32,6 +35,7 @@ import HeroIllustration from "./Illustrations/HeroIllustration";
 import BottomLeft from "./Illustrations/BottomLeft";
 import TopRight from "./Illustrations/TopRight";
 import BottomRidge from "./BottomRidge";
+import SDGBug from "./SDGBug";
 
 export default {
   name: "Landing",
@@ -39,9 +43,24 @@ export default {
     HeroIllustration,
     BottomRidge,
     BottomLeft,
-    TopRight
+    TopRight,
+    SDGBug
   },
   props: ["quizStarted"],
+  data() {
+    return {
+      newYearsValue: "KUNG HEI FAT CHOY!"
+    };
+  },
+  mounted() {
+    setInterval(() => {
+      if (this.newYearsValue === "KUNG HEI FAT CHOY!") {
+        this.newYearsValue = "HAPPY NEW YEAR!";
+      } else {
+        this.newYearsValue = "KUNG HEI FAT CHOY!";
+      }
+    }, 1500);
+  },
   methods: {
     startQuiz() {
       this.$store.commit("setQuizStarted", {
@@ -78,7 +97,6 @@ header {
   left: 0;
   width: 100vw;
   line-height: 1.3;
-  font-weight: 700;
   color: $pink;
   background: $white;
   text-align: center;
@@ -89,8 +107,9 @@ header {
   h2 {
     position: relative;
     z-index: 7;
-    font-size: 1.4rem;
-    font-weight: 400;
+    font-size: 0.8rem;
+    font-weight: 900;
+
     width: fit-content;
     top: 10%;
   }
@@ -110,19 +129,10 @@ header {
   transition: all 0.3s $cubic-ease;
   position: relative;
   color: $white;
-
-  h1 {
-    font-family: $type-heading-italic;
-    position: relative;
-
-    &:first-of-type {
-      left: -8vw;
-    }
-
-    &:nth-of-type(2) {
-      left: 8vw;
-    }
-  }
+  text-align: center;
+  font-family: $type-accent;
+  font-weight: 400;
+  position: relative;
 }
 
 p {
@@ -135,31 +145,39 @@ p {
   font-weight: bold;
   color: $white;
   margin-bottom: 30px;
+  font-weight: 800;
 }
 
 @media (min-width: $breakpoint-small) {
+  header {
+    h2 {
+      letter-spacing: 0.1em;
+      font-size: 1.5rem;
+    }
+  }
+
   .home-subtitle {
     font-size: 24px;
   }
 }
 
 .start-quiz-btn {
-  background: none;
   border: none;
-  font-size: 1rem;
   margin: 1rem auto 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  text-transform: uppercase;
-  background: $white;
-  padding: 10px 25px;
   border-radius: 40px;
+  background: #70c4ba;
+  padding: 13px 30px;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  font-weight: bold;
 
   p {
-    color: $pink;
-    font-weight: 700;
+    color: $white;
     margin: 0;
   }
 
@@ -174,7 +192,7 @@ p {
     margin-right: 10px;
 
     .cls-1 {
-      fill: $pink;
+      fill: $white;
     }
   }
 }

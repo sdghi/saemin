@@ -244,13 +244,13 @@ svg {
   position: absolute;
   top: 0;
   right: 0;
-  width: 70%;
+  width: 52%;
   z-index: 0;
 }
 
 @media (min-width: $breakpoint-small) {
   svg {
-    width: 40%;
+    width: 30%;
   }
 }
 

@@ -256,32 +256,32 @@ const state = {
             ]
         },
         {
-            content: 'Pick the character from The Office you relate to most',
+            content: 'How do you prefer to give gifts?',
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
             answers: [{
-                    content: 'Michael Scott',
+                    content: 'Support a good cause',
                     value: 5
                 },
                 {
-                    content: 'Dwight Schrute',
+                    content: 'Gift card / money',
                     value: 1
                 },
                 {
-                    content: 'Phyllis Vance',
+                    content: 'Something on their wish list',
                     value: 3
                 },
                 {
-                    content: 'Kelley Kapoor',
+                    content: 'Something useful',
                     value: 0
                 },
                 {
-                    content: 'Ryan Howard',
+                    content: 'Novelty gift',
                     value: 4
                 },
                 {
-                    content: 'Robert California',
+                    content: 'Something for self-improvement',
                     value: 2
                 }
             ]
@@ -506,68 +506,68 @@ const state = {
             ]
         },
         //  STYLE QUESTIONS
-        {
-            content: 'Choose a place to spend an afternoon',
-            isAnswered: false,
-            illustrationRef: 2,
-            ingredientRef: 2,
-            answers: [{
-                    content: 'Museum',
-                    value: 1
-                },
-                {
-                    content: 'Spa',
-                    value: 5
-                },
-                {
-                    content: 'The Beach',
-                    value: 2
-                },
-                {
-                    content: 'Antique Store',
-                    value: 0
-                },
-                {
-                    content: 'Botanical Garden',
-                    value: 3
-                },
-                {
-                    content: 'Harajuku',
-                    value: 4
-                }
-            ]
-        },
-        {
-            content: 'Choose a red',
-            isAnswered: false,
-            illustrationRef: 2,
-            ingredientRef: 2,
-            answers: [{
-                    content: 'Ruby Red',
-                    value: 5
-                },
-                {
-                    content: 'Vermillion',
-                    value: 3
-                },
-                {
-                    content: 'Midcentury Orange',
-                    value: 0
-                },
-                {
-                    content: 'Maroon',
-                    value: 1
-                },
-                {
-                    content: 'Neon Pink',
-                    value: 4
-                },
-                {
-                    content: 'Red',
-                    value: 2
-                }
-            ]
-        },
+        // {
+        //     content: 'Choose a place to spend an afternoon',
+        //     isAnswered: false,
+        //     illustrationRef: 2,
+        //     ingredientRef: 2,
+        //     answers: [{
+        //             content: 'Museum',
+        //             value: 1
+        //         },
+        //         {
+        //             content: 'Spa',
+        //             value: 5
+        //         },
+        //         {
+        //             content: 'The Beach',
+        //             value: 2
+        //         },
+        //         {
+        //             content: 'Antique Store',
+        //             value: 0
+        //         },
+        //         {
+        //             content: 'Botanical Garden',
+        //             value: 3
+        //         },
+        //         {
+        //             content: 'Harajuku',
+        //             value: 4
+        //         }
+        //     ]
+        // },
+        // {
+        //     content: 'Choose a red',
+        //     isAnswered: false,
+        //     illustrationRef: 2,
+        //     ingredientRef: 2,
+        //     answers: [{
+        //             content: 'Ruby Red',
+        //             value: 5
+        //         },
+        //         {
+        //             content: 'Vermillion',
+        //             value: 3
+        //         },
+        //         {
+        //             content: 'Midcentury Orange',
+        //             value: 0
+        //         },
+        //         {
+        //             content: 'Maroon',
+        //             value: 1
+        //         },
+        //         {
+        //             content: 'Neon Pink',
+        //             value: 4
+        //         },
+        //         {
+        //             content: 'Red',
+        //             value: 2
+        //         }
+        //     ]
+        // },
         {
             content: 'Choose a Bob',
             isAnswered: false,

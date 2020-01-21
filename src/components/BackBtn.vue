@@ -24,17 +24,13 @@ button {
   border: none;
   border-radius: 30px;
   padding: 10px 20px;
-  margin-top: 30px;
   display: flex;
   align-items: center;
 
   p {
     font-size: 20px;
-    font-weight: 700;
     margin: 0;
-    font-family: $type-heading;
     text-transform: uppercase;
-    line-height: auto;
   }
 
   svg {

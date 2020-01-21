@@ -152,9 +152,10 @@ export default {
 <style lang="scss" scoped>
 svg {
   max-height: 500px;
-  width: 80%;
+  width: 120%;
   position: relative;
   z-index: 1;
+  margin: -4vw;
 }
 
 .cls-1 {
@@ -169,7 +170,7 @@ svg {
 .cls-4 {
   font-size: 59.19px;
   fill: #eb2e57;
-  font-family: SourceSansPro-Black, Source Sans Pro;
+  font-family: $type-base;
   font-weight: 800;
 }
 
@@ -177,7 +178,14 @@ svg {
   transform: scale(0.95);
   transform-box: fill-box;
   transform-origin: center;
+  display: none;
   animation: rotate 8s linear infinite;
+}
+
+@media (min-width: $breakpoint-small) {
+  #spin {
+    display: block;
+  }
 }
 
 @keyframes rotate {

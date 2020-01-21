@@ -15,13 +15,6 @@
       <rect x="0" y="646.6" class="table" width="1442" height="319.4" />
     </g>
 
-	<g id="BG-desktop" :class="moodClass">
-      <rect y="-800" width="1442" height="1780" class="st4"></rect>
-      <rect x="0" y="900" width="1442" height="800" class="st27"></rect>
-    </g>
-
-
-    <g >
 	<g id="cupnoodle_1_">
 		<path id="cup-inside-fill_1_" class="st2" d="M814.8,291.5c29.7,11.6,51.2,37.5,71.5,62.1c1.6,1.9,3.3,3.9,5.6,4.9    c8,3.2,14-7.5,17.2-13.1c4-6.9,4.4-15.6,2-23.1c-3.4-10.5-11.4-19-20-25.9c-8.6-7-18.1-12.9-28.1-17.7c-9.3-4.4-20.3-0.9-29.7,2.7    C830.7,282.3,816,292,814.8,291.5z"/>
 		<path id="lid-fill01_1_" class="st2" d="M557.6,397.3c-12.9-5.3-26.2-11-35.4-21.4c-20.9-23.5-0.5-57.4,17.8-75.1    c11.2-10.8,25.8-18.6,41.3-19.7c-1.6,0-10.8,24.5-11.7,27.2c-2.2,6.7-2.8,13.8-5.1,20.5c-1.5,4.3-4.2,8-5.6,12.2    c-2,5.6-1.6,12.8-1.9,18.7C556.5,372.1,556.6,384.7,557.6,397.3z"/>
@@ -344,116 +337,303 @@
 			<path class="st4" d="M1182.7,736.2c-0.8,1.8-0.9,3.9-0.4,5.9c0.2,0.9,0.5,1.8,1,2.5c1.4,2,3.9,2.8,6.3,3.2c2,0.4,4.1,0.5,6.2,0.6     c0.8,0,1.6,0,2.3-0.4c0.7-0.4,1.2-1.2,0.9-2c-2.3,0.2-4.6-0.8-6.8-1.8c-1.4-0.7-2.8-1.3-4.2-2c-0.4-0.2-0.7-0.3-1-0.6     c-0.4-0.5-0.6-1.1-0.6-1.7c0-1.7,0.9-3.5,2.3-4.5c1.4-1,3.3-1.3,5-0.7c0.4-0.5-0.2-1.1-0.7-1.4     C1189.3,731.5,1184.5,732.3,1182.7,736.2z"/>
 		</g>
 	</g>
-</g>
+
   </svg>
 </template>
 
 <script>
-    export default {
-        name: 'CupNoodle'
-    }
+export default {
+  name: "CupNoodle"
+};
 </script>
 
 <style lang="scss" scoped>
-	svg{
-		position: relative;
-		z-index: 100;
-	}
 
-    .background{
-        fill: #8a9992;
-    }
+@media(min-width: $breakpoint-medium){
+svg {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  bottom: 0;
+}
+}
 
-    .table{
-        fill: #97a59f;
-    }
 
-	.st0{fill:#8A9992;}
-	.st1{fill:#97A59F;}
-	.st2{fill:#ADB5B0;}
-	.st3{fill:#73767B;}
-    .st4{fill:#1D2036;}
-	.st5{fill:#D7DEDD;}
-	.st6{fill:none;}
-	.st7{fill:#A8AFAF;}
-	.st8{fill:#E8E8B2;}
-	.st9{fill:#E8B691;}
-	.st10{fill:#B8D2C6;}
-	.st11{fill:#7C7E82;}
-	.st12{fill:#D9D9D9;}
-	.st13{fill:#FFFFFF;}
-	.st14{fill:#E76152;}
-	.st15{fill:#E57164;}
-	.st16{fill:#6E8DA0;}
-	.st17{fill:#829BAD;}
-	.st18{fill:#D7DDDD;}
-	.st19{fill:#9DA7B1;}
-	.st20{fill:#171B2B;}
-	.st21{fill:#9376B2;}
-	.st22{opacity:0.5;fill:#FFFFFF;}
-	.st23{fill:#E9A041;}
-	.st24{fill:#FDEB51;}
-	.st25{fill:#EC008C;}
-	.st26{fill:#E83B95;}
-	.st27{fill:#00AEEF;}
-	.st28{fill:#FFCE07;}
-	.st29{fill:#BBBC7D;}
-	.st30{fill:#9FD7CA;}
-	.st31{fill:#62BCA4;}
-	.st32{fill:#FCFCEE;}
-	.st33{fill:#F6AA8F;}
-	.st34{fill:#01444F;}
-	.st35{fill:#FFCD60;}
-	.st36{fill:#F68B1F;}
-	.st37{fill:#753624;}
-	.st38{fill:#FFE0B6;}
-	.st39{fill:#E72527;}
-	.st40{fill:#294666;}
-	.st41{fill:#ECE1CC;}
-	.st42{fill:#F27171;}
-	.st43{fill:#727579;}
-	.st44{display:none;}
-	.st45{display:inline;}
-	.st46{fill:#F79E1E;}
-	.st47{fill:#40B392;}
-	.st48{fill:#396F91;}
-	.st49{fill:#497F9B;}
-	.st50{fill:#FFD683;}
-	.st51{fill:#97BF49;}
-	.st52{fill:#FFECDA;}
-	.st53{fill:#EE7D69;}
-	.st54{fill:#010101;}
-	.st55{opacity:0.3;}
-	.st56{fill:#FAA635;}
-	.st57{fill:#8DB542;}
-	.st58{fill:#B3BCBC;}
-	.st59{fill:#2A2D3F;}
-	.st60{fill:#E2A225;}
-	.st61{opacity:0.5;fill:#FFE0B6;}
-	.st62{fill:#71C4BA;}
-	.st63{fill:#363A49;}
-	.st64{fill:#AF84A7;}
-	.st65{fill:#EE7928;}
-	.st66{fill:#FEC248;}
-	.st67{fill:#BAAEA4;}
-	.st68{fill:#2A5861;}
-	.st69{fill:#94BF3D;}
-	.st70{fill:#4DB5A5;}
-	.st71{fill:#F69FA1;}
-	.st72{fill:#CAAB82;}
-	.st73{fill:#B8D3C7;}
-	.st74{fill:#895B24;}
-	.st75{fill:#51426B;}
-	.st76{fill:#BBA9A6;}
-	.st77{fill:#A59C95;}
-	.st78{display:inline;fill:#FFE0B6;}
-	.st79{display:inline;fill:#E72527;}
-	.st80{fill:#BCD266;}
-	.st81{fill:#DBDBDB;}
-	.st82{font-family:'MyriadPro-Semibold';}
-	.st83{font-size:32px;}
-	.st84{letter-spacing:3;}
-	.st85{fill:none;stroke:#000000;stroke-miterlimit:10;}
-	.st86{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+.background {
+  fill: #8a9992;
+}
 
+.table {
+  fill: #97a59f;
+}
+
+.st0 {
+  fill: #8a9992;
+}
+.st1 {
+  fill: #97a59f;
+}
+.st2 {
+  fill: #adb5b0;
+}
+.st3 {
+  fill: #73767b;
+}
+.st4 {
+  fill: #1d2036;
+}
+.st5 {
+  fill: #d7dedd;
+}
+.st6 {
+  fill: none;
+}
+.st7 {
+  fill: #a8afaf;
+}
+.st8 {
+  fill: #e8e8b2;
+}
+.st9 {
+  fill: #e8b691;
+}
+.st10 {
+  fill: #b8d2c6;
+}
+.st11 {
+  fill: #7c7e82;
+}
+.st12 {
+  fill: #d9d9d9;
+}
+.st13 {
+  fill: #ffffff;
+}
+.st14 {
+  fill: #e76152;
+}
+.st15 {
+  fill: #e57164;
+}
+.st16 {
+  fill: #6e8da0;
+}
+.st17 {
+  fill: #829bad;
+}
+.st18 {
+  fill: #d7dddd;
+}
+.st19 {
+  fill: #9da7b1;
+}
+.st20 {
+  fill: #171b2b;
+}
+.st21 {
+  fill: #9376b2;
+}
+.st22 {
+  opacity: 0.5;
+  fill: #ffffff;
+}
+.st23 {
+  fill: #e9a041;
+}
+.st24 {
+  fill: #fdeb51;
+}
+.st25 {
+  fill: #ec008c;
+}
+.st26 {
+  fill: #e83b95;
+}
+.st27 {
+  fill: #00aeef;
+}
+.st28 {
+  fill: #ffce07;
+}
+.st29 {
+  fill: #bbbc7d;
+}
+.st30 {
+  fill: #9fd7ca;
+}
+.st31 {
+  fill: #62bca4;
+}
+.st32 {
+  fill: #fcfcee;
+}
+.st33 {
+  fill: #f6aa8f;
+}
+.st34 {
+  fill: #01444f;
+}
+.st35 {
+  fill: #ffcd60;
+}
+.st36 {
+  fill: #f68b1f;
+}
+.st37 {
+  fill: #753624;
+}
+.st38 {
+  fill: #ffe0b6;
+}
+.st39 {
+  fill: #e72527;
+}
+.st40 {
+  fill: #294666;
+}
+.st41 {
+  fill: #ece1cc;
+}
+.st42 {
+  fill: #f27171;
+}
+.st43 {
+  fill: #727579;
+}
+.st44 {
+  display: none;
+}
+.st45 {
+  display: inline;
+}
+.st46 {
+  fill: #f79e1e;
+}
+.st47 {
+  fill: #40b392;
+}
+.st48 {
+  fill: #396f91;
+}
+.st49 {
+  fill: #497f9b;
+}
+.st50 {
+  fill: #ffd683;
+}
+.st51 {
+  fill: #97bf49;
+}
+.st52 {
+  fill: #ffecda;
+}
+.st53 {
+  fill: #ee7d69;
+}
+.st54 {
+  fill: #010101;
+}
+.st55 {
+  opacity: 0.3;
+}
+.st56 {
+  fill: #faa635;
+}
+.st57 {
+  fill: #8db542;
+}
+.st58 {
+  fill: #b3bcbc;
+}
+.st59 {
+  fill: #2a2d3f;
+}
+.st60 {
+  fill: #e2a225;
+}
+.st61 {
+  opacity: 0.5;
+  fill: #ffe0b6;
+}
+.st62 {
+  fill: #71c4ba;
+}
+.st63 {
+  fill: #363a49;
+}
+.st64 {
+  fill: #af84a7;
+}
+.st65 {
+  fill: #ee7928;
+}
+.st66 {
+  fill: #fec248;
+}
+.st67 {
+  fill: #baaea4;
+}
+.st68 {
+  fill: #2a5861;
+}
+.st69 {
+  fill: #94bf3d;
+}
+.st70 {
+  fill: #4db5a5;
+}
+.st71 {
+  fill: #f69fa1;
+}
+.st72 {
+  fill: #caab82;
+}
+.st73 {
+  fill: #b8d3c7;
+}
+.st74 {
+  fill: #895b24;
+}
+.st75 {
+  fill: #51426b;
+}
+.st76 {
+  fill: #bba9a6;
+}
+.st77 {
+  fill: #a59c95;
+}
+.st78 {
+  display: inline;
+  fill: #ffe0b6;
+}
+.st79 {
+  display: inline;
+  fill: #e72527;
+}
+.st80 {
+  fill: #bcd266;
+}
+.st81 {
+  fill: #dbdbdb;
+}
+.st82 {
+  font-family: "MyriadPro-Semibold";
+}
+.st83 {
+  font-size: 32px;
+}
+.st84 {
+  letter-spacing: 3;
+}
+.st85 {
+  fill: none;
+  stroke: #000000;
+  stroke-miterlimit: 10;
+}
+.st86 {
+  fill: none;
+  stroke: #ffffff;
+  stroke-miterlimit: 10;
+}
 </style>

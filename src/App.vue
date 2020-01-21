@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Home/>
+    <Home />
   </div>
 </template>
 
@@ -30,6 +30,7 @@ body {
   position: relative;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 ul {
@@ -47,5 +48,12 @@ a {
 
 button:focus {
   outline: none;
+}
+
+button {
+  p {
+    font-family: $type-accent;
+    font-weight: 400;
+  }
 }
 </style>

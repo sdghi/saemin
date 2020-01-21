@@ -88,7 +88,8 @@ export default {
       setTimeout(() => {
         window.scrollTo({
           top:
-            this.$refs.scrollCta.offsetHeight + this.$refs.scrollCta.offsetTop,
+            this.$refs.scrollCta.offsetHeight +
+            this.$refs.scrollCta.offsetTop / 2,
           behavior: "smooth"
         });
       }, 700);
@@ -105,6 +106,7 @@ section {
   position: relative;
   z-index: 99;
   margin-top: -45vh;
+  overflow: hidden;
 
   &::after,
   &::before {
@@ -129,16 +131,23 @@ section {
 }
 
 svg {
-  position: relative;
-  left: 24%;
   margin: 0 auto;
+  position: relative;
+  top: 30px;
   height: 100vh;
+  left: 30vmin;
 }
 
 @media (min-width: $breakpoint-small) {
   svg {
-    left: 14%;
-    height: 200vh;
+    position: relative;
+    left: 24vmin;
+  }
+}
+
+@media (min-width: $breakpoint-medium) {
+  svg {
+    left: 12vmin;
   }
 }
 
