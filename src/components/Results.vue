@@ -164,6 +164,7 @@ export default {
 
 .ramen-info {
   margin-top: -40px;
+  margin-bottom: 20px;
 }
 
 strong {
