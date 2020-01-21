@@ -1,5 +1,6 @@
 <template>
   <section class="results-container">
+    <SDGBug page="results" />
     <div id="info-container">
       <YouAreSvg />
       <div class="ramen-info" v-if="topping.refId === 2">
@@ -48,10 +49,12 @@ import BottomLeft from "./Illustrations/BottomLeft";
 import TopRight from "./Illustrations/TopRight";
 import BackBtn from "./BackBtn";
 import YouAreSvg from "./Illustrations/YouAreSvg";
+import SDGBug from "./SDGBug";
 
 export default {
   name: "Results",
   components: {
+    SDGBug,
     BottomLeft,
     TopRight,
     Ramen,

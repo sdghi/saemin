@@ -5,6 +5,7 @@
       <BottomRidge />
     </header>
     <div id="home">
+      <SDGBug page="home" />
       <HeroIllustration />
       <div class="home-content">
         <h1 class="home-title uppercase text-center">Generator</h1>
@@ -34,6 +35,7 @@ import HeroIllustration from "./Illustrations/HeroIllustration";
 import BottomLeft from "./Illustrations/BottomLeft";
 import TopRight from "./Illustrations/TopRight";
 import BottomRidge from "./BottomRidge";
+import SDGBug from "./SDGBug";
 
 export default {
   name: "Landing",
@@ -41,7 +43,8 @@ export default {
     HeroIllustration,
     BottomRidge,
     BottomLeft,
-    TopRight
+    TopRight,
+    SDGBug
   },
   props: ["quizStarted"],
   data() {
