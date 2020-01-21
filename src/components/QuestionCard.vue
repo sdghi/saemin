@@ -97,23 +97,11 @@ export default {
   },
   methods: {
     goBack() {
-      // const centerHeight =
-      //   (window.innerHeight - this.$refs.questionContainer.clientHeight) / 2;
-      // check to see if it's the first question before going back
-
-      // if (this.index === 1) {
-      //   console.log("first back");
-      //   window.scrollTo({
-      //     top: window.pageYOffset - this.scrollHeight + centerHeight,
-      //     behavior: "smooth"
-      //   });
-      // } else {
       window.scrollY - this.scrollHeight > 0 &&
         window.scrollTo({
           top: window.pageYOffset - this.scrollHeight,
           behavior: "smooth"
         });
-      // }
     },
     setAnswer(e) {
       // sets current answer
@@ -138,9 +126,7 @@ export default {
         value: this.$refs.quizQuestion.clientHeight
       });
 
-      // const centerHeight =
-      //   (window.innerHeight - this.$refs.questionContainer.clientHeight) / 2;
-
+  
       // Scroll window from current window position to the start of the next question
       if (this.index === 0) {
         window.scrollTo({
