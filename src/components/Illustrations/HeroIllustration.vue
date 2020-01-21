@@ -169,7 +169,7 @@ svg {
 .cls-4 {
   font-size: 59.19px;
   fill: #eb2e57;
-  font-family: SourceSansPro-Black, Source Sans Pro;
+  font-family: $type-base;
   font-weight: 800;
 }
 
