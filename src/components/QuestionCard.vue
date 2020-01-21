@@ -126,7 +126,6 @@ export default {
         value: this.$refs.quizQuestion.clientHeight
       });
 
-  
       // Scroll window from current window position to the start of the next question
       if (this.index === 0) {
         window.scrollTo({
@@ -308,12 +307,6 @@ svg.third {
 }
 
 @media (min-width: $breakpoint-small) {
-  #bottom-noodles {
-    svg {
-      height: 200vh;
-    }
-  }
-
   .question-card {
     width: 80%;
 

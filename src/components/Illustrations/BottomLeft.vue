@@ -249,7 +249,7 @@ svg {
   width: 52%;
   bottom: 0;
   left: 0;
-  z-index: 999999;
+  z-index: 0;
 }
 
 .cls-1 {
