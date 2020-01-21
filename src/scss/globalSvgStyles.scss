@@ -158,11 +158,7 @@
     fill: $noodle-shade;
 }
 
-#paletteblob01_1_,
-#tsukemen-chopsticks_1_ .st36,
-#chopsticks02-fill_1_ {
-    fill: $chopsticks;
-}
+
 
 #paletteblob04_1_ {
     fill: $phone;
@@ -197,4 +193,12 @@
 
 #phone-fill {
     fill: $phone;
+}
+
+#paletteblob01_1_,
+#tsukemen-chopsticks_1_ .st36,
+#chopsticks02-fill_1_,
+#Chopsticks02 {
+    fill: $chopsticks;
+    fill-opacity: 1;
 }
