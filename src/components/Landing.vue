@@ -148,6 +148,7 @@ p {
 @media (min-width: $breakpoint-small) {
   header {
     h2 {
+      letter-spacing: 0.1em;
       font-size: 1.5rem;
     }
   }
