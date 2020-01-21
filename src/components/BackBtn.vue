@@ -24,7 +24,6 @@ button {
   border: none;
   border-radius: 30px;
   padding: 10px 20px;
-  margin-top: 30px;
   display: flex;
   align-items: center;
 

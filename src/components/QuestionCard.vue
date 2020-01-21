@@ -3,7 +3,8 @@
     :class="{
       even: index % 2 !== 0 && index % 3 !== 0,
       odd: index % 2 === 0 && index % 3 !== 0,
-      third: index % 3 === 0
+      third: index % 3 === 0,
+      first: index === 0
     }"
     ref="questionSection"
   >
@@ -34,12 +35,17 @@
             {{ answer.content }}
           </button>
         </div>
-        <BackBtn
-          content="back"
-          btnStyle="back"
-          :btnEvent="goBack"
-          v-if="index !== 0"
-        />
+        <div class="bottom-row">
+          <BackBtn
+            content="back"
+            btnStyle="back"
+            :btnEvent="goBack"
+            v-if="index !== 0"
+          />
+          <h4 class="question-status">
+            {{ index + 1 }} out of {{ allQuestions.length }}
+          </h4>
+        </div>
       </div>
 
       <!-- this is the illustration -->
@@ -174,6 +180,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+
+  .question-status {
+    color: $maroon;
+  }
+}
+
+.first {
+  .bottom-row {
+    justify-content: flex-end;
+  }
+}
+
 section {
   height: fit-content;
   width: 100%;
