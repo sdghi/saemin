@@ -78,7 +78,6 @@ header {
   left: 0;
   width: 100vw;
   line-height: 1.3;
-  font-weight: 700;
   color: $pink;
   background: $white;
   text-align: center;
@@ -89,8 +88,9 @@ header {
   h2 {
     position: relative;
     z-index: 7;
-    font-size: 1.4rem;
-    font-weight: 400;
+    font-size: 0.8rem;
+    font-weight: 900;
+
     width: fit-content;
     top: 10%;
   }
@@ -110,19 +110,10 @@ header {
   transition: all 0.3s $cubic-ease;
   position: relative;
   color: $white;
-
-  h1 {
-    font-family: $type-heading-italic;
-    position: relative;
-
-    &:first-of-type {
-      left: -8vw;
-    }
-
-    &:nth-of-type(2) {
-      left: 8vw;
-    }
-  }
+  text-align: center;
+  font-family: $type-accent;
+  font-weight: 400;
+  position: relative;
 }
 
 p {
@@ -135,9 +126,16 @@ p {
   font-weight: bold;
   color: $white;
   margin-bottom: 30px;
+  font-weight: 800;
 }
 
 @media (min-width: $breakpoint-small) {
+  header {
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+
   .home-subtitle {
     font-size: 24px;
   }
@@ -159,7 +157,6 @@ p {
 
   p {
     color: $pink;
-    font-weight: 700;
     margin: 0;
   }
 

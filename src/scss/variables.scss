@@ -1,24 +1,30 @@
-@font-face {
-    font-family: "Din Next Pro Heavy";
+// @font-face {
+//     font-family: "Din Next Pro Heavy";
 
-    // Has to be realtive path to the component
-    src: url("~@/fonts/DINNextLTPro-Heavy.otf");
-}
+//     // Has to be realtive path to the component
+//     src: url("~@/fonts/DINNextLTPro-Heavy.otf");
+// }
 
-@font-face {
-    font-family: "Din Next Pro Heavy Italic";
-    src: url("~@/fonts/DINNextLTPro-HeavyItalic.otf");
-}
+// @font-face {
+//     font-family: "Din Next Pro Heavy Italic";
+//     src: url("~@/fonts/DINNextLTPro-HeavyItalic.otf");
+// }
 
-@font-face {
-    font-family: "Source Sans Variable Roman";
-    src: url("~@/fonts/SourceSansVariable-Roman.otf");
-}
+// @font-face {
+//     font-family: "Source Sans Variable Roman";
+//     src: url("~@/fonts/SourceSansVariable-Roman.otf");
+// }
+
+// @import url("https://use.typekit.net/vhq5zze.css");
 
 // Fonts
-$type-heading: "Din Next Pro Heavy";
-$type-heading-italic: "Din Next Pro Heavy Italic";
-$type-base: "Source Sans Variable Roman";
+$type-heading: "Termina",
+sans-serif;
+// $type-heading-italic: "Din Next Pro Heavy Italic";
+$type-base: "Source Sans",
+sans-serif;
+$type-accent: 'Alfarn',
+sans-serif;
 
 // Colors
 $background: white;

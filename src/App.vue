@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Home/>
+    <Home />
   </div>
 </template>
 
@@ -47,5 +47,12 @@ a {
 
 button:focus {
   outline: none;
+}
+
+button {
+  p {
+    font-family: $type-accent;
+    font-weight: 400;
+  }
 }
 </style>
