@@ -157,7 +157,6 @@ export default {
 #info-container {
   position: relative;
   z-index: 900;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -196,8 +195,8 @@ strong {
 
 @media (min-width: $breakpoint-medium) {
   #info-container {
-    width: 60%;
-    padding: 0;
+    width: 50%;
+    padding: 50px;
   }
 
   .results-container {

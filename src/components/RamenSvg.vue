@@ -93,7 +93,7 @@ import Socialite from "./BrothAndNoodles/Socialite";
 
 export default {
   name: "RamenSvg",
-  props: ["brothAndNoodle", "bowl", "topping"],
+  props: ["brothAndNoodle", "bowl", "topping", "moodClass"],
   components: {
     // Bowls
     Hipster,
@@ -116,11 +116,6 @@ export default {
     Optimistic,
     Troubled
   },
-  data() {
-    return {
-      moodClass: ""
-    };
-  },
   mounted() {
     if (this.topping === 2) {
       console.log("instant ramen");
@@ -128,34 +123,6 @@ export default {
       console.log(
         `broth and noodle: ${this.brothAndNoodle}, topping: ${this.topping}, bowl: ${this.bowl}`
       );
-    }
-
-    // Creates mood class for svgs based off of the topping value
-    let toppingVal = this.topping;
-
-    if (this.topping !== 2) {
-      switch (toppingVal) {
-        case 0:
-          this.moodClass = "optimistic";
-          break;
-        case 1:
-          this.moodClass = "troubled";
-          break;
-        case 2:
-          this.moodClass = "disenchanted";
-          break;
-        case 3:
-          this.moodClass = "anxious";
-          break;
-        case 4:
-          this.moodClass = "easygoing";
-          break;
-        case 5:
-          this.moodClass = "angry";
-          break;
-        default:
-          break;
-      }
     }
   }
 };
