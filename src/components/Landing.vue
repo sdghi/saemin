@@ -8,7 +8,9 @@
       <HeroIllustration />
       <div class="home-content">
         <h1 class="home-title uppercase text-center">Generator</h1>
-        <p class="home-subtitle">What kind of saimin are you?</p>
+        <p class="home-subtitle">
+          Find out what kind of saimin you'd be in 21&nbsp;questions
+        </p>
         <button class="start-quiz-btn" @click="startQuiz" v-if="!quizStarted">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 10">
             <title>down-triangle</title>
