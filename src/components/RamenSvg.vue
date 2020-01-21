@@ -87,15 +87,6 @@ export default {
     Easygoing,
     Optimistic,
     Troubled
-  },
-  mounted() {
-    if (this.topping === 2) {
-      console.log("instant ramen");
-    } else {
-      console.log(
-        `broth and noodle: ${this.brothAndNoodle}, topping: ${this.topping}, bowl: ${this.bowl}`
-      );
-    }
   }
 };
 </script>

@@ -256,32 +256,32 @@ const state = {
             ]
         },
         {
-            content: 'Pick the character from The Office you relate to most',
+            content: 'How do you prefer to give gifts?',
             isAnswered: false,
             illustrationRef: 0,
             ingredientRef: 0,
             answers: [{
-                    content: 'Michael Scott',
+                    content: 'Support a good cause',
                     value: 5
                 },
                 {
-                    content: 'Dwight Schrute',
+                    content: 'Gift card / money',
                     value: 1
                 },
                 {
-                    content: 'Phyllis Vance',
+                    content: 'Something on their wish list',
                     value: 3
                 },
                 {
-                    content: 'Kelley Kapoor',
+                    content: 'Something useful',
                     value: 0
                 },
                 {
-                    content: 'Ryan Howard',
+                    content: 'Novelty gift',
                     value: 4
                 },
                 {
-                    content: 'Robert California',
+                    content: 'Something for self-improvement',
                     value: 2
                 }
             ]
