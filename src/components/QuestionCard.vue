@@ -43,7 +43,7 @@
             v-if="index !== 0"
           />
           <h4 class="question-status">
-            {{ index + 1 }} out of {{ allQuestions.length }}
+            {{ index + 1 }} of {{ allQuestions.length }}
           </h4>
         </div>
       </div>
@@ -63,10 +63,10 @@ import "scroll-behavior-polyfill";
 import IllustrationOne from "./Transitions/IllustrationOne";
 import IllustrationTwo from "./Transitions/IllustrationTwo";
 import IllustrationThree from "./Transitions/IllustrationThree";
-import QuestionPattern from "./QuestionPattern";
-import QuestionPatternMobile from "./QuestionPatternMobile";
+import QuestionPattern from "./Illustrations/QuestionPattern";
+import QuestionPatternMobile from "./Illustrations/QuestionPatternMobile";
 import BackBtn from "./BackBtn";
-import TopRidge from "./TopRidge";
+import TopRidge from "./Illustrations/TopRidge";
 import { mapGetters } from "vuex";
 
 export default {
@@ -171,6 +171,7 @@ export default {
   .question-status {
     color: $maroon;
     font-size: 1em;
+    font-weight: 600;
   }
 }
 

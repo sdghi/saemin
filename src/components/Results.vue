@@ -1,5 +1,5 @@
 <template>
-  <section class="results-container">
+  <section class="results-container" :class="moodClass">
     <SDGBug page="results" />
     <div id="info-container">
       <YouAreSvg />
@@ -17,10 +17,9 @@
           {{ brothAndNoodle.name }}.
         </h2>
         <div class="description-container">
-          <!-- <p>
-            You are <strong>{{ brothAndNoodle.title }}</strong
-            >.
-          </p> -->
+          <p>
+            <strong>{{ brothAndNoodle.title }}</strong>
+          </p>
           <p>{{ brothAndNoodle.description }}</p>
           <p>{{ topping.description }}</p>
         </div>
@@ -35,6 +34,7 @@
       :brothAndNoodleRef="brothAndNoodle.refId"
       :toppingRef="topping.refId"
       :bowlRef="bowl.refId"
+      :moodClass="moodClass"
     />
 
     <BottomLeft status="blue" />
@@ -49,7 +49,7 @@ import BottomLeft from "./Illustrations/BottomLeft";
 import TopRight from "./Illustrations/TopRight";
 import BackBtn from "./BackBtn";
 import YouAreSvg from "./Illustrations/YouAreSvg";
-import SDGBug from "./SDGBug";
+import SDGBug from "./Illustrations/SDGBug";
 
 export default {
   name: "Results",
@@ -76,8 +76,36 @@ export default {
       brothAndNoodle: null,
       topping: null,
       bowl: null,
-      questionCardHeight: null
+      questionCardHeight: null,
+      moodClass: ''
     };
+  },
+    mounted() {
+    // Creates mood class for svgs based off of the topping value
+    let toppingVal = this.topping.refId;
+
+    switch (toppingVal) {
+      case 0:
+        this.moodClass = "optimistic";
+        break;
+      case 1:
+        this.moodClass = "troubled";
+        break;
+      case 2:
+        this.moodClass = "disenchanted";
+        break;
+      case 3:
+        this.moodClass = "anxious";
+        break;
+      case 4:
+        this.moodClass = "easygoing";
+        break;
+      case 5:
+        this.moodClass = "angry";
+        break;
+      default:
+        break;
+    }
   },
   created() {
     this.brothAndNoodle = this.getIngredientValue(
@@ -149,7 +177,6 @@ export default {
 .results-container {
   display: flex;
   flex-direction: column;
-  background: $textBlue;
   position: relative;
 }
 
@@ -177,7 +204,6 @@ strong {
 .ramen-title {
   font-size: 3rem;
   text-transform: lowercase;
-  color: $white;
 }
 
 .description-container p {

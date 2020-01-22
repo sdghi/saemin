@@ -34,5 +34,12 @@
     $garnish: $decoration;
     $sweat: $decoration;
 
+    $palette: $white;
+    $results-container: $bowl;
+    $you-are: $noodle;
+    $title-color: $noodle;
+    $text-color: $outlines;
+    $try-again: $red;
+
     @import '../globalSvgStyles.scss';
 }

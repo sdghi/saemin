@@ -34,5 +34,12 @@
     $garnish: $pencil;
     $sweat: $pencil;
 
+    $palette: #a8afaf;
+    $results-container: #294666;
+    $you-are: #d7dEdd;
+    $title-color: $you-are;
+    $text-color: $you-are;
+    $try-again: $pencil;
+
     @import '../globalSvgStyles.scss';
 }

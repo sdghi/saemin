@@ -17,44 +17,12 @@ import CupNoodle from "./CupNoodle";
 
 export default {
   name: "Ramen",
-  props: ["brothAndNoodleRef", "toppingRef", "bowlRef"],
+  props: ["brothAndNoodleRef", "toppingRef", "bowlRef", "moodClass"],
   components: {
     RamenSvg,
     CupNoodle
-  },
-  data() {
-    return {
-      moodClass: ""
-    };
-  },
-  mounted() {
-    // Creates mood class for svgs based off of the topping value
-    let toppingVal = this.toppingRef;
-
-    switch (toppingVal) {
-      case 0:
-        this.moodClass = "optimistic";
-        break;
-      case 1:
-        this.moodClass = "troubled";
-        break;
-      case 2:
-        this.moodClass = "disenchanted";
-        break;
-      case 3:
-        this.moodClass = "anxious";
-        break;
-      case 4:
-        this.moodClass = "easygoing";
-        break;
-      case 5:
-        this.moodClass = "angry";
-        break;
-      default:
-        break;
-    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

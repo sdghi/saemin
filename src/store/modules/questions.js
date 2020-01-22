@@ -465,7 +465,7 @@ const state = {
                 },
                 {
                     // eslint-disable-next-line no-useless-escape
-                    content: "¯\_(ツ)_/¯",
+                    content: "¯\\_(ツ)_/¯",
                     value: 4
                 },
                 {

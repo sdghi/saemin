@@ -1,5 +1,5 @@
 <template>
-  <svg viewBox="0 0 2463 1072.21" :class="status">
+  <svg viewBox="0 0 2463 1072.21" :class="status" id="top-right-pattern">
     <title>pattern top right</title>
     <g id="Layer_2" data-name="Layer 2">
       <g id="Layer_1-2" data-name="Layer 1">
@@ -256,13 +256,5 @@ svg {
 
 .cls-1 {
   fill: #e94568;
-}
-
-.blue {
-  z-index: 1;
-
-  .cls-1 {
-    fill: lighten($textBlue, 4%);
-  }
 }
 </style>
