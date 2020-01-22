@@ -3,6 +3,7 @@
     <header>
       <h2>{{ newYearsValue }}</h2>
       <BottomRidge />
+      <BottomRidgeDesktop/>
     </header>
     <div id="home">
       <SDGBug page="home" />
@@ -35,6 +36,7 @@ import HeroIllustration from "./Illustrations/HeroIllustration";
 import BottomLeft from "./Illustrations/BottomLeft";
 import TopRight from "./Illustrations/TopRight";
 import BottomRidge from "./Illustrations/BottomRidge";
+import BottomRidgeDesktop from './Illustrations/BottomRidgeDesktop';
 import SDGBug from "./Illustrations/SDGBug";
 
 export default {
@@ -42,6 +44,7 @@ export default {
   components: {
     HeroIllustration,
     BottomRidge,
+    BottomRidgeDesktop,
     BottomLeft,
     TopRight,
     SDGBug
@@ -192,6 +195,10 @@ p {
       letter-spacing: 0.1em;
       font-size: 1.5rem;
       top: 10%;
+    }
+
+    svg{
+      bottom: -50%;
     }
   }
 
