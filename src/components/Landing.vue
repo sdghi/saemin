@@ -10,7 +10,7 @@
       <div class="home-content">
         <h1 class="home-title uppercase text-center">Generator</h1>
         <p class="home-subtitle">
-          Find out what kind of saimin you'd be in 21&nbsp;questions
+          Find out what kind of saimin you'd be in 21&nbsp;questions.
         </p>
         <button class="start-quiz-btn" @click="startQuiz" v-if="!quizStarted">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 10">
@@ -109,7 +109,6 @@ header {
     z-index: 7;
     font-size: 1rem;
     font-weight: 900;
-
     width: fit-content;
     top: 10%;
   }
@@ -148,19 +147,6 @@ p {
   margin-top: 20px;
 }
 
-@media (min-width: $breakpoint-small) {
-  header {
-    h2 {
-      letter-spacing: 0.1em;
-      font-size: 1.5rem;
-    }
-  }
-
-  .home-subtitle {
-    font-size: 24px;
-  }
-}
-
 .start-quiz-btn {
   border: none;
   margin: 1rem auto 0 auto;
@@ -170,18 +156,22 @@ p {
   cursor: pointer;
   border-radius: 40px;
   background: #70c4ba;
-  padding: 13px 30px;
+  padding: 10px 20px;
   text-transform: uppercase;
-  font-size: 1.5em;
+  font-size: 1em;
   letter-spacing: 0.1em;
-  font-weight: bold;
+  transition: all .3s ease-out; 
 
   p {
+    font-weight: 700;
     color: $white;
     margin: 0;
   }
 
   &:hover {
+    transition: all .3s ease-in; 
+    background: #92D6CA;
+    
     svg {
       animation: upDown 0.6s ease infinite;
     }
@@ -195,6 +185,24 @@ p {
       fill: $white;
     }
   }
+}
+
+@media (min-width: $breakpoint-small) {
+  header {
+    h2 {
+      letter-spacing: 0.1em;
+      font-size: 1.5rem;
+    }
+  }
+
+  .home-subtitle {
+    font-size: 24px;
+  }
+
+  .start-quiz-btn {
+  padding: 13px 30px;
+  font-size: 1.5em;
+}
 }
 
 @keyframes upDown {

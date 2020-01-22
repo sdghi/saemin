@@ -197,8 +197,10 @@
 
 #paletteblob01_1_,
 #tsukemen-chopsticks_1_ .st36,
-#chopsticks02-fill_1_,
-#Chopsticks02 {
+#chopsticks02-fill_1_{
     fill: $chopsticks;
-    fill-opacity: 1;
 }
+
+#Chopsticks02 {
+    display: none;;
+} 

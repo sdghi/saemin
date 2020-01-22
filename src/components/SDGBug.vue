@@ -166,16 +166,18 @@ svg {
 }
 
 .home {
-  width: 150px;
+  width: 100px;
   top: 12vh;
-  animation: spin 5s linear infinite;
+  animation: spin 10s linear infinite;
 }
 
 @media (min-width: $breakpoint-small) {
   .home {
     display: none;
   }
+}
 
+@media(min-width: $breakpoint-medium){
   .results {
     width: 200px;
   }

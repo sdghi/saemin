@@ -111,7 +111,7 @@ section {
   &::after,
   &::before {
     content: "";
-    z-index: -111;
+  
     position: absolute;
     left: 0;
     width: 100%;
@@ -119,13 +119,15 @@ section {
 
   &:before {
     height: 50%;
+    z-index: -100;
     bottom: 0;
     background: $maroon;
   }
 
   &:after {
-    height: 35%;
-    top: 15%;
+    height: 100%;
+      z-index: -111;
+    top: 25%;
     background: $pink;
   }
 }
@@ -133,7 +135,7 @@ section {
 svg {
   margin: 0 auto;
   position: relative;
-  top: 30px;
+  top: 130px;
   height: 100vh;
   left: 30vmin;
 }
