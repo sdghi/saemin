@@ -204,3 +204,38 @@
 #Chopsticks02 {
     display: none;;
 } 
+
+// Results Page
+.ramen-title{
+    color: $title-color;
+}
+
+&.results-container{
+    background: $results-container;
+}
+
+.ramen-info p{
+    color: $text-color; 
+}
+
+#top-right-pattern{
+    .cls-1{
+        fill: lighten($results-container, 4%);
+    }
+}
+
+.restart{
+    p{
+        color: $try-again;
+    }
+
+    svg{
+        fill: $try-again;
+    }
+}
+
+#you-are-svg{
+    .cls-2{
+        fill: $you-are;
+    }
+}
