@@ -174,14 +174,18 @@ p {
   text-transform: uppercase;
   font-size: 1.5em;
   letter-spacing: 0.1em;
-  font-weight: bold;
+  transition: all .3s ease-out; 
 
   p {
+    font-weight: 700;
     color: $white;
     margin: 0;
   }
 
   &:hover {
+    transition: all .3s ease-in; 
+    background: #92D6CA;
+    
     svg {
       animation: upDown 0.6s ease infinite;
     }
