@@ -175,7 +175,9 @@ svg {
   .home {
     display: none;
   }
+}
 
+@media(min-width: $breakpoint-medium){
   .results {
     width: 200px;
   }
