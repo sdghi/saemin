@@ -63,10 +63,10 @@ import "scroll-behavior-polyfill";
 import IllustrationOne from "./Transitions/IllustrationOne";
 import IllustrationTwo from "./Transitions/IllustrationTwo";
 import IllustrationThree from "./Transitions/IllustrationThree";
-import QuestionPattern from "./QuestionPattern";
-import QuestionPatternMobile from "./QuestionPatternMobile";
+import QuestionPattern from "./Illustrations/QuestionPattern";
+import QuestionPatternMobile from "./Illustrations/QuestionPatternMobile";
 import BackBtn from "./BackBtn";
-import TopRidge from "./TopRidge";
+import TopRidge from "./Illustrations/TopRidge";
 import { mapGetters } from "vuex";
 
 export default {

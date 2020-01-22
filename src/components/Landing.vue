@@ -34,8 +34,8 @@
 import HeroIllustration from "./Illustrations/HeroIllustration";
 import BottomLeft from "./Illustrations/BottomLeft";
 import TopRight from "./Illustrations/TopRight";
-import BottomRidge from "./BottomRidge";
-import SDGBug from "./SDGBug";
+import BottomRidge from "./Illustrations/BottomRidge";
+import SDGBug from "./Illustrations/SDGBug";
 
 export default {
   name: "Landing",

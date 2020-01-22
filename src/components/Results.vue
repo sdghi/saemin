@@ -49,7 +49,7 @@ import BottomLeft from "./Illustrations/BottomLeft";
 import TopRight from "./Illustrations/TopRight";
 import BackBtn from "./BackBtn";
 import YouAreSvg from "./Illustrations/YouAreSvg";
-import SDGBug from "./SDGBug";
+import SDGBug from "./Illustrations/SDGBug";
 
 export default {
   name: "Results",
