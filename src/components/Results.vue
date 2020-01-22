@@ -17,10 +17,9 @@
           {{ brothAndNoodle.name }}.
         </h2>
         <div class="description-container">
-          <!-- <p>
-            You are <strong>{{ brothAndNoodle.title }}</strong
-            >.
-          </p> -->
+          <p>
+            <strong>{{ brothAndNoodle.title }}</strong>
+          </p>
           <p>{{ brothAndNoodle.description }}</p>
           <p>{{ topping.description }}</p>
         </div>
