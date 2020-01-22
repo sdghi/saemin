@@ -135,7 +135,7 @@ section {
 svg {
   margin: 0 auto;
   position: relative;
-  top: 130px;
+  top: 45px;
   height: 100vh;
   left: 30vmin;
 }
@@ -143,6 +143,7 @@ svg {
 @media (min-width: $breakpoint-small) {
   svg {
     position: relative;
+      top: 130px;
     left: 24vmin;
   }
 }
