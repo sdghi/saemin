@@ -143,7 +143,7 @@ svg {
 @media (min-width: $breakpoint-small) {
   svg {
     position: relative;
-      top: 130px;
+    top: 130px;
     left: 24vmin;
   }
 }

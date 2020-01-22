@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="wrapper">
     <header>
       <h2>{{ newYearsValue }}</h2>
       <BottomRidge />
@@ -10,7 +10,7 @@
       <div class="home-content">
         <h1 class="home-title uppercase text-center">Generator</h1>
         <p class="home-subtitle">
-          Find out what kind of saimin you'd be in 21&nbsp;questions.
+          Find out what kind of saimin you'd be in 15&nbsp;questions.
         </p>
         <button class="start-quiz-btn" @click="startQuiz" v-if="!quizStarted">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 10">
@@ -78,8 +78,8 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 10vh;
-  height: 90vh;
+  margin-top: 5vh;
+  height: 95vh;
   background: $pink;
 
   .home-content {
@@ -91,31 +91,30 @@ export default {
   }
 }
 
+
 header {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  line-height: 1.3;
+  width: 100%;
   color: $pink;
   background: $white;
-  text-align: center;
-  height: 10vh;
-  display: grid;
-  place-items: center;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   h2 {
     position: relative;
     z-index: 7;
     font-size: 1rem;
     font-weight: 900;
-    width: fit-content;
-    top: 10%;
+    top: 17.5%;
   }
 
   svg {
     position: absolute;
-    bottom: -10%;
+    bottom: -35%;
     left: 0;
     z-index: 1;
     min-width: 100%;
@@ -192,6 +191,7 @@ p {
     h2 {
       letter-spacing: 0.1em;
       font-size: 1.5rem;
+      top: 10%;
     }
   }
 
