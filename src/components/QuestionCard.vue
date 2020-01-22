@@ -43,7 +43,7 @@
             v-if="index !== 0"
           />
           <h4 class="question-status">
-            {{ index + 1 }} out of {{ allQuestions.length }}
+            {{ index + 1 }} of {{ allQuestions.length }}
           </h4>
         </div>
       </div>
@@ -171,6 +171,7 @@ export default {
   .question-status {
     color: $maroon;
     font-size: 1em;
+    font-weight: 600;
   }
 }
 
