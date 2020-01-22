@@ -170,6 +170,7 @@ export default {
 
   .question-status {
     color: $maroon;
+    font-size: 1em;
   }
 }
 
@@ -245,13 +246,14 @@ svg.third {
 
   h3 {
     font-size: 1.3rem;
+    font-family: $type-base;
   }
 }
 
 // May break into another component later
 .question-container {
   background: $pink;
-  padding: 20px 30px;
+  padding: 20px 15px;
 
   h3 {
     text-align: center;
@@ -266,7 +268,7 @@ svg.third {
   user-select: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+  grid-gap: 10px;
 
   .answer {
     width: 100%;
@@ -275,7 +277,7 @@ svg.third {
     border: none;
     cursor: pointer;
     text-align: center;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: $maroon;
     transition: all 0.2s ease-out;
@@ -323,6 +325,7 @@ svg.third {
   .answers-container {
     grid-template-columns: repeat(3, 1fr);
     max-height: fit-content;
+    grid-gap: 20px;
 
     .answer {
       height: 150px;

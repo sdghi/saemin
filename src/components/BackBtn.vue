@@ -28,14 +28,16 @@ button {
   align-items: center;
 
   p {
-    font-size: 20px;
+    font-size: 1.2em;
     margin: 0;
     text-transform: uppercase;
+    font-family: $type-accent;
+    letter-spacing: 0.1em;
   }
 
   svg {
     width: 10px;
-    margin-right: 5px;
+    margin-right: 10px;
     transform: rotate(180deg);
   }
 

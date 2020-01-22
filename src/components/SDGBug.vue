@@ -166,9 +166,9 @@ svg {
 }
 
 .home {
-  width: 150px;
+  width: 100px;
   top: 12vh;
-  animation: spin 5s linear infinite;
+  animation: spin 10s linear infinite;
 }
 
 @media (min-width: $breakpoint-small) {

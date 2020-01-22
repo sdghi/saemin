@@ -109,7 +109,6 @@ header {
     z-index: 7;
     font-size: 1rem;
     font-weight: 900;
-
     width: fit-content;
     top: 10%;
   }
@@ -148,19 +147,6 @@ p {
   margin-top: 20px;
 }
 
-@media (min-width: $breakpoint-small) {
-  header {
-    h2 {
-      letter-spacing: 0.1em;
-      font-size: 1.5rem;
-    }
-  }
-
-  .home-subtitle {
-    font-size: 24px;
-  }
-}
-
 .start-quiz-btn {
   border: none;
   margin: 1rem auto 0 auto;
@@ -170,9 +156,9 @@ p {
   cursor: pointer;
   border-radius: 40px;
   background: #70c4ba;
-  padding: 13px 30px;
+  padding: 10px 20px;
   text-transform: uppercase;
-  font-size: 1.5em;
+  font-size: 1em;
   letter-spacing: 0.1em;
   transition: all .3s ease-out; 
 
@@ -199,6 +185,24 @@ p {
       fill: $white;
     }
   }
+}
+
+@media (min-width: $breakpoint-small) {
+  header {
+    h2 {
+      letter-spacing: 0.1em;
+      font-size: 1.5rem;
+    }
+  }
+
+  .home-subtitle {
+    font-size: 24px;
+  }
+
+  .start-quiz-btn {
+  padding: 13px 30px;
+  font-size: 1.5em;
+}
 }
 
 @keyframes upDown {
