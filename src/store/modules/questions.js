@@ -4,71 +4,71 @@ const state = {
     scrollHeight: 0,
     questions: [
         // PERSONALITY QUESTIONS
-        {
-            content: 'Pick a spirit animal',
-            isAnswered: false,
-            // this will reference the illustration on the bottom of the question
-            illustrationRef: 0,
-            // ingredient 0 will be noodles and broth together
-            ingredientRef: 0,
-            answers: [{
-                    // This object references a single answer
-                    content: 'Wolf',
-                    value: 2
-                },
-                {
-                    content: 'Owl',
-                    value: 1,
-                },
-                {
-                    content: 'Pony',
-                    value: 0
-                },
-                {
-                    content: 'Dog',
-                    value: 3
-                },
-                {
-                    content: 'Monkey',
-                    value: 5
-                },
-                {
-                    content: 'Cat',
-                    value: 4
-                }
-            ]
-        },
-        {
-            content: 'I find ________ the most interesting',
-            isAnswered: false,
-            illustrationRef: 0,
-            ingredientRef: 0,
-            answers: [{
-                    content: "People's stories",
-                    value: 0
-                },
-                {
-                    content: 'Complex puzzles',
-                    value: 1
-                },
-                {
-                    content: "Exploring unknown territory",
-                    value: 4
-                },
-                {
-                    content: "Connecting with my community",
-                    value: 5
-                },
-                {
-                    content: 'Organizing things',
-                    value: 2
-                },
-                {
-                    content: "Kids’ perspectives",
-                    value: 3
-                }
-            ]
-        },
+        // {
+        //     content: 'Pick a spirit animal',
+        //     isAnswered: false,
+        //     // this will reference the illustration on the bottom of the question
+        //     illustrationRef: 0,
+        //     // ingredient 0 will be noodles and broth together
+        //     ingredientRef: 0,
+        //     answers: [{
+        //             // This object references a single answer
+        //             content: 'Wolf',
+        //             value: 2
+        //         },
+        //         {
+        //             content: 'Owl',
+        //             value: 1,
+        //         },
+        //         {
+        //             content: 'Pony',
+        //             value: 0
+        //         },
+        //         {
+        //             content: 'Dog',
+        //             value: 3
+        //         },
+        //         {
+        //             content: 'Monkey',
+        //             value: 5
+        //         },
+        //         {
+        //             content: 'Cat',
+        //             value: 4
+        //         }
+        //     ]
+        // },
+        // {
+        //     content: 'I find ________ the most interesting',
+        //     isAnswered: false,
+        //     illustrationRef: 0,
+        //     ingredientRef: 0,
+        //     answers: [{
+        //             content: "People's stories",
+        //             value: 0
+        //         },
+        //         {
+        //             content: 'Complex puzzles',
+        //             value: 1
+        //         },
+        //         {
+        //             content: "Exploring unknown territory",
+        //             value: 4
+        //         },
+        //         {
+        //             content: "Connecting with my community",
+        //             value: 5
+        //         },
+        //         {
+        //             content: 'Organizing things',
+        //             value: 2
+        //         },
+        //         {
+        //             content: "Kids’ perspectives",
+        //             value: 3
+        //         }
+        //     ]
+        // },
         {
             content: 'You’re bored. Pick a smartphone activity / app:',
             isAnswered: false,
@@ -131,37 +131,37 @@ const state = {
                 }
             ]
         },
-        {
-            content: 'In school group projects, I was often in the role of:',
-            isAnswered: false,
-            illustrationRef: 0,
-            ingredientRef: 0,
-            answers: [{
-                    content: "Devil’s Advocate",
-                    value: 1
-                },
-                {
-                    content: 'Mastermind',
-                    value: 2
-                },
-                {
-                    content: "Illustrator",
-                    value: 4
-                },
-                {
-                    content: 'Presenter',
-                    value: 0
-                },
-                {
-                    content: 'Facilitator',
-                    value: 5
-                },
-                {
-                    content: 'Supporter',
-                    value: 3
-                }
-            ]
-        },
+        // {
+        //     content: 'In school group projects, I was often in the role of:',
+        //     isAnswered: false,
+        //     illustrationRef: 0,
+        //     ingredientRef: 0,
+        //     answers: [{
+        //             content: "Devil’s Advocate",
+        //             value: 1
+        //         },
+        //         {
+        //             content: 'Mastermind',
+        //             value: 2
+        //         },
+        //         {
+        //             content: "Illustrator",
+        //             value: 4
+        //         },
+        //         {
+        //             content: 'Presenter',
+        //             value: 0
+        //         },
+        //         {
+        //             content: 'Facilitator',
+        //             value: 5
+        //         },
+        //         {
+        //             content: 'Supporter',
+        //             value: 3
+        //         }
+        //     ]
+        // },
         {
             content: 'Of the following, which is most important to you?',
             isAnswered: false,
@@ -255,37 +255,37 @@ const state = {
                 }
             ]
         },
-        {
-            content: 'How do you prefer to give gifts?',
-            isAnswered: false,
-            illustrationRef: 0,
-            ingredientRef: 0,
-            answers: [{
-                    content: 'Support a good cause',
-                    value: 5
-                },
-                {
-                    content: 'Gift card / money',
-                    value: 1
-                },
-                {
-                    content: 'Something on their wish list',
-                    value: 3
-                },
-                {
-                    content: 'Something useful',
-                    value: 0
-                },
-                {
-                    content: 'Novelty gift',
-                    value: 4
-                },
-                {
-                    content: 'Something for self-improvement',
-                    value: 2
-                }
-            ]
-        },
+        // {
+        //     content: 'How do you prefer to give gifts?',
+        //     isAnswered: false,
+        //     illustrationRef: 0,
+        //     ingredientRef: 0,
+        //     answers: [{
+        //             content: 'Support a good cause',
+        //             value: 5
+        //         },
+        //         {
+        //             content: 'Gift card / money',
+        //             value: 1
+        //         },
+        //         {
+        //             content: 'Something on their wish list',
+        //             value: 3
+        //         },
+        //         {
+        //             content: 'Something useful',
+        //             value: 0
+        //         },
+        //         {
+        //             content: 'Novelty gift',
+        //             value: 4
+        //         },
+        //         {
+        //             content: 'Something for self-improvement',
+        //             value: 2
+        //         }
+        //     ]
+        // },
         {
             content: 'My Kryptonite:',
             isAnswered: false,
