@@ -1,14 +1,14 @@
 &#ramen {
-    background: $background;
+	background: $background;
 }
 
 // Background
 .st4 {
-    fill: $background;
+	fill: $background;
 }
 
 .st27 {
-    fill: $table;
+	fill: $table;
 }
 
 // Bowl
@@ -23,7 +23,7 @@
 #bowl-01-lines_2_,
 #chinese-border_2_,
 #ChopDisposable_1_ {
-    fill: $outlines;
+	fill: $outlines;
 }
 
 #bowl05-fill,
@@ -33,11 +33,11 @@
 #bowl02-fill_1_,
 #bowl-01-fill_2_,
 #tsukemen-bowl-fill_1_ {
-    fill: $bowl;
+	fill: $bowl;
 }
 
 #bowl04-flowers_3_ {
-    fill: $decoration;
+	fill: $decoration;
 }
 
 // Toppings
@@ -50,7 +50,7 @@
 .st20,
 .st39,
 .st54 {
-    fill: $outlines;
+	fill: $outlines;
 }
 
 .st62,
@@ -58,96 +58,96 @@
 .st57,
 .st21,
 #paletteblob02_1_ {
-    fill: $green;
+	fill: $green;
 }
 
 .st80 {
-    fill: $light-green;
+	fill: $light-green;
 }
 
 .st78,
 .st81,
 #hand-fill_1_ {
-    fill: $beige;
+	fill: $beige;
 }
 
 .st46,
 .st28,
 .st35 {
-    fill: $yellow;
+	fill: $yellow;
 }
 
 .st14 {
-    fill: $nori;
+	fill: $nori;
 }
 
 .st13,
 #angry-egg-white_3_,
 .st32,
 #notebook_1_ {
-    fill: $white;
+	fill: $white;
 }
 
 .st25 {
-    fill: $pink;
+	fill: $pink;
 }
 
 #kimchee-leaves_4_,
 #pencil-eraser_1_ {
-    fill: $red;
+	fill: $red;
 }
 
 #Nori02_4_ {
-    fill: $garnish;
+	fill: $garnish;
 }
 
 .st53 {
-    fill: $orange;
+	fill: $orange;
 }
 
 #tempura-flecks_1_,
 #cool-seeds_1_ {
-    fill: darken($yellow, 20%);
+	fill: darken($yellow, 20%);
 }
 
 .st36 {
-    fill: $plate;
+	fill: $plate;
 }
 
 #porkbelly-fill_4_ {
-    fill: $pink;
+	fill: $pink;
 }
 
 .st75 {
-    fill: $cloud;
+	fill: $cloud;
 }
 
 #raindrops_4_ {
-    fill: $raindrops;
+	fill: $raindrops;
 }
 
 #Shiitake_4_ {
-    fill: $mushrooms;
+	fill: $mushrooms;
 }
 
 #shoyu-fill_3_ {
-    fill: $shoyu;
+	fill: $shoyu;
 }
 
 #shoyu-fill-level_3_ {
-    fill: $shoyu-level;
+	fill: $shoyu-level;
 }
 
 .st48,
 #Noodle06_broth,
 .st47 {
-    fill: $broth;
+	fill: $broth;
 }
 
 .st18,
 #noodles04-fill_1_,
 #noodle02-fill_1_ {
-    fill: $noodle;
+	fill: $noodle;
 }
 
 .st58,
@@ -155,87 +155,84 @@
 #noodle-shadow_1_ .st39,
 #noodle06-shade_1_,
 #noodle02-shade_1_ {
-    fill: $noodle-shade;
+	fill: $noodle-shade;
 }
 
-
-
 #paletteblob04_1_ {
-    fill: $phone;
+	fill: $phone;
 }
 
 #paletteblob03_1_ {
-    fill: $pink;
+	fill: $pink;
 }
 
 #tsukemen-broth_1_ {
-    fill: $tsukemen-broth;
+	fill: $tsukemen-broth;
 }
 
 // Supposed to be free spirit but has conflicts with personalitites
 #Broth04_1_ {
-    fill: $broth;
+	fill: $broth;
 }
 
-
 #glasses-lenses_1_ {
-    fill: $white;
-    fill-opacity: 0.5;
+	fill: $white;
+	fill-opacity: 0.5;
 }
 
 #pencil {
-    fill: $pencil;
+	fill: $pencil;
 }
 
 #pencil-wood_1_ {
-    fill: $beige;
+	fill: $beige;
 }
 
 #phone-fill {
-    fill: $phone;
+	fill: $phone;
 }
 
 #paletteblob01_1_,
 #tsukemen-chopsticks_1_ .st36,
-#chopsticks02-fill_1_{
-    fill: $chopsticks;
+#chopsticks02-fill_1_ {
+	fill: $chopsticks;
 }
 
 #Chopsticks02 {
-    display: none;;
-} 
+	display: none;
+}
 
 // Results Page
-.ramen-title{
-    color: $title-color;
+.ramen-title {
+	color: $title-color;
 }
 
-&.results-container{
-    background: $results-container;
+&.results-container {
+	background: $results-container;
 }
 
-.ramen-info p{
-    color: $text-color; 
+.ramen-info p {
+	color: $text-color;
 }
 
-#top-right-pattern{
-    .cls-1{
-        fill: lighten($results-container, 4%);
-    }
+#top-right-pattern {
+	.cls-1 {
+		fill: lighten($results-container, 4%);
+	}
 }
 
-.restart{
-    p{
-        color: $try-again;
-    }
+.restart {
+	p {
+		color: $try-again;
+	}
 
-    svg{
-        fill: $try-again;
-    }
+	svg {
+		fill: $try-again;
+	}
 }
 
-#you-are-svg{
-    .cls-2{
-        fill: $you-are;
-    }
+#you-are-svg {
+	.cls-2 {
+		fill: $you-are;
+	}
 }
