@@ -76,8 +76,9 @@
 	svg {
 		position: absolute;
 		top: 20px;
-		left: 0;
+		left: 2%;
 		display: none;
+		width: 96%;
 	}
 
 	.cls-1 {
