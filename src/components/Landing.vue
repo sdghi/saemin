@@ -11,7 +11,8 @@
 			<div class="home-content">
 				<h1 class="home-title uppercase text-center">Generator</h1>
 				<p class="home-subtitle">
-					Find out what kind of saimin you'd be in 15&nbsp;questions.
+					Find out what kind of noodles you’d be in 15 questions. Live long and
+					noodle on.
 				</p>
 				<button class="start-quiz-btn" @click="startQuiz" v-if="!quizStarted">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 10">
@@ -132,6 +133,7 @@
 		text-align: center;
 		font-family: $type-accent;
 		position: relative;
+		letter-spacing: 0.02em;
 	}
 
 	p {
@@ -146,6 +148,7 @@
 		margin-bottom: 30px;
 		font-weight: 800;
 		margin-top: 20px;
+		max-width: 100%;
 	}
 
 	.start-quiz-btn {
