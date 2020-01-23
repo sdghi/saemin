@@ -211,7 +211,8 @@
 	}
 
 	.ramen-title {
-		font-size: 2rem;
+		margin-top: 30px;
+		font-size: 1.8rem;
 		text-transform: lowercase;
 	}
 
