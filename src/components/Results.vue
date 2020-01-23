@@ -4,12 +4,17 @@
 		<div id="info-container">
 			<YouAreSvg />
 			<div class="ramen-info" v-if="topping.refId === 2">
-				<h2 class="ramen-title">An instant ramen.</h2>
+				<h2 class="ramen-title">a Disenchanted Underachiever</h2>
+				<p>
+					<strong>Instant Ramen: </strong>minimal effort. Fill to the line, or
+					just eat it crunchy.
+				</p>
 				<p>
 					When presented with a choice, you reliably choose the easier.
 					Immediate gratification is routinely sought at the expense of basic
 					health and hygiene. Maybe try a little harder?
 				</p>
+				<p>“Let’s not do anything today.”</p>
 			</div>
 			<div class="ramen-info" v-else-if="topping.refId !== 2">
 				<h2 class="ramen-title">
@@ -19,7 +24,7 @@
 				<div class="description-container">
 					<p>
 						<strong>{{ brothAndNoodle.title }}: </strong>
-						{{ brothAndNoodle.description }}
+						{{ brothAndNoodle.type }}
 					</p>
 					<p>{{ brothAndNoodle.description }}</p>
 					<p>{{ topping.description }}</p>
