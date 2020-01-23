@@ -211,7 +211,8 @@
 	background: $results-container;
 }
 
-.ramen-info p {
+.ramen-info p,
+.share-cta {
 	color: $text-color;
 }
 
@@ -235,4 +236,12 @@
 	.cls-2 {
 		fill: $you-are;
 	}
+}
+
+#Broth04_1_ {
+	fill: $free-spirit-broth;
+}
+
+#sweat_4_ {
+	fill: $palette;
 }

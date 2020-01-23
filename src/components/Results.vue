@@ -24,6 +24,10 @@
 					<p>{{ topping.description }}</p>
 				</div>
 			</div>
+			<p class="share-cta">
+				🍜<strong>SEND NOODS!</strong> Screenshot and share your results with
+				the hashtag #Saemin.
+			</p>
 			<BackBtn
 				content="try again!"
 				btnStyle="restart"
@@ -194,7 +198,6 @@
 
 	.ramen-info {
 		margin-top: -40px;
-		margin-bottom: 20px;
 	}
 
 	strong {
@@ -206,14 +209,16 @@
 		text-transform: lowercase;
 	}
 
-	.description-container p {
+	.description-container p,
+	.share-cta {
 		font-size: 1rem;
 		margin-bottom: 1.2rem;
 		line-height: 1.4;
 	}
 
 	@media (min-width: $breakpoint-small) {
-		.ramen-info p {
+		.ramen-info p,
+		.share-cta {
 			font-size: 1.325em;
 			line-height: 1.65em;
 		}
@@ -225,7 +230,8 @@
 			padding: 50px;
 		}
 
-		.description-container p {
+		.description-container p,
+		.share-cta {
 			font-size: 1.3rem;
 		}
 
