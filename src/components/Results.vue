@@ -4,12 +4,17 @@
 		<div id="info-container">
 			<YouAreSvg />
 			<div class="ramen-info" v-if="topping.refId === 2">
-				<h2 class="ramen-title">An instant ramen.</h2>
+				<h2 class="ramen-title">a Disenchanted Underachiever</h2>
+				<p>
+					<strong>Instant Ramen: </strong>minimal effort. Fill to the line, or
+					just eat it crunchy.
+				</p>
 				<p>
 					When presented with a choice, you reliably choose the easier.
 					Immediate gratification is routinely sought at the expense of basic
 					health and hygiene. Maybe try a little harder?
 				</p>
+				<p>“Let’s not do anything today.”</p>
 			</div>
 			<div class="ramen-info" v-else-if="topping.refId !== 2">
 				<h2 class="ramen-title">
@@ -18,7 +23,8 @@
 				</h2>
 				<div class="description-container">
 					<p>
-						<strong>{{ brothAndNoodle.title }}</strong>
+						<strong>{{ brothAndNoodle.title }}: </strong>
+						{{ brothAndNoodle.type }}
 					</p>
 					<p>{{ brothAndNoodle.description }}</p>
 					<p>{{ topping.description }}</p>
@@ -205,7 +211,8 @@
 	}
 
 	.ramen-title {
-		font-size: 3rem;
+		margin-top: 30px;
+		font-size: 1.8rem;
 		text-transform: lowercase;
 	}
 
@@ -226,8 +233,9 @@
 
 	@media (min-width: $breakpoint-medium) {
 		#info-container {
-			width: 50%;
+			width: 60%;
 			padding: 50px;
+			overflow-y: auto;
 		}
 
 		.description-container p,
@@ -241,6 +249,10 @@
 			width: 100%;
 			display: flex;
 			flex-direction: row-reverse;
+		}
+
+		.ramen-title {
+			font-size: 2.5rem;
 		}
 
 		.ramen-info {
