@@ -1,45 +1,45 @@
 .easygoing {
-    // Reusable
-    $white: #fcfcee;
-    $background: #9fd7ca;
-    $red: #ee7d69;
-    $pink: $red;
-    $orange: $red;
-    $yellow: #ffcd60;
+	// Reusable
+	$white: #fcfcee;
+	$background: #9fd7ca;
+	$red: #ee7d69;
+	$pink: $red;
+	$orange: $red;
+	$yellow: #ffcd60;
 
-    // Global styles
-    $beige: #ffecda;
-    $bowl: #f6aa8f;
-    $pencil: $bowl;
-    $table: #62bca4;
-    $chopsticks: $yellow;
-    $noodle: #ffd683;
-    $noodle-shade: #bbbc7d;
-    $broth: #40b392;
-    $tsukemen-broth: $broth;
-    $plate: $broth;
-    $free-spirit-broth: $bowl;
-    $mushrooms: #fec248;
-    $green: #97bf49;
-    $light-green: lighten($green, 20%);
-    $cloud: #2a5861;
-    $nori: #01444f;
-    $outlines: $nori;
-    $decoration: #ee7d69;
-    $decoration2: $decoration;
-    $phone: $decoration;
-    $shoyu: $decoration;
-    $shoyu-level: lighten($shoyu, 20%);
-    $raindrops: $decoration;
-    $garnish: $decoration;
-    $sweat: $decoration;
+	// Global styles
+	$beige: #ffecda;
+	$bowl: #f6aa8f;
+	$pencil: $bowl;
+	$table: #62bca4;
+	$chopsticks: $yellow;
+	$noodle: #ffd683;
+	$noodle-shade: #bbbc7d;
+	$broth: #40b392;
+	$tsukemen-broth: $broth;
+	$plate: $broth;
+	$free-spirit-broth: $bowl;
+	$mushrooms: #fec248;
+	$green: #97bf49;
+	$light-green: lighten($green, 20%);
+	$cloud: #2a5861;
+	$nori: #01444f;
+	$outlines: $nori;
+	$decoration: #ee7d69;
+	$decoration2: $decoration;
+	$phone: $decoration;
+	$shoyu: $decoration;
+	$shoyu-level: lighten($shoyu, 20%);
+	$raindrops: $decoration;
+	$garnish: $decoration;
+	$sweat: $decoration;
 
-    $palette: $white;
-    $results-container: $bowl;
-    $you-are: $noodle;
-    $title-color: $noodle;
-    $text-color: $outlines;
-    $try-again: $red;
+	$palette: $white;
+	$results-container: $bowl;
+	$you-are: $noodle;
+	$title-color: $noodle;
+	$text-color: $outlines;
+	$try-again: $red;
 
-    @import '../globalSvgStyles.scss';
+	@import "../globalSvgStyles.scss";
 }

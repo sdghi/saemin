@@ -1,11 +1,9 @@
 @import url("https://use.typekit.net/vhq5zze.css");
 
 // Fonts
-$type-heading: "Termina",
-sans-serif;
-$type-base: 'source-sans-pro', sans-serif;
-$type-accent: 'Alfarn',
-sans-serif;
+$type-heading: "Termina", sans-serif;
+$type-base: "source-sans-pro", sans-serif;
+$type-accent: "Alfarn", sans-serif;
 
 // Colors
 $background: white;
@@ -13,12 +11,12 @@ $white: white;
 $black: black;
 $card-color: grey;
 $accent-color: lightgrey;
-$pink: #E92E55;
-$maroon: #5A110A;
+$pink: #e92e55;
+$maroon: #5a110a;
 $gold: #876521;
-$teal: #2A5960;
-$textGold: #E1C487;
-$textBlue: #70C4BA;
+$teal: #2a5960;
+$textGold: #e1c487;
+$textBlue: #70c4ba;
 
 // Easings
 $cubic-ease: cubic-bezier(0.18, 0.61, 0.63, 0.975);

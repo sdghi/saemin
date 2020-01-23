@@ -1,46 +1,45 @@
 .disenchanted {
-    // Reusable
-    $yellow: #e8e8b2;
+	// Reusable
+	$yellow: #e8e8b2;
 
-    // Gloabal
-    $white: #ffffff;
-    $beige: #d7dedd;
-    $bowl: #727579;
-    $free-spirit-broth: $bowl;
-    $pencil: $yellow;
-    $background: #8a9992;
-    $table: #97a59f;
-    $red: #af85a7;
-    $pink: #bba9a6;
-    $orange: #e8b691;
-    $chopsticks: $yellow;
-    $noodle: #d7dEdd;
-    $noodle-shade: #a8afaf;
-    $broth: #1d2036;
-    $tsukemen-broth: $broth;
-    $plate: $broth;
-    $mushrooms: #a59c95;
-    $green: #b8d3c7;
-    $light-green: lighten($green, 20%);
-    $cloud: #363a49;
-    $nori: $cloud;
-    $outlines: #1d2036;
-    $decoration: $outlines;
-    $decoration2: $outlines;
-    $phone: #727597;
-    $shoyu: $phone;
-    $shoyu-level: lighten($phone, 20%);
-    $raindrops: $phone;
-    $garnish: $phone;
-    $sweat: $phone;
+	// Gloabal
+	$white: #ffffff;
+	$beige: #d7dedd;
+	$bowl: #727579;
+	$free-spirit-broth: $bowl;
+	$pencil: $yellow;
+	$background: #8a9992;
+	$table: #97a59f;
+	$red: #af85a7;
+	$pink: #bba9a6;
+	$orange: #e8b691;
+	$chopsticks: $yellow;
+	$noodle: #d7dedd;
+	$noodle-shade: #a8afaf;
+	$broth: #1d2036;
+	$tsukemen-broth: $broth;
+	$plate: $broth;
+	$mushrooms: #a59c95;
+	$green: #b8d3c7;
+	$light-green: lighten($green, 20%);
+	$cloud: #363a49;
+	$nori: $cloud;
+	$outlines: #1d2036;
+	$decoration: $outlines;
+	$decoration2: $outlines;
+	$phone: #727597;
+	$shoyu: $phone;
+	$shoyu-level: lighten($phone, 20%);
+	$raindrops: $phone;
+	$garnish: $phone;
+	$sweat: $phone;
 
+	$palette: $beige;
+	$results-container: $broth;
+	$you-are: $beige;
+	$title-color: $white;
+	$text-color: $white;
+	$try-again: $yellow;
 
-    $palette: $beige;
-    $results-container: $broth;
-    $you-are: $beige;
-    $title-color: $white;
-    $text-color: $white;
-    $try-again: $yellow;
-
-    @import '../globalSvgStyles.scss';
+	@import "../globalSvgStyles.scss";
 }
