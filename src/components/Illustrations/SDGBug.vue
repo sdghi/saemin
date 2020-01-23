@@ -159,10 +159,7 @@
 	}
 
 	.results {
-		top: 2.5%;
-		right: 2.5%;
-		width: 100px;
-		animation: spin 15s linear infinite;
+		display: none;
 	}
 
 	.home {
@@ -175,11 +172,19 @@
 		.home {
 			display: none;
 		}
+
+		.results {
+			top: 2.5%;
+			right: 2.5%;
+			width: 150px;
+			animation: spin 15s linear infinite;
+			display: block;
+		}
 	}
 
 	@media (min-width: $breakpoint-medium) {
 		.results {
-			width: 200px;
+			width: 10em;
 		}
 	}
 
