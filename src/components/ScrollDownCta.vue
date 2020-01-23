@@ -73,15 +73,18 @@
 				</g>
 			</g>
 		</svg>
+		<audio ref="slurpAudio" src="slurp.mp3"></audio>
 	</section>
 </template>
 
 <script>
 	import "scroll-behavior-polyfill";
+	import { mapGetters } from "vuex";
 
 	export default {
 		name: "ScrollDownCta",
 		props: ["scrollCtaHeight", "quizStarted"],
+		computed: mapGetters(["getAudioStatus"]),
 		mounted() {
 			// Will handle initial scroll down to first question when starting quiz
 			this.quizStarted &&
@@ -92,7 +95,17 @@
 							this.$refs.scrollCta.offsetTop / 1.7,
 						behavior: "smooth"
 					});
+
+					// Play Slurp Audio
+					this.playAudio();
 				}, 700);
+		},
+		methods: {
+			playAudio() {
+				if (this.getAudioStatus) {
+					this.$refs.slurpAudio.play();
+				}
+			}
 		}
 	};
 </script>
