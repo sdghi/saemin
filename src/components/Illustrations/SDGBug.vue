@@ -163,7 +163,7 @@
 	}
 
 	.home {
-		width: 100px;
+		width: 150px;
 		top: 12vh;
 		animation: spin 10s linear infinite;
 	}

@@ -169,8 +169,8 @@
 		margin-top: 30px;
 
 		.question-status {
-			color: $maroon;
-			font-size: 1em;
+			font-size: 0.75rem;
+			color: #c1113b;
 			font-weight: 600;
 		}
 	}
@@ -283,6 +283,7 @@
 			color: $maroon;
 			transition: all 0.2s ease-out;
 			padding: 10px;
+			line-height: 1.125rem;
 
 			&.selected,
 			&:hover {
@@ -308,6 +309,12 @@
 			}
 		}
 
+		.bottom-row {
+			.question-status {
+				font-size: 1em;
+			}
+		}
+
 		.question-container {
 			padding: 50px;
 
@@ -330,6 +337,7 @@
 
 			.answer {
 				height: 150px;
+				line-height: initial;
 				font-size: 1.5rem;
 			}
 		}
