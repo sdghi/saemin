@@ -337,7 +337,7 @@
 
 			.answer {
 				height: 150px;
-				line-height: initial;
+				line-height: 1.875rem;
 				font-size: 1.5rem;
 			}
 		}

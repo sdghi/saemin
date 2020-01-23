@@ -22,7 +22,7 @@
 		fill: #fff;
 	}
 
-	@media (min-width: $breakpoint-medium) {
+	@media (min-width: $breakpoint-small) {
 		svg {
 			display: none;
 		}

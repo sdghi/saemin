@@ -196,7 +196,7 @@
 			h2 {
 				letter-spacing: 0.1em;
 				font-size: 1.5rem;
-				top: 10%;
+				top: 35%;
 			}
 
 			svg {
