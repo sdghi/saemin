@@ -149,6 +149,7 @@
 		font-weight: 800;
 		margin-top: 20px;
 		max-width: 100%;
+		padding: 0 10px;
 	}
 
 	.start-quiz-btn {

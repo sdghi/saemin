@@ -18,7 +18,8 @@
 				</h2>
 				<div class="description-container">
 					<p>
-						<strong>{{ brothAndNoodle.title }}</strong>
+						<strong>{{ brothAndNoodle.title }}: </strong>
+						{{ brothAndNoodle.description }}
 					</p>
 					<p>{{ brothAndNoodle.description }}</p>
 					<p>{{ topping.description }}</p>
@@ -205,7 +206,7 @@
 	}
 
 	.ramen-title {
-		font-size: 3rem;
+		font-size: 2rem;
 		text-transform: lowercase;
 	}
 
@@ -226,8 +227,9 @@
 
 	@media (min-width: $breakpoint-medium) {
 		#info-container {
-			width: 50%;
+			width: 60%;
 			padding: 50px;
+			overflow-y: auto;
 		}
 
 		.description-container p,
@@ -241,6 +243,10 @@
 			width: 100%;
 			display: flex;
 			flex-direction: row-reverse;
+		}
+
+		.ramen-title {
+			font-size: 2.5rem;
 		}
 
 		.ramen-info {
