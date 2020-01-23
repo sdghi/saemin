@@ -65,6 +65,7 @@
 
 		p {
 			color: $pink;
+			letter-spacing: 0.1em;
 		}
 
 		svg {
