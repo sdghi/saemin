@@ -7,7 +7,7 @@ const getters = {
 };
 
 const mutations = {
-	changeAudioStatus(state, value) {
+	changeAudioStatus(state, { value }) {
 		state.allowAudio = value;
 	}
 };
