@@ -55,6 +55,7 @@
 				<IllustrationThree v-if="index % 3 === 0" />
 			</div>
 		</div>
+		<audio ref="slurpAudio" src="slurp.mp3"></audio>
 	</section>
 </template>
 
@@ -71,7 +72,7 @@
 
 	export default {
 		name: "QuestionCard",
-		computed: mapGetters(["scrollHeight"]),
+		computed: mapGetters(["scrollHeight", "getAudioStatus"]),
 		props: ["question", "allQuestions", "quizCompleted", "setScrollHeight"],
 		components: {
 			IllustrationOne,
@@ -94,8 +95,14 @@
 		},
 		updated() {
 			this.checkIfCompleted();
+			this.playAudio();
 		},
 		methods: {
+			playAudio() {
+				if (this.getAudioStatus) {
+					this.$refs.slurpAudio.play();
+				}
+			},
 			goBack() {
 				window.scrollY - this.scrollHeight > 0 &&
 					window.scrollTo({
