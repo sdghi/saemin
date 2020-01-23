@@ -73,6 +73,7 @@
 				</g>
 			</g>
 		</svg>
+		<audio ref="slurpAudio" src="slurp.mp3"></audio>
 	</section>
 </template>
 
@@ -92,7 +93,15 @@
 							this.$refs.scrollCta.offsetTop / 1.7,
 						behavior: "smooth"
 					});
+
+					// Play Slurp Audio
+					this.playAudio();
 				}, 700);
+		},
+		methods: {
+			playAudio() {
+				this.$refs.slurpAudio.play();
+			}
 		}
 	};
 </script>
