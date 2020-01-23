@@ -46,7 +46,7 @@
 			:bowlRef="bowl.refId"
 			:moodClass="moodClass"
 		/>
-
+		<audio ref="burpAudio" src="burp.mp3"></audio>
 		<BottomLeft status="blue" />
 		<TopRight status="blue" />
 	</section>
@@ -91,6 +91,10 @@
 			};
 		},
 		mounted() {
+			// Play the burp sound
+			console.log("play the burp sound");
+			this.playAudio();
+
 			// Creates mood class for svgs based off of the topping value
 			let toppingVal = this.topping.refId;
 
@@ -128,6 +132,9 @@
 			this.bowl = this.getIngredientValue("bowl", this.allBowls);
 		},
 		methods: {
+			playAudio() {
+				this.$refs.burpAudio.play();
+			},
 			modeValue(array) {
 				if (array.length == 0) return null;
 				var modeMap = {};
