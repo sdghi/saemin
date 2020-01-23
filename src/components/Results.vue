@@ -14,7 +14,7 @@
 					Immediate gratification is routinely sought at the expense of basic
 					health and hygiene. Maybe try a little harder?
 				</p>
-				<p>“Let’s not do anything today.”</p>
+				<p class="quote">“Let’s not do anything today.”</p>
 			</div>
 			<div class="ramen-info" v-else-if="topping.refId !== 2">
 				<h2 class="ramen-title">
@@ -27,7 +27,7 @@
 						{{ brothAndNoodle.type }}
 					</p>
 					<p>{{ brothAndNoodle.description }}</p>
-					<p>{{ topping.description }}</p>
+					<p class="quote">{{ topping.description }}</p>
 				</div>
 			</div>
 			<p class="share-cta">
@@ -233,11 +233,21 @@
 		line-height: 1.4;
 	}
 
+	.quote {
+		font-size: 1.2rem;
+		font-weight: 700;
+		font-style: italic;
+	}
+
 	@media (min-width: $breakpoint-small) {
 		.ramen-info p,
 		.share-cta {
 			font-size: 1.325em;
 			line-height: 1.65em;
+		}
+
+		.quote {
+			font-size: 1.4rem;
 		}
 	}
 

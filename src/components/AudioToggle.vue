@@ -58,6 +58,7 @@
 		bottom: 2.5%;
 		right: 2.5%;
 		width: fit-content;
+		z-index: 999999;
 
 		svg {
 			height: 18px;
