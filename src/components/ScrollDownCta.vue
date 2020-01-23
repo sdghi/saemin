@@ -89,7 +89,7 @@
 					window.scrollTo({
 						top:
 							this.$refs.scrollCta.offsetHeight +
-							this.$refs.scrollCta.offsetTop / 2,
+							this.$refs.scrollCta.offsetTop / 1.7,
 						behavior: "smooth"
 					});
 				}, 700);

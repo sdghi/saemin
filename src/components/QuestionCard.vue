@@ -284,6 +284,7 @@
 			transition: all 0.2s ease-out;
 			padding: 10px;
 			line-height: 1.125rem;
+			letter-spacing: 0.02em;
 
 			&.selected,
 			&:hover {
