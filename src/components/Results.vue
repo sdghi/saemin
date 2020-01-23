@@ -18,7 +18,7 @@
 			</div>
 			<div class="ramen-info" v-else-if="topping.refId !== 2">
 				<h2 class="ramen-title">
-					{{ topping.starter }} {{ topping.name }} {{ bowl.name }}
+					{{ topping.starter }} {{ topping.name }}, {{ bowl.name }}
 					{{ brothAndNoodle.name }}.
 				</h2>
 				<div class="description-container">
@@ -31,8 +31,9 @@
 				</div>
 			</div>
 			<p class="share-cta">
-				🍜<strong>SEND NOODS!</strong> Screenshot and share your results with
-				the hashtag #Saemin.
+				🍜<strong>SEND NOODS!</strong> Screenshot and share your results on
+				Instagram with the hashtag
+				<strong class="insta-hashtag">#saemingenerator.</strong>.
 			</p>
 			<BackBtn
 				content="try again!"
