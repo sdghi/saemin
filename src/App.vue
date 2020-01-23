@@ -1,59 +1,59 @@
 <template>
-  <div id="app">
-    <Home />
-  </div>
+	<div id="app">
+		<Home />
+	</div>
 </template>
 
 <script>
-import Home from "@/components/Home";
+	import Home from "@/components/Home";
 
-export default {
-  name: "app",
-  components: {
-    Home
-  }
-};
+	export default {
+		name: "app",
+		components: {
+			Home
+		}
+	};
 </script>
 
 <style lang="scss">
-html {
-  box-sizing: border-box;
-}
+	html {
+		box-sizing: border-box;
+	}
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+	*,
+	*::before,
+	*::after {
+		box-sizing: inherit;
+	}
 
-body {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
+	body {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden;
+	}
 
-ul {
-  padding: 0;
-  margin: 0;
+	ul {
+		padding: 0;
+		margin: 0;
 
-  li {
-    list-style: none;
-  }
-}
+		li {
+			list-style: none;
+		}
+	}
 
-a {
-  text-decoration: none;
-}
+	a {
+		text-decoration: none;
+	}
 
-button:focus {
-  outline: none;
-}
+	button:focus {
+		outline: none;
+	}
 
-button {
-  p {
-    font-family: $type-accent;
-    font-weight: 400;
-  }
-}
+	button {
+		p {
+			font-family: $type-accent;
+			font-weight: 400;
+		}
+	}
 </style>
