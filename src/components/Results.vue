@@ -79,7 +79,8 @@
 			"toppings",
 			"allToppings",
 			"bowls",
-			"allBowls"
+			"allBowls",
+			"getAudioStatus"
 		]),
 		data() {
 			return {
@@ -92,7 +93,6 @@
 		},
 		mounted() {
 			// Play the burp sound
-			console.log("play the burp sound");
 			this.playAudio();
 
 			// Creates mood class for svgs based off of the topping value
@@ -133,7 +133,9 @@
 		},
 		methods: {
 			playAudio() {
-				this.$refs.burpAudio.play();
+				if (this.getAudioStatus) {
+					this.$refs.burpAudio.play();
+				}
 			},
 			modeValue(array) {
 				if (array.length == 0) return null;

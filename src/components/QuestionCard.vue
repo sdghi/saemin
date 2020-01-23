@@ -72,7 +72,7 @@
 
 	export default {
 		name: "QuestionCard",
-		computed: mapGetters(["scrollHeight"]),
+		computed: mapGetters(["scrollHeight", "getAudioStatus"]),
 		props: ["question", "allQuestions", "quizCompleted", "setScrollHeight"],
 		components: {
 			IllustrationOne,
@@ -99,7 +99,9 @@
 		},
 		methods: {
 			playAudio() {
-				this.$refs.slurpAudio.play();
+				if (this.getAudioStatus) {
+					this.$refs.slurpAudio.play();
+				}
 			},
 			goBack() {
 				window.scrollY - this.scrollHeight > 0 &&

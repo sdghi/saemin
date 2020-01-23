@@ -79,10 +79,12 @@
 
 <script>
 	import "scroll-behavior-polyfill";
+	import { mapGetters } from "vuex";
 
 	export default {
 		name: "ScrollDownCta",
 		props: ["scrollCtaHeight", "quizStarted"],
+		computed: mapGetters(["getAudioStatus"]),
 		mounted() {
 			// Will handle initial scroll down to first question when starting quiz
 			this.quizStarted &&
@@ -100,7 +102,9 @@
 		},
 		methods: {
 			playAudio() {
-				this.$refs.slurpAudio.play();
+				if (this.getAudioStatus) {
+					this.$refs.slurpAudio.play();
+				}
 			}
 		}
 	};
