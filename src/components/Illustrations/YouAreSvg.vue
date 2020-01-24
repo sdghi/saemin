@@ -36,7 +36,7 @@
 
 <style lang="scss" scoped>
 	svg {
-		width: 45%;
+		width: 40%;
 	}
 
 	@media (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) {

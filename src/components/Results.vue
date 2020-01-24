@@ -222,7 +222,7 @@
 
 	.ramen-title {
 		margin-top: 30px;
-		font-size: 1.8rem;
+		font-size: 1.5rem;
 		text-transform: lowercase;
 	}
 
@@ -240,6 +240,10 @@
 	}
 
 	@media (min-width: $breakpoint-small) {
+		.ramen-title {
+			font-size: 1.8rem;
+		}
+
 		.ramen-info p,
 		.share-cta {
 			font-size: 1.325em;
