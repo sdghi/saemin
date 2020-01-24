@@ -3,6 +3,7 @@
 		<Landing v-if="!quizCompleted" :quizStarted="quizStarted" />
 		<Quiz v-if="!quizCompleted" :quizStarted="quizStarted" />
 		<Results v-if="quizCompleted" />
+		<AudioToggle />
 	</div>
 </template>
 
@@ -12,6 +13,7 @@
 	import { mapGetters } from "vuex";
 	import Quiz from "./Quiz";
 	import Results from "./Results";
+	import AudioToggle from "./AudioToggle";
 
 	export default {
 		name: "Home",
@@ -26,6 +28,7 @@
 			}
 		},
 		components: {
+			AudioToggle,
 			Quiz,
 			Results,
 			Landing

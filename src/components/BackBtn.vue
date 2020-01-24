@@ -62,6 +62,7 @@
 
 	.back {
 		background: $textGold;
+		padding: 10px 15px;
 
 		p {
 			color: $pink;

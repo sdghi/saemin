@@ -36,7 +36,8 @@
 	fill: $bowl;
 }
 
-#bowl04-flowers_3_ {
+#bowl04-flowers_3_,
+#chinese-border_2_ .st39 {
 	fill: $decoration;
 }
 
@@ -140,13 +141,15 @@
 
 .st48,
 #Noodle06_broth,
-.st47 {
+.st47,
+#Broth03 .st4 {
 	fill: $broth;
 }
 
 .st18,
 #noodles04-fill_1_,
-#noodle02-fill_1_ {
+#noodle02-fill_1_,
+#noodle06-fill_1_ .st28 {
 	fill: $noodle;
 }
 
@@ -203,7 +206,8 @@
 }
 
 // Results Page
-.ramen-title {
+.ramen-title,
+.insta-hashtag {
 	color: $title-color;
 }
 
@@ -243,5 +247,15 @@
 }
 
 #sweat_4_ {
+	fill: $sweat;
+}
+
+#glasses-lines_1_,
+#glasses-arm2_1_,
+#glasses-arm1_1_ {
+	fill: $outlines;
+}
+
+#palette-fill_1_ {
 	fill: $palette;
 }

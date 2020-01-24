@@ -14,11 +14,11 @@
 					Immediate gratification is routinely sought at the expense of basic
 					health and hygiene. Maybe try a little harder?
 				</p>
-				<p>“Let’s not do anything today.”</p>
+				<p class="quote">“Let’s not do anything today.”</p>
 			</div>
 			<div class="ramen-info" v-else-if="topping.refId !== 2">
 				<h2 class="ramen-title">
-					{{ topping.starter }} {{ topping.name }} {{ bowl.name }}
+					{{ topping.starter }} {{ topping.name }}, {{ bowl.name }}
 					{{ brothAndNoodle.name }}.
 				</h2>
 				<div class="description-container">
@@ -27,12 +27,13 @@
 						{{ brothAndNoodle.type }}
 					</p>
 					<p>{{ brothAndNoodle.description }}</p>
-					<p>{{ topping.description }}</p>
+					<p class="quote">{{ topping.description }}</p>
 				</div>
 			</div>
 			<p class="share-cta">
-				🍜<strong>SEND NOODS!</strong> Screenshot and share your results with
-				the hashtag #Saemin.
+				🍜<strong>SEND NOODS!</strong> Screenshot and share your results on
+				Instagram with the hashtag
+				<strong class="insta-hashtag">#saemingenerator.</strong>.
 			</p>
 			<BackBtn
 				content="try again!"
@@ -221,7 +222,7 @@
 
 	.ramen-title {
 		margin-top: 30px;
-		font-size: 1.8rem;
+		font-size: 1.5rem;
 		text-transform: lowercase;
 	}
 
@@ -232,11 +233,25 @@
 		line-height: 1.4;
 	}
 
+	.quote {
+		font-size: 1.2rem;
+		font-weight: 700;
+		font-style: italic;
+	}
+
 	@media (min-width: $breakpoint-small) {
+		.ramen-title {
+			font-size: 1.8rem;
+		}
+
 		.ramen-info p,
 		.share-cta {
 			font-size: 1.325em;
 			line-height: 1.65em;
+		}
+
+		.quote {
+			font-size: 1.4rem;
 		}
 	}
 

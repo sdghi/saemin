@@ -262,7 +262,7 @@ const state = {
 			]
 		},
 		{
-			content: "Quickly — Pick a Patronus",
+			content: "Quickly — pick a spirit animal",
 			isAnswered: false,
 			illustrationRef: 1,
 			ingredientRef: 1,
