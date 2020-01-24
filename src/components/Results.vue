@@ -33,7 +33,7 @@
 			<p class="share-cta">
 				🍜<strong>SEND NOODS!</strong> Screenshot and share your results on
 				Instagram with the hashtag
-				<strong class="insta-hashtag">#saemingenerator.</strong>.
+				<strong class="insta-hashtag">#saemingenerator</strong>.
 			</p>
 			<BackBtn
 				content="try again!"
