@@ -5,4 +5,4 @@
 - built w/ vue
 - personality quiz that generators a custom ramen based off user input
 
-https://saemin.netlify.com/
+https://saemin.saedesign.com
